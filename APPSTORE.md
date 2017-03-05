@@ -9,12 +9,13 @@ This app gives you the opportunity to add Virtual Devices to Homey that can be o
 
 ## What doesn't:
 
+* Only 1 device can be added
 * Use the switches status as a condition
-* Other devices, like a push-button, Dimmer, Thermostat, etc.
+* Other devices, like a push-button, Dimmer, etc.
 
-Requests are possible, but I do not give guarantees on functionality or timelines.
+I'm very interested to hear your ideas for other virtual devices. 
 
 ## If you like this app
 
-Buy me a beer on [PayPal](http://paypal.me/ArjanKranenburg),
+Buy me a (virtual) beer on [PayPal](http://paypal.me/ArjanKranenburg),
 but no sweat if you don't.
