@@ -50,24 +50,7 @@
                     }
                 ]
             }
-        ],
-        "tbd": {"conditions": [
-            {
-                "id": "switch",
-                "title": {
-                    "en": "Switch is on",
-                    "nl": "Schakelaar is aan"
-                },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-            }
         ]
-        }
     },
     "drivers": [
         {
@@ -77,8 +60,8 @@
                 "nl": "Virtuele Schakelaar"
             },
             "images": {
-                "large": "drivers/virtual_switch/assets/large.jpg",
-                "small": "drivers/virtual_switch/assets/small.jpg"
+                "large": "drivers/virtual_switch/assets/images/large.png",
+                "small": "drivers/virtual_switch/assets/images/small.png"
             },
             "class": "other",
             "capabilities": [ "onoff" ],
