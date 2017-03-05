@@ -1,0 +1,112 @@
+{
+    "id": "com.arjankranenburg.virtual",
+    "name": {
+        "en": "Virtual Devices",
+        "nl": "Virtuele Apparaten"
+    },
+	"tags": {
+		"en": [ "virtual device" ],
+		"nl": [ "Virtuele Apparaten" ]
+	},
+    "version": "0.0.1",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Arjan Kranenburg",
+        "email": "arjan.kranenburg@gmail.com"
+    },
+	"images": {
+		"large": "./assets/images/large.png",
+		"small": "./assets/images/small.png"
+	},
+	"category": "tools",
+    "flow": {
+        "triggers": [
+            {
+                "id": "virtual_switch_on",
+                "title": {
+                    "en": "Switch is turned on",
+                    "nl": "Schakelaar wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+
+            },
+            {
+                "id": "virtual_switch_off",
+                "title": {
+                    "en": "Switch is turned off",
+                    "nl": "Schakelaar wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+            }
+        ],
+        "tbd": {"conditions": [
+            {
+                "id": "switch",
+                "title": {
+                    "en": "Switch is on",
+                    "nl": "Schakelaar is aan"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+            }
+        ]
+        }
+    },
+    "drivers": [
+        {
+            "id": "virtual_switch",
+            "name": {
+                "en": "Virtual Switch",
+                "nl": "Virtuele Schakelaar"
+            },
+            "images": {
+                "large": "drivers/virtual_switch/assets/large.jpg",
+                "small": "drivers/virtual_switch/assets/small.jpg"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_switches",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_switches"
+                    }
+                },
+                {
+                    "id": "add_switches",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        }
+    ]
+}
