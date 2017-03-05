@@ -1,5 +1,6 @@
 {
     "id": "com.arjankranenburg.virtual",
+    "description": "Virtual Devices to trigger your flows from the GUI.",
     "name": {
         "en": "Virtual Devices",
         "nl": "Virtuele Apparaten"
