@@ -49,6 +49,12 @@ module.exports.pair = function( other ) {
     })
 };
 
+//module.exports.renamed = function( device_data, new_name ) {
+    // run when the user has renamed the device in Homey.
+    // It is recommended to synchronize a device's name, so the user is not confused
+    // when it uses another remote to control that device (e.g. the manufacturer's app).
+//}
+
 
 //these are the methods that respond to get/set calls from Homey
 //for example when a user pressed a button
@@ -59,7 +65,6 @@ module.exports.capabilities.onoff = {};
 // `device_data` is the object as saved during pairing
 // `callback` should return the current value in the format callback( err, value )
 module.exports.capabilities.onoff.get = function (device_data, callback) {
-    console.log("get state");
 	
     var virtualSwitch = getSwitch( device_data.id );
     if( virtualSwitch instanceof Error ) return callback( virtualSwitch );
@@ -82,17 +87,15 @@ module.exports.capabilities.onoff.set = function( device_data, onoff, callback )
     var tokens = {"type": "device"};
 
     if (onoff) {
-        console.log("Turning on");
+        console.log( "Turning on  " + virtualSwitch.data.id);
 
         Homey.manager('flow').triggerDevice('virtual_switch_on', tokens, state, device_data, function (err, result) {
-        	console.log("Device triggered callback");
        		if (err) return console.error(err);
     	});
     } else {
-        console.log("Turning off");
+        console.log("Turning off " + virtualSwitch.data.id);
     	
         Homey.manager('flow').triggerDevice('virtual_switch_off', tokens, state, device_data, function (err, result) {
-        	console.log("Device triggered callback");
        		if (err) return console.error(err);
     	});
     }
@@ -106,6 +109,13 @@ module.exports.capabilities.onoff.set = function( device_data, onoff, callback )
     callback( null, virtualSwitch.state.onoff );
 };
 
+Homey.manager('flow').on('condition.virtual_switch', function( callback, args ){
+    var virtualSwitch = getSwitch( args.device.id );
+    if( virtualSwitch instanceof Error ) return callback( virtualSwitch );
+
+    callback( null, virtualSwitch.state.onoff ); 
+});
+
 //a helper method to get a switch from the devices list by it's id
 function getSwitch( switch_id ) {
     var device = devices[ switch_id ];
@@ -118,9 +128,15 @@ function getSwitch( switch_id ) {
 
 //a helper method to add a switch to the devices list
 function initDevice( device_data ) {
+	console.log("Device initialized " + device_data.id);
+//	console.log(JSON.stringify(device_data));
     devices[ device_data.id ] = {};
     devices[ device_data.id ].state = { onoff: false };
     devices[ device_data.id ].data = device_data;
+    
+//    module.exports.getSettings( device_data, function( err, settings ){
+//    	console.log(JSON.stringify(settings));
+//    })
 }
 
 function guid() {

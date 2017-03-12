@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.0.2",
+    "version": "0.0.3",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
@@ -35,7 +35,6 @@
                         "filter": "driver_id=virtual_switch"
                     }
                 ]
-
             },
             {
                 "id": "virtual_switch_off",
@@ -50,6 +49,22 @@
                         "filter": "driver_id=virtual_switch"
                     }
                 ]
+            }
+        ],
+        "conditions": [
+            {
+                "id": "virtual_switch",
+                "title": {
+                    "en": "Switch !{{is|isn't}} turned on",
+                    "nl": "Schakelaar !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]                
             }
         ]
     },
