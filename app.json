@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.0.1",
+    "version": "0.0.2",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",

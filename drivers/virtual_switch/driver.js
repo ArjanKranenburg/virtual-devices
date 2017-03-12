@@ -39,7 +39,7 @@ module.exports.pair = function( other ) {
         var device_data = {
             name: "New Virtual Switch",
             data: {
-                id: "abcd1234"
+                id: guid()
             }
         }
 
@@ -121,4 +121,11 @@ function initDevice( device_data ) {
     devices[ device_data.id ] = {};
     devices[ device_data.id ].state = { onoff: false };
     devices[ device_data.id ].data = device_data;
+}
+
+function guid() {
+	function s4() {
+		return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+	}
+	return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
