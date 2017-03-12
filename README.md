@@ -19,14 +19,8 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
-### 0.0.3
+### 0.1.0
 
 * Use the switches status as a condition
-
-### 0.0.2
-
 * Multiple Virtual devices can be added
-
-### 0.0.1
-
 * First Device: a Virtual Switch
