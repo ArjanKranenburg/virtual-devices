@@ -9,13 +9,19 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.1.0",
+    "version": "0.1.1",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
         "email": "arjan.kranenburg@gmail.com"
     },
-	"images": {
+	"contributors": {
+	    "developers": [{
+	        "name": "Arjan Kranenburg",
+	        "email": "arjan.kranenburg@gmail.com"
+	    }]
+	},
+  	"images": {
 		"large": "./assets/images/large.png",
 		"small": "./assets/images/small.png"
 	},

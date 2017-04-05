@@ -6,7 +6,7 @@
 var devices = {};
 
 module.exports.init = function( devices_data, callback ) {
-    console.log("Initializing driver");
+    console.log("Initializing switch driver");
 
     // when the driver starts, Homey rebooted. Initialise all previously paired devices.
     devices_data.forEach(function(device_data){
