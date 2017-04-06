@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.1.1",
+    "version": "0.2.0",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
@@ -72,7 +72,38 @@
                     }
                 ]                
             }
-        ]
+        ],
+        "actions": [
+	        {
+	            "id": "virtual_switch_action_on",
+	            "title": {
+	                "en": "Turn switch on",
+	                "nl": "Zet schakelaar aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_switch_action_off",
+	            "title": {
+	                "en": "Turn switch off",
+	                "nl": "Zet schakelaar uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+	        }
+    	]
+        
     },
     "drivers": [
         {

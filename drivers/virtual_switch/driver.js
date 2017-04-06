@@ -102,7 +102,6 @@ module.exports.capabilities.onoff.set = function( device_data, onoff, callback )
 
     // also emit the new value to realtime
     // this produces Insights logs and triggers Flows
-    // AWK: It does NOT trigger the flows, but don't see the harm to keep it here
     module.exports.realtime( device_data, 'onoff', onoff);
     
     // send the new onoff value to Homey
@@ -114,6 +113,38 @@ Homey.manager('flow').on('condition.virtual_switch', function( callback, args ){
     if( virtualSwitch instanceof Error ) return callback( virtualSwitch );
 
     callback( null, virtualSwitch.state.onoff ); 
+});
+
+Homey.manager('flow').on('action.virtual_switch_action_on', function( callback, args ){
+    var virtualSwitch = getSwitch( args.device.id );
+    if( virtualSwitch instanceof Error ) return callback( virtualSwitch );
+
+    virtualSwitch.state.onoff = true;
+    var state = virtualSwitch.state;
+    var tokens = {"type": "device"};
+
+    Homey.manager('flow').triggerDevice('virtual_switch_on', tokens, state, args.device, function (err, result) {
+   		if (err) return console.error(err);
+	});
+    module.exports.realtime( args.device, 'onoff', true);
+    
+    callback( null, true );
+});
+
+Homey.manager('flow').on('action.virtual_switch_action_off', function( callback, args ){
+    var virtualSwitch = getSwitch( args.device.id );
+    if( virtualSwitch instanceof Error ) return callback( virtualSwitch );
+
+    virtualSwitch.state.onoff = false;
+    var state = virtualSwitch.state;
+    var tokens = {"type": "device"};
+
+    Homey.manager('flow').triggerDevice('virtual_switch_off', tokens, state, args.device, function (err, result) {
+   		if (err) return console.error(err);
+	});
+    module.exports.realtime( args.device, 'onoff', false);
+
+    callback( null, true );
 });
 
 //a helper method to get a switch from the devices list by it's id
@@ -129,11 +160,11 @@ function getSwitch( switch_id ) {
 //a helper method to add a switch to the devices list
 function initDevice( device_data ) {
 	console.log("Device initialized " + device_data.id);
-//	console.log(JSON.stringify(device_data));
+	console.log("Data = " + JSON.stringify(device_data));
     devices[ device_data.id ] = {};
     devices[ device_data.id ].state = { onoff: false };
     devices[ device_data.id ].data = device_data;
-    
+
 //    module.exports.getSettings( device_data, function( err, settings ){
 //    	console.log(JSON.stringify(settings));
 //    })
