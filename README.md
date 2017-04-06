@@ -9,6 +9,7 @@ Or you can add a 'master' switch and add it as a condition, e.g. to dissable mul
 * Simple on/off switch
 * Trigger a flow
 * Use the switches status as a condition
+* Use the switch in the 'then'-column
 
 ## What doesn't:
 
@@ -18,6 +19,9 @@ I'm very interested to hear your ideas for other virtual devices.
 
 
 ## Release history
+
+### 0.2.0
+* Use the switch in the 'then'-column
 
 ### 0.1.0
 

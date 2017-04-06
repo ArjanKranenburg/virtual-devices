@@ -8,7 +8,8 @@ Or you can add a 'master' switch and add it as a condition, e.g. to dissable mul
 
 * Simple on/off switch
 * Trigger a flow
-* Use the switches status as a condition
+* Use the switch' status as a condition
+* Use the switch in the 'then'-column
 
 ## What doesn't:
 
