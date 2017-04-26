@@ -36,9 +36,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="9.22"
-     inkscape:cx="21.925231"
-     inkscape:cy="22.570631"
+     inkscape:zoom="3.0331189"
+     inkscape:cx="-20.965383"
+     inkscape:cy="22.523444"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -72,12 +72,30 @@
      transform="translate(0,-284.03533)">
     <rect
        style="fill:#ffffff;stroke-width:0.01611738;stroke:#ffffff;stroke-opacity:1;fill-opacity:1"
+       id="rect4011"
+       width="1.3251996"
+       height="0.35524234"
+       x="4.3757157"
+       y="-287.6145"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.01611738;stroke:#ffffff;stroke-opacity:1;fill-opacity:1"
        id="rect4011-9"
        width="1.3251996"
        height="0.35524234"
        x="7.2905149"
        y="-287.6221"
        transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.0189436;stroke:#ffffff;stroke-opacity:1;fill-opacity:1"
+       id="rect4011-4"
+       width="1.892553"
+       height="0.34363258"
+       x="-191.0907"
+       y="-202.13327"
+       transform="matrix(0.68667584,-0.72696374,-0.67736645,-0.73564577,0,0)"
+       inkscape:transform-center-x="0.44322934"
+       inkscape:transform-center-y="-1.2605088" />
     <path
        style="opacity:1;fill:#ffffff;stroke:#ffffff;stroke-width:0.28009236;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:0"
        d="m 4.0614995,290.17502 c 0.7639081,0.7527 1.5278222,1.50541 2.309446,1.5054 0.7816239,-1e-5 1.5809354,-0.75271 2.3802233,-1.5054"
@@ -92,13 +110,5 @@
        id="path6335"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
-    <ellipse
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.46685147;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path6339"
-       transform="matrix(0.78919073,-0.61414818,0.60806323,0.7938886,0,0)"
-       cx="-170.82008"
-       cy="229.99884"
-       rx="0.29443753"
-       ry="0.27927327" />
   </g>
 </svg>

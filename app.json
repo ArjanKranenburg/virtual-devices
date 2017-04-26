@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.2.0",
+    "version": "0.3.0",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
@@ -55,6 +55,383 @@
                         "filter": "driver_id=virtual_switch"
                     }
                 ]
+            },
+			{
+                "id": "virtual_security_on",
+                "title": {
+                    "en": "Security is armed",
+                    "nl": "Security wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_security"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_security_off",
+                "title": {
+                    "en": "Security is disarmed",
+                    "nl": "Security wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_security"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_movie_on",
+                "title": {
+                    "en": "Movie mode is active",
+                    "nl": "Movie mode wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_movie"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_movie_off",
+                "title": {
+                    "en": "Movie mode is off",
+                    "nl": "Movie mode wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_movie"
+                    }
+                ]
+            },
+			
+			{
+                "id": "virtual_party_on",
+                "title": {
+                    "en": "Party mode is active",
+                    "nl": "Party wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_party"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_party_off",
+                "title": {
+                    "en": "Party mode is off",
+                    "nl": "Party wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_party"
+                    }
+                ]
+            },
+			
+			{
+                "id": "virtual_event_on",
+                "title": {
+                    "en": "Event mode is active",
+                    "nl": "Event wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_event"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_event_off",
+                "title": {
+                    "en": "Event mode is off",
+                    "nl": "Event wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_event"
+                    }
+                ]
+            },
+			
+			
+			{
+                "id": "virtual_away_on",
+                "title": {
+                    "en": "Away mode is active",
+                    "nl": "Away wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_away"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_away_off",
+                "title": {
+                    "en": "Away mode is off",
+                    "nl": "Away wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_away"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_holiday_on",
+                "title": {
+                    "en": "Holiday mode is active",
+                    "nl": "Holiday wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_holiday"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_holiday_off",
+                "title": {
+                    "en": "Holiday mode is off",
+                    "nl": "Holiday wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_holiday"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_sleep_on",
+                "title": {
+                    "en": "Sleep mode is active",
+                    "nl": "Sleep wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_sleep"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_sleep_off",
+                "title": {
+                    "en": "Sleep mode is off",
+                    "nl": "Sleep wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_sleep"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_quiet_on",
+                "title": {
+                    "en": "Quiet mode is active",
+                    "nl": "Quiet wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_quiet"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_quiet_off",
+                "title": {
+                    "en": "Quiet mode is off",
+                    "nl": "Quiet wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_quiet"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_light_on",
+                "title": {
+                    "en": "Virtual light is on",
+                    "nl": "Virtual light wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_light"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_light_off",
+                "title": {
+                    "en": "Virtual light is off",
+                    "nl": "Virtual light uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_light"
+                    }
+                ]
+            },
+            
+             {
+                "id": "virtual_blind_on",
+                "title": {
+                    "en": "Virtual blind is closed",
+                    "nl": "Virtual blind wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_blind"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_blind_off",
+                "title": {
+                    "en": "Virtual blind is open",
+                    "nl": "Virtual blind uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_blind"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_tv_on",
+                "title": {
+                    "en": "Virtual TV is on",
+                    "nl": "Virtual TV wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_tv"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_tv_off",
+                "title": {
+                    "en": "Virtual TV is off",
+                    "nl": "Virtual TV uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_tv"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_hifi_on",
+                "title": {
+                    "en": "Virtual Hi-Fi is on",
+                    "nl": "Virtual Hi-Fi wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_hifi"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_hifi_off",
+                "title": {
+                    "en": "Virtual Hi-Fi is off",
+                    "nl": "Virtual Hi-Fi uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_hifi"
+                    }
+                ]
+            },
+            
+            {
+                "id": "virtual_alarm_on",
+                "title": {
+                    "en": "Virtual Alarm is on",
+                    "nl": "Virtual Alarm wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_alarm"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_alarm_off",
+                "title": {
+                    "en": "Virtual Alarm is off",
+                    "nl": "Virtual Alarm uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_alarm"
+                    }
+                ]
             }
         ],
         "conditions": [
@@ -70,7 +447,198 @@
                         "type": "device",
                         "filter": "driver_id=virtual_switch"
                     }
+                ]
+            },						
+			{
+                "id": "virtual_security",
+                "title": {
+                    "en": "Security !{{is|isn't}} activated",
+                    "nl": "Security !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_security"
+                    }
                 ]                
+            },
+            
+            {
+                "id": "virtual_movie",
+                "title": {
+                    "en": "Movie mode !{{is|isn't}} activated",
+                    "nl": "Party !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_movie"
+                    }
+                ]                
+            },
+			
+			{
+                "id": "virtual_party",
+                "title": {
+                    "en": "Party mode !{{is|isn't}} turned on",
+                    "nl": "Party !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_party"
+                    }
+                ]                
+            },
+			
+			{
+                "id": "virtual_event",
+                "title": {
+                    "en": "Event mode !{{is|isn't}} turned on",
+                    "nl": "Event !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_event"
+                    }
+                ]                
+            },
+			
+			{
+                "id": "virtual_away",
+                "title": {
+                    "en": "Away mode !{{is|isn't}} turned on",
+                    "nl": "Away !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_away"
+                    }
+                ]                
+            },
+            
+            {
+                "id": "virtual_holiday",
+                "title": {
+                    "en": "Holiday mode !{{is|isn't}} activated",
+                    "nl": "Holiday !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_holiday"
+                    }
+                ]                
+            },
+            
+            {
+                "id": "virtual_sleep",
+                "title": {
+                    "en": "Sleep mode !{{is|isn't}} activated",
+                    "nl": "Sleep !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_sleep"
+                    }
+                ]                
+            },
+            
+            {
+                "id": "virtual_quiet",
+                "title": {
+                    "en": "Quiet mode !{{is|isn't}} activated",
+                    "nl": "Quiet !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_quiet"
+                    }
+                ]                
+            },
+            
+            {
+                "id": "virtual_light",
+                "title": {
+                    "en": "Light !{{is|isn't}} turned on",
+                    "nl": "Light !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_light"
+                    }
+                ]                
+            },
+            
+            {
+                "id": "virtual_blind",
+                "title": {
+                    "en": "Blind !{{is|isn't}} closed",
+                    "nl": "Blind !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_blind"
+                    }
+                ]                
+            },
+            {
+                "id": "virtual_tv",
+                "title": {
+                    "en": "TV !{{is|isn't}} turned on",
+                    "nl": "TV !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_tv"
+                    }
+                ]                
+            },
+            {
+                "id": "virtual_hifi",
+                "title": {
+                    "en": "Hi-Fi !{{is|isn't}} turned on",
+                    "nl": "Hi-Fi !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_hifi"
+                    }
+                ]                
+            },
+            {
+                "id": "virtual_alarm",
+                "title": {
+                    "en": "Alarm !{{is|isn't}} turned on",
+                    "nl": "Alarm !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_alarm"
+                    }
+                ]
             }
         ],
         "actions": [
@@ -101,9 +669,383 @@
                         "filter": "driver_id=virtual_switch"
                     }
                 ]
+	        },
+			{
+	            "id": "virtual_security_action_on",
+	            "title": {
+	                "en": "Turn security on",
+	                "nl": "Zet security aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_security"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_security_action_off",
+	            "title": {
+	                "en": "Turn security off",
+	                "nl": "Zet security uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_security"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_movie_action_on",
+	            "title": {
+	                "en": "Turn movie mode on",
+	                "nl": "Zet movie aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_movie"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_movie_action_off",
+	            "title": {
+	                "en": "Turn movie mode off",
+	                "nl": "Zet movie uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_movie"
+                    }
+                ]
+	        },
+			
+			{
+	            "id": "virtual_party_action_on",
+	            "title": {
+	                "en": "Turn party mode on",
+	                "nl": "Zet party aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_party"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_party_action_off",
+	            "title": {
+	                "en": "Turn party mode off",
+	                "nl": "Zet party uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_party"
+                    }
+                ]
+	        },
+			
+			{
+	            "id": "virtual_event_action_on",
+	            "title": {
+	                "en": "Turn event mode on",
+	                "nl": "Zet event aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_event"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_event_action_off",
+	            "title": {
+	                "en": "Turn event mode off",
+	                "nl": "Zet event uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_event"
+                    }
+                ]
+	        },
+			{
+	            "id": "virtual_away_action_on",
+	            "title": {
+	                "en": "Turn away mode on",
+	                "nl": "Zet away aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_away"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_away_action_off",
+	            "title": {
+	                "en": "Turn away mode off",
+	                "nl": "Zet away uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_away"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_holiday_action_on",
+	            "title": {
+	                "en": "Activate holiday mode",
+	                "nl": "Zet holiday aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_holiday"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_holiday_action_off",
+	            "title": {
+	                "en": "Turn holiday mode off",
+	                "nl": "Zet holiday uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_holiday"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_sleep_action_on",
+	            "title": {
+	                "en": "Activate sleep mode",
+	                "nl": "Zet sleep aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_sleep"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_sleep_action_off",
+	            "title": {
+	                "en": "Turn sleep mode off",
+	                "nl": "Zet sleep uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_sleep"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_quiet_action_on",
+	            "title": {
+	                "en": "Activate quiet mode",
+	                "nl": "Zet quiet aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_quiet"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_quiet_action_off",
+	            "title": {
+	                "en": "Turn quiet mode off",
+	                "nl": "Zet quiet uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_quiet"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_light_action_on",
+	            "title": {
+	                "en": "Turn virtual light on",
+	                "nl": "Zet light aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_light"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_light_action_off",
+	            "title": {
+	                "en": "Turn virtual light off",
+	                "nl": "Zet light uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_light"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_blind_action_on",
+	            "title": {
+	                "en": "Close virtual blind",
+	                "nl": "Zet blind aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_blind"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_blind_action_off",
+	            "title": {
+	                "en": "Open virtual blind",
+	                "nl": "Zet blind uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_blind"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_tv_action_on",
+	            "title": {
+	                "en": "Turn virtual TV on",
+	                "nl": "Zet TV aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_tv"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_tv_action_off",
+	            "title": {
+	                "en": "Turn virtual TV off",
+	                "nl": "Zet TV uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_tv"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_hifi_action_on",
+	            "title": {
+	                "en": "Turn virtual Hi-Fi on",
+	                "nl": "Zet Hi-Fi aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_hifi"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_hifi_action_off",
+	            "title": {
+	                "en": "Turn virtual Hi-Fi off",
+	                "nl": "Zet Hi-Fi uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_hifi"
+                    }
+                ]
+	        },
+            
+            {
+	            "id": "virtual_alarm_action_on",
+	            "title": {
+	                "en": "Turn virtual alarm on",
+	                "nl": "Zet alarm aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_alarm"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_alarm_action_off",
+	            "title": {
+	                "en": "Turn virtual alarm off",
+	                "nl": "Zet alarm uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_alarm"
+                    }
+                ]
 	        }
     	]
-        
     },
     "drivers": [
         {
@@ -128,6 +1070,512 @@
                 },
                 {
                     "id": "add_switches",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+ 		{
+            "id": "virtual_security",
+            "name": {
+                "en": "Arm Security",
+                "nl": "Arm Security"
+            },
+            "images": {
+                "large": "drivers/virtual_security/assets/images/large.png",
+                "small": "drivers/virtual_security/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_switches",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_switches"
+                    }
+                },
+                {
+                    "id": "add_switches",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_movie",
+            "name": {
+                "en": "Movie mode",
+                "nl": "Movie mode"
+            },
+            "images": {
+                "large": "drivers/virtual_movie/assets/images/large.png",
+                "small": "drivers/virtual_movie/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_movie",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_movie"
+                    }
+                },
+                {
+                    "id": "add_movie",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+		
+		{
+            "id": "virtual_party",
+            "name": {
+                "en": "Party mode",
+                "nl": "Party mode"
+            },
+            "images": {
+                "large": "drivers/virtual_party/assets/images/large.png",
+                "small": "drivers/virtual_party/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_party",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_party"
+                    }
+                },
+                {
+                    "id": "add_party",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+		
+		{
+            "id": "virtual_event",
+            "name": {
+                "en": "Event mode",
+                "nl": "Event mode"
+            },
+            "images": {
+                "large": "drivers/virtual_event/assets/images/large.png",
+                "small": "drivers/virtual_event/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_event",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_event"
+                    }
+                },
+                {
+                    "id": "add_event",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+		
+		{
+            "id": "virtual_away",
+            "name": {
+                "en": "Away mode",
+                "nl": "Away mode"
+            },
+            "images": {
+                "large": "drivers/virtual_away/assets/images/large.png",
+                "small": "drivers/virtual_away/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_away",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_away"
+                    }
+                },
+                {
+                    "id": "add_away",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_holiday",
+            "name": {
+                "en": "Holiday mode",
+                "nl": "Holiday mode"
+            },
+            "images": {
+                "large": "drivers/virtual_holiday/assets/images/large.png",
+                "small": "drivers/virtual_holiday/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_holiday",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_holiday"
+                    }
+                },
+                {
+                    "id": "add_holiday",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_sleep",
+            "name": {
+                "en": "Sleep mode",
+                "nl": "Sleep mode"
+            },
+            "images": {
+                "large": "drivers/virtual_sleep/assets/images/large.png",
+                "small": "drivers/virtual_sleep/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_sleep",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_sleep"
+                    }
+                },
+                {
+                    "id": "add_sleep",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_quiet",
+            "name": {
+                "en": "Quiet mode",
+                "nl": "Quiet mode"
+            },
+            "images": {
+                "large": "drivers/virtual_quiet/assets/images/large.png",
+                "small": "drivers/virtual_quiet/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_quiet",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_quiet"
+                    }
+                },
+                {
+                    "id": "add_quiet",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_light",
+            "name": {
+                "en": "Virtual light",
+                "nl": "Virtual light"
+            },
+            "images": {
+                "large": "drivers/virtual_light/assets/images/large.png",
+                "small": "drivers/virtual_light/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_light",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_light"
+                    }
+                },
+                {
+                    "id": "add_light",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_blind",
+            "name": {
+                "en": "Virtual blind",
+                "nl": "Virtual blind"
+            },
+            "images": {
+                "large": "drivers/virtual_blind/assets/images/large.png",
+                "small": "drivers/virtual_blind/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_blind",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_blind"
+                    }
+                },
+                {
+                    "id": "add_blind",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_tv",
+            "name": {
+                "en": "Virtual TV",
+                "nl": "Virtual TV"
+            },
+            "images": {
+                "large": "drivers/virtual_tv/assets/images/large.png",
+                "small": "drivers/virtual_tv/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_tv",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_tv"
+                    }
+                },
+                {
+                    "id": "add_tv",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_hifi",
+            "name": {
+                "en": "Virtual Hi-Fi",
+                "nl": "Virtual Hi-Fi"
+            },
+            "images": {
+                "large": "drivers/virtual_hifi/assets/images/large.png",
+                "small": "drivers/virtual_hifi/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_hifi",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_hifi"
+                    }
+                },
+                {
+                    "id": "add_hifi",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+        
+        {
+            "id": "virtual_alarm",
+            "name": {
+                "en": "Virtual Alarm",
+                "nl": "Virtual Alarm"
+            },
+            "images": {
+                "large": "drivers/virtual_alarm/assets/images/large.png",
+                "small": "drivers/virtual_alarm/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_alarm",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_alarm"
+                    }
+                },
+                {
+                    "id": "add_alarm",
                     "template": "add_devices"
                 }
             ],
