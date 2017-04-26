@@ -60,7 +60,7 @@
                 "id": "virtual_security_on",
                 "title": {
                     "en": "Security is armed",
-                    "nl": "Security wordt aangezet"
+                    "nl": "Beveiliging wordt aangezet"
                 },
                 "args": [
                     {
@@ -74,7 +74,7 @@
                 "id": "virtual_security_off",
                 "title": {
                     "en": "Security is disarmed",
-                    "nl": "Security wordt uitgezet"
+                    "nl": "Beveiliging wordt uitgezet"
                 },
                 "args": [
                     {
@@ -89,7 +89,7 @@
                 "id": "virtual_movie_on",
                 "title": {
                     "en": "Movie mode is active",
-                    "nl": "Movie mode wordt aangezet"
+                    "nl": "Filmmodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -103,7 +103,7 @@
                 "id": "virtual_movie_off",
                 "title": {
                     "en": "Movie mode is off",
-                    "nl": "Movie mode wordt uitgezet"
+                    "nl": "Filmmodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -118,7 +118,7 @@
                 "id": "virtual_party_on",
                 "title": {
                     "en": "Party mode is active",
-                    "nl": "Party wordt aangezet"
+                    "nl": "Feestmodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -132,7 +132,7 @@
                 "id": "virtual_party_off",
                 "title": {
                     "en": "Party mode is off",
-                    "nl": "Party wordt uitgezet"
+                    "nl": "Feestmodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -147,7 +147,7 @@
                 "id": "virtual_event_on",
                 "title": {
                     "en": "Event mode is active",
-                    "nl": "Event wordt aangezet"
+                    "nl": "Eventmodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -161,7 +161,7 @@
                 "id": "virtual_event_off",
                 "title": {
                     "en": "Event mode is off",
-                    "nl": "Event wordt uitgezet"
+                    "nl": "Eventmodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -177,7 +177,7 @@
                 "id": "virtual_away_on",
                 "title": {
                     "en": "Away mode is active",
-                    "nl": "Away wordt aangezet"
+                    "nl": "Wegmodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -191,7 +191,7 @@
                 "id": "virtual_away_off",
                 "title": {
                     "en": "Away mode is off",
-                    "nl": "Away wordt uitgezet"
+                    "nl": "Wegmodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -206,7 +206,7 @@
                 "id": "virtual_holiday_on",
                 "title": {
                     "en": "Holiday mode is active",
-                    "nl": "Holiday wordt aangezet"
+                    "nl": "Vakantiemodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -220,7 +220,7 @@
                 "id": "virtual_holiday_off",
                 "title": {
                     "en": "Holiday mode is off",
-                    "nl": "Holiday wordt uitgezet"
+                    "nl": "Vakantiemodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -235,7 +235,7 @@
                 "id": "virtual_sleep_on",
                 "title": {
                     "en": "Sleep mode is active",
-                    "nl": "Sleep wordt aangezet"
+                    "nl": "Slaapmodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -249,7 +249,7 @@
                 "id": "virtual_sleep_off",
                 "title": {
                     "en": "Sleep mode is off",
-                    "nl": "Sleep wordt uitgezet"
+                    "nl": "Slaapmodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -264,7 +264,7 @@
                 "id": "virtual_quiet_on",
                 "title": {
                     "en": "Quiet mode is active",
-                    "nl": "Quiet wordt aangezet"
+                    "nl": "Stiltemodus wordt aangezet"
                 },
                 "args": [
                     {
@@ -278,7 +278,7 @@
                 "id": "virtual_quiet_off",
                 "title": {
                     "en": "Quiet mode is off",
-                    "nl": "Quiet wordt uitgezet"
+                    "nl": "Stiltemodus wordt uitgezet"
                 },
                 "args": [
                     {
@@ -292,8 +292,8 @@
             {
                 "id": "virtual_light_on",
                 "title": {
-                    "en": "Virtual light is on",
-                    "nl": "Virtual light wordt aangezet"
+                    "en": "Light is on",
+                    "nl": "Licht wordt aangezet"
                 },
                 "args": [
                     {
@@ -306,8 +306,8 @@
             {
                 "id": "virtual_light_off",
                 "title": {
-                    "en": "Virtual light is off",
-                    "nl": "Virtual light uitgezet"
+                    "en": "Light is off",
+                    "nl": "Licht wordt uitgezet"
                 },
                 "args": [
                     {
@@ -321,8 +321,8 @@
              {
                 "id": "virtual_blind_on",
                 "title": {
-                    "en": "Virtual blind is closed",
-                    "nl": "Virtual blind wordt aangezet"
+                    "en": "Blinds are closed",
+                    "nl": "Blindering gaat naar beneden"
                 },
                 "args": [
                     {
@@ -335,8 +335,8 @@
             {
                 "id": "virtual_blind_off",
                 "title": {
-                    "en": "Virtual blind is open",
-                    "nl": "Virtual blind uitgezet"
+                    "en": "Blinds are open",
+                    "nl": "Blindering gaat omhoog"
                 },
                 "args": [
                     {
@@ -350,8 +350,8 @@
             {
                 "id": "virtual_tv_on",
                 "title": {
-                    "en": "Virtual TV is on",
-                    "nl": "Virtual TV wordt aangezet"
+                    "en": "TV is on",
+                    "nl": "TV wordt aangezet"
                 },
                 "args": [
                     {
@@ -364,8 +364,8 @@
             {
                 "id": "virtual_tv_off",
                 "title": {
-                    "en": "Virtual TV is off",
-                    "nl": "Virtual TV uitgezet"
+                    "en": "TV is off",
+                    "nl": "TV wordt uitgezet"
                 },
                 "args": [
                     {
@@ -379,8 +379,8 @@
             {
                 "id": "virtual_hifi_on",
                 "title": {
-                    "en": "Virtual Hi-Fi is on",
-                    "nl": "Virtual Hi-Fi wordt aangezet"
+                    "en": "Hi-Fi is on",
+                    "nl": "Hi-Fi wordt aangezet"
                 },
                 "args": [
                     {
@@ -393,8 +393,8 @@
             {
                 "id": "virtual_hifi_off",
                 "title": {
-                    "en": "Virtual Hi-Fi is off",
-                    "nl": "Virtual Hi-Fi uitgezet"
+                    "en": "Hi-Fi is off",
+                    "nl": "Hi-Fi wordt uitgezet"
                 },
                 "args": [
                     {
@@ -408,8 +408,8 @@
             {
                 "id": "virtual_alarm_on",
                 "title": {
-                    "en": "Virtual Alarm is on",
-                    "nl": "Virtual Alarm wordt aangezet"
+                    "en": "Alarm is on",
+                    "nl": "Alarm wordt aangezet"
                 },
                 "args": [
                     {
@@ -422,8 +422,8 @@
             {
                 "id": "virtual_alarm_off",
                 "title": {
-                    "en": "Virtual Alarm is off",
-                    "nl": "Virtual Alarm uitgezet"
+                    "en": "Alarm is off",
+                    "nl": "Alarm wordt uitgezet"
                 },
                 "args": [
                     {
@@ -453,7 +453,7 @@
                 "id": "virtual_security",
                 "title": {
                     "en": "Security !{{is|isn't}} activated",
-                    "nl": "Security !{{is|is niet}} aangezet"
+                    "nl": "Beveiliging !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -468,7 +468,7 @@
                 "id": "virtual_movie",
                 "title": {
                     "en": "Movie mode !{{is|isn't}} activated",
-                    "nl": "Party !{{is|is niet}} aangezet"
+                    "nl": "Filmmodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -483,7 +483,7 @@
                 "id": "virtual_party",
                 "title": {
                     "en": "Party mode !{{is|isn't}} turned on",
-                    "nl": "Party !{{is|is niet}} aangezet"
+                    "nl": "Feestmodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -498,7 +498,7 @@
                 "id": "virtual_event",
                 "title": {
                     "en": "Event mode !{{is|isn't}} turned on",
-                    "nl": "Event !{{is|is niet}} aangezet"
+                    "nl": "Eventmodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -513,7 +513,7 @@
                 "id": "virtual_away",
                 "title": {
                     "en": "Away mode !{{is|isn't}} turned on",
-                    "nl": "Away !{{is|is niet}} aangezet"
+                    "nl": "Wegmodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -528,7 +528,7 @@
                 "id": "virtual_holiday",
                 "title": {
                     "en": "Holiday mode !{{is|isn't}} activated",
-                    "nl": "Holiday !{{is|is niet}} aangezet"
+                    "nl": "Vakantiemodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -543,7 +543,7 @@
                 "id": "virtual_sleep",
                 "title": {
                     "en": "Sleep mode !{{is|isn't}} activated",
-                    "nl": "Sleep !{{is|is niet}} aangezet"
+                    "nl": "Slaapmodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -558,7 +558,7 @@
                 "id": "virtual_quiet",
                 "title": {
                     "en": "Quiet mode !{{is|isn't}} activated",
-                    "nl": "Quiet !{{is|is niet}} aangezet"
+                    "nl": "Stiltemodus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -573,7 +573,7 @@
                 "id": "virtual_light",
                 "title": {
                     "en": "Light !{{is|isn't}} turned on",
-                    "nl": "Light !{{is|is niet}} aangezet"
+                    "nl": "Licht !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
@@ -587,8 +587,8 @@
             {
                 "id": "virtual_blind",
                 "title": {
-                    "en": "Blind !{{is|isn't}} closed",
-                    "nl": "Blind !{{is|is niet}} aangezet"
+                    "en": "Blinds !{{are|aren't}} closed",
+                    "nl": "Blindering !{{is|is niet}} omlaag"
                 },
                 "args": [
                     {
@@ -674,7 +674,7 @@
 	            "id": "virtual_security_action_on",
 	            "title": {
 	                "en": "Turn security on",
-	                "nl": "Zet security aan"
+	                "nl": "Zet beveiliging aan"
 	            },
                 "args": [
                     {
@@ -688,7 +688,7 @@
 	            "id": "virtual_security_action_off",
 	            "title": {
 	                "en": "Turn security off",
-	                "nl": "Zet security uit"
+	                "nl": "Zet beveiliging uit"
 	            },
                 "args": [
                     {
@@ -703,7 +703,7 @@
 	            "id": "virtual_movie_action_on",
 	            "title": {
 	                "en": "Turn movie mode on",
-	                "nl": "Zet movie aan"
+	                "nl": "Zet filmmodus aan"
 	            },
                 "args": [
                     {
@@ -717,7 +717,7 @@
 	            "id": "virtual_movie_action_off",
 	            "title": {
 	                "en": "Turn movie mode off",
-	                "nl": "Zet movie uit"
+	                "nl": "Zet filmmodus uit"
 	            },
                 "args": [
                     {
@@ -732,7 +732,7 @@
 	            "id": "virtual_party_action_on",
 	            "title": {
 	                "en": "Turn party mode on",
-	                "nl": "Zet party aan"
+	                "nl": "Zet feestmodus aan"
 	            },
                 "args": [
                     {
@@ -746,7 +746,7 @@
 	            "id": "virtual_party_action_off",
 	            "title": {
 	                "en": "Turn party mode off",
-	                "nl": "Zet party uit"
+	                "nl": "Zet feestmodus uit"
 	            },
                 "args": [
                     {
@@ -761,7 +761,7 @@
 	            "id": "virtual_event_action_on",
 	            "title": {
 	                "en": "Turn event mode on",
-	                "nl": "Zet event aan"
+	                "nl": "Zet eventmodus aan"
 	            },
                 "args": [
                     {
@@ -775,7 +775,7 @@
 	            "id": "virtual_event_action_off",
 	            "title": {
 	                "en": "Turn event mode off",
-	                "nl": "Zet event uit"
+	                "nl": "Zet eventmodus uit"
 	            },
                 "args": [
                     {
@@ -789,7 +789,7 @@
 	            "id": "virtual_away_action_on",
 	            "title": {
 	                "en": "Turn away mode on",
-	                "nl": "Zet away aan"
+	                "nl": "Zet wegmodus aan"
 	            },
                 "args": [
                     {
@@ -803,7 +803,7 @@
 	            "id": "virtual_away_action_off",
 	            "title": {
 	                "en": "Turn away mode off",
-	                "nl": "Zet away uit"
+	                "nl": "Zet wegmodus uit"
 	            },
                 "args": [
                     {
@@ -818,7 +818,7 @@
 	            "id": "virtual_holiday_action_on",
 	            "title": {
 	                "en": "Activate holiday mode",
-	                "nl": "Zet holiday aan"
+	                "nl": "Zet vakantiemodus aan"
 	            },
                 "args": [
                     {
@@ -832,7 +832,7 @@
 	            "id": "virtual_holiday_action_off",
 	            "title": {
 	                "en": "Turn holiday mode off",
-	                "nl": "Zet holiday uit"
+	                "nl": "Zet vakantiemodus uit"
 	            },
                 "args": [
                     {
@@ -847,7 +847,7 @@
 	            "id": "virtual_sleep_action_on",
 	            "title": {
 	                "en": "Activate sleep mode",
-	                "nl": "Zet sleep aan"
+	                "nl": "Zet slaapmodus aan"
 	            },
                 "args": [
                     {
@@ -861,7 +861,7 @@
 	            "id": "virtual_sleep_action_off",
 	            "title": {
 	                "en": "Turn sleep mode off",
-	                "nl": "Zet sleep uit"
+	                "nl": "Zet slaapmodus uit"
 	            },
                 "args": [
                     {
@@ -876,7 +876,7 @@
 	            "id": "virtual_quiet_action_on",
 	            "title": {
 	                "en": "Activate quiet mode",
-	                "nl": "Zet quiet aan"
+	                "nl": "Zet stiltemodus aan"
 	            },
                 "args": [
                     {
@@ -890,7 +890,7 @@
 	            "id": "virtual_quiet_action_off",
 	            "title": {
 	                "en": "Turn quiet mode off",
-	                "nl": "Zet quiet uit"
+	                "nl": "Zet stiltemodus uit"
 	            },
                 "args": [
                     {
@@ -905,7 +905,7 @@
 	            "id": "virtual_light_action_on",
 	            "title": {
 	                "en": "Turn virtual light on",
-	                "nl": "Zet light aan"
+	                "nl": "Doe het licht aan"
 	            },
                 "args": [
                     {
@@ -919,7 +919,7 @@
 	            "id": "virtual_light_action_off",
 	            "title": {
 	                "en": "Turn virtual light off",
-	                "nl": "Zet light uit"
+	                "nl": "Doe het licht uit"
 	            },
                 "args": [
                     {
@@ -933,8 +933,8 @@
             {
 	            "id": "virtual_blind_action_on",
 	            "title": {
-	                "en": "Close virtual blind",
-	                "nl": "Zet blind aan"
+	                "en": "Close the blinds",
+	                "nl": "Doe blindering omlaag"
 	            },
                 "args": [
                     {
@@ -947,8 +947,8 @@
 	        {
 	            "id": "virtual_blind_action_off",
 	            "title": {
-	                "en": "Open virtual blind",
-	                "nl": "Zet blind uit"
+	                "en": "Open the blinds",
+	                "nl": "Doe blindering omhoog"
 	            },
                 "args": [
                     {
@@ -962,7 +962,7 @@
             {
 	            "id": "virtual_tv_action_on",
 	            "title": {
-	                "en": "Turn virtual TV on",
+	                "en": "Turn TV on",
 	                "nl": "Zet TV aan"
 	            },
                 "args": [
@@ -976,7 +976,7 @@
 	        {
 	            "id": "virtual_tv_action_off",
 	            "title": {
-	                "en": "Turn virtual TV off",
+	                "en": "Turn TV off",
 	                "nl": "Zet TV uit"
 	            },
                 "args": [
@@ -991,7 +991,7 @@
             {
 	            "id": "virtual_hifi_action_on",
 	            "title": {
-	                "en": "Turn virtual Hi-Fi on",
+	                "en": "Turn Hi-Fi on",
 	                "nl": "Zet Hi-Fi aan"
 	            },
                 "args": [
@@ -1005,7 +1005,7 @@
 	        {
 	            "id": "virtual_hifi_action_off",
 	            "title": {
-	                "en": "Turn virtual Hi-Fi off",
+	                "en": "Turn Hi-Fi off",
 	                "nl": "Zet Hi-Fi uit"
 	            },
                 "args": [
@@ -1020,7 +1020,7 @@
             {
 	            "id": "virtual_alarm_action_on",
 	            "title": {
-	                "en": "Turn virtual alarm on",
+	                "en": "Turn alarm on",
 	                "nl": "Zet alarm aan"
 	            },
                 "args": [
@@ -1034,7 +1034,7 @@
 	        {
 	            "id": "virtual_alarm_action_off",
 	            "title": {
-	                "en": "Turn virtual alarm off",
+	                "en": "Turn alarm off",
 	                "nl": "Zet alarm uit"
 	            },
                 "args": [
@@ -1089,8 +1089,8 @@
  		{
             "id": "virtual_security",
             "name": {
-                "en": "Arm Security",
-                "nl": "Arm Security"
+                "en": "Security",
+                "nl": "Beveiliging"
             },
             "images": {
                 "large": "drivers/virtual_security/assets/images/large.png",
@@ -1129,7 +1129,7 @@
             "id": "virtual_movie",
             "name": {
                 "en": "Movie mode",
-                "nl": "Movie mode"
+                "nl": "Filmmodus"
             },
             "images": {
                 "large": "drivers/virtual_movie/assets/images/large.png",
@@ -1168,7 +1168,7 @@
             "id": "virtual_party",
             "name": {
                 "en": "Party mode",
-                "nl": "Party mode"
+                "nl": "Feestmodus"
             },
             "images": {
                 "large": "drivers/virtual_party/assets/images/large.png",
@@ -1207,7 +1207,7 @@
             "id": "virtual_event",
             "name": {
                 "en": "Event mode",
-                "nl": "Event mode"
+                "nl": "Eventmodus"
             },
             "images": {
                 "large": "drivers/virtual_event/assets/images/large.png",
@@ -1246,7 +1246,7 @@
             "id": "virtual_away",
             "name": {
                 "en": "Away mode",
-                "nl": "Away mode"
+                "nl": "Wegmodus"
             },
             "images": {
                 "large": "drivers/virtual_away/assets/images/large.png",
@@ -1285,7 +1285,7 @@
             "id": "virtual_holiday",
             "name": {
                 "en": "Holiday mode",
-                "nl": "Holiday mode"
+                "nl": "Vakantiemodus"
             },
             "images": {
                 "large": "drivers/virtual_holiday/assets/images/large.png",
@@ -1324,7 +1324,7 @@
             "id": "virtual_sleep",
             "name": {
                 "en": "Sleep mode",
-                "nl": "Sleep mode"
+                "nl": "Slaapmodus"
             },
             "images": {
                 "large": "drivers/virtual_sleep/assets/images/large.png",
@@ -1363,7 +1363,7 @@
             "id": "virtual_quiet",
             "name": {
                 "en": "Quiet mode",
-                "nl": "Quiet mode"
+                "nl": "Stiltemodus"
             },
             "images": {
                 "large": "drivers/virtual_quiet/assets/images/large.png",
@@ -1402,7 +1402,7 @@
             "id": "virtual_light",
             "name": {
                 "en": "Virtual light",
-                "nl": "Virtual light"
+                "nl": "Virtueel licht"
             },
             "images": {
                 "large": "drivers/virtual_light/assets/images/large.png",
@@ -1440,8 +1440,8 @@
         {
             "id": "virtual_blind",
             "name": {
-                "en": "Virtual blind",
-                "nl": "Virtual blind"
+                "en": "Virtual blinds",
+                "nl": "Virtuele blindering"
             },
             "images": {
                 "large": "drivers/virtual_blind/assets/images/large.png",
@@ -1480,7 +1480,7 @@
             "id": "virtual_tv",
             "name": {
                 "en": "Virtual TV",
-                "nl": "Virtual TV"
+                "nl": "Virtuele TV"
             },
             "images": {
                 "large": "drivers/virtual_tv/assets/images/large.png",
@@ -1519,7 +1519,7 @@
             "id": "virtual_hifi",
             "name": {
                 "en": "Virtual Hi-Fi",
-                "nl": "Virtual Hi-Fi"
+                "nl": "Virtuele Hi-Fi"
             },
             "images": {
                 "large": "drivers/virtual_hifi/assets/images/large.png",
@@ -1558,7 +1558,7 @@
             "id": "virtual_alarm",
             "name": {
                 "en": "Virtual Alarm",
-                "nl": "Virtual Alarm"
+                "nl": "Virtueel Alarm"
             },
             "images": {
                 "large": "drivers/virtual_alarm/assets/images/large.png",
