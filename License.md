@@ -1,9 +1,7 @@
 # License
 
 ## Art work
-The Virtual device Face icon is copyright of Arjan Kranenburg
-
-The Holiday and Away icons is copyright of ZperX
+The VD, Holiday and Away icons is copyright of ZperX
 
 The Blind Icon is coyright of Athom.
 
