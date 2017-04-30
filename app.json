@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.3.0",
+    "version": "0.4.0",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
@@ -31,8 +31,7 @@
 	"category": "tools",
     "flow": {
         "triggers": [
-            {
-                "id": "virtual_switch_on",
+            {   "id": "virtual_switch_on",
                 "title": {
                     "en": "Switch is turned on",
                     "nl": "Schakelaar wordt aangezet"
@@ -45,8 +44,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_switch_off",
+            {   "id": "virtual_switch_off",
                 "title": {
                     "en": "Switch is turned off",
                     "nl": "Schakelaar wordt uitgezet"
@@ -59,8 +57,7 @@
                     }
                 ]
             },
-			{
-                "id": "virtual_security_on",
+			{   "id": "virtual_security_on",
                 "title": {
                     "en": "Security is armed",
                     "nl": "Beveiliging wordt aangezet"
@@ -73,8 +70,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_security_off",
+            {   "id": "virtual_security_off",
                 "title": {
                     "en": "Security is disarmed",
                     "nl": "Beveiliging wordt uitgezet"
@@ -87,9 +83,7 @@
                     }
                 ]
             },
-            
-            {
-                "id": "virtual_movie_on",
+            {   "id": "virtual_movie_on",
                 "title": {
                     "en": "Movie mode is active",
                     "nl": "Filmmodus wordt aangezet"
@@ -102,8 +96,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_movie_off",
+            {   "id": "virtual_movie_off",
                 "title": {
                     "en": "Movie mode is off",
                     "nl": "Filmmodus wordt uitgezet"
@@ -115,10 +108,8 @@
                         "filter": "driver_id=virtual_movie"
                     }
                 ]
-            },
-			
-			{
-                "id": "virtual_party_on",
+            },			
+			{   "id": "virtual_party_on",
                 "title": {
                     "en": "Party mode is active",
                     "nl": "Feestmodus wordt aangezet"
@@ -131,8 +122,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_party_off",
+            {   "id": "virtual_party_off",
                 "title": {
                     "en": "Party mode is off",
                     "nl": "Feestmodus wordt uitgezet"
@@ -144,10 +134,8 @@
                         "filter": "driver_id=virtual_party"
                     }
                 ]
-            },
-			
-			{
-                "id": "virtual_event_on",
+            },			
+			{   "id": "virtual_event_on",
                 "title": {
                     "en": "Event mode is active",
                     "nl": "Eventmodus wordt aangezet"
@@ -160,8 +148,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_event_off",
+            {   "id": "virtual_event_off",
                 "title": {
                     "en": "Event mode is off",
                     "nl": "Eventmodus wordt uitgezet"
@@ -174,10 +161,7 @@
                     }
                 ]
             },
-			
-			
-			{
-                "id": "virtual_away_on",
+			{   "id": "virtual_away_on",
                 "title": {
                     "en": "Away mode is active",
                     "nl": "Wegmodus wordt aangezet"
@@ -190,8 +174,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_away_off",
+            {   "id": "virtual_away_off",
                 "title": {
                     "en": "Away mode is off",
                     "nl": "Wegmodus wordt uitgezet"
@@ -203,10 +186,8 @@
                         "filter": "driver_id=virtual_away"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_holiday_on",
+            },            
+            {   "id": "virtual_holiday_on",
                 "title": {
                     "en": "Holiday mode is active",
                     "nl": "Vakantiemodus wordt aangezet"
@@ -219,8 +200,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_holiday_off",
+            {   "id": "virtual_holiday_off",
                 "title": {
                     "en": "Holiday mode is off",
                     "nl": "Vakantiemodus wordt uitgezet"
@@ -232,10 +212,8 @@
                         "filter": "driver_id=virtual_holiday"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_sleep_on",
+            },            
+            {   "id": "virtual_sleep_on",
                 "title": {
                     "en": "Sleep mode is active",
                     "nl": "Slaapmodus wordt aangezet"
@@ -248,8 +226,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_sleep_off",
+            {   "id": "virtual_sleep_off",
                 "title": {
                     "en": "Sleep mode is off",
                     "nl": "Slaapmodus wordt uitgezet"
@@ -261,10 +238,8 @@
                         "filter": "driver_id=virtual_sleep"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_quiet_on",
+            },            
+            {   "id": "virtual_quiet_on",
                 "title": {
                     "en": "Quiet mode is active",
                     "nl": "Stiltemodus wordt aangezet"
@@ -277,8 +252,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_quiet_off",
+            {   "id": "virtual_quiet_off",
                 "title": {
                     "en": "Quiet mode is off",
                     "nl": "Stiltemodus wordt uitgezet"
@@ -290,10 +264,8 @@
                         "filter": "driver_id=virtual_quiet"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_light_on",
+            },            
+            {   "id": "virtual_light_on",
                 "title": {
                     "en": "Light is on",
                     "nl": "Licht wordt aangezet"
@@ -306,8 +278,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_light_off",
+            {   "id": "virtual_light_off",
                 "title": {
                     "en": "Light is off",
                     "nl": "Licht wordt uitgezet"
@@ -319,10 +290,8 @@
                         "filter": "driver_id=virtual_light"
                     }
                 ]
-            },
-            
-             {
-                "id": "virtual_blind_on",
+            },            
+            {   "id": "virtual_blind_on",
                 "title": {
                     "en": "Blinds are closed",
                     "nl": "Blindering gaat naar beneden"
@@ -335,8 +304,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_blind_off",
+            {   "id": "virtual_blind_off",
                 "title": {
                     "en": "Blinds are open",
                     "nl": "Blindering gaat omhoog"
@@ -348,10 +316,8 @@
                         "filter": "driver_id=virtual_blind"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_tv_on",
+            },            
+            {   "id": "virtual_tv_on",
                 "title": {
                     "en": "TV is on",
                     "nl": "TV wordt aangezet"
@@ -364,8 +330,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_tv_off",
+            {   "id": "virtual_tv_off",
                 "title": {
                     "en": "TV is off",
                     "nl": "TV wordt uitgezet"
@@ -377,10 +342,8 @@
                         "filter": "driver_id=virtual_tv"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_hifi_on",
+            },            
+            {   "id": "virtual_hifi_on",
                 "title": {
                     "en": "Hi-Fi is on",
                     "nl": "Hi-Fi wordt aangezet"
@@ -393,8 +356,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_hifi_off",
+            {   "id": "virtual_hifi_off",
                 "title": {
                     "en": "Hi-Fi is off",
                     "nl": "Hi-Fi wordt uitgezet"
@@ -406,10 +368,8 @@
                         "filter": "driver_id=virtual_hifi"
                     }
                 ]
-            },
-            
-            {
-                "id": "virtual_alarm_on",
+            },            
+            {   "id": "virtual_alarm_on",
                 "title": {
                     "en": "Alarm is on",
                     "nl": "Alarm wordt aangezet"
@@ -422,8 +382,7 @@
                     }
                 ]
             },
-            {
-                "id": "virtual_alarm_off",
+            {   "id": "virtual_alarm_off",
                 "title": {
                     "en": "Alarm is off",
                     "nl": "Alarm wordt uitgezet"
@@ -433,6 +392,71 @@
                         "name": "device",
                         "type": "device",
                         "filter": "driver_id=virtual_alarm"
+                    }
+                ]
+            },
+            {   "id": "button_pushed",
+                "title": {
+                    "en": "Button is pushed",
+                    "nl": "Knop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_button"
+                    }
+                ]
+            },
+            {   "id": "button_light_pushed",
+                "title": {
+                    "en": "Light button is pushed",
+                    "nl": "Lichtknop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_button_light"
+                    }
+                ]
+            },
+            {   "id": "button_alarm_pushed",
+                "title": {
+                    "en": "Alarm button is pushed",
+                    "nl": "Alarmknop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_button_alarm"
+                    }
+                ]
+            },
+            {   "id": "button_hifi_pushed",
+                "title": {
+                    "en": "Hi-Fi button is pushed",
+                    "nl": "Hifiknop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_button_hifi"
+                    }
+                ]
+            },
+            {   "id": "button_tv_pushed",
+                "title": {
+                    "en": "TV button is pushed",
+                    "nl": "TV-knop is ingedrukt"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_button_tv"
                     }
                 ]
             }
@@ -1051,11 +1075,10 @@
     	]
     },
     "drivers": [
-        {
-            "id": "virtual_switch",
+        {   "id": "virtual_switch",
             "name": {
-                "en": "Virtual Switch",
-                "nl": "Virtuele Schakelaar"
+                "en": "Switch",
+                "nl": "Schakelaar"
             },
             "images": {
                 "large": "drivers/virtual_switch/assets/images/large.png",
@@ -1089,8 +1112,7 @@
 	            ]
 	        }
         },
- 		{
-            "id": "virtual_security",
+ 		{   "id": "virtual_security",
             "name": {
                 "en": "Security",
                 "nl": "Beveiliging"
@@ -1127,9 +1149,7 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_movie",
+        {   "id": "virtual_movie",
             "name": {
                 "en": "Movie mode",
                 "nl": "Filmmodus"
@@ -1166,9 +1186,7 @@
 	            ]
 	        }
         },
-		
-		{
-            "id": "virtual_party",
+		{   "id": "virtual_party",
             "name": {
                 "en": "Party mode",
                 "nl": "Feestmodus"
@@ -1205,9 +1223,7 @@
 	            ]
 	        }
         },
-		
-		{
-            "id": "virtual_event",
+		{   "id": "virtual_event",
             "name": {
                 "en": "Event mode",
                 "nl": "Eventmodus"
@@ -1244,9 +1260,7 @@
 	            ]
 	        }
         },
-		
-		{
-            "id": "virtual_away",
+		{   "id": "virtual_away",
             "name": {
                 "en": "Away mode",
                 "nl": "Wegmodus"
@@ -1283,9 +1297,7 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_holiday",
+        {   "id": "virtual_holiday",
             "name": {
                 "en": "Holiday mode",
                 "nl": "Vakantiemodus"
@@ -1322,9 +1334,7 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_sleep",
+        {   "id": "virtual_sleep",
             "name": {
                 "en": "Sleep mode",
                 "nl": "Slaapmodus"
@@ -1361,9 +1371,7 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_quiet",
+        {   "id": "virtual_quiet",
             "name": {
                 "en": "Quiet mode",
                 "nl": "Stiltemodus"
@@ -1400,12 +1408,10 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_light",
+        {   "id": "virtual_light",
             "name": {
-                "en": "Virtual light",
-                "nl": "Virtueel licht"
+                "en": "Light",
+                "nl": "Licht"
             },
             "images": {
                 "large": "drivers/virtual_light/assets/images/large.png",
@@ -1439,12 +1445,10 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_blind",
+        {   "id": "virtual_blind",
             "name": {
-                "en": "Virtual blinds",
-                "nl": "Virtuele blindering"
+                "en": "Blinds",
+                "nl": "Blindering"
             },
             "images": {
                 "large": "drivers/virtual_blind/assets/images/large.png",
@@ -1478,12 +1482,10 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_tv",
+        {   "id": "virtual_tv",
             "name": {
-                "en": "Virtual TV",
-                "nl": "Virtuele TV"
+                "en": "TV",
+                "nl": "TV"
             },
             "images": {
                 "large": "drivers/virtual_tv/assets/images/large.png",
@@ -1517,12 +1519,10 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_hifi",
+        {   "id": "virtual_hifi",
             "name": {
-                "en": "Virtual Hi-Fi",
-                "nl": "Virtuele Hi-Fi"
+                "en": "Hi-Fi",
+                "nl": "Hi-Fi"
             },
             "images": {
                 "large": "drivers/virtual_hifi/assets/images/large.png",
@@ -1556,12 +1556,10 @@
 	            ]
 	        }
         },
-        
-        {
-            "id": "virtual_alarm",
+        {   "id": "virtual_alarm",
             "name": {
-                "en": "Virtual Alarm",
-                "nl": "Virtueel Alarm"
+                "en": "Alarm",
+                "nl": "Alarm"
             },
             "images": {
                 "large": "drivers/virtual_alarm/assets/images/large.png",
@@ -1591,6 +1589,191 @@
 	                {
 	                    "id": "toggle",
 	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "virtual_button",
+            "name": {
+                "en": "Button",
+                "nl": "Knop"
+            },
+            "images": {
+                "large": "drivers/virtual_button/assets/images/large.png",
+                "small": "drivers/virtual_button/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button"
+                    }
+                },
+                {
+                    "id": "add_button",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "virtual_button_light",
+            "name": {
+                "en": "Light Button",
+                "nl": "Lichtknop"
+            },
+            "images": {
+                "large": "drivers/virtual_button_light/assets/images/large.png",
+                "small": "drivers/virtual_button_light/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button_light",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button_light"
+                    }
+                },
+                {
+                    "id": "add_button_light",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "virtual_button_alarm",
+            "name": {
+                "en": "Alarm Button",
+                "nl": "Alarmknop"
+            },
+            "images": {
+                "large": "drivers/virtual_button_alarm/assets/images/large.png",
+                "small": "drivers/virtual_button_alarm/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button_alarm",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button_alarm"
+                    }
+                },
+                {
+                    "id": "add_button_alarm",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "virtual_button_hifi",
+            "name": {
+                "en": "Hi-Fi Button",
+                "nl": "Hifiknop"
+            },
+            "images": {
+                "large": "drivers/virtual_button_hifi/assets/images/large.png",
+                "small": "drivers/virtual_button_hifi/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button_hifi",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button_hifi"
+                    }
+                },
+                {
+                    "id": "add_button_hifi",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "virtual_button_tv",
+            "name": {
+                "en": "TV Button",
+                "nl": "TV-knop"
+            },
+            "images": {
+                "large": "drivers/virtual_button_tv/assets/images/large.png",
+                "small": "drivers/virtual_button_tv/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button_tv",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button_tv"
+                    }
+                },
+                {
+                    "id": "add_button_tv",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
 	                }
 	            ]
 	        }
