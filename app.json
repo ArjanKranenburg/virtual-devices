@@ -135,6 +135,58 @@
                     }
                 ]
             },			
+			{   "id": "virtual_relax_on",
+                "title": {
+                    "en": "Relax mode is active",
+                    "nl": "Ontspanmodus wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_relax"
+                    }
+                ]
+            },
+            {   "id": "virtual_relax_off",
+                "title": {
+                    "en": "Relax mode is off",
+                    "nl": "Ontspanmodus wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_relax"
+                    }
+                ]
+            },			
+			{   "id": "virtual_manual_on",
+                "title": {
+                    "en": "Manual mode is active",
+                    "nl": "Handmatigemodus wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_manual"
+                    }
+                ]
+            },
+            {   "id": "virtual_manual_off",
+                "title": {
+                    "en": "Manual mode is off",
+                    "nl": "Handmatigemodus wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_manual"
+                    }
+                ]
+            },			
 			{   "id": "virtual_event_on",
                 "title": {
                     "en": "Event mode is active",
@@ -506,8 +558,7 @@
                 ]                
             },
 			
-			{
-                "id": "virtual_party",
+			{   "id": "virtual_party",
                 "title": {
                     "en": "Party mode !{{is|isn't}} turned on",
                     "nl": "Feestmodus !{{is|is niet}} aangezet"
@@ -517,6 +568,32 @@
                         "name": "device",
                         "type": "device",
                         "filter": "driver_id=virtual_party"
+                    }
+                ]                
+            },
+			{   "id": "virtual_relax",
+                "title": {
+                    "en": "Relax mode !{{is|isn't}} turned on",
+                    "nl": "Ontspanmodus !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_relax"
+                    }
+                ]                
+            },
+			{   "id": "virtual_manual",
+                "title": {
+                    "en": "Manual mode !{{is|isn't}} turned on",
+                    "nl": "Handmatigemodus !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_manual"
                     }
                 ]                
             },
@@ -753,10 +830,8 @@
                         "filter": "driver_id=virtual_movie"
                     }
                 ]
-	        },
-			
-			{
-	            "id": "virtual_party_action_on",
+	        },			
+			{   "id": "virtual_party_action_on",
 	            "title": {
 	                "en": "Turn party mode on",
 	                "nl": "Zet feestmodus aan"
@@ -769,8 +844,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_party_action_off",
+	        {   "id": "virtual_party_action_off",
 	            "title": {
 	                "en": "Turn party mode off",
 	                "nl": "Zet feestmodus uit"
@@ -780,6 +854,58 @@
                         "name": "device",
                         "type": "device",
                         "filter": "driver_id=virtual_party"
+                    }
+                ]
+	        },
+			{   "id": "virtual_relax_action_on",
+	            "title": {
+	                "en": "Turn relax mode on",
+	                "nl": "Zet ontspanmodus aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_relax"
+                    }
+                ]
+	        },
+	        {   "id": "virtual_relax_action_off",
+	            "title": {
+	                "en": "Turn relax mode off",
+	                "nl": "Zet ontspanmodus uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_relax"
+                    }
+                ]
+	        },
+			{   "id": "virtual_manual_action_on",
+	            "title": {
+	                "en": "Turn manual mode on",
+	                "nl": "Zet handmatigemodus aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_manual"
+                    }
+                ]
+	        },
+	        {   "id": "virtual_manual_action_off",
+	            "title": {
+	                "en": "Turn manual mode off",
+	                "nl": "Zet handmatigemodus uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_manual"
                     }
                 ]
 	        },
@@ -1207,6 +1333,80 @@
                 },
                 {
                     "id": "add_party",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+		{   "id": "virtual_relax",
+            "name": {
+                "en": "Relax mode",
+                "nl": "Ontspanmodus"
+            },
+            "images": {
+                "large": "drivers/virtual_relax/assets/images/large.png",
+                "small": "drivers/virtual_relax/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_relax",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_relax"
+                    }
+                },
+                {
+                    "id": "add_relax",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+        },
+		{   "id": "virtual_manual",
+            "name": {
+                "en": "Manual mode",
+                "nl": "Handmatigemodus"
+            },
+            "images": {
+                "large": "drivers/virtual_manual/assets/images/large.png",
+                "small": "drivers/virtual_manual/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_manual",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_manual"
+                    }
+                },
+                {
+                    "id": "add_manual",
                     "template": "add_devices"
                 }
             ],

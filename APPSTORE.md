@@ -22,7 +22,9 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
   * Quiet
   * Movie
   * Sleep
-
+  * Relax
+  * Manual
+  
 
 * Trigger a flow
 * Use the switch' status as a condition
@@ -31,7 +33,7 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
 ## What doesn't:
 
 * Blinds can go on/off, not yet up, stop, down
-* Other devices, like a push-button, Dimmer, etc.
+* Other devices, like a Dimmer, etc.
 
 I'm very interested to hear your ideas for other virtual devices. 
 

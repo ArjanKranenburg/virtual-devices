@@ -22,6 +22,8 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
   * Quiet
   * Movie
   * Sleep
+  * Relax
+  * Manual
 
 
 * Trigger a flow
@@ -40,6 +42,7 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ### 0.4.0
 * Added Buttons
+* Added Relax and Manual Modes
 
 ### 0.3.0
 * Added more devices and modes (thanks to ZperX)
