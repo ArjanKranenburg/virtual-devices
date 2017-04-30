@@ -31,12 +31,15 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
 ## What doesn't:
 
 * Blinds can go on/off, not yet up, stop, down
-* Other devices, like a push-button, Dimmer, etc.
+* Other devices, like a Dimmer, etc.
 
 I'm very interested to hear your ideas for other virtual devices. 
 
 
 ## Release history
+
+### 0.4.0
+* Added Buttons
 
 ### 0.3.0
 * Added more devices and modes (thanks to ZperX)
