@@ -1,9 +1,13 @@
 # License
 
 ## Art work
-The VD, Holiday and Away icons is copyright of ZperX
 
-The Blind Icon is coyright of Athom.
+The copyright of the following icons lies with:
+* VD, Holiday and Away by ZperX
+* Blinds by Athom.
+* Switch by Arthur Shlain from the Noun Project
+* Relax by Delwar Hossain from the Noun Project
+* Manual by H Alberto Gongora from the Noun Project
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 
