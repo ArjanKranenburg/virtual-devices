@@ -20,10 +20,6 @@ module.exports = class Device {
 //		this.logger = new Logger( loggerConfig );
 
 //	    console.log("Creating Device");
-//
-//	    setFlowCondition(driverConfig.conditions.onoff);
-//	    setFlowAction(driverConfig.actions.on);
-//	    setFlowAction(driverConfig.actions.off);
 	}
 	
 	init(connectedDevices, callback) {
@@ -54,25 +50,6 @@ module.exports = class Device {
 	    delete devices[device_data.id];
 	    callback(null, true);
 	}
-
-//	// the `pair` method is called when a user start pairing
-//	pair( other ) {
-//	    console.log("Pair driver");
-//		other.on('list_devices', function( data, callback ){
-//
-//	        var device_data = {
-//	            name: "Virtual try",
-//	            data: {
-//	                id: guid()
-//	            }
-//	        }
-//
-//	        console.log("Added Virtual device: " + device_data.data.id);
-//	        callback( null, [device_data] );
-//
-//	    })
-//	}
-
 
 	//renamed( device_data, new_name ) {
 	    // run when the user has renamed the device in Homey.

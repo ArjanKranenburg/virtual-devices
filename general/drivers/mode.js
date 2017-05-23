@@ -30,35 +30,6 @@ module.exports = class Mode extends Device {
 	    Device.setFlowAction(driverConfig.actions.off);
 	}
 	
-//	init(connectedDevices, callback) {
-//	    console.log("Init try driver");
-//
-//	    // when the driver starts, Homey rebooted. Initialise all previously paired devices.
-//	    connectedDevices.forEach(function(connectedDevices){
-//	    	initDevice( connectedDevices );
-//	    })
-//
-//		if (callback) {
-//			callback();
-//		}
-//	}
-
-	//the `added` method is called is when pairing is done and a device has been added
-//	added(device_data, callback) {
-//	    console.log("Adding device " + device_data.id);
-//
-//	    initDevice(device_data);
-//	    callback(null, true);
-//	}
-
-	//the `delete` method is called when a device has been deleted by a user
-//	deleted(device_data, callback) {
-//	    console.log("Deleting device " + device_data.id);
-//
-//	    delete devices[device_data.id];
-//	    callback(null, true);
-//	}
-
 	// the `pair` method is called when a user start pairing
 	pair( other ) {
 	    console.log("Pair try driver");
