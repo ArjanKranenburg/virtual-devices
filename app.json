@@ -511,6 +511,32 @@
                         "filter": "driver_id=button_tv"
                     }
                 ]
+            },
+            {   "id": "virtual_try_on",
+                "title": {
+                    "en": "Try is on",
+                    "nl": "Probeer wordt aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=try"
+                    }
+                ]
+            },
+            {   "id": "virtual_try_off",
+                "title": {
+                    "en": "Try is off",
+                    "nl": "Probeer wordt uitgezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=try"
+                    }
+                ]
             }
         ],
         "conditions": [
@@ -741,6 +767,20 @@
                         "name": "device",
                         "type": "device",
                         "filter": "driver_id=switch_alarm"
+                    }
+                ]
+            },
+            {
+                "id": "virtual_try",
+                "title": {
+                    "en": "Try !{{is|isn't}} turned on",
+                    "nl": "Probeer !{{is|is niet}} aangezet"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=try"
                     }
                 ]
             }
@@ -1197,7 +1237,36 @@
                         "filter": "driver_id=switch_alarm"
                     }
                 ]
+	        },
+	        {
+	            "id": "virtual_try_action_on",
+	            "title": {
+	                "en": "Turn try on",
+	                "nl": "Zet probeer aan"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=try"
+                    }
+                ]
+	        },
+	        {
+	            "id": "virtual_try_action_off",
+	            "title": {
+	                "en": "Turn try off",
+	                "nl": "Zet probeer uit"
+	            },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=try"
+                    }
+                ]
 	        }
+	        
     	]
     },
     "drivers": [
@@ -1974,6 +2043,43 @@
 	                {
 	                    "id": "button",
 	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "try",
+            "name": {
+                "en": "Try",
+                "nl": "Probeer"
+            },
+            "images": {
+                "large": "drivers/try/assets/images/large.png",
+                "small": "drivers/try/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_try",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_try"
+                    }
+                },
+                {
+                    "id": "add_try",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
 	        }
