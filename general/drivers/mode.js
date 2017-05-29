@@ -23,7 +23,7 @@ module.exports = class Mode extends Device {
 		this.config = driverConfig;
 //		this.logger = new Logger( loggerConfig );
 
-	    console.log("Creating Try driver");
+	    console.log("Creating mode driver");
 
 	    Device.setFlowCondition(driverConfig.conditions.onoff);
 	    Device.setFlowAction(driverConfig.actions.on);
@@ -32,17 +32,19 @@ module.exports = class Mode extends Device {
 	
 	// the `pair` method is called when a user start pairing
 	pair( other ) {
-	    console.log("Pair try driver");
+	    console.log("Pair mode driver");
 		other.on('list_devices', function( data, callback ){
 
 	        var device_data = {
-	            name: "Virtual try",
+	            name: "Mode device",
 	            data: {
 	                id: Device.guid()
 	            }
 	        }
 
-	        console.log("Added Virtual try: " + device_data.data.id);
+	        console.log("Added mode device: " + device_data.data.id);
+	    	console.log("Data = " + JSON.stringify(device_data));
+
 	        callback( null, [device_data] );
 
 	    })
@@ -74,13 +76,13 @@ module.exports = class Mode extends Device {
 	    var tokens = {"type": "device"};
 
 	    if (onoff) {
-	        console.log( "Turning on  " + modeDevice.data.id + " (" + this.config.actions.on.name + ")");
+	        console.log( "Turning on  " + modeDevice.data.id + " (" + this.config.triggers.on.name + ")");
 
 	        Homey.manager('flow').triggerDevice(this.config.triggers.on.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
 	    	});
 	    } else {
-	        console.log("Turning off " + modeDevice.data.id + " (" + this.config.actions.off.name + ")");
+	        console.log("Turning off " + modeDevice.data.id + " (" + this.config.triggers.off.name + ")");
 	    	
 	        Homey.manager('flow').triggerDevice(this.config.triggers.off.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);

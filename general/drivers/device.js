@@ -57,7 +57,6 @@ module.exports = class Device {
 	    // when it uses another remote to control that device (e.g. the manufacturer's app).
 	//}
 
-
 	static setFlowCondition(config) {
 	    console.log("Setting Flow condition: " + config.name);
 	    Homey.manager('flow').on('condition.' + config.name, function( callback, args ){

@@ -2,10 +2,10 @@
 
 
 const config = {
-	capabilities: ['onoff'],
-	id: 'virtual_try',
-	class: 'other',
-	name: 'devices.virtual.try',
+//	capabilities: ['onoff'],
+//	id: 'virtual_try',
+//	class: 'other',
+//	name: 'devices.virtual.try',
 	triggers: {
 		on: {
 			name: 'virtual_try_on',
