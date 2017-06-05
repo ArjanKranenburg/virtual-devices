@@ -31,21 +31,32 @@ module.exports = class Mode extends Device {
 	}
 	
 	// the `pair` method is called when a user start pairing
-	pair( other ) {
+	pair( socket ) {
 	    console.log("Pair mode driver");
-		other.on('list_devices', function( data, callback ){
+	    socket.on('list_devices', function( data, callback ){
 
-	        var device_data = {
-	            name: "Mode device",
-	            data: {
-	                id: Device.guid()
-	            }
-	        }
-
-	        console.log("Added mode device: " + device_data.data.id);
+	        var device_data = [
+		        {
+		            name: "Mode device 1",
+		            data: {
+		                id: Device.guid(),
+		                type: "a"
+		            }
+		        },
+		        {
+		            name: "Partymode",
+		            data: {
+		                id: Device.guid(),
+		                type: "b"
+		            },
+		            icon: "../assets/party.svg"
+		        }
+		    ]
+	        	        
+//	        console.log("Added mode device: " + device_data.data.id);
 	    	console.log("Data = " + JSON.stringify(device_data));
 
-	        callback( null, [device_data] );
+	        callback( null, device_data );
 
 	    })
 	}

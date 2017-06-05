@@ -20,10 +20,12 @@ module.exports = class Device {
 //		this.logger = new Logger( loggerConfig );
 
 //	    console.log("Creating Device");
+//		console.log("Drivers: " + JSON.stringify( Homey.manager('drivers').getDriver('virtual_switch') ));
 	}
 	
 	init(connectedDevices, callback) {
 //	    console.log("Init try driver");
+		console.log("Connected Devices: " + JSON.stringify( connectedDevices ));
 
 	    // when the driver starts, Homey rebooted. Initialise all previously paired devices.
 	    connectedDevices.forEach(function(connectedDevices){

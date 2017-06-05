@@ -1,10 +1,6 @@
 "use strict";
 
 const config = {
-		capabilities: ['onoff'],
-		id: 'virtual_party',
-		class: 'other',
-		name: 'Party mode',
 		triggers: {
 			on: {
 				name: 'virtual_party_on',

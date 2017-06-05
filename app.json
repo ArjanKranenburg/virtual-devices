@@ -9,17 +9,22 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.4.1",
+    "version": "0.4.2",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
         "email": "arjan.kranenburg@gmail.com"
     },
 	"contributors": {
-	    "developers": [{
-	        "name": "Arjan Kranenburg",
-	        "email": "arjan.kranenburg@gmail.com"
-	    }],
+	    "developers": [
+		    {
+		        "name": "Arjan Kranenburg",
+		        "email": "arjan.kranenburg@gmail.com"
+		    },
+			{
+		        "name": "ZperX"
+		    }
+	    ],
 	    "graphical designer": [{
 	        "name": "ZperX"
 	    }]
@@ -512,29 +517,29 @@
                     }
                 ]
             },
-            {   "id": "virtual_try_on",
+            {   "id": "virtual_mode_on",
                 "title": {
-                    "en": "Try is on",
-                    "nl": "Probeer wordt aangezet"
+                    "en": "Mode is on",
+                    "nl": "Modus wordt aangezet"
                 },
                 "args": [
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=try"
+                        "filter": "driver_id=mode"
                     }
                 ]
             },
-            {   "id": "virtual_try_off",
+            {   "id": "virtual_mode_off",
                 "title": {
-                    "en": "Try is off",
-                    "nl": "Probeer wordt uitgezet"
+                    "en": "Mode is off",
+                    "nl": "Modus wordt uitgezet"
                 },
                 "args": [
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=try"
+                        "filter": "driver_id=mode"
                     }
                 ]
             }
@@ -771,16 +776,16 @@
                 ]
             },
             {
-                "id": "virtual_try",
+                "id": "mode",
                 "title": {
-                    "en": "Try !{{is|isn't}} turned on",
-                    "nl": "Probeer !{{is|is niet}} aangezet"
+                    "en": "Mode !{{is|isn't}} turned on",
+                    "nl": "Modus !{{is|is niet}} aangezet"
                 },
                 "args": [
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=try"
+                        "filter": "driver_id=mode"
                     }
                 ]
             }
@@ -1239,30 +1244,30 @@
                 ]
 	        },
 	        {
-	            "id": "virtual_try_action_on",
+	            "id": "mode_action_on",
 	            "title": {
-	                "en": "Turn try on",
-	                "nl": "Zet probeer aan"
+	                "en": "Turn mode on",
+	                "nl": "Zet modus aan"
 	            },
                 "args": [
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=try"
+                        "filter": "driver_id=mode"
                     }
                 ]
 	        },
 	        {
-	            "id": "virtual_try_action_off",
+	            "id": "mode_action_off",
 	            "title": {
-	                "en": "Turn try off",
-	                "nl": "Zet probeer uit"
+	                "en": "Turn mode off",
+	                "nl": "Zet modus uit"
 	            },
                 "args": [
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=try"
+                        "filter": "driver_id=mode"
                     }
                 ]
 	        }
@@ -1270,7 +1275,7 @@
     	]
     },
     "drivers": [
-        {   "id": "virtual_switch",
+	    {   "id": "virtual_switch",
             "name": {
                 "en": "Switch",
                 "nl": "Schakelaar"
@@ -1307,6 +1312,80 @@
 	            ]
 	        }
         },
+        {   "id": "mode",
+            "name": {
+                "en": "Mode",
+                "nl": "Modus"
+            },
+            "images": {
+                "large": "drivers/mode/assets/images/large.png",
+                "small": "drivers/mode/assets/images/small.png"
+            },
+            "class": "other",
+            "capabilities": [ "onoff" ],
+            "pair": [
+                {
+                    "id": "list_mode",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_mode"
+                    }
+                },
+                {
+                    "id": "add_mode",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "onoff" ]
+	                },
+	                {
+	                    "id": "toggle",
+	                    "capabilities": [ "onoff" ]
+	                }
+	            ]
+	        }
+	    },
+        {   "id": "button",
+            "name": {
+                "en": "Button",
+                "nl": "Knop"
+            },
+            "images": {
+                "large": "drivers/button/assets/images/large.png",
+                "small": "drivers/button/assets/images/small.png"
+            },
+            "class": "button",
+            "capabilities": [ "button" ],
+            "pair": [
+                {
+                    "id": "list_button",
+                    "template": "list_devices",
+                    "navigation": {
+                        "next": "add_button"
+                    }
+                },
+                {
+                    "id": "add_button",
+                    "template": "add_devices"
+                }
+            ],
+            "mobile": {
+	            "components": [
+	                {
+	                    "id": "icon",
+	                    "capabilities": [ "button" ]
+	                },
+	                {
+	                    "id": "button",
+	                    "capabilities": [ "button" ]
+	                }
+	            ]
+	        }
+	    },
  		{   "id": "mode_security",
             "name": {
                 "en": "Security",
@@ -1318,19 +1397,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_switches",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_switches"
-                    }
-                },
-                {
-                    "id": "add_switches",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1355,19 +1421,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_movie",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_movie"
-                    }
-                },
-                {
-                    "id": "add_movie",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1392,19 +1445,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_party",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_party"
-                    }
-                },
-                {
-                    "id": "add_party",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1429,19 +1469,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_relax",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_relax"
-                    }
-                },
-                {
-                    "id": "add_relax",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1466,19 +1493,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_manual",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_manual"
-                    }
-                },
-                {
-                    "id": "add_manual",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1503,19 +1517,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_event",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_event"
-                    }
-                },
-                {
-                    "id": "add_event",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1540,19 +1541,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_away",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_away"
-                    }
-                },
-                {
-                    "id": "add_away",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1577,19 +1565,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_holiday",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_holiday"
-                    }
-                },
-                {
-                    "id": "add_holiday",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1614,19 +1589,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_sleep",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_sleep"
-                    }
-                },
-                {
-                    "id": "add_sleep",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1651,19 +1613,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_quiet",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_quiet"
-                    }
-                },
-                {
-                    "id": "add_quiet",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1862,43 +1811,6 @@
 	            ]
 	        }
 	    },
-        {   "id": "button",
-            "name": {
-                "en": "Button",
-                "nl": "Knop"
-            },
-            "images": {
-                "large": "drivers/button/assets/images/large.png",
-                "small": "drivers/button/assets/images/small.png"
-            },
-            "class": "button",
-            "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button"
-                    }
-                },
-                {
-                    "id": "add_button",
-                    "template": "add_devices"
-                }
-            ],
-            "mobile": {
-	            "components": [
-	                {
-	                    "id": "icon",
-	                    "capabilities": [ "button" ]
-	                },
-	                {
-	                    "id": "button",
-	                    "capabilities": [ "button" ]
-	                }
-	            ]
-	        }
-	    },
         {   "id": "button_light",
             "name": {
                 "en": "Light Button",
@@ -2043,43 +1955,6 @@
 	                {
 	                    "id": "button",
 	                    "capabilities": [ "button" ]
-	                }
-	            ]
-	        }
-	    },
-        {   "id": "try",
-            "name": {
-                "en": "Try",
-                "nl": "Probeer"
-            },
-            "images": {
-                "large": "drivers/try/assets/images/large.png",
-                "small": "drivers/try/assets/images/small.png"
-            },
-            "class": "other",
-            "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_try",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_try"
-                    }
-                },
-                {
-                    "id": "add_try",
-                    "template": "add_devices"
-                }
-            ],
-            "mobile": {
-	            "components": [
-	                {
-	                    "id": "icon",
-	                    "capabilities": [ "onoff" ]
-	                },
-	                {
-	                    "id": "toggle",
-	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
 	        }
