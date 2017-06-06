@@ -1637,19 +1637,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_light",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_light"
-                    }
-                },
-                {
-                    "id": "add_light",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1674,19 +1661,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_blind",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_blind"
-                    }
-                },
-                {
-                    "id": "add_blind",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1711,19 +1685,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_tv",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_tv"
-                    }
-                },
-                {
-                    "id": "add_tv",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1748,19 +1709,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_hifi",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_hifi"
-                    }
-                },
-                {
-                    "id": "add_hifi",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1785,19 +1733,6 @@
             },
             "class": "other",
             "capabilities": [ "onoff" ],
-            "pair": [
-                {
-                    "id": "list_alarm",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_alarm"
-                    }
-                },
-                {
-                    "id": "add_alarm",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {

@@ -12,7 +12,7 @@ const loggerConfig = {
 		captureLevel: 5,
 	};
 
-module.exports = class Mode extends Device {
+module.exports = class Switch extends Device {
 	constructor(driverConfig) {
 		if (!driverConfig) {
 			throw new Error('No deviceconfig found in constructor. Make sure you pass config to super call!');
@@ -23,7 +23,7 @@ module.exports = class Mode extends Device {
 		this.config = driverConfig;
 //		this.logger = new Logger( loggerConfig );
 
-	    console.log("Creating mode driver");
+	    console.log("Creating switch driver");
 
 	    Device.setFlowCondition(driverConfig.conditions.onoff);
 	    Device.setFlowAction(driverConfig.actions.on);
@@ -32,12 +32,12 @@ module.exports = class Mode extends Device {
 	
 	// the `pair` method is called when a user start pairing
 	pair( socket ) {
-	    console.log("Pair mode driver");
+	    console.log("Pair switch driver");
 	    socket.on('list_devices', function( data, callback ){
 
 	        var device_data = [
 		        {
-		            name: "Mode device",
+		            name: "Switch",
 		            data: {
 		                id: Device.guid(),
 		            }
@@ -57,11 +57,11 @@ module.exports = class Mode extends Device {
 	// `callback` should return the current value in the format callback( err, value )
 	get(device_data, callback) {
 		
-	    var modeDevice = Device.getDevice( device_data.id );
-	    if( modeDevice instanceof Error ) return callback( modeDevice );
+	    var switchDevice = Device.getDevice( device_data.id );
+	    if( switchDevice instanceof Error ) return callback( switchDevice );
 
 	    // send the state value to Homey
-	    callback( null, modeDevice.state.onoff );
+	    callback( null, switchDevice.state.onoff );
 	}
 
 	// this function is called by Homey when it wants to SET the partyes state, e.g. when the user presses the button on
@@ -70,21 +70,21 @@ module.exports = class Mode extends Device {
 	// `onoff` is the new value
 	// `callback` should return the new value in the format callback( err, value )
 	set( device_data, onoff, callback ) {
-	    var modeDevice = Device.getDevice( device_data.id );
-	    if( modeDevice instanceof Error ) return callback( modeDevice );
+	    var switchDevice = Device.getDevice( device_data.id );
+	    if( switchDevice instanceof Error ) return callback( switchDevice );
 
-	    modeDevice.state.onoff = onoff;
-	    var state = modeDevice.state;
+	    switchDevice.state.onoff = onoff;
+	    var state = switchDevice.state;
 	    var tokens = {"type": "device"};
 
 	    if (onoff) {
-	        console.log( "Turning on  " + modeDevice.data.id + " (" + this.config.triggers.on.name + ")");
+	        console.log( "Turning on  " + switchDevice.data.id + " (" + this.config.triggers.on.name + ")");
 
 	        Homey.manager('flow').triggerDevice(this.config.triggers.on.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
 	    	});
 	    } else {
-	        console.log("Turning off " + modeDevice.data.id + " (" + this.config.triggers.off.name + ")");
+	        console.log("Turning off " + switchDevice.data.id + " (" + this.config.triggers.off.name + ")");
 	    	
 	        Homey.manager('flow').triggerDevice(this.config.triggers.off.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
@@ -92,7 +92,7 @@ module.exports = class Mode extends Device {
 	    }
 	    
 	    // send the new onoff value to Homey
-	    callback( null, modeDevice.state.onoff );
+	    callback( null, switchDevice.state.onoff );
 	}
 
 	getExports() {
