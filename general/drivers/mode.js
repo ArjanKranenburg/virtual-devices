@@ -26,8 +26,14 @@ module.exports = class Mode extends Device {
 	    console.log("Creating mode driver");
 
 	    Device.setFlowCondition(driverConfig.conditions.onoff);
-	    Device.setFlowAction(driverConfig.actions.on);
-	    Device.setFlowAction(driverConfig.actions.off);
+
+	    var actionOnConfig  = driverConfig.actions.on
+	    actionOnConfig.trigger = driverConfig.triggers.on.name
+	    Device.setFlowAction(actionOnConfig);
+	    
+	    var actionOffConfig = driverConfig.actions.off
+	    actionOffConfig.trigger = driverConfig.triggers.off.name
+	    Device.setFlowAction(actionOffConfig);
 	}
 	
 	// the `pair` method is called when a user start pairing
@@ -90,14 +96,20 @@ module.exports = class Mode extends Device {
 	       		if (err) return console.error(err);
 	    	});
 	    }
+
+	    // also emit the new value to realtime
+	    // this produces Insights logs and triggers Flows
+	    this.updateRealtime( device_data, 'onoff', modeDevice.state.onoff);
 	    
 	    // send the new onoff value to Homey
 	    callback( null, modeDevice.state.onoff );
 	}
 
+	updateRealtime(args, device, state) { /* template method */	}
+
 	getExports() {
 //		this.logger.silly('Driver:getExports()');
-		console.log('Driver:getExports()');
+		console.log('Mode:getExports()');
 		return {
 			capabilities: {
 				onoff: {

@@ -84,9 +84,9 @@ module.exports.capabilities.button.set = function( args, button, callback ) {
     callback( null, false );
 };
 
-Homey.manager('flow').on('action.button_light_pushed', function( callback, args ){
+Homey.manager('flow').on('action.button_light_action_pushed', function( callback, args ){
     var virtualButton = getSwitch( args.id );
-    if( virtualButton instanceof Error ) return callback( virtualPushButton );
+    if( virtualButton instanceof Error ) return callback( virtualButton );
 
     var tokens = {"type": "device"};
 

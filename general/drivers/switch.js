@@ -25,11 +25,28 @@ module.exports = class Switch extends Device {
 
 	    console.log("Creating switch driver");
 
-	    Device.setFlowCondition(driverConfig.conditions.onoff);
-	    Device.setFlowAction(driverConfig.actions.on);
-	    Device.setFlowAction(driverConfig.actions.off);
 	}
 	
+	init(devices_data, callback) {
+		super.init(devices_data, null);
+		
+	    Device.setFlowTrigger(this.config.triggers.on)
+	    Device.setFlowTrigger(this.config.triggers.off)
+	    Device.setFlowCondition(this.config.conditions.onoff);
+
+	    var actionOnConfig  = this.config.actions.on
+	    actionOnConfig.trigger = this.config.triggers.on.name
+	    Device.setFlowAction(actionOnConfig, this.updateRealtime);
+	    
+	    var actionOffConfig = this.config.actions.off
+	    actionOffConfig.trigger = this.config.triggers.off.name
+	    Device.setFlowAction(actionOffConfig, this.updateRealtime);		
+
+		if (callback) {
+			callback();
+		}
+	}
+
 	// the `pair` method is called when a user start pairing
 	pair( socket ) {
 	    console.log("Pair switch driver");
@@ -90,14 +107,21 @@ module.exports = class Switch extends Device {
 	       		if (err) return console.error(err);
 	    	});
 	    }
+
+console.log("Check 1");
+	    // also emit the new value to realtime
+	    // this produces Insights logs and triggers Flows
+	    this.updateRealtime( device_data, 'onoff', switchDevice.state.onoff);
 	    
 	    // send the new onoff value to Homey
 	    callback( null, switchDevice.state.onoff );
 	}
+	
+	updateRealtime(args, device, state) { /* template method */	}
 
 	getExports() {
 //		this.logger.silly('Driver:getExports()');
-		console.log('Driver:getExports()');
+		console.log('Switch:getExports()');
 		return {
 			capabilities: {
 				onoff: {

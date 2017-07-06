@@ -59,32 +59,46 @@ module.exports = class Device {
 	    // when it uses another remote to control that device (e.g. the manufacturer's app).
 	//}
 
-	static setFlowCondition(config) {
-	    console.log("Setting Flow condition: " + config.name);
-	    Homey.manager('flow').on('condition.' + config.name, function( callback, args ){
-	        var modeDevice = Device.getDevice( args.device.id );
-	        if( modeDevice instanceof Error ) return callback( modeDevice );
+	static setFlowTrigger(config) {
+	    console.log("Setting Flow trigger: " + config.name);
+	    Homey.manager('flow').on('trigger.' + config.name, function( callback, args, state ){
+	        var virtualDevice = Device.getDevice( args.device.id );
+	        if( virtualDevice instanceof Error ) return callback( virtualDevice );
+console.log("Switch is triggered: " + args.device.id + " --> " + state);
 	
-	        callback( null, modeDevice.state.onoff ); 
+	        callback( null, virtualDevice.state.onoff ); 
 	    });
 	}
 
-	static setFlowAction(config) {
+	static setFlowCondition(config) {
+	    console.log("Setting Flow condition: " + config.name);
+	    Homey.manager('flow').on('condition.' + config.name, function( callback, args ){
+	        var virtualDevice = Device.getDevice( args.device.id );
+	        if( virtualDevice instanceof Error ) return callback( virtualDevice, null );
+console.log("Checking Switch state: " + virtualDevice.state.onoff);
+	
+	        callback( null, virtualDevice.state.onoff ); 
+	    });
+	}
+
+	static setFlowAction(config, updateRealtime) {
 	    console.log("Setting Flow action: " + config.name);
 		Homey.manager('flow').on('action.' + config.name, function( callback, args ){
-		    console.log('action.' + config.name);
-		
-			var virtualButton = Device.getDevice( args.id );
-		    if( virtualButton instanceof Error ) return callback( virtualButton );
+			var virtualDevice = Device.getDevice( args.device.id );
+		    if( virtualDevice instanceof Error ) return callback( virtualDevice );
+console.log("Setting Switch state: " + JSON.stringify(args));
 		
 		    var tokens = {"type": "device"};
-		
-		    Homey.manager('flow').triggerDevice(config.name, tokens, true, args, function (err, result) {
+		    Homey.manager('flow').triggerDevice(config.trigger, tokens, true, args.device, function (err, result) {
 		   		if (err) return console.error(err);
 			});
-		    module.exports.realtime( args, config.type, true);
+console.log("Triggered Switch: " + config.trigger);
 		    
-		    callback( null, true );
+// also emit the new value to realtime
+// this produces Insights logs and triggers Flows
+updateRealtime( args.device, 'onoff', virtualDevice.state.onoff);
+
+			callback( null, true );
 		});
 	}
 

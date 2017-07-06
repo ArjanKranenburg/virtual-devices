@@ -17,11 +17,11 @@ const config = {
 		actions: {
 			on: {
 				name: 'virtual_switch_action_on',
-				type: 'onoff'
+				type: 'onoff',
 			},
 			off: {
 				name: 'virtual_switch_action_off',
-				type: 'onoff'
+				type: 'onoff',
 			}
 		},
 		logger: {
@@ -97,3 +97,6 @@ const config = {
 	    })
 	};
 
+	driver.updateRealtime = function(args, device, state) {		
+	    module.exports.realtime( args, device, state);
+	};
