@@ -26,6 +26,17 @@
 		"tv": "TV",
 		"hifi": "Hi-Fi",
 		"alarm": "Alarm",
-		"blinds": "Blinds"
+		"blinds": "Blinds",
+		"mode": "Mode",
+		"away": "Away mode",
+		"event": "Event mode",
+		"holiday": "Holiday mode",
+		"manual": "Manual mode",
+		"movie": "Movie mode",
+		"party": "Party mode",
+		"quiet": "Quiet mode",
+		"relax": "Relax mode",
+		"secure": "Secure mode",
+		"sleep": "Sleep mode"
 	}
 }

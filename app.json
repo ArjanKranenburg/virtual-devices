@@ -1297,11 +1297,7 @@
             "capabilities": [ "onoff" ],
             "pair": [
                 {
-                    "id": "list_mode",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_mode"
-                    }
+                    "id": "start"
                 },
                 {
                     "id": "add_mode",

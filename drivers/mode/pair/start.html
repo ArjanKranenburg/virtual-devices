@@ -51,18 +51,20 @@
 		<div class="fa" data-i18n="pair.select.name"></div><span>:</span>
 		<input class="fa" name="deviceName" type="text" value="Virtual Device">
 		<br>
-		
-		<div class="fa" data-i18n="pair.select.class">Class:</div><span>:</span>
-		<select id="device_class" name="class" class="inline_question">
-		    <option value="socket" data-i18n="socket">Socket</option>
-		    <option value="button" data-i18n="button">Button</option>
-		    <option value="light" data-i18n="light">Light</option>
-		</select>
-		<br>
 
-		<div class="fa" data-i18n="pair.select.capability">Capability:</div><span>:</span>
-		<div id="list_of_capabilities" class="my_checkbox"></div>
- 		<br>
+		<div hidden>
+			<div class="fa" data-i18n="pair.select.class">Class:</div><span>:</span>
+			<select id="device_class" name="class" class="inline_question" disabled>
+			    <option value="other" data-i18n="other">Other</option>
+			</select>
+			<br>
+		</div>
+
+		<div hidden>
+			<div class="fa" data-i18n="pair.select.capability">Capability:</div><span>:</span>
+			<div id="list_of_capabilities" class="my_checkbox"></div>
+	 		<br>
+		</div>
 		
 		<div class="fa" data-i18n="pair.select.icon">Select Icon</div><span>:</span>
 		<div id="list_of_images"></div>
@@ -74,34 +76,14 @@
 </form>	
 
 <script>
-	var SUPPORTED_CAPABILITIES = ["onoff", "button"];
+	var SUPPORTED_CAPABILITIES = ["onoff"];
 	var SUPPORTED_CLASSES = {
-			"socket": {
-				"capabilities": [
-					"onoff"
-				],
-				"defaultCapabilities": [
-					"onoff"
-				]
+			"other": {
+				"capabilities": ["onoff"],
+				"defaultCapabilities": ["onoff"]
 			},
-			"light": {
-				"capabilities": [
-					"onoff"
-				],
-				"defaultCapabilities": [
-					"onoff"
-				]
-			},
-			"button": {
-				"capabilities": [
-					"button"
-				],
-				"defaultCapabilities": [
-					"button"
-				]
-			}
 		}
-	var DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/virtual_switch/";
+	var DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/mode/";
 
 	function classSelected( selectedClass ) {
 		var allowedCapabilities = SUPPORTED_CLASSES[selectedClass]["capabilities"]
@@ -212,7 +194,8 @@
 		addCapability(SUPPORTED_CAPABILITIES[i]);
 	}
 
-	classSelected("socket");
+	classSelected("other");
+	$('#list_of_capabilities > div:first-child > input').prop("disabled", true);
 
 	// Add Possible Icons
 	Homey.emit( 'getIcons', {}, function( err, devices ){

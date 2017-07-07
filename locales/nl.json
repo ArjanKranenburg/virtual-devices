@@ -26,6 +26,17 @@
 		"tv": "TV",
 		"hifi": "Hi-Fi",
 		"alarm": "Alarm",
-		"blinds": "Zonwering"
+		"blinds": "Zonwering",
+		"mode": "Modus",
+		"away": "Weg modus",
+		"event": "Evenement modus",
+		"holiday": "Vakantie modus",
+		"manual": "Handmatige modus",
+		"movie": "Film modus",
+		"party": "Feest modus",
+		"quiet": "Stilte modus",
+		"relax": "Ontspan modus",
+		"secure": "Veilige modus",
+		"sleep": "Slaap modus"
 	}
 }
