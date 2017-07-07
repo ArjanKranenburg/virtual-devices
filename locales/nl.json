@@ -1,0 +1,31 @@
+{ 
+	"pair": {
+		"select": {
+			"details": "Specificeer de details",
+			"name": "Geef het een naam",
+			"icon": "Selecteer een pictogram",
+			"capability": "Selecteer 1 of meerdere eigenschappen",
+			"class": "Selecteer een apparaatklasse"
+		},
+		"device": {
+			"add": "Voeg toe"
+		},
+		"warning": {
+			"not_changeable": " Let op: deze instellingen kunnen hierna niet meer worden veranderd!"
+		}
+	},
+	"onoff": "Aan / uit",
+	"button": "Knop",
+	"other": "Anders",
+	"light": "Licht",
+	"socket": "Stopcontact",
+	"icon": {
+		"light": "Licht",
+		"button": "Knop",
+		"switch": "Schakelaar",
+		"tv": "TV",
+		"hifi": "Hi-Fi",
+		"alarm": "Alarm",
+		"blinds": "Zonwering"
+	}
+}

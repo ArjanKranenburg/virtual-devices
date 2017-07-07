@@ -1,102 +1,79 @@
 "use strict";
 
 const config = {
-		triggers: {
-			on: {
-				name: 'virtual_switch_on',
-			},
-			off: {
-				name: 'virtual_switch_off',
-			}
+	triggers: {
+		on: {
+			name: 'virtual_switch_on',
 		},
-		conditions: {
-			onoff: {
-				name: 'virtual_switch',
-			}
+		off: {
+			name: 'virtual_switch_off',
 		},
-		actions: {
-			on: {
-				name: 'virtual_switch_action_on',
-				type: 'onoff',
-			},
-			off: {
-				name: 'virtual_switch_action_off',
-				type: 'onoff',
-			}
+		button: {
+			name: 'button_pushed',
 		},
-		logger: {
+	},
+	conditions: {
+		onoff: {
+			name: 'virtual_switch',
 		}
-	};
-
-	const name = {
-		switch: {
-			en: "Switch",
-			nl: "Schakelaar"
+	},
+	actions: {
+		on: {
+			name: 'virtual_switch_action_on',
+			type: 'onoff',
 		},
-		light: {
-			en: "Light",
-			nl: "Licht"
-		},
-		blinds: {
-			en: "Blinds",
-			nl: "Blindering"
-		},
-		tv: {
-			en: "TV",
-			nl: "TV"
-		},
-		hifi: {
-			en: "Hi-Fi",
-			nl: "Hi-Fi"
-		},
-		alarm: {
-			en: "Alarm",
-			nl: "Alarm"
-		},
+		off: {
+			name: 'virtual_switch_action_off',
+			type: 'onoff',
+		}
+	},
+	logger: {
 	}
+};
 
-	function getDeviceTemplate( device ) {
-		var language = Homey.manager( 'i18n' ).getLanguage( );
-		return 	        {
-	        name: name[device][language],
-	        data: {
-	            id: Device.guid(),
-	        },
-	        "class": "onoff",
-	        capabilities: [ "onoff" ],
-	    	icon: "../assets/" + device + ".svg"
-	    }
+const Device = require('../../general/drivers/device.js');
+const Switch   = require('../../general/drivers/switch.js');
+const driver = new Switch(config);
+
+module.exports = Object.assign(
+	{},
+	driver.getExports(), 
+	{ init: (devices, callback) => driver.init(devices, callback) }
+);
+
+module.exports.pair = function( socket ) {
+    socket.on('log', function( msg, callback ) {
+        console.log(msg);
+        callback( null, "ok" );
+    });
+
+    socket.on('getIcons', function( data, callback ) {
+        console.log("Adding new device");
+
+        var device_data = [
+	        getIconNameAndLocation('switch'),
+	        getIconNameAndLocation('light'),
+	        getIconNameAndLocation('blinds'),
+	        getIconNameAndLocation('tv'),
+	        getIconNameAndLocation('hifi'),
+	        getIconNameAndLocation('alarm'),
+	    ]
+
+        callback( null, device_data );
+    });
+
+    socket.on('disconnect', function(){
+        console.log("User aborted pairing, or pairing is finished");
+    })
+};
+
+driver.updateRealtime = function(args, device, state) {		
+    module.exports.realtime( args, device, state);
+};
+
+function getIconNameAndLocation( name ) {
+	return {
+		"name": name,
+		"location": "../assets/" + name + ".svg"
 	}
-
-	const Device = require('../../general/drivers/device.js');
-	const Switch   = require('../../general/drivers/switch.js');
-	const driver = new Switch(config);
-
-	module.exports = Object.assign(
-		{},
-		driver.getExports(), 
-		{ init: (devices, callback) => driver.init(devices, callback) }
-	);
-
-	module.exports.pair = function( other ) {
-		other.on('list_devices', function( data, callback ){
-
-			var language = Homey.manager( 'i18n' ).getLanguage( );
-			
-	        var device_data = [
-		        getDeviceTemplate('switch'),
-		        getDeviceTemplate('light'),
-		        getDeviceTemplate('blinds'),
-		        getDeviceTemplate('tv'),
-		        getDeviceTemplate('hifi'),
-		        getDeviceTemplate('alarm'),
-		    ]
-
-	        callback( null, device_data );
-
-	    })
-	};
-
-	driver.updateRealtime = function(args, device, state) {		
-	    module.exports.realtime( args, device, state);
-	};
+}

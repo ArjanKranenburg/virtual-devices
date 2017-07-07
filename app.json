@@ -36,32 +36,6 @@
 	"category": "tools",
     "flow": {
         "triggers": [
-            {   "id": "virtual_switch_on",
-                "title": {
-                    "en": "Switch is turned on",
-                    "nl": "Schakelaar wordt aangezet"
-                },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-            },
-            {   "id": "virtual_switch_off",
-                "title": {
-                    "en": "Switch is turned off",
-                    "nl": "Schakelaar wordt uitgezet"
-                },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-            },
 			{   "id": "virtual_security_on",
                 "title": {
                     "en": "Security is armed",
@@ -461,7 +435,7 @@
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=button"
+                        "filter": "driver_id=virtual_switch"
                     }
                 ]
             },
@@ -1299,32 +1273,16 @@
                 "small": "drivers/virtual_switch/assets/images/small.png"
             },
             "class": "other",
-            "capabilities": [ "onoff" ],
+            "capabilities": [ "onoff", "button" ],
             "pair": [
                 {
-                    "id": "list_switches",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_switches"
-                    }
+                    "id": "start"
                 },
                 {
                     "id": "add_switches",
                     "template": "add_devices"
                 }
-            ],
-            "mobile": {
-	            "components": [
-	                {
-	                    "id": "icon",
-	                    "capabilities": [ "onoff" ]
-	                },
-	                {
-	                    "id": "toggle",
-	                    "capabilities": [ "onoff" ]
-	                }
-	            ]
-	        }
+            ]
         },
         {   "id": "mode",
             "name": {

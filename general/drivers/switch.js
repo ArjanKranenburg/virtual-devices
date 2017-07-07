@@ -47,28 +47,6 @@ module.exports = class Switch extends Device {
 		}
 	}
 
-	// the `pair` method is called when a user start pairing
-	pair( socket ) {
-	    console.log("Pair switch driver");
-	    socket.on('list_devices', function( data, callback ){
-
-	        var device_data = [
-		        {
-		            name: "Switch",
-		            data: {
-		                id: Device.guid(),
-		            }
-		        }
-		    ]
-	        	        
-//	        console.log("Added mode device: " + device_data.data.id);
-	    	console.log("Data = " + JSON.stringify(device_data));
-
-	        callback( null, device_data );
-
-	    })
-	}
-
 	// this function is called by Homey when it wants to GET the state, e.g. when the user loads the smartphone interface
 	// `device_data` is the object as saved during pairing
 	// `callback` should return the current value in the format callback( err, value )
@@ -86,7 +64,7 @@ module.exports = class Switch extends Device {
 	// `device_data` is the object as saved during pairing
 	// `onoff` is the new value
 	// `callback` should return the new value in the format callback( err, value )
-	set( device_data, onoff, callback ) {
+	setOnOff( device_data, onoff, callback ) {
 	    var switchDevice = Device.getDevice( device_data.id );
 	    if( switchDevice instanceof Error ) return callback( switchDevice );
 
@@ -108,7 +86,7 @@ module.exports = class Switch extends Device {
 	    	});
 	    }
 
-console.log("Check 1");
+//console.log("Check 1");
 	    // also emit the new value to realtime
 	    // this produces Insights logs and triggers Flows
 	    this.updateRealtime( device_data, 'onoff', switchDevice.state.onoff);
@@ -116,7 +94,28 @@ console.log("Check 1");
 	    // send the new onoff value to Homey
 	    callback( null, switchDevice.state.onoff );
 	}
+
+	setButton( device_data, onoff, callback ) {
+	    var buttonDevice = Device.getDevice( device_data.id );
+	    if( buttonDevice instanceof Error ) return callback( buttonDevice );
+	    console.log("Button pushed");
 	
+	    var tokens = {"type": "device"};
+	
+	    Homey.manager('flow').triggerDevice(this.config.triggers.button.name, tokens, true, device_data, function (err, result) {
+		    console.log("Button pushed 2a");
+	   		if (err) return console.error(err);
+		});
+	    console.log("Button pushed 2b");
+	
+	    // also emit the new value to realtime
+	    // this produces Insights logs and triggers Flows
+	    this.updateRealtime( device_data, 'button', true);
+	    console.log("Button pushed 3");
+	    
+	    callback( null, true );
+	}
+
 	updateRealtime(args, device, state) { /* template method */	}
 
 	getExports() {
@@ -126,13 +125,16 @@ console.log("Check 1");
 			capabilities: {
 				onoff: {
 					get: this.get.bind(this),
-					set: this.set.bind(this),
+					set: this.setOnOff.bind(this),
+				},
+				button: {
+					set: this.setButton.bind(this),
 				}
 			},
 			init: super.init.bind(this),
 			added: super.added.bind(this),
 			deleted: super.deleted.bind(this),
-			pair: this.pair.bind(this),
+//			pair: this.pair.bind(this),
 //			renamed: this.renamed.bind(this),
 //			settings: this.updateSettings.bind(this),
 		}
