@@ -1265,8 +1265,8 @@
     "drivers": [
 	    {   "id": "virtual_switch",
             "name": {
-                "en": "Switch",
-                "nl": "Schakelaar"
+                "en": "Device",
+                "nl": "Apparaat"
             },
             "images": {
                 "large": "drivers/virtual_switch/assets/images/large.png",
@@ -1328,19 +1328,6 @@
             },
             "class": "button",
             "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button"
-                    }
-                },
-                {
-                    "id": "add_button",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1725,19 +1712,6 @@
             },
             "class": "button",
             "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button_light",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button_light"
-                    }
-                },
-                {
-                    "id": "add_button_light",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1762,19 +1736,6 @@
             },
             "class": "button",
             "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button_alarm",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button_alarm"
-                    }
-                },
-                {
-                    "id": "add_button_alarm",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1799,19 +1760,6 @@
             },
             "class": "button",
             "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button_hifi",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button_hifi"
-                    }
-                },
-                {
-                    "id": "add_button_hifi",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {
@@ -1836,19 +1784,6 @@
             },
             "class": "button",
             "capabilities": [ "button" ],
-            "pair": [
-                {
-                    "id": "list_button_tv",
-                    "template": "list_devices",
-                    "navigation": {
-                        "next": "add_button_tv"
-                    }
-                },
-                {
-                    "id": "add_button_tv",
-                    "template": "add_devices"
-                }
-            ],
             "mobile": {
 	            "components": [
 	                {

@@ -53,10 +53,17 @@
 		<br>
 		
 		<div class="fa" data-i18n="pair.select.class">Class:</div><span>:</span>
-		<select id="device_class" name="class" class="inline_question">
-		    <option value="socket" data-i18n="socket">Socket</option>
-		    <option value="button" data-i18n="button">Button</option>
-		    <option value="light" data-i18n="light">Light</option>
+		<select id="device_class" name="class" class="inline_question" onchange="classSelected(this.value);">
+		    <option value="socket" data-i18n="class.socket">Socket</option>
+		    <option value="light" data-i18n="class.light">Light</option>
+		    <option value="tv" data-i18n="class.tv">TV</option>
+		    <option value="amplifier" data-i18n="class.amplifier">Amplifier</option>
+		    <option value="windowcoverings" data-i18n="class.windowcoverings">Window Coverings</option>
+		    <option value="fan" data-i18n="class.fan">Fan</option>
+		    <option value="heater" data-i18n="class.heater">Heater</option>
+		    <option value="kettle" data-i18n="class.kettle">Kettle</option>
+		    <option value="coffeemachine" data-i18n="class.coffeemachine">Coffee Machine</option>
+		    <option value="button" data-i18n="class.button">Button</option>
 		</select>
 		<br>
 
@@ -85,6 +92,62 @@
 				]
 			},
 			"light": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"tv": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"amplifier": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"windowcoverings": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"fan": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"heater": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"kettle": {
+				"capabilities": [
+					"onoff"
+				],
+				"defaultCapabilities": [
+					"onoff"
+				]
+			},
+			"coffeemachine": {
 				"capabilities": [
 					"onoff"
 				],
@@ -170,7 +233,7 @@
  	function addCapability(capab) {
  		var html = '<div>\
 			<input type="checkbox" name="capability_' + capab + '" value="' + capab + '">\
-			<label class="enabled" value="' + capab + '" data-i18n="' + capab + '"></label>\
+			<label class="enabled" value="' + capab + '" data-i18n="capability.' + capab + '"></label>\
 		</div>'	
 	 	$('#list_of_capabilities').append(html);
  	}

@@ -7,11 +7,6 @@ const Device = require('./device.js');
 // paired and active devices in your driver's memory.
 var devices = {};
 
-const loggerConfig = {
-		level: 4,
-		captureLevel: 5,
-	};
-
 module.exports = class Mode extends Device {
 	constructor(driverConfig) {
 		if (!driverConfig) {
@@ -19,11 +14,7 @@ module.exports = class Mode extends Device {
 		}
 
 		super(driverConfig);
-
 		this.config = driverConfig;
-//		this.logger = new Logger( loggerConfig );
-
-	    console.log("Creating mode driver");
 
 	    Device.setFlowCondition(driverConfig.conditions.onoff);
 
@@ -50,11 +41,9 @@ module.exports = class Mode extends Device {
 		        }
 		    ]
 	        	        
-//	        console.log("Added mode device: " + device_data.data.id);
 	    	console.log("Data = " + JSON.stringify(device_data));
 
 	        callback( null, device_data );
-
 	    })
 	}
 
@@ -108,8 +97,6 @@ module.exports = class Mode extends Device {
 	updateRealtime(args, device, state) { /* template method */	}
 
 	getExports() {
-//		this.logger.silly('Driver:getExports()');
-		console.log('Mode:getExports()');
 		return {
 			capabilities: {
 				onoff: {

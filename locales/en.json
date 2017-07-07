@@ -14,11 +14,23 @@
 			"not_changeable": " Warning: these settings cannot be changed afterwards"
 		}
 	},
-	"onoff": "On / off",
-	"button": "Button",
-	"other": "Other",
-	"light": "Light",
-	"socket": "Socket",
+	"class": {
+		"other": "Other",
+		"light": "Light",
+		"socket": "Socket",
+		"tv": "TV",
+		"amplifier": "Amplifier",
+		"windowcoverings": "Window Coverings",
+		"fan": "Fan",
+		"heater": "Heater",
+		"kettle": "Kettle",
+		"coffeemachine": "Coffee Machine",
+		"button": "Button"
+	},
+	"capability": {
+		"onoff": "Aan / uit",
+		"button": "Knop"
+	},
 	"icon": {
 		"light": "Light",
 		"button": "Button",
@@ -28,15 +40,15 @@
 		"alarm": "Alarm",
 		"blinds": "Blinds",
 		"mode": "Mode",
-		"away": "Away mode",
-		"event": "Event mode",
-		"holiday": "Holiday mode",
-		"manual": "Manual mode",
-		"movie": "Movie mode",
-		"party": "Party mode",
-		"quiet": "Quiet mode",
-		"relax": "Relax mode",
-		"secure": "Secure mode",
-		"sleep": "Sleep mode"
+		"away": "Away",
+		"event": "Event",
+		"holiday": "Holiday",
+		"manual": "Manual",
+		"movie": "Movie",
+		"party": "Party",
+		"quiet": "Quiet",
+		"relax": "Relax",
+		"secure": "Secure",
+		"sleep": "Sleep"
 	}
 }

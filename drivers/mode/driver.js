@@ -24,8 +24,6 @@ const config = {
 			type: 'onoff'
 		}
 	},
-	logger: {
-	}
 };
 
 const Device = require('../../general/drivers/device.js');

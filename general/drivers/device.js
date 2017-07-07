@@ -5,11 +5,6 @@
 // paired and active devices in your driver's memory.
 var devices = {};
 
-const loggerConfig = {
-		level: 4,
-		captureLevel: 5,
-	};
-
 module.exports = class Device {
 	constructor(driverConfig) {
 		if (!driverConfig) {
@@ -17,15 +12,10 @@ module.exports = class Device {
 		}
 
 		this.config = driverConfig;
-//		this.logger = new Logger( loggerConfig );
-
-//	    console.log("Creating Device");
-//		console.log("Drivers: " + JSON.stringify( Homey.manager('drivers').getDriver('virtual_switch') ));
 	}
 	
 	init(connectedDevices, callback) {
-//	    console.log("Init try driver");
-		console.log("Connected Devices: " + JSON.stringify( connectedDevices ));
+//		console.log("Connected Devices: " + JSON.stringify( connectedDevices ));
 
 	    // when the driver starts, Homey rebooted. Initialise all previously paired devices.
 	    connectedDevices.forEach(function(connectedDevices){
@@ -60,39 +50,39 @@ module.exports = class Device {
 	//}
 
 	static setFlowTrigger(config) {
-	    console.log("Setting Flow trigger: " + config.name);
+//	    console.log("Setting Flow trigger: " + config.name);
 	    Homey.manager('flow').on('trigger.' + config.name, function( callback, args, state ){
 	        var virtualDevice = Device.getDevice( args.device.id );
 	        if( virtualDevice instanceof Error ) return callback( virtualDevice );
-console.log("Switch is triggered: " + args.device.id + " --> " + state);
+//console.log("Switch is triggered: " + args.device.id + " --> " + state);
 	
 	        callback( null, virtualDevice.state.onoff ); 
 	    });
 	}
 
 	static setFlowCondition(config) {
-	    console.log("Setting Flow condition: " + config.name);
+//	    console.log("Setting Flow condition: " + config.name);
 	    Homey.manager('flow').on('condition.' + config.name, function( callback, args ){
 	        var virtualDevice = Device.getDevice( args.device.id );
 	        if( virtualDevice instanceof Error ) return callback( virtualDevice, null );
-console.log("Checking Switch state: " + virtualDevice.state.onoff);
+//console.log("Checking Switch state: " + virtualDevice.state.onoff);
 	
 	        callback( null, virtualDevice.state.onoff ); 
 	    });
 	}
 
 	static setFlowAction(config, updateRealtime) {
-	    console.log("Setting Flow action: " + config.name);
+//	    console.log("Setting Flow action: " + config.name);
 		Homey.manager('flow').on('action.' + config.name, function( callback, args ){
 			var virtualDevice = Device.getDevice( args.device.id );
 		    if( virtualDevice instanceof Error ) return callback( virtualDevice );
-console.log("Setting Switch state: " + JSON.stringify(args));
+//console.log("Setting Switch state: " + JSON.stringify(args));
 		
 		    var tokens = {"type": "device"};
 		    Homey.manager('flow').triggerDevice(config.trigger, tokens, true, args.device, function (err, result) {
 		   		if (err) return console.error(err);
 			});
-console.log("Triggered Switch: " + config.trigger);
+//console.log("Triggered Switch: " + config.trigger);
 		    
 // also emit the new value to realtime
 // this produces Insights logs and triggers Flows
@@ -122,8 +112,7 @@ updateRealtime( args.device, 'onoff', virtualDevice.state.onoff);
 
 //a helper method to add a party to the devices list
 function initDevice( device_data ) {
-	console.log("Device initialized " + device_data.id);
-	console.log("Data = " + JSON.stringify(device_data));
+	console.log("Device initialized = " + JSON.stringify(device_data));
     devices[ device_data.id ] = {};
     devices[ device_data.id ].state = { onoff: false };
     devices[ device_data.id ].data = device_data;

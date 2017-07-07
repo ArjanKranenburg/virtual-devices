@@ -27,8 +27,6 @@ const config = {
 			type: 'onoff',
 		}
 	},
-	logger: {
-	}
 };
 
 const Device = require('../../general/drivers/device.js');
@@ -57,6 +55,7 @@ module.exports.pair = function( socket ) {
 	        getIconNameAndLocation('tv'),
 	        getIconNameAndLocation('hifi'),
 	        getIconNameAndLocation('alarm'),
+	        getIconNameAndLocation('button'),
 	    ]
 
         callback( null, device_data );

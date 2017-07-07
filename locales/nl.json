@@ -14,11 +14,23 @@
 			"not_changeable": " Let op: deze instellingen kunnen hierna niet meer worden veranderd!"
 		}
 	},
-	"onoff": "Aan / uit",
-	"button": "Knop",
-	"other": "Anders",
-	"light": "Licht",
-	"socket": "Stopcontact",
+	"class": {
+		"other": "Anders",
+		"light": "Licht",
+		"socket": "Stopcontact",
+		"tv": "TV",
+		"amplifier": "Versterker",
+		"windowcoverings": "Blindering",
+		"fan": "Ventilator",
+		"heater": "Verwarming",
+		"kettle": "Waterketel",
+		"coffeemachine": "Kofiezetapparaat",
+		"button": "Knop"
+	},
+	"capability": {
+		"onoff": "Aan / uit",
+		"button": "Knop"
+	},
 	"icon": {
 		"light": "Licht",
 		"button": "Knop",
@@ -28,15 +40,15 @@
 		"alarm": "Alarm",
 		"blinds": "Zonwering",
 		"mode": "Modus",
-		"away": "Weg modus",
-		"event": "Evenement modus",
-		"holiday": "Vakantie modus",
-		"manual": "Handmatige modus",
-		"movie": "Film modus",
-		"party": "Feest modus",
-		"quiet": "Stilte modus",
-		"relax": "Ontspan modus",
-		"secure": "Veilige modus",
-		"sleep": "Slaap modus"
+		"away": "Weg",
+		"event": "Evenement",
+		"holiday": "Vakantie",
+		"manual": "Handmatig",
+		"movie": "Film",
+		"party": "Feest",
+		"quiet": "Stilte",
+		"relax": "Ontspan",
+		"secure": "Veilig",
+		"sleep": "Slaap"
 	}
 }

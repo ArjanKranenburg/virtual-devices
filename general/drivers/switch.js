@@ -7,11 +7,6 @@ const Device = require('./device.js');
 // paired and active devices in your driver's memory.
 var devices = {};
 
-const loggerConfig = {
-		level: 4,
-		captureLevel: 5,
-	};
-
 module.exports = class Switch extends Device {
 	constructor(driverConfig) {
 		if (!driverConfig) {
@@ -19,12 +14,7 @@ module.exports = class Switch extends Device {
 		}
 
 		super(driverConfig);
-
 		this.config = driverConfig;
-//		this.logger = new Logger( loggerConfig );
-
-	    console.log("Creating switch driver");
-
 	}
 	
 	init(devices_data, callback) {
@@ -98,20 +88,16 @@ module.exports = class Switch extends Device {
 	setButton( device_data, onoff, callback ) {
 	    var buttonDevice = Device.getDevice( device_data.id );
 	    if( buttonDevice instanceof Error ) return callback( buttonDevice );
-	    console.log("Button pushed");
 	
 	    var tokens = {"type": "device"};
 	
 	    Homey.manager('flow').triggerDevice(this.config.triggers.button.name, tokens, true, device_data, function (err, result) {
-		    console.log("Button pushed 2a");
 	   		if (err) return console.error(err);
 		});
-	    console.log("Button pushed 2b");
 	
 	    // also emit the new value to realtime
 	    // this produces Insights logs and triggers Flows
 	    this.updateRealtime( device_data, 'button', true);
-	    console.log("Button pushed 3");
 	    
 	    callback( null, true );
 	}
@@ -119,8 +105,6 @@ module.exports = class Switch extends Device {
 	updateRealtime(args, device, state) { /* template method */	}
 
 	getExports() {
-//		this.logger.silly('Driver:getExports()');
-		console.log('Switch:getExports()');
 		return {
 			capabilities: {
 				onoff: {
@@ -134,7 +118,6 @@ module.exports = class Switch extends Device {
 			init: super.init.bind(this),
 			added: super.added.bind(this),
 			deleted: super.deleted.bind(this),
-//			pair: this.pair.bind(this),
 //			renamed: this.renamed.bind(this),
 //			settings: this.updateSettings.bind(this),
 		}
