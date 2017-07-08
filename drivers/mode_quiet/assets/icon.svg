@@ -1,19 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="611.98px" height="611.98px" viewBox="0 0 611.98 611.98" enable-background="new 0 0 611.98 611.98" xml:space="preserve">
-<g>
-	<g>
-		<path d="M165.972,387.277h21.756l35.357-35.356h-39.428v-92.256h72.004c4.701,0,9.187-1.892,12.541-5.217l81.793-82.352v52.928
-			l35.357-35.357v-60.439c0-7.152-4.357-13.644-10.992-16.339c-6.564-2.751-14.146-1.232-19.264,3.871L248.267,224.307h-82.295
-			c-9.817,0-17.671,7.911-17.671,17.671v127.614C148.3,379.367,156.168,387.277,165.972,387.277z"/>
-		<path d="M349.996,439.575l-54.763-54.82l-24.995,24.996l84.904,85.074c3.382,3.383,7.911,5.175,12.541,5.175
-			c2.265,0,4.543-0.415,6.735-1.348c6.592-2.723,10.949-9.187,10.949-16.339V294.649l-35.356,35.358v109.568H349.996z"/>
-		<path d="M525.45,102.053c-3.784-3.797-8.771-5.661-13.745-5.661c-4.973,0-9.932,1.863-13.744,5.661L385.354,214.676
-			l-35.357,35.357L248.081,351.921l-35.357,35.356L107.697,492.333c-7.596,7.597-7.596,19.893,0,27.488
-			c3.798,3.798,8.757,5.69,13.73,5.69c4.987,0,9.947-1.906,13.745-5.69L257.74,397.253l25.038-25.024l67.218-67.232l35.357-35.357
-			L525.45,129.528C533.046,121.975,533.046,109.65,525.45,102.053z"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="125"
+   viewBox="0 0 26.458333 33.072916"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="obsolete.svg"
+   inkscape:version="0.92.1 r">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6769553"
+     inkscape:cx="85.043617"
+     inkscape:cy="94.402853"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1297"
+     inkscape:window-height="804"
+     inkscape:window-x="17"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.92709)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.23528056"
+       x="-257.07867"
+       y="175.32855"
+       id="text5092"
+       transform="matrix(0.59286994,-0.63319003,0.89697454,0.72873429,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5090"
+         x="-257.07867"
+         y="175.32855"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.23528056">Obsolete</tspan></text>
+  </g>
 </svg>

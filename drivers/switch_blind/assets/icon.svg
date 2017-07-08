@@ -1,27 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="198.781px" height="174.314px" viewBox="0 0 198.781 174.314" enable-background="new 0 0 198.781 174.314"
-	 xml:space="preserve">
-<rect x="6.813" y="0.25" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="185.25" height="25.029"/>
-<rect x="6.813" y="0.25" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="185.25" height="25.029"/>
-<rect x="193.656" y="5.969" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="4.875" height="14.719"/>
-<rect x="193.656" y="5.969" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="4.875" height="14.719"/>
-<rect x="15.624" y="27.156" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="168.189" height="11.812"/>
-<rect x="15.624" y="27.156" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="168.189" height="11.812"/>
-<rect x="15.624" y="41.329" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="168.189" height="11.812"/>
-<rect x="15.624" y="41.329" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="168.189" height="11.812"/>
-<rect x="15.624" y="55.503" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="168.189" height="11.812"/>
-<rect x="15.624" y="55.503" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="168.189" height="11.812"/>
-<rect x="15.624" y="69.676" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="168.189" height="11.812"/>
-<rect x="15.624" y="69.676" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="168.189" height="11.812"/>
-<rect x="15.624" y="83.849" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="168.189" height="11.812"/>
-<rect x="15.624" y="83.849" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="168.189" height="11.812"/>
-<rect x="11.688" y="168.158" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="176.062" height="5.906"/>
-<rect x="11.688" y="168.158" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="176.062" height="5.906"/>
-<rect x="193.656" y="27.344" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="1.968" height="66.564"/>
-<rect x="193.656" y="27.344" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="1.968" height="66.564"/>
-<rect x="0.25" y="5.969" fill-rule="evenodd" clip-rule="evenodd" fill="#2B2A29" width="4.875" height="14.719"/>
-<rect x="0.25" y="5.969" fill="none" stroke="#2B2A29" stroke-width="0.5" stroke-miterlimit="22.9256" width="4.875" height="14.719"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="125"
+   viewBox="0 0 26.458333 33.072916"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="obsolete.svg"
+   inkscape:version="0.92.1 r">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6769553"
+     inkscape:cx="85.043617"
+     inkscape:cy="94.402853"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1297"
+     inkscape:window-height="804"
+     inkscape:window-x="17"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.92709)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.23528056"
+       x="-257.07867"
+       y="175.32855"
+       id="text5092"
+       transform="matrix(0.59286994,-0.63319003,0.89697454,0.72873429,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5090"
+         x="-257.07867"
+         y="175.32855"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.23528056">Obsolete</tspan></text>
+  </g>
 </svg>

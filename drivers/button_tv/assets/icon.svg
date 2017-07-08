@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -7,60 +9,62 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="125"
+   viewBox="0 0 26.458333 33.072916"
    version="1.1"
-   viewBox="0 0 471 471"
-   enable-background="new 0 0 471 471"
-   id="svg11240"
-   sodipodi:docname="icon.svg"
+   id="svg8"
+   sodipodi:docname="obsolete.svg"
    inkscape:version="0.92.1 r">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6769553"
+     inkscape:cx="85.043617"
+     inkscape:cy="94.402853"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1297"
+     inkscape:window-height="804"
+     inkscape:window-x="17"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0" />
   <metadata
-     id="metadata11246">
+     id="metadata5">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <defs
-     id="defs11244" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="973"
-     inkscape:window-height="703"
-     id="namedview11242"
-     showgrid="false"
-     inkscape:zoom="0.50106157"
-     inkscape:cx="235.5"
-     inkscape:cy="235.5"
-     inkscape:window-x="0"
-     inkscape:window-y="23"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg11240" />
   <g
-     id="g11238"
-     transform="matrix(0.58195507,0,0,0.58195507,13.970339,-7.0691205)">
-    <path
-       d="m 443.5,86.676 h -416 c -2.761,0 -5,2.239 -5,5 v 253.493 c 0,2.761 2.239,5 5,5 h 416 c 2.762,0 5,-2.239 5,-5 V 91.676 c 0,-2.762 -2.238,-5 -5,-5 z m -5,253.493 H 32.5 V 96.676 h 406 z"
-       id="path11234"
-       inkscape:connector-curvature="0" />
-    <path
-       d="M 449.055,64.176 H 21.946 C 9.845,64.176 0,74.021 0,86.121 v 264.602 c 0,12.101 9.845,21.945 21.946,21.945 h 148.343 l -7.91,19.156 h -31.772 c -4.142,0 -7.5,3.358 -7.5,7.5 0,4.142 3.358,7.5 7.5,7.5 h 209.79 c 4.143,0 7.5,-3.358 7.5,-7.5 0,-4.142 -3.357,-7.5 -7.5,-7.5 h -31.772 l -7.911,-19.156 h 148.343 c 12.101,0 21.945,-9.845 21.945,-21.945 V 86.121 C 471,74.021 461.156,64.176 449.055,64.176 Z M 292.394,391.825 H 178.606 l 7.911,-19.156 h 97.967 z M 456,350.724 c 0,3.83 -3.115,6.945 -6.945,6.945 H 21.946 c -3.83,0 -6.946,-3.116 -6.946,-6.945 V 86.121 c 0,-3.83 3.116,-6.946 6.946,-6.946 h 427.109 c 3.83,0 6.945,3.116 6.945,6.946 z"
-       id="path11236"
-       inkscape:connector-curvature="0" />
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.92709)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.23528056"
+       x="-257.07867"
+       y="175.32855"
+       id="text5092"
+       transform="matrix(0.59286994,-0.63319003,0.89697454,0.72873429,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5090"
+         x="-257.07867"
+         y="175.32855"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.23528056">Obsolete</tspan></text>
   </g>
-  <path
-     id="path11838"
-     d="m 451.38946,332.37466 c 0,64.59275 -52.55429,117.14653 -117.13747,117.14653 -64.59274,0 -117.14653,-52.55429 -117.14653,-117.14653 0,-33.40529 14.32679,-65.33165 39.30997,-87.54335 3.71379,-3.30886 9.42467,-2.99228 12.72519,0.73951 3.30861,3.73119 2.97403,9.39867 -0.73958,12.70758 -21.1467,18.83247 -33.27304,45.83076 -33.27304,74.09692 0,54.6662 44.46676,99.12385 99.12399,99.12385 54.65732,0 99.11493,-44.45813 99.11493,-99.12385 0,-28.26616 -12.10892,-55.26445 -33.22905,-74.06148 -3.73122,-3.30874 -4.08324,-9.01122 -0.77439,-12.7076 3.3443,-3.76665 9.04658,-4.08311 12.7424,-0.77439 24.957,22.21116 39.28358,54.13752 39.28358,87.54281 z M 334.25133,305.34087 c 4.98102,0 9.0113,-4.01288 9.0113,-9.01123 v -90.11287 c 0,-4.96341 -4.03028,-9.01112 -9.0113,-9.01112 -4.98094,0 -9.01128,4.04832 -9.01128,9.01112 v 90.11287 c 0,4.99835 4.03091,9.01123 9.01128,9.01123 z"
-     inkscape:connector-curvature="0"
-     style="stroke-width:0.56320435" />
 </svg>

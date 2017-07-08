@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -8,14 +9,36 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="125"
+   viewBox="0 0 26.458333 33.072916"
    version="1.1"
-   viewBox="0 0 512 512"
-   enable-background="new 0 0 512 512"
-   id="svg8150"
-   sodipodi:docname="icon.svg"
+   id="svg8"
+   sodipodi:docname="obsolete.svg"
    inkscape:version="0.92.1 r">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6769553"
+     inkscape:cx="85.043617"
+     inkscape:cy="94.402853"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1297"
+     inkscape:window-height="804"
+     inkscape:window-x="17"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0" />
   <metadata
-     id="metadata8156">
+     id="metadata5">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,89 +49,22 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <defs
-     id="defs8154">
-    <linearGradient
-       id="linearGradient9704"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop9702" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient9698"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#ecebf8;stop-opacity:1;"
-         offset="0"
-         id="stop9696" />
-    </linearGradient>
-  </defs>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1172"
-     inkscape:window-height="687"
-     id="namedview8152"
-     showgrid="false"
-     inkscape:zoom="0.69"
-     inkscape:cx="256"
-     inkscape:cy="256"
-     inkscape:window-x="757"
-     inkscape:window-y="175"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg8150"
-     inkscape:pagecheckerboard="false" />
   <g
-     id="g8148"
-     transform="matrix(0.57044674,0,0,0.5858368,26.632302,4.5557952)">
-    <g
-       id="g8146"
-       style="fill:#231f20">
-      <path
-         d="M 338.6,136.1 C 315,113.4 284,101.7 251.2,102.9 188.3,105.4 137,158.6 136.8,221.6 c -0.1,27.9 9.7,55.1 27.6,76.5 25.8,31 40,70.1 40,110.2 0,0 -2.7,18.4 10.4,18.4 h 82.4 c 13.4,0 10.4,-18.4 10.4,-18.4 0,-39.2 14.4,-78 41.7,-112.2 16.9,-21.3 25.9,-46.9 25.9,-74.1 0,-32.7 -13,-63.3 -36.6,-85.9 z m -5.6,147 c -29.7,37.2 -45.6,79.6 -46.2,122.8 h -61.6 c -0.6,-44.1 -16.4,-87 -44.8,-121.1 -14.7,-17.7 -22.8,-40.1 -22.7,-63.1 0.2,-52 42.5,-95.9 94.4,-98 27.1,-1 52.7,8.7 72.1,27.4 19.5,18.7 30.2,43.9 30.2,70.9 -0.1,22.5 -7.4,43.6 -21.4,61.1 z"
-         id="path8130"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 393.2,67.8 c -4.1,-4.1 -10.7,-4.1 -14.7,0 l -25.4,25.4 c -4.1,4.1 -4.1,10.7 0,14.7 4.1,4 10.7,4.1 14.7,0 l 25.4,-25.4 c 4.1,-4 4.1,-10.6 0,-14.7 z"
-         id="path8132"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 297.6,440.9 h -83.2 c -5.8,0 -10.4,4.7 -10.4,10.4 0,5.8 4.7,10.4 10.4,10.4 h 83.2 c 5.8,0 10.4,-4.7 10.4,-10.4 0,-5.7 -4.7,-10.4 -10.4,-10.4 z"
-         id="path8134"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 281.9,480.1 h -51.7 c -5.8,0 -10.4,4.7 -10.4,10.4 0,5.8 4.7,10.4 10.4,10.4 h 51.7 c 5.8,0 10.4,-4.7 10.4,-10.4 0,-5.7 -4.7,-10.4 -10.4,-10.4 z"
-         id="path8136"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 256,67.7 c 5.8,0 10.4,-4.7 10.4,-10.4 V 21.4 C 266.4,15.6 261.7,11 256,11 c -5.7,0 -10.4,4.7 -10.4,10.4 v 35.9 c 0,5.8 4.6,10.4 10.4,10.4 z"
-         id="path8138"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 158.9,108 c 4.1,-4.1 4.1,-10.7 0,-14.7 L 133.5,67.9 c -4.1,-4.1 -10.7,-4.1 -14.7,0 -4,4.1 -4.1,10.7 0,14.7 l 25.4,25.4 c 4.1,4 10.7,4 14.7,0 z"
-         id="path8140"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 439.6,194.6 h -35.9 c -5.8,0 -10.4,4.7 -10.4,10.4 0,5.7 4.7,10.4 10.4,10.4 h 35.9 c 5.8,0 10.4,-4.7 10.4,-10.4 0,-5.7 -4.7,-10.4 -10.4,-10.4 z"
-         id="path8142"
-         inkscape:connector-curvature="0" />
-      <path
-         d="M 108.3,194.6 H 72.4 c -5.8,0 -10.4,4.7 -10.4,10.4 0,5.7 4.7,10.4 10.4,10.4 h 35.9 c 5.8,0 10.4,-4.7 10.4,-10.4 0,-5.7 -4.6,-10.4 -10.4,-10.4 z"
-         id="path8144"
-         inkscape:connector-curvature="0" />
-    </g>
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.92709)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.23528056"
+       x="-257.07867"
+       y="175.32855"
+       id="text5092"
+       transform="matrix(0.59286994,-0.63319003,0.89697454,0.72873429,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5090"
+         x="-257.07867"
+         y="175.32855"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.41117859px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.23528056">Obsolete</tspan></text>
   </g>
-  <path
-     id="path9536"
-     d="m 461.93867,373.76845 c 0,70.22801 -60.85713,127.36663 -135.64359,127.36663 -74.79755,0 -135.65405,-57.13924 -135.65405,-127.36663 0,-36.3197 16.59024,-71.0314 45.52041,-95.18085 4.30049,-3.59749 10.91362,-3.25335 14.73542,0.804 3.83158,4.05676 3.44418,10.21873 -0.85633,13.81622 -24.4875,20.47542 -38.52964,49.82914 -38.52964,80.56124 0,59.43553 51.4918,107.77177 114.78419,107.77177 63.29238,0 114.77375,-48.33685 114.77375,-107.77177 0,-30.7321 -14.02194,-60.08582 -38.4788,-80.52266 -4.32071,-3.59748 -4.72832,-9.79742 -0.89674,-13.81621 3.87265,-4.09533 10.47601,-4.43947 14.75563,-0.84197 28.89953,24.14883 45.48975,58.86053 45.48975,95.18023 z M 326.29441,344.37616 c 5.76792,0 10.43493,-4.36293 10.43493,-9.79744 v -97.97433 c 0,-5.39657 -4.66701,-9.79744 -10.43493,-9.79744 -5.7679,0 -10.43492,4.40149 -10.43492,9.79744 v 97.97433 c 0,5.43451 4.66767,9.79744 10.43492,9.79744 z"
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>
