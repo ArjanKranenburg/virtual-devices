@@ -1339,7 +1339,36 @@
 	                    "capabilities": [ "button" ]
 	                }
 	            ]
-	        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
 	    },
  		{   "id": "mode_security",
             "name": {
@@ -1363,8 +1392,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "mode_movie",
             "name": {
                 "en": "Movie mode",
@@ -1387,8 +1445,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
 		{   "id": "mode_party",
             "name": {
                 "en": "Party mode",
@@ -1411,8 +1498,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
 		{   "id": "mode_relax",
             "name": {
                 "en": "Relax mode",
@@ -1435,8 +1551,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
 		{   "id": "mode_manual",
             "name": {
                 "en": "Manual mode",
@@ -1459,8 +1604,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
 		{   "id": "mode_event",
             "name": {
                 "en": "Event mode",
@@ -1483,8 +1657,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
 		{   "id": "mode_away",
             "name": {
                 "en": "Away mode",
@@ -1507,8 +1710,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "mode_holiday",
             "name": {
                 "en": "Holiday mode",
@@ -1531,8 +1763,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "mode_sleep",
             "name": {
                 "en": "Sleep mode",
@@ -1555,8 +1816,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "mode_quiet",
             "name": {
                 "en": "Quiet mode",
@@ -1579,8 +1869,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "switch_light",
             "name": {
                 "en": "Light",
@@ -1603,8 +1922,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "switch_blind",
             "name": {
                 "en": "Blinds",
@@ -1627,8 +1975,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "switch_tv",
             "name": {
                 "en": "TV",
@@ -1651,8 +2028,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "switch_hifi",
             "name": {
                 "en": "Hi-Fi",
@@ -1675,8 +2081,37 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
-        },
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    },
         {   "id": "switch_alarm",
             "name": {
                 "en": "Alarm",
@@ -1699,7 +2134,36 @@
 	                    "capabilities": [ "onoff" ]
 	                }
 	            ]
-	        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
 	    },
         {   "id": "button_light",
             "name": {
@@ -1723,7 +2187,36 @@
 	                    "capabilities": [ "button" ]
 	                }
 	            ]
-	        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
 	    },
         {   "id": "button_alarm",
             "name": {
@@ -1747,7 +2240,36 @@
 	                    "capabilities": [ "button" ]
 	                }
 	            ]
-	        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
 	    },
         {   "id": "button_hifi",
             "name": {
@@ -1771,7 +2293,36 @@
 	                    "capabilities": [ "button" ]
 	                }
 	            ]
-	        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
 	    },
         {   "id": "button_tv",
             "name": {
@@ -1795,7 +2346,36 @@
 	                    "capabilities": [ "button" ]
 	                }
 	            ]
-	        }
-        }
+	        },
+	        "settings": [
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "The driver for this virtual device will soon be removed. Please replace it by a new Virtual Device. You can select the desired icon, class, and capabilities when creating the new device.",
+		            	"nl": "De driver voor dit Virtueel Apparaat wordt binnenkort verwijderd. U kunt dit apparaat vervangen door een nieuw Virtueel Apparaat aan te maken. Dan kunt u ook aangeven welk pictogram, klasse en eigenschappen dit apparaat moet hebben."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Unfortunately that means that you need to replace the devices in your flows as well. I'm sorry for this inconvenience.",
+		            	"nl": "Helaas betekent dat dat de apparaten in de Flows ook moeten worden vervangen. Sorry voor dit ongemak."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        },
+	        	{
+		            "type": "group",
+		            "label": {
+		            	"en": "Reason: Restructuring the drivers (basically 22 drivers into 2), will make it easier for me to add new features in the future and keep the size of the Virtual Devices app small.",
+		            	"nl": "Reden: Herstructurering van de drivers (van 22 drivers naar 2), maakt het voor mij makkelijker om in de toekomst nieuwe features toe te voegen. Ook blijft op deze manier de grootte van de app klein."
+		            },
+		            "collapsed": true,
+		            "children": []
+		        }
+            ]        
+	    }
     ]
 }
