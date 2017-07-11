@@ -435,7 +435,7 @@
                     {
                         "name": "device",
                         "type": "device",
-                        "filter": "driver_id=virtual_switch"
+                        "filter": "driver_id=button"
                     }
                 ]
             },
@@ -491,7 +491,7 @@
                     }
                 ]
             },
-            {   "id": "virtual_mode_on",
+            {   "id": "mode_on",
                 "title": {
                     "en": "Mode is on",
                     "nl": "Modus wordt aangezet"
@@ -504,7 +504,7 @@
                     }
                 ]
             },
-            {   "id": "virtual_mode_off",
+            {   "id": "mode_off",
                 "title": {
                     "en": "Mode is off",
                     "nl": "Modus wordt uitgezet"
@@ -519,22 +519,7 @@
             }
         ],
         "conditions": [
-            {
-                "id": "virtual_switch",
-                "title": {
-                    "en": "Switch !{{is|isn't}} turned on",
-                    "nl": "Schakelaar !{{is|is niet}} aangezet"
-                },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-            },						
-			{
-                "id": "virtual_security",
+			{   "id": "virtual_security",
                 "title": {
                     "en": "Security !{{is|isn't}} activated",
                     "nl": "Beveiliging !{{is|is niet}} aangezet"
@@ -547,9 +532,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_movie",
+            {   "id": "virtual_movie",
                 "title": {
                     "en": "Movie mode !{{is|isn't}} activated",
                     "nl": "Filmmodus !{{is|is niet}} aangezet"
@@ -562,7 +545,6 @@
                     }
                 ]                
             },
-			
 			{   "id": "virtual_party",
                 "title": {
                     "en": "Party mode !{{is|isn't}} turned on",
@@ -602,9 +584,7 @@
                     }
                 ]                
             },
-			
-			{
-                "id": "virtual_event",
+			{   "id": "virtual_event",
                 "title": {
                     "en": "Event mode !{{is|isn't}} turned on",
                     "nl": "Eventmodus !{{is|is niet}} aangezet"
@@ -617,9 +597,7 @@
                     }
                 ]                
             },
-			
-			{
-                "id": "virtual_away",
+			{   "id": "virtual_away",
                 "title": {
                     "en": "Away mode !{{is|isn't}} turned on",
                     "nl": "Wegmodus !{{is|is niet}} aangezet"
@@ -632,9 +610,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_holiday",
+            {   "id": "virtual_holiday",
                 "title": {
                     "en": "Holiday mode !{{is|isn't}} activated",
                     "nl": "Vakantiemodus !{{is|is niet}} aangezet"
@@ -647,9 +623,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_sleep",
+            {   "id": "virtual_sleep",
                 "title": {
                     "en": "Sleep mode !{{is|isn't}} activated",
                     "nl": "Slaapmodus !{{is|is niet}} aangezet"
@@ -662,9 +636,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_quiet",
+            {   "id": "virtual_quiet",
                 "title": {
                     "en": "Quiet mode !{{is|isn't}} activated",
                     "nl": "Stiltemodus !{{is|is niet}} aangezet"
@@ -677,9 +649,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_light",
+            {   "id": "virtual_light",
                 "title": {
                     "en": "Light !{{is|isn't}} turned on",
                     "nl": "Licht !{{is|is niet}} aangezet"
@@ -692,9 +662,7 @@
                     }
                 ]                
             },
-            
-            {
-                "id": "virtual_blind",
+            {   "id": "virtual_blind",
                 "title": {
                     "en": "Blinds !{{are|aren't}} closed",
                     "nl": "Blindering !{{is|is niet}} omlaag"
@@ -707,8 +675,7 @@
                     }
                 ]                
             },
-            {
-                "id": "virtual_tv",
+            {   "id": "virtual_tv",
                 "title": {
                     "en": "TV !{{is|isn't}} turned on",
                     "nl": "TV !{{is|is niet}} aangezet"
@@ -721,8 +688,7 @@
                     }
                 ]                
             },
-            {
-                "id": "virtual_hifi",
+            {   "id": "virtual_hifi",
                 "title": {
                     "en": "Hi-Fi !{{is|isn't}} turned on",
                     "nl": "Hi-Fi !{{is|is niet}} aangezet"
@@ -735,8 +701,7 @@
                     }
                 ]                
             },
-            {
-                "id": "virtual_alarm",
+            {   "id": "virtual_alarm",
                 "title": {
                     "en": "Alarm !{{is|isn't}} turned on",
                     "nl": "Alarm !{{is|is niet}} aangezet"
@@ -749,8 +714,7 @@
                     }
                 ]
             },
-            {
-                "id": "mode",
+            {   "id": "mode",
                 "title": {
                     "en": "Mode !{{is|isn't}} turned on",
                     "nl": "Modus !{{is|is niet}} aangezet"
@@ -765,36 +729,7 @@
             }
         ],
         "actions": [
-	        {
-	            "id": "virtual_switch_action_on",
-	            "title": {
-	                "en": "Turn switch on",
-	                "nl": "Zet schakelaar aan"
-	            },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-	        },
-	        {
-	            "id": "virtual_switch_action_off",
-	            "title": {
-	                "en": "Turn switch off",
-	                "nl": "Zet schakelaar uit"
-	            },
-                "args": [
-                    {
-                        "name": "device",
-                        "type": "device",
-                        "filter": "driver_id=virtual_switch"
-                    }
-                ]
-	        },
-			{
-	            "id": "virtual_security_action_on",
+			{   "id": "virtual_security_action_on",
 	            "title": {
 	                "en": "Turn security on",
 	                "nl": "Zet beveiliging aan"
@@ -807,8 +742,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_security_action_off",
+	        {   "id": "virtual_security_action_off",
 	            "title": {
 	                "en": "Turn security off",
 	                "nl": "Zet beveiliging uit"
@@ -821,9 +755,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_movie_action_on",
+            {   "id": "virtual_movie_action_on",
 	            "title": {
 	                "en": "Turn movie mode on",
 	                "nl": "Zet filmmodus aan"
@@ -836,8 +768,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_movie_action_off",
+	        {   "id": "virtual_movie_action_off",
 	            "title": {
 	                "en": "Turn movie mode off",
 	                "nl": "Zet filmmodus uit"
@@ -928,9 +859,7 @@
                     }
                 ]
 	        },
-			
-			{
-	            "id": "virtual_event_action_on",
+			{   "id": "virtual_event_action_on",
 	            "title": {
 	                "en": "Turn event mode on",
 	                "nl": "Zet eventmodus aan"
@@ -943,8 +872,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_event_action_off",
+	        {   "id": "virtual_event_action_off",
 	            "title": {
 	                "en": "Turn event mode off",
 	                "nl": "Zet eventmodus uit"
@@ -957,8 +885,7 @@
                     }
                 ]
 	        },
-			{
-	            "id": "virtual_away_action_on",
+			{   "id": "virtual_away_action_on",
 	            "title": {
 	                "en": "Turn away mode on",
 	                "nl": "Zet wegmodus aan"
@@ -971,8 +898,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_away_action_off",
+	        {   "id": "virtual_away_action_off",
 	            "title": {
 	                "en": "Turn away mode off",
 	                "nl": "Zet wegmodus uit"
@@ -985,9 +911,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_holiday_action_on",
+            {   "id": "virtual_holiday_action_on",
 	            "title": {
 	                "en": "Activate holiday mode",
 	                "nl": "Zet vakantiemodus aan"
@@ -1000,8 +924,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_holiday_action_off",
+	        {   "id": "virtual_holiday_action_off",
 	            "title": {
 	                "en": "Turn holiday mode off",
 	                "nl": "Zet vakantiemodus uit"
@@ -1014,9 +937,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_sleep_action_on",
+            {   "id": "virtual_sleep_action_on",
 	            "title": {
 	                "en": "Activate sleep mode",
 	                "nl": "Zet slaapmodus aan"
@@ -1029,8 +950,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_sleep_action_off",
+	        {   "id": "virtual_sleep_action_off",
 	            "title": {
 	                "en": "Turn sleep mode off",
 	                "nl": "Zet slaapmodus uit"
@@ -1043,9 +963,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_quiet_action_on",
+            {   "id": "virtual_quiet_action_on",
 	            "title": {
 	                "en": "Activate quiet mode",
 	                "nl": "Zet stiltemodus aan"
@@ -1058,8 +976,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_quiet_action_off",
+	        {   "id": "virtual_quiet_action_off",
 	            "title": {
 	                "en": "Turn quiet mode off",
 	                "nl": "Zet stiltemodus uit"
@@ -1072,9 +989,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_light_action_on",
+            {   "id": "virtual_light_action_on",
 	            "title": {
 	                "en": "Turn virtual light on",
 	                "nl": "Doe het licht aan"
@@ -1087,8 +1002,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_light_action_off",
+	        {   "id": "virtual_light_action_off",
 	            "title": {
 	                "en": "Turn virtual light off",
 	                "nl": "Doe het licht uit"
@@ -1101,9 +1015,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_blind_action_on",
+            {   "id": "virtual_blind_action_on",
 	            "title": {
 	                "en": "Close the blinds",
 	                "nl": "Doe blindering omlaag"
@@ -1116,8 +1028,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_blind_action_off",
+	        {   "id": "virtual_blind_action_off",
 	            "title": {
 	                "en": "Open the blinds",
 	                "nl": "Doe blindering omhoog"
@@ -1130,9 +1041,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_tv_action_on",
+            {   "id": "virtual_tv_action_on",
 	            "title": {
 	                "en": "Turn TV on",
 	                "nl": "Zet TV aan"
@@ -1145,8 +1054,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_tv_action_off",
+	        {   "id": "virtual_tv_action_off",
 	            "title": {
 	                "en": "Turn TV off",
 	                "nl": "Zet TV uit"
@@ -1159,9 +1067,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_hifi_action_on",
+            {   "id": "virtual_hifi_action_on",
 	            "title": {
 	                "en": "Turn Hi-Fi on",
 	                "nl": "Zet Hi-Fi aan"
@@ -1174,8 +1080,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_hifi_action_off",
+	        {   "id": "virtual_hifi_action_off",
 	            "title": {
 	                "en": "Turn Hi-Fi off",
 	                "nl": "Zet Hi-Fi uit"
@@ -1188,9 +1093,7 @@
                     }
                 ]
 	        },
-            
-            {
-	            "id": "virtual_alarm_action_on",
+            {   "id": "virtual_alarm_action_on",
 	            "title": {
 	                "en": "Turn alarm on",
 	                "nl": "Zet alarm aan"
@@ -1203,8 +1106,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "virtual_alarm_action_off",
+	        {   "id": "virtual_alarm_action_off",
 	            "title": {
 	                "en": "Turn alarm off",
 	                "nl": "Zet alarm uit"
@@ -1217,8 +1119,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "mode_action_on",
+	        {   "id": "mode_action_on",
 	            "title": {
 	                "en": "Turn mode on",
 	                "nl": "Zet modus aan"
@@ -1231,8 +1132,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "mode_action_off",
+	        {   "id": "mode_action_off",
 	            "title": {
 	                "en": "Turn mode off",
 	                "nl": "Zet modus uit"
@@ -1245,8 +1145,7 @@
                     }
                 ]
 	        },
-	        {
-	            "id": "button_action_pushed",
+	        {   "id": "button_action_pushed",
 	            "title": {
 	                "en": "Push button",
 	                "nl": "Druk op de knop"
@@ -1259,7 +1158,6 @@
                     }
                 ]
 	        }
-	        
     	]
     },
     "drivers": [

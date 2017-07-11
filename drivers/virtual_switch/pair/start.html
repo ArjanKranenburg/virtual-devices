@@ -209,14 +209,15 @@
 			name: details.deviceName.value,
 			data: {
 				id: guid(),
+				name: details.deviceName.value,
 				version: 1,
-				icon_name: details.icon.value.split(";")[0],
+				icon: details.icon.value,
 				"class": details["class"].value,
 				capabilities: capabilities,
 			},
 			"class": details["class"].value,
 			capabilities: capabilities,
-			icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
+			icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 		}
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
@@ -240,7 +241,7 @@
  	
  	function addSelectableIcon(icon) {
  		var html = '<label class="icon inline_list">\
-	 			<input type="radio" name="icon" value="' + icon.name + ';' + icon.location + '"/>\
+	 			<input type="radio" name="icon" value="'+ icon.location + '"/>\
 	 			<div>\
 		 			<div class="icon bg" style="-webkit-mask-image: url(' + icon.location + ')"></div>\
 		 			<div class="icon_name">' + __("icon." + icon.name ) + '</div>\

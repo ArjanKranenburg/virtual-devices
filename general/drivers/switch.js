@@ -20,17 +20,10 @@ module.exports = class Switch extends Device {
 	init(devices_data, callback) {
 		super.init(devices_data, null);
 		
-	    Device.setFlowTrigger(this.config.triggers.on)
-	    Device.setFlowTrigger(this.config.triggers.off)
 	    Device.setFlowCondition(this.config.conditions.onoff);
 
-	    var actionOnConfig  = this.config.actions.on
-	    actionOnConfig.trigger = this.config.triggers.on.name
-	    Device.setFlowAction(actionOnConfig, this.updateRealtime);
-	    
-	    var actionOffConfig = this.config.actions.off
-	    actionOffConfig.trigger = this.config.triggers.off.name
-	    Device.setFlowAction(actionOffConfig, this.updateRealtime);		
+	    Device.setFlowAction(this, this.config.actions.on.name, 'setOnOff', true);
+	    Device.setFlowAction(this, this.config.actions.off.name, 'setOnOff', false);		
 
 		if (callback) {
 			callback();
@@ -63,23 +56,22 @@ module.exports = class Switch extends Device {
 	    var tokens = {"type": "device"};
 
 	    if (onoff) {
-	        console.log( "Turning on  " + switchDevice.data.id + " (" + this.config.triggers.on.name + ")");
+console.log( "Turning on  " + switchDevice.data.id + " (" + this.config.triggers.on.name + ")");
 
 	        Homey.manager('flow').triggerDevice(this.config.triggers.on.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
 	    	});
 	    } else {
-	        console.log("Turning off " + switchDevice.data.id + " (" + this.config.triggers.off.name + ")");
+console.log("Turning off " + switchDevice.data.id + " (" + this.config.triggers.off.name + ")");
 	    	
 	        Homey.manager('flow').triggerDevice(this.config.triggers.off.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
 	    	});
 	    }
 
-//console.log("Check 1");
 	    // also emit the new value to realtime
 	    // this produces Insights logs and triggers Flows
-	    this.updateRealtime( device_data, 'onoff', switchDevice.state.onoff);
+	    this.updateRealtime( device_data, 'onoff', onoff);
 	    
 	    // send the new onoff value to Homey
 	    callback( null, switchDevice.state.onoff );
@@ -102,7 +94,7 @@ module.exports = class Switch extends Device {
 	    callback( null, true );
 	}
 
-	updateRealtime(args, device, state) { /* template method */	}
+	updateRealtime(device_data, capability, newValue) { /* template method */	}
 
 	getExports() {
 		return {

@@ -4,8 +4,6 @@ const config = {
 		triggers: {
 			name: 'button_pushed',
 		},
-		logger: {
-		}
 	};
 
 const Button = require('../../general/drivers/button.js');

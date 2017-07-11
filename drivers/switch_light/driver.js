@@ -17,15 +17,13 @@ const config = {
 	actions: {
 		on: {
 			name: 'virtual_light_action_on',
-			type: 'onoff'
+			state: true
 		},
 		off: {
 			name: 'virtual_light_action_off',
-			type: 'onoff'
+			state: false
 		}
 	},
-	logger: {
-	}
 };
 const Switch = require('../../general/drivers/switch.js');
 const driver = new Switch(config);
@@ -36,9 +34,9 @@ module.exports = Object.assign(
 	{ init: (devices, callback) => driver.init(devices, callback) }
 );
 
-driver.updateRealtime = function(args, device, state) {	
-	console.log("setting realtime-state of " + device.id + " to " + state);
-    module.exports.realtime( args, device, state);
+driver.updateRealtime = function(device_data, capability, newValue) {	
+	console.log("setting realtime-state of " + device_data.id + " to " + newValue);
+    module.exports.realtime( device_data, capability, newValue);
 };
 
 

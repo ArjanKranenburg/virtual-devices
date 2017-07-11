@@ -46,7 +46,7 @@ module.exports = class Button extends Device {
 	    if( buttonDevice instanceof Error ) return callback( buttonDevice );
 
 	    var tokens = {"type": "device"};
-
+console.log("Button is pushed");
         Homey.manager('flow').triggerDevice(this.config.triggers.name, tokens, true, device_data, function (err, result) {
        		if (err) return console.error(err);
     	});

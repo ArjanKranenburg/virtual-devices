@@ -67,12 +67,14 @@ module.exports.capabilities.button = {};
 // `onoff` is the new value
 // `callback` should return the new value in the format callback( err, value )
 module.exports.capabilities.button.set = function( args, button, callback ) {
+	console.log("Light button pushed")
     var virtualButton = getSwitch( args.id );
     if( virtualButton instanceof Error ) return callback( virtualButton );
 
     var tokens = {"type": "device"};
 
     Homey.manager('flow').triggerDevice('button_light_pushed', tokens, true, args, function (err, result) {
+    	console.log("Triggering flow button_light_pushed")
    		if (err) return console.error(err);
 	});
 

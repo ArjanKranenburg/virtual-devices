@@ -18,13 +18,13 @@ module.exports = class Mode extends Device {
 
 	    Device.setFlowCondition(driverConfig.conditions.onoff);
 
-	    var actionOnConfig  = driverConfig.actions.on
-	    actionOnConfig.trigger = driverConfig.triggers.on.name
-	    Device.setFlowAction(actionOnConfig);
+//	    var actionOnConfig  = driverConfig.actions.on
+//	    actionOnConfig.trigger = driverConfig.triggers.on.name
+	    Device.setFlowAction(this, driverConfig.actions.on.name, 'set', true);
 	    
-	    var actionOffConfig = driverConfig.actions.off
-	    actionOffConfig.trigger = driverConfig.triggers.off.name
-	    Device.setFlowAction(actionOffConfig);
+//	    var actionOffConfig = driverConfig.actions.off
+//	    actionOffConfig.trigger = driverConfig.triggers.off.name
+	    Device.setFlowAction(this, driverConfig.actions.off.name, 'set', false);
 	}
 	
 	// the `pair` method is called when a user start pairing
@@ -88,10 +88,10 @@ module.exports = class Mode extends Device {
 
 	    // also emit the new value to realtime
 	    // this produces Insights logs and triggers Flows
-	    this.updateRealtime( device_data, 'onoff', modeDevice.state.onoff);
+	    this.updateRealtime( device_data, 'onoff', onoff);
 	    
 	    // send the new onoff value to Homey
-	    callback( null, modeDevice.state.onoff );
+	    callback( null, onoff );
 	}
 
 	updateRealtime(args, device, state) { /* template method */	}
