@@ -6,7 +6,7 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
 
 ## What works:
 
-* Devices:
+Devices:
   * Switch
   * Alarm
   * Blinds
@@ -14,7 +14,8 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
   * Light
   * Security
   * TV
-* Modes
+
+Modes:
   * Holiday
   * Away
   * Party

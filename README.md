@@ -6,15 +6,16 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
 
 ## What works:
 
-* Devices:
+Devices:
   * Switch
+  * Light
   * Alarm
   * Blinds
   * Hifi
-  * Light
-  * Security
   * TV
-* Modes
+  * Button
+
+Modes:
   * Holiday
   * Away
   * Party
@@ -24,6 +25,7 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
   * Sleep
   * Relax
   * Manual
+  * Secure
 
 
 * Trigger a flow
@@ -39,6 +41,11 @@ I'm very interested to hear your ideas for other virtual devices.
 
 
 ## Release history
+
+### 0.5.0
+* Major re-factoring to keep the app lean. maintainable and to prepare for future updates
+* The class, capabilities, and icon can now be selected when creating the virtual device
+* <b>Unfortunately old devices must be added again (they will stop working in the next release)</b>
 
 ### 0.4.0
 * Added Buttons
