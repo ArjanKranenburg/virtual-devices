@@ -9,7 +9,7 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.5.0",
+    "version": "0.5.1",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
@@ -33,6 +33,19 @@
 	"category": "tools",
     "flow": {
         "triggers": [
+			{   "id": "press",
+                "title": {
+                    "en": "Pressed/changed",
+                    "nl": "Pressed/changed"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=virtual_switch"
+                    }
+                ]
+            },
 			{   "id": "virtual_security_on",
                 "title": {
                     "en": "Security is armed",
