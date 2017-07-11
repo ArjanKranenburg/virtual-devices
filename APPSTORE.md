@@ -7,24 +7,24 @@ Or you can add a mode and add it as a condition, e.g. to dissable multiple flows
 ## What works:
 
 Devices:
-  * Switch
-  * Alarm
-  * Blinds
-  * Hifi
-  * Light
-  * Security
-  * TV
+* Switch
+* Alarm
+* Blinds
+* Hifi
+* Light
+* Security
+* TV
 
 Modes:
-  * Holiday
-  * Away
-  * Party
-  * Event
-  * Quiet
-  * Movie
-  * Sleep
-  * Relax
-  * Manual
+* Holiday
+* Away
+* Party
+* Event
+* Quiet
+* Movie
+* Sleep
+* Relax
+* Manual
   
 
 * Trigger a flow
