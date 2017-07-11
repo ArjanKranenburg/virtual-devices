@@ -35,8 +35,8 @@
         "triggers": [
 			{   "id": "press",
                 "title": {
-                    "en": "Pressed/changed",
-                    "nl": "Pressed/changed"
+                    "en": "Pressed / changed",
+                    "nl": "Ingedrukt / veranderd"
                 },
                 "args": [
                     {
