@@ -43,7 +43,7 @@ I'm very interested to hear your ideas for other virtual devices.
 ## Release history
 
 ### 0.5.0
-* Major re-factoring to keep the app lean. maintainable and to prepare for future updates
+* Major re-factoring to keep the app lean, maintainable, and to prepare for future updates
 * The class, capabilities, and icon can now be selected when creating the virtual device
 * <b>Unfortunately old devices must be added again (they will stop working in the next release)</b>
 
