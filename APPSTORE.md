@@ -44,6 +44,6 @@ If you like this app, you can buy me a (virtual) beer, but no sweat if you don't
 [![Paypal donate][pp-donate-image]][pp-donate-link]
 
 
-[pp-donate-link]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A4APP2SSQRFGJ&lc=GB&item_name=Arjan%20Kranenburg&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+[pp-donate-link]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A4APP2SSQRFGJ&lc=NL&item_name=Virtual%20Devices&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 [pp-donate-image]: https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
 
