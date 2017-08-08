@@ -60,7 +60,7 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
     callback( null, switchDevice.state.onoff );
 }
 
-// this function is called by Homey when it wants to SET the partyes state, e.g. when the user presses the button on
+// this function is called by Homey when it wants to SET the state, e.g. when the user presses the button on
 // the smartphone
 // `device_data` is the object as saved during pairing
 // `onoff` is the new value
