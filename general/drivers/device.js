@@ -77,6 +77,23 @@ module.exports = class Device {
 		});
 	}
 
+	static setState( id, value ) {
+	    var switchDevice = Device.getDevice( id );
+	    if( switchDevice instanceof Error ) return callback( switchDevice );
+
+	    switchDevice.state.onoff = value;
+	    Homey.manager('settings').set(`${id}:state`, value);
+	}
+
+	static getState( id ) {
+		var state = false
+		let setState = 	Homey.manager('settings').get(`${id}:state`);
+		if ( setState ) { 
+			state = setState
+		}
+		return state
+	}
+
 	//a helper method to get a party from the devices list by it's id
 	static getDevice( device_id ) {
 	    var device = devices[ device_id ];

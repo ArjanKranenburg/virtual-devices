@@ -57,7 +57,7 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
     if( switchDevice instanceof Error ) return callback( switchDevice );
 
     // send the state value to Homey
-    callback( null, switchDevice.state.onoff );
+    callback( null, Device.getState( device_data.id ) );
 }
 
 // this function is called by Homey when it wants to SET the state, e.g. when the user presses the button on
@@ -66,17 +66,15 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
 // `onoff` is the new value
 // `callback` should return the new value in the format callback( err, value )
 module.exports.capabilities.onoff.set = function( device_data, onoff, callback ) {
-    var switchDevice = Device.getDevice( device_data.id );
-    if( switchDevice instanceof Error ) return callback( switchDevice );
 
-    switchDevice.state.onoff = onoff;
+	Device.setState( device_data.id, onoff );
 
     // also emit the new value to realtime
     // this produces Insights logs and triggers Flows
     module.exports.realtime( device_data, 'onoff', onoff);
     
     // send the new onoff value to Homey
-    callback( null, switchDevice.state.onoff );
+    callback( null, onoff );
 }
 
 module.exports.capabilities.button.set = function( device_data, onoff, callback ) {
