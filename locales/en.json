@@ -30,7 +30,7 @@
 	"capability": {
 		"onoff": "On / Off",
 		"button": "Button",
-		"windowcoverings_state": "Up / Stop / Down"
+		"windowcoverings_state": "Up / Idle / Down"
 	},
 	"icon": {
 		"light": "Light",
