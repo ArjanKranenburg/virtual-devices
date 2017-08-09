@@ -42,6 +42,9 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.5.3
+* Adds Virtual Sunscreen device (Up / stop / down)
+
 ### 0.5.2
 * Make states persistent over reboots
 

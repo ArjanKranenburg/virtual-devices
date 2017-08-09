@@ -81,7 +81,7 @@
 </form>	
 
 <script>
-	var SUPPORTED_CAPABILITIES = ["onoff", "button"];
+	var SUPPORTED_CAPABILITIES = ["onoff", "button", "windowcoverings_state"];
 	var SUPPORTED_CLASSES = {
 			"socket": {
 				"capabilities": [
@@ -117,7 +117,8 @@
 			},
 			"windowcoverings": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"windowcoverings_state"
 				],
 				"defaultCapabilities": [
 					"onoff"

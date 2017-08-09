@@ -28,8 +28,9 @@
 		"button": "Button"
 	},
 	"capability": {
-		"onoff": "Aan / uit",
-		"button": "Knop"
+		"onoff": "On / Off",
+		"button": "Button",
+		"windowcoverings_state": "Up / Stop / Down"
 	},
 	"icon": {
 		"light": "Light",

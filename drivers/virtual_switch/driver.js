@@ -17,7 +17,8 @@ module.exports = {
 		renamed: (device_data, new_name) => driver.renamed(device_data, new_name),
 		capabilities: {
 			onoff: {},
-			button: {}
+			button: {},
+			windowcoverings_state: {}
 		}
 	}
 
