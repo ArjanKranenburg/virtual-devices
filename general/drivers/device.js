@@ -79,13 +79,18 @@ module.exports = class Device {
 
 	static setState( id, value ) {
 	    var switchDevice = Device.getDevice( id );
-	    if( switchDevice instanceof Error ) return callback( switchDevice );
+	    if( switchDevice instanceof Error ) return switchDevice;
 
 	    switchDevice.state.onoff = value;
 	    Homey.manager('settings').set(`${id}:state`, value);
+	    
+	    return switchDevice
 	}
 
 	static getState( id ) {
+		var switchDevice = Device.getDevice( id );
+		if( switchDevice instanceof Error ) return false;
+
 		var state = false
 		let setState = 	Homey.manager('settings').get(`${id}:state`);
 		if ( setState ) { 

@@ -65,11 +65,10 @@ module.exports = class Mode extends Device {
 	// `onoff` is the new value
 	// `callback` should return the new value in the format callback( err, value )
 	set( device_data, onoff, callback ) {
-	    var modeDevice = Device.getDevice( device_data.id );
+	    var modeDevice = Device.setState( device_data.id, onoff );
 	    if( modeDevice instanceof Error ) return callback( modeDevice );
 
 	    modeDevice.state.onoff = onoff;
-		Device.setState( device_data.id, onoff );
 
 		var state = modeDevice.state;
 	    var tokens = {"type": "device"};

@@ -68,7 +68,8 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
 // `callback` should return the new value in the format callback( err, value )
 module.exports.capabilities.onoff.set = function( device_data, onoff, callback ) {
 
-	Device.setState( device_data.id, onoff );
+	var switchDevice = Device.setState( device_data.id, onoff );
+	if ( switchDevice instanceof Error ) return callback( switchDevice );
 
     // also emit the new value to realtime
     // this produces Insights logs and triggers Flows
@@ -77,6 +78,37 @@ module.exports.capabilities.onoff.set = function( device_data, onoff, callback )
     // send the new onoff value to Homey
     callback( null, onoff );
 }
+
+//this function is called by Homey when it wants to GET the state, e.g. when the user loads the smartphone interface
+//`device_data` is the object as saved during pairing
+//`callback` should return the current value in the format callback( err, value )
+module.exports.capabilities.windowcoverings_state.get = function(device_data, callback) {
+
+	var switchDevice = Device.getDevice( device_data.id );
+	if( switchDevice instanceof Error ) return callback( switchDevice );
+
+	// send the state value to Homey
+	callback( null, Device.getState( device_data.id ) );
+}
+
+//this function is called by Homey when it wants to SET the state, e.g. when the user presses the button on
+//the smartphone
+//`device_data` is the object as saved during pairing
+//`onoff` is the new value
+//`callback` should return the new value in the format callback( err, value )
+module.exports.capabilities.windowcoverings_state.set = function( device_data, state, callback ) {
+
+	var switchDevice = Device.setState( device_data.id, state );
+	if ( switchDevice instanceof Error ) return callback( switchDevice );
+
+	// also emit the new value to realtime
+	// this produces Insights logs and triggers Flows
+	module.exports.realtime( device_data, 'windowcoverings_state', state);
+	 
+	// send the new state value to Homey
+	callback( null, state );
+}
+
 
 module.exports.capabilities.button.set = function( device_data, onoff, callback ) {
     var buttonDevice = Device.getDevice( device_data.id );
