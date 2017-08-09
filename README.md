@@ -42,6 +42,12 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.5.2
+* Make states persistent over reboots
+
+### 0.5.1
+* Fix issue with action card for buttons
+
 ### 0.5.0
 * Major re-factoring to keep the app lean, maintainable, and to prepare for future updates
 * The class, capabilities, and icon can now be selected when creating the virtual device
