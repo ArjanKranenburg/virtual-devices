@@ -56,7 +56,7 @@ module.exports = class Mode extends Device {
 	    if( modeDevice instanceof Error ) return callback( modeDevice );
 
 	    // send the state value to Homey
-	    callback( null, Device.getState( device_data.id ) );
+	    callback( null, modeDevice.state );
 	}
 
 	// this function is called by Homey when it wants to SET the partyes state, e.g. when the user presses the button on
@@ -65,10 +65,8 @@ module.exports = class Mode extends Device {
 	// `onoff` is the new value
 	// `callback` should return the new value in the format callback( err, value )
 	set( device_data, onoff, callback ) {
-	    var modeDevice = Device.setState( device_data.id, onoff );
+	    var modeDevice = Device.setState( device_data.id, 'onoff', onoff );
 	    if( modeDevice instanceof Error ) return callback( modeDevice );
-
-	    modeDevice.state.onoff = onoff;
 
 		var state = modeDevice.state;
 	    var tokens = {"type": "device"};

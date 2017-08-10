@@ -58,7 +58,7 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
     if( switchDevice instanceof Error ) return callback( switchDevice );
 
     // send the state value to Homey
-    callback( null, Device.getState( device_data.id ) );
+    callback( null, switchDevice.state );
 }
 
 // this function is called by Homey when it wants to SET the state, e.g. when the user presses the button on
@@ -68,8 +68,9 @@ module.exports.capabilities.onoff.get = function(device_data, callback) {
 // `callback` should return the new value in the format callback( err, value )
 module.exports.capabilities.onoff.set = function( device_data, onoff, callback ) {
 
-	var switchDevice = Device.setState( device_data.id, onoff );
+	var switchDevice = Device.setState( device_data.id, 'onoff', onoff );
 	if ( switchDevice instanceof Error ) return callback( switchDevice );
+//	console.log("Setting " + switchDevice.data.name + " onoff-state to " + onoff)
 
     // also emit the new value to realtime
     // this produces Insights logs and triggers Flows
@@ -88,7 +89,7 @@ module.exports.capabilities.windowcoverings_state.get = function(device_data, ca
 	if( switchDevice instanceof Error ) return callback( switchDevice );
 
 	// send the state value to Homey
-	callback( null, Device.getState( device_data.id ) );
+	callback( null, switchDevice.state );
 }
 
 //this function is called by Homey when it wants to SET the state, e.g. when the user presses the button on
@@ -98,7 +99,7 @@ module.exports.capabilities.windowcoverings_state.get = function(device_data, ca
 //`callback` should return the new value in the format callback( err, value )
 module.exports.capabilities.windowcoverings_state.set = function( device_data, state, callback ) {
 
-	var switchDevice = Device.setState( device_data.id, state );
+	var switchDevice = Device.setState( device_data.id, 'windowcoverings_state', state );
 	if ( switchDevice instanceof Error ) return callback( switchDevice );
 
 	// also emit the new value to realtime

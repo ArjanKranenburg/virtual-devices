@@ -77,26 +77,18 @@ module.exports = class Device {
 		});
 	}
 
-	static setState( id, value ) {
+	static setState( id, capability, value ) {
 	    var switchDevice = Device.getDevice( id );
 	    if( switchDevice instanceof Error ) return switchDevice;
 
-	    switchDevice.state.onoff = value;
-	    Homey.manager('settings').set(`${id}:state`, value);
+		if ( typeof switchDevice.state !== 'object' ) {
+			switchDevice.state = {}
+		}
+	    switchDevice.state[capability] = value;
+
+	    Homey.manager('settings').set(`${id}:state`, switchDevice.state);
 	    
 	    return switchDevice
-	}
-
-	static getState( id ) {
-		var switchDevice = Device.getDevice( id );
-		if( switchDevice instanceof Error ) return false;
-
-		var state = false
-		let setState = 	Homey.manager('settings').get(`${id}:state`);
-		if ( setState ) { 
-			state = setState
-		}
-		return state
 	}
 
 	//a helper method to get a party from the devices list by it's id
@@ -104,9 +96,12 @@ module.exports = class Device {
 	    var device = devices[ device_id ];
 	    if( typeof device === 'undefined' ) {
 	        return new Error("Could not find Virtual Device " + device_id);
-	    } else {
-	        return device;
 	    }
+
+	    var state = getState( device_id );
+	    device.state = state;
+
+	    return device;
 	}
 
 	static guid() {
@@ -117,10 +112,29 @@ module.exports = class Device {
 	}
 }
 
+function getState( id ) {
+	let state = Homey.manager('settings').get(`${id}:state`);
+	if ( typeof state !== 'undefined' ) { 
+		return state
+	}
+	return false
+}
+
 //a helper method to add a party to the devices list
 function initDevice( device_data ) {
-	console.log("Device initialized = " + JSON.stringify(device_data));
+//	console.log("Device initialized = " + JSON.stringify(device_data));
     devices[ device_data.id ] = {};
-    devices[ device_data.id ].state = { onoff: false };
     devices[ device_data.id ].data = device_data;
+	devices[ device_data.id ].state = {}
+    
+    var capabilities = device_data.capabilities;
+    if (typeof capabilities === 'undefined' ) {
+    	return
+    }
+    
+    capabilities.forEach(function(capabilities){
+    	devices[ device_data.id ].state[capabilities] = false
+    })
+
+    console.log( "Device initialized " + JSON.stringify(devices[ device_data.id ]) );
 }
