@@ -43,10 +43,11 @@ I'm very interested to hear your ideas for other virtual devices.
 ## Release history
 
 ### 0.5.3
-* Adds Virtual Sunscreen device (Up / idle / down)
+* Adds Virtual Sunscreen device (Up / idle / down) (issue #4)
+* Fix triggering of the 'pressed' trigger-card (issue #7)
 
 ### 0.5.2
-* Make states persistent over reboots
+* Make states persistent over reboots (issue #8)
 
 ### 0.5.1
 * Fix issue with action card for buttons

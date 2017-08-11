@@ -33,8 +33,9 @@ Modes:
 
 ## What doesn't:
 
-* Blinds can go on/off, not yet up, stop, down
 * Other devices, like a Dimmer, etc.
+* Settings that disable cascading flows (issue #5)
+* Settings (or other) that makes some modes mutually exclusive (issue #3)
 
 I'm very interested to hear your ideas for other virtual devices. 
 
