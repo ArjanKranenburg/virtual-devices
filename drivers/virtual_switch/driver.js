@@ -75,7 +75,13 @@ module.exports.capabilities.onoff.set = function( device_data, onoff, callback )
     // also emit the new value to realtime
     // this produces Insights logs and triggers Flows
     module.exports.realtime( device_data, 'onoff', onoff);
-    
+
+	var state = switchDevice.state;
+    var tokens = {"type": "device"};
+    Homey.manager('flow').triggerDevice('press', tokens, state, device_data, function (err, result) {
+   		if (err) return console.error(err);
+	});
+
     // send the new onoff value to Homey
     callback( null, onoff );
 }
