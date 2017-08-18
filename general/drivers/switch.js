@@ -48,7 +48,8 @@ module.exports = class Switch extends Device {
 	// `onoff` is the new value
 	// `callback` should return the new value in the format callback( err, value )
 	setOnOff( device_data, onoff, callback ) {
-	    var switchDevice = Device.getDevice( device_data.id );
+
+		var switchDevice = Device.setState( device_data.id, 'onoff', onoff );
 	    if( switchDevice instanceof Error ) return callback( switchDevice );
 
 	    switchDevice.state.onoff = onoff;
@@ -56,13 +57,13 @@ module.exports = class Switch extends Device {
 	    var tokens = {"type": "device"};
 
 	    if (onoff) {
-console.log( "Turning on  " + switchDevice.data.id + " (" + this.config.triggers.on.name + ")");
+//console.log( "Turning on  " + switchDevice.data.id + " (" + this.config.triggers.on.name + ")");
 
 	        Homey.manager('flow').triggerDevice(this.config.triggers.on.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);
 	    	});
 	    } else {
-console.log("Turning off " + switchDevice.data.id + " (" + this.config.triggers.off.name + ")");
+//console.log("Turning off " + switchDevice.data.id + " (" + this.config.triggers.off.name + ")");
 	    	
 	        Homey.manager('flow').triggerDevice(this.config.triggers.off.name, tokens, state, device_data, function (err, result) {
 	       		if (err) return console.error(err);

@@ -1,35 +1,16 @@
 # Virtual Devices
 
-This app gives you the opportunity to add Virtual Devices to Homey that can be operated from the UI Interface and that can trigger flows.
+This app gives you the opportunity to add Virtual Devices to Homey. You can operate the Virtual Devices from the UI and/or use them in flows.
 
-Or you can add a mode and add it as a condition, e.g. to dissable multiple flows when going on Holiday. 
+Or you can add a mode and add it as a condition, e.g. to disable multiple flows when going on Holiday. 
 
 ## What works:
 
-Devices:
-* Switch
-* Alarm
-* Blinds
-* Hifi
-* Light
-* Security
-* TV
-
-Modes:
-* Holiday
-* Away
-* Party
-* Event
-* Quiet
-* Movie
-* Sleep
-* Relax
-* Manual
-  
-
+* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV
+* Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual
 * Trigger a flow
-* Use the switch' status as a condition
-* Use the switch in the 'then'-column
+* Use the status as a condition
+* Use the virtual device in the 'then'-column
 
 ## What doesn't:
 
