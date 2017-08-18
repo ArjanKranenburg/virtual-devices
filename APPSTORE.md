@@ -20,7 +20,14 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 
 I'm very interested to hear your ideas for other virtual devices. 
 
-## If you like this app
+## Feature Requests and Bugs
+
+Any help to improve this App is highly appreciated. Requests for new Features can be done on github:
+[https://github.com/ArjanKranenburg/virtual-devices/issues](https://github.com/ArjanKranenburg/virtual-devices/issues)
+
+Bugs can be reported there as well.
+
+## If you like this App
 
 If you like this app, you can buy me a (virtual) beer, but no sweat if you don't.
 [![Paypal donate][pp-donate-image]][pp-donate-link]
