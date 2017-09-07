@@ -1,5 +1,8 @@
 {
     "id": "com.arjankranenburg.virtual",
+    "version": "0.5.4",
+    "compatibility": "1.x >=1.5.0",
+    "sdk": 2,
     "description": "Virtual Devices to trigger your flows from the GUI.",
     "name": {
         "en": "Virtual Devices",
@@ -9,8 +12,6 @@
 		"en": [ "virtual device" ],
 		"nl": [ "Virtuele Apparaten" ]
 	},
-    "version": "0.5.4",
-    "compatibility": "0.x || 1.x",
     "author": {
         "name": "Arjan Kranenburg",
         "email": "arjan.kranenburg@gmail.com"

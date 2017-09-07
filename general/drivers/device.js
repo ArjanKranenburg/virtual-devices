@@ -1,17 +1,24 @@
-"use strict";
+'use strict';
 
-// a list of devices, with their 'id' as key
-// it is generally advisable to keep a list of
-// paired and active devices in your driver's memory.
+const Homey = require('homey');
+
+
+//a list of devices, with their 'id' as key
+//it is generally advisable to keep a list of
+//paired and active devices in your driver's memory.
 var devices = {};
 
-module.exports = class Device {
+class Device extends Homey.Driver {
 	constructor(driverConfig) {
 		if (!driverConfig) {
 			throw new Error('No deviceconfig found in constructor. Make sure you pass config to super call!');
 		}
 
 		this.config = driverConfig;
+	}
+
+	onInit(){
+		
 	}
 	
 	init(connectedDevices, callback) {
@@ -111,6 +118,8 @@ module.exports = class Device {
 		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 	}
 }
+
+module.exports = Device;
 
 function getState( id ) {
 	let state = Homey.manager('settings').get(`${id}:state`);
