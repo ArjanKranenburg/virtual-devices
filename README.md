@@ -27,11 +27,10 @@ I'm very interested to hear your ideas for other virtual devices.
 * Fix crash-report: "Cannot assign to read only property 'onoff' of false" (issue #12)
 
 ### 0.5.3
-* Adds Virtual Sunscreen device (Up / idle / down) (issue #4)
-* Fix triggering of the 'pressed' trigger-card (issue #7)
+* Adds Virtual Sunscreen device (Up / idle / down)
 
 ### 0.5.2
-* Make states persistent over reboots (issue #8)
+* Make states persistent over reboots
 
 ### 0.5.1
 * Fix issue with action card for buttons

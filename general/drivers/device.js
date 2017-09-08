@@ -138,18 +138,12 @@ function initDevice( device_data ) {
     
     var capabilities = device_data.capabilities;
     if (typeof capabilities === 'undefined' ) {
-    	return;
+    	return
     }
-    var state = getState( device_data.id );
-	if ( typeof state === 'object' ) { 
-		devices[ device_data.id ].state = state;
-//	    console.log( "Device initialized (1)" + JSON.stringify(devices[ device_data.id ]) );
-		return;
-	}
     
     capabilities.forEach(function(capabilities){
     	devices[ device_data.id ].state[capabilities] = false
     })
 
-//    console.log( "Device initialized " + JSON.stringify(devices[ device_data.id ]) );
+    console.log( "Device initialized " + JSON.stringify(devices[ device_data.id ]) );
 }
