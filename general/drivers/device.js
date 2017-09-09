@@ -1,24 +1,17 @@
-'use strict';
+"use strict";
 
-const Homey = require('homey');
-
-
-//a list of devices, with their 'id' as key
-//it is generally advisable to keep a list of
-//paired and active devices in your driver's memory.
+// a list of devices, with their 'id' as key
+// it is generally advisable to keep a list of
+// paired and active devices in your driver's memory.
 var devices = {};
 
-class Device extends Homey.Driver {
+module.exports = class Device {
 	constructor(driverConfig) {
 		if (!driverConfig) {
 			throw new Error('No deviceconfig found in constructor. Make sure you pass config to super call!');
 		}
 
 		this.config = driverConfig;
-	}
-
-	onInit(){
-		
 	}
 	
 	init(connectedDevices, callback) {
@@ -119,8 +112,6 @@ class Device extends Homey.Driver {
 	}
 }
 
-module.exports = Device;
-
 function getState( id ) {
 	let state = Homey.manager('settings').get(`${id}:state`);
 	if ( typeof state !== 'undefined' ) { 
@@ -138,12 +129,18 @@ function initDevice( device_data ) {
     
     var capabilities = device_data.capabilities;
     if (typeof capabilities === 'undefined' ) {
-    	return
+    	return;
     }
+    var state = getState( device_data.id );
+	if ( typeof state === 'object' ) { 
+		devices[ device_data.id ].state = state;
+//	    console.log( "Device initialized (1)" + JSON.stringify(devices[ device_data.id ]) );
+		return;
+	}
     
     capabilities.forEach(function(capabilities){
     	devices[ device_data.id ].state[capabilities] = false
     })
 
-    console.log( "Device initialized " + JSON.stringify(devices[ device_data.id ]) );
+//    console.log( "Device initialized " + JSON.stringify(devices[ device_data.id ]) );
 }

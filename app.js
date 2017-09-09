@@ -1,9 +1,14 @@
 "use strict";
 
-function init() {
+const Homey = require('homey');
 
-	Homey.log("Installing Virtual Devices");
+class VirtualDevices extends Homey.App {
+
+	onInit() {
+
+		this.log('Virtual Devices App is initialized');
+	}
 
 }
 
-module.exports.init = init;
+module.exports = VirtualDevices;

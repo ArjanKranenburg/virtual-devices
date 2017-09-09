@@ -1,42 +1,18 @@
 'use strict';
 
-const config = {
-	triggers: {
-		on: {
-			name: 'mode_on',
-		},
-		off: {
-			name: 'mode_off',
-		}
-	},
-	conditions: {
-		onoff: {
-			name: 'mode',
-		}
-	},
-	actions: {
-		on: {
-			name: 'mode_action_on',
-			type: 'onoff'
-		},
-		off: {
-			name: 'mode_action_off',
-			type: 'onoff'
-		}
-	},
-};
+const Homey = require('homey');
 
-const Device = require('../../general/drivers/device.js');
-const Mode   = require('../../general/drivers/mode.js');
-const driver = new Mode(config);
+class ModeDriver extends Homey.Driver {
+  onInit() {
+		this.log('Initialized driver for Modes');
+		var devices = this.getDevices();
+		for (var i=0; i < devices.length; i++) {
+				this.log('name: ' + devices[i].getName());
+		}
+	}
 
-module.exports = Object.assign(
-	{},
-	driver.getExports(), 
-	{ init: (devices, callback) => driver.init(devices, callback) }
-);
+  onPair( socket ) {
 
-module.exports.pair = function( socket ) {
     socket.on('log', function( msg, callback ) {
         console.log(msg);
         callback( null, "ok" );
@@ -46,7 +22,7 @@ module.exports.pair = function( socket ) {
         console.log("Adding new device");
 
         var device_data = [
-	        getIconNameAndLocation('mode'),
+					getIconNameAndLocation('mode'),
 	        getIconNameAndLocation('away'),
 	        getIconNameAndLocation('event'),
 	        getIconNameAndLocation('holiday'),
@@ -65,12 +41,54 @@ module.exports.pair = function( socket ) {
     socket.on('disconnect', function(){
         console.log("User aborted pairing, or pairing is finished");
     })
-};
+  }
+}
 
-driver.updateRealtime = function(args, device, state) {		
-    module.exports.realtime( args, device, state);
-};
 
+module.exports = ModeDriver;
+
+//
+// const config = {
+// 	triggers: {
+// 		on: {
+// 			name: 'mode_on',
+// 		},
+// 		off: {
+// 			name: 'mode_off',
+// 		}
+// 	},
+// 	conditions: {
+// 		onoff: {
+// 			name: 'mode',
+// 		}
+// 	},
+// 	actions: {
+// 		on: {
+// 			name: 'mode_action_on',
+// 			type: 'onoff'
+// 		},
+// 		off: {
+// 			name: 'mode_action_off',
+// 			type: 'onoff'
+// 		}
+// 	},
+// };
+//
+// const Device = require('../../general/drivers/device.js');
+// const Mode   = require('../../general/drivers/mode.js');
+// const driver = new Mode(config);
+//
+// module.exports = Object.assign(
+// 	{},
+// 	driver.getExports(),
+// 	{ init: (devices, callback) => driver.init(devices, callback) }
+// );
+//
+//
+// driver.updateRealtime = function(args, device, state) {
+//     module.exports.realtime( args, device, state);
+// };
+//
 function getIconNameAndLocation( name ) {
 	return {
 		"name": name,
