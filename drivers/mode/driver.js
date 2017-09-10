@@ -5,17 +5,36 @@ const Homey = require('homey');
 class ModeDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Modes');
-		var devices = this.getDevices();
-		for (var i=0; i < devices.length; i++) {
-				this.log('name: ' + devices[i].getName());
-		}
+
+    // let modeOnTrigger = new Homey.FlowCardTriggerDevice('mode_on');
+    // modeOnTrigger.register()
+    //   .registerRunListener(( args, state ) => {
+    //
+    //         console.log(args); // { 'location': 'New York' }, this is the user input
+    //         console.log(state); // { 'location': 'Amsterdam' }, this is the state parameter, as passed in trigger()
+    //         this.log(args); // { 'location': 'New York' }, this is the user input
+    //         this.log(state); // { 'location': 'Amsterdam' }, this is the state parameter, as passed in trigger()
+    //
+    //         // If true, this flow should run
+    //         return Promise.resolve( true );
+    //
+    //     })
+
+    // let modeOnTriggerDevice = new Homey.FlowCardTriggerDevice('mode_on')
+    //     .register()
+    //     .trigger( device, tokens, state )
+    //         .then( this.log )
+    //         .catch( this.error )
+    //
+
+
 	}
 
   onPair( socket ) {
 
     socket.on('log', function( msg, callback ) {
         console.log(msg);
-        callback( null, "ok" );
+        callback( null, 'ok' );
     });
 
     socket.on('getIcons', function( data, callback ) {
@@ -47,48 +66,6 @@ class ModeDriver extends Homey.Driver {
 
 module.exports = ModeDriver;
 
-//
-// const config = {
-// 	triggers: {
-// 		on: {
-// 			name: 'mode_on',
-// 		},
-// 		off: {
-// 			name: 'mode_off',
-// 		}
-// 	},
-// 	conditions: {
-// 		onoff: {
-// 			name: 'mode',
-// 		}
-// 	},
-// 	actions: {
-// 		on: {
-// 			name: 'mode_action_on',
-// 			type: 'onoff'
-// 		},
-// 		off: {
-// 			name: 'mode_action_off',
-// 			type: 'onoff'
-// 		}
-// 	},
-// };
-//
-// const Device = require('../../general/drivers/device.js');
-// const Mode   = require('../../general/drivers/mode.js');
-// const driver = new Mode(config);
-//
-// module.exports = Object.assign(
-// 	{},
-// 	driver.getExports(),
-// 	{ init: (devices, callback) => driver.init(devices, callback) }
-// );
-//
-//
-// driver.updateRealtime = function(args, device, state) {
-//     module.exports.realtime( args, device, state);
-// };
-//
 function getIconNameAndLocation( name ) {
 	return {
 		"name": name,

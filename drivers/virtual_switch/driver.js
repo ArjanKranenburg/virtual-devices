@@ -5,7 +5,6 @@ const Homey = require('homey');
 class VirtualDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Virtual Devices');
-		// console.log(util.inspect(this.getDevices()));
 	}
 
   onPair( socket ) {
