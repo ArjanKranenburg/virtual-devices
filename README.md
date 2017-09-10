@@ -2,7 +2,7 @@
 
 This app gives you the opportunity to add Virtual Devices to Homey. You can operate the Virtual Devices from the UI and/or use them in flows.
 
-Or you can add a mode and add it as a condition, e.g. to disable multiple flows when going on Holiday. 
+Or you can add a mode and add it as a condition, e.g. to disable multiple flows when going on Holiday.
 
 ## What works:
 
@@ -18,10 +18,14 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 * Settings that disable cascading flows (issue #5)
 * Settings (or other) that makes some modes mutually exclusive (issue #3)
 
-I'm very interested to hear your ideas for other virtual devices. 
+I'm very interested to hear your ideas for other virtual devices.
 
 
 ## Release history
+
+### 0.6.0
+* Rewrite for SDK2
+* Removal of Obsolete Devices
 
 ### 0.5.4
 * Fix crash-report: "Cannot assign to read only property 'onoff' of false" (issue #12)
