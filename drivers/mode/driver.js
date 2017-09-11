@@ -3,31 +3,62 @@
 const Homey = require('homey');
 
 class ModeDriver extends Homey.Driver {
+
   onInit() {
 		this.log('Initialized driver for Modes');
 
-    // let modeOnTrigger = new Homey.FlowCardTriggerDevice('mode_on');
-    // modeOnTrigger.register()
-    //   .registerRunListener(( args, state ) => {
-    //
-    //         console.log(args); // { 'location': 'New York' }, this is the user input
-    //         console.log(state); // { 'location': 'Amsterdam' }, this is the state parameter, as passed in trigger()
-    //         this.log(args); // { 'location': 'New York' }, this is the user input
-    //         this.log(state); // { 'location': 'Amsterdam' }, this is the state parameter, as passed in trigger()
-    //
-    //         // If true, this flow should run
-    //         return Promise.resolve( true );
-    //
-    //     })
+    let triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on');
+    triggerDeviceOn.register();
+    let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
+    triggerDeviceOff.register();
 
-    // let modeOnTriggerDevice = new Homey.FlowCardTriggerDevice('mode_on')
-    //     .register()
-    //     .trigger( device, tokens, state )
-    //         .then( this.log )
-    //         .catch( this.error )
-    //
+    let modeCondition = new Homey.FlowCardCondition('mode');
+    modeCondition
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> Condition checked');
 
+        if (device.getState().onoff) {
+          return Promise.resolve( true );
+        } else {
+          return Promise.resolve( false );
+        }
+      })
 
+    let modeActionOn = new Homey.FlowCardAction('mode_action_on');
+    modeActionOn
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> Action on requested');
+
+        args.device.setCapabilityValue('onoff', true);
+
+        // setCapability does not trigger the device-card
+        triggerDeviceOn.trigger( device, {}, {'onoff': true} )
+          .then( device.log )
+          .catch( device.error )
+
+        return Promise.resolve( true );
+      })
+
+    let modeActionOff = new Homey.FlowCardAction('mode_action_off');
+    modeActionOff
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> Action off requested');
+
+        args.device.setCapabilityValue('onoff', false);
+
+        // setCapability does not trigger the device-card
+        triggerDeviceOff.trigger( device, {}, {'onoff': false} )
+          .then( device.log )
+          .catch( device.error )
+
+        return Promise.resolve( false );
+      })
 	}
 
   onPair( socket ) {
@@ -38,7 +69,7 @@ class ModeDriver extends Homey.Driver {
     });
 
     socket.on('getIcons', function( data, callback ) {
-        console.log("Adding new device");
+        console.log('Adding new device');
 
         var device_data = [
 					getIconNameAndLocation('mode'),
@@ -58,17 +89,16 @@ class ModeDriver extends Homey.Driver {
     });
 
     socket.on('disconnect', function(){
-        console.log("User aborted pairing, or pairing is finished");
+        console.log('User aborted pairing, or pairing is finished');
     })
   }
 }
-
 
 module.exports = ModeDriver;
 
 function getIconNameAndLocation( name ) {
 	return {
-		"name": name,
-		"location": "../assets/" + name + ".svg"
+		'name': name,
+		'location': '../assets/' + name + '.svg'
 	}
 }

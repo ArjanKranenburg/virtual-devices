@@ -127,20 +127,6 @@
             "filter": "driver_id=mode"
           }
         ]
-      },
-      {
-        "id": "button_action_pushed",
-        "title": {
-          "en": "Push button",
-          "nl": "Druk op de knop"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=button"
-          }
-        ]
       }
     ]
   },

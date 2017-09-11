@@ -11,13 +11,13 @@ class VirtualDevice extends Homey.Device {
   onInit() {
     this.log('Virtual Device initialized');
 
-		this.log('name:        ', this.getName());
-    this.log('id:          ', this.getData().id);
-    this.log('version:     ', this.getData().version);
-    this.log('icon:        ', this.getData().icon);
-    this.log('class:       ', this.getClass());
-    this.log('capabilities:', JSON.stringify(this.getCapabilities()));
-    this.log('state:       ', this.getState());
+		// this.log('name:        ', this.getName());
+    // this.log('id:          ', this.getData().id);
+    // this.log('version:     ', this.getData().version);
+    // this.log('icon:        ', this.getData().icon);
+    // this.log('class:       ', this.getClass());
+    // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
+    // this.log('state:       ', this.getState());
   }
 
   // this method is called when the Device is added
