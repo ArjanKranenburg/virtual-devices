@@ -15,13 +15,15 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 ## What doesn't:
 
 * Other devices, like a Dimmer, etc.
-* Settings that disable cascading flows (issue #5)
 * Settings (or other) that makes some modes mutually exclusive (issue #3)
 
 I'm very interested to hear your ideas for other virtual devices.
 
 
 ## Release history
+
+### 0.6.1
+* Added action cards to set mode without triggering device (issue #5)
 
 ### 0.6.0
 * Rewrite for SDK2

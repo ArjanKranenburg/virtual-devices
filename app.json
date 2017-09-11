@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "compatibility": "1.x >=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -119,6 +119,34 @@
         "title": {
           "en": "Turn mode off",
           "nl": "Zet modus uit"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=mode"
+          }
+        ]
+      },
+      {
+        "id": "mode_state_on",
+        "title": {
+          "en": "Set mode on, no trigger",
+          "nl": "Zet modus aan zonder trigger"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=mode"
+          }
+        ]
+      },
+      {
+        "id": "mode_state_off",
+        "title": {
+          "en": "Set mode off, no trigger",
+          "nl": "Zet modus uit zonder trigger"
         },
         "args": [
           {

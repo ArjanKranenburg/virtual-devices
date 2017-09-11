@@ -59,6 +59,30 @@ class ModeDriver extends Homey.Driver {
 
         return Promise.resolve( false );
       })
+
+    let modeStateOn = new Homey.FlowCardAction('mode_state_on');
+    modeStateOn
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> State set to on');
+
+        args.device.setCapabilityValue('onoff', true);
+
+        return Promise.resolve( true );
+      })
+
+    let modeStateOff = new Homey.FlowCardAction('mode_state_off');
+    modeStateOff
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> State set to off');
+
+        args.device.setCapabilityValue('onoff', false);
+
+        return Promise.resolve( false );
+      })
 	}
 
   onPair( socket ) {
