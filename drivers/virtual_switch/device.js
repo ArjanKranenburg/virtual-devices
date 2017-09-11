@@ -18,6 +18,7 @@ class VirtualDevice extends Homey.Device {
     // this.log('class:       ', this.getClass());
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
     // this.log('state:       ', this.getState());
+
   }
 
   // this method is called when the Device is added
