@@ -9,7 +9,7 @@ var devices = {};
 
 class ModeDevice extends Homey.Device {
   onInit() {
-    this.log('Mode device inititialized');
+    this.log('Mode device (' + this.getName() + ') inititialized');
 
 		// this.log('name:        ', this.getName());
     // this.log('id:          ', this.getData().id);
@@ -19,6 +19,19 @@ class ModeDevice extends Homey.Device {
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
     // this.log('state:       ', this.getState());
 
+    let triggerDevice = new Homey.FlowCardTriggerDevice('mode_changed');
+    triggerDevice.register();
+
+    // When capability is changed
+    this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
+      this.log(this.getName() + ' -> Capability changed');
+
+      triggerDevice.trigger( this, {}, valueObj )
+        .then( this.log )
+        .catch( this.error )
+
+      return Promise.resolve();
+    }, 500);
   }
 
   // this method is called when the Device is added

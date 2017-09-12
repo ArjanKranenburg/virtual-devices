@@ -9,7 +9,7 @@ var devices = {};
 
 class VirtualDevice extends Homey.Device {
   onInit() {
-    this.log('Virtual Device initialized');
+    this.log('Virtual Device (' + this.getName() + ') initialized');
 
 		// this.log('name:        ', this.getName());
     // this.log('id:          ', this.getData().id);
@@ -30,8 +30,6 @@ class VirtualDevice extends Homey.Device {
   onDeleted() {
     this.log('device deleted: ' + this.getName());
   }
-
-
 }
 
 module.exports = VirtualDevice;

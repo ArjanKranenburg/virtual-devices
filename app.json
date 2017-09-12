@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "compatibility": "1.x >=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -73,6 +73,20 @@
         "title": {
           "en": "Mode is off",
           "nl": "Modus wordt uitgezet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=mode"
+          }
+        ]
+      },
+      {
+        "id": "mode_changed",
+        "title": {
+          "en": "Mode Changed",
+          "nl": "Modus Veranderd"
         },
         "args": [
           {

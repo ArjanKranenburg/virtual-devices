@@ -33,7 +33,7 @@ class ModeDriver extends Homey.Driver {
         let device = args.device;
         this.log(device.getName() + ' -> Action on requested');
 
-        args.device.setCapabilityValue('onoff', true);
+        device.setCapabilityValue('onoff', true);
 
         // setCapability does not trigger the device-card
         triggerDeviceOn.trigger( device, {}, {'onoff': true} )
@@ -50,7 +50,7 @@ class ModeDriver extends Homey.Driver {
         let device = args.device;
         this.log(device.getName() + ' -> Action off requested');
 
-        args.device.setCapabilityValue('onoff', false);
+        device.setCapabilityValue('onoff', false);
 
         // setCapability does not trigger the device-card
         triggerDeviceOff.trigger( device, {}, {'onoff': false} )
@@ -67,7 +67,7 @@ class ModeDriver extends Homey.Driver {
         let device = args.device;
         this.log(device.getName() + ' -> State set to on');
 
-        args.device.setCapabilityValue('onoff', true);
+        device.setCapabilityValue('onoff', true);
 
         return Promise.resolve( true );
       })
@@ -79,7 +79,7 @@ class ModeDriver extends Homey.Driver {
         let device = args.device;
         this.log(device.getName() + ' -> State set to off');
 
-        args.device.setCapabilityValue('onoff', false);
+        device.setCapabilityValue('onoff', false);
 
         return Promise.resolve( false );
       })

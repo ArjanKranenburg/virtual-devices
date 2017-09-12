@@ -22,6 +22,9 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.6.2
+* Added trigger card  for modes to trigger on a change (issue #11)
+
 ### 0.6.1
 * Added action cards to set mode without triggering device (issue #5)
 
