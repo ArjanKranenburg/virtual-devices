@@ -22,11 +22,12 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
-### 0.6.2
+### 0.6.4
+* Added radiator icon
+
+### 0.6.3
 * Added trigger card for modes to trigger on a change (issue #11)
 * Fixed trigger card for status changed of virtual devices (issue #15)
-
-### 0.6.1
 * Added action cards to set mode without triggering device (issue #5)
 
 ### 0.6.0

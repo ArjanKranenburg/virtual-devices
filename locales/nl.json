@@ -1,4 +1,4 @@
-{ 
+{
 	"pair": {
 		"select": {
 			"details": "Specificeer de details",
@@ -48,6 +48,7 @@
 		"movie": "Film",
 		"party": "Feest",
 		"quiet": "Stilte",
+		"radiator": "Verwarming",
 		"relax": "Ontspan",
 		"secure": "Veilig",
 		"sleep": "Slaap"

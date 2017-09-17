@@ -1,4 +1,4 @@
-{ 
+{
 	"pair": {
 		"select": {
 			"details": "Specify the Details",
@@ -48,6 +48,7 @@
 		"movie": "Movie",
 		"party": "Party",
 		"quiet": "Quiet",
+		"radiator": "Radiator",
 		"relax": "Relax",
 		"secure": "Secure",
 		"sleep": "Sleep"
