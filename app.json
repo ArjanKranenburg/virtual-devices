@@ -38,6 +38,86 @@
     "small": "./assets/images/small.png"
   },
   "category": "tools",
+  "capabilities": {
+    "alarm_modes": {
+      "type": "enum",
+      "title": {
+        "en": "Alarm states",
+        "nl": "Alarm statuses"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "armed",
+          "title": {
+            "en": "Armed",
+            "nl": "Geactiveerd"
+          }
+        },
+        {
+          "id": "guard",
+          "title": {
+            "en": "Guard",
+            "nl": "Bewaakt"
+          }
+        },
+        {
+          "id": "disarmed",
+          "title": {
+            "en": "Disarmed",
+            "nl": "Uitgeschakeld"
+          }
+        },
+        {
+          "id": "alarm",
+          "title": {
+            "en": "Alarm",
+            "nl": "Alarm"
+          }
+        }
+      ]
+    },
+    "home_modes": {
+      "type": "enum",
+      "title": {
+        "en": "Home states",
+        "nl": "Thuis statuses"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "home",
+          "title": {
+            "en": "Home",
+            "nl": "Thuis"
+          }
+        },
+        {
+          "id": "away",
+          "title": {
+            "en": "Away",
+            "nl": "Weg"
+          }
+        },
+        {
+          "id": "sleep",
+          "title": {
+            "en": "Sleep",
+            "nl": "Slapend"
+          }
+        },
+        {
+          "id": "holiday",
+          "title": {
+            "en": "Holiday",
+            "nl": "Vakantie"
+          }
+        }
+      ]
+    }
+  },
   "flow": {
     "triggers": [
       {
@@ -186,8 +266,35 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "button"
+        "dim",
+        "button",
+        "alarm_states"
       ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "picker",
+            "capabilities": [
+              "alarm_states"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          }
+        ]
+      },
       "pair": [
         {
           "id": "start"

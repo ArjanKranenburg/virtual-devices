@@ -1,6 +1,7 @@
 {
 	"pair": {
 		"select": {
+			"type": "New mode type",
 			"details": "Specify the Details",
 			"name": "Give it a Name",
 			"icon": "Select an Icon",
@@ -29,8 +30,11 @@
 	},
 	"capability": {
 		"onoff": "On / Off",
+		"dim": "Dimmable",
 		"button": "Button",
-		"windowcoverings_state": "Up / Idle / Down"
+		"windowcoverings_state": "Up / Idle / Down",
+		"alarm_modes": "Armed / Guard / Disarmed / Alarm",
+		"home_modes": "Home / Away / Sleep / Holiday"
 	},
 	"icon": {
 		"light": "Light",

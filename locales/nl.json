@@ -1,6 +1,7 @@
 {
 	"pair": {
 		"select": {
+			"type": "Nieuwe modus type",
 			"details": "Specificeer de details",
 			"name": "Geef het een naam",
 			"icon": "Selecteer een pictogram",
@@ -29,8 +30,11 @@
 	},
 	"capability": {
 		"onoff": "Aan / uit",
+		"dim": "Dimbaar",
 		"button": "Knop",
-		"windowcoverings_state": "Op / stop / neer"
+		"windowcoverings_state": "Op / stop / neer",
+		"alarm_modes": "Geactiveerd / Bewaakt / Uitgeschakeld / Alarm",
+		"home_modes": "Thuis / Weg / Slapend / Vakantie"
 	},
 	"icon": {
 		"light": "Licht",

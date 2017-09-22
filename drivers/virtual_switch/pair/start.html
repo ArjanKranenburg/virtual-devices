@@ -1,6 +1,6 @@
 <style>
-	.inline_list {display:inline-block;margin-right:10px;} 
-	.inline_question {display:inline-block} 
+	.inline_list {display:inline-block;margin-right:10px;}
+	.inline_question {display:inline-block}
 
 	.icon > input{ /* HIDE RADIO */
 	  visibility: hidden; /* Makes input not-clickable */
@@ -14,15 +14,15 @@
 	.icon > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
 	  border:2px solid #f00;
 	}
-	
+
 	.icon > .icon_name {
 	  text-align: center
 	}
-	
+
 	.my_checkbox {
 		line-height: 20px
 	}
-	
+
 	.warning {
 		color: #f00
 	}
@@ -34,15 +34,15 @@
 	input {
 		padding: 3px
 	}
-	
+
 	select {
 		font-size: 14px
 	}
-	
+
 	form.device {
 		height: unset
 	}
-	
+
 </style>
 
 <form name="deviceForm" class="device" action="javascript: addDevice(deviceForm)">
@@ -51,7 +51,7 @@
 		<div class="fa" data-i18n="pair.select.name"></div><span>:</span>
 		<input class="fa" name="deviceName" type="text" value="Virtual Device">
 		<br>
-		
+
 		<div class="fa" data-i18n="pair.select.class">Class:</div><span>:</span>
 		<select id="device_class" name="class" class="inline_question" onchange="classSelected(this.value);">
 		    <option value="socket" data-i18n="class.socket">Socket</option>
@@ -70,22 +70,27 @@
 		<div class="fa" data-i18n="pair.select.capability">Capability:</div><span>:</span>
 		<div id="list_of_capabilities" class="my_checkbox"></div>
  		<br>
-		
+
 		<div class="fa" data-i18n="pair.select.icon">Select Icon</div><span>:</span>
 		<div id="list_of_images"></div>
 
 	</fieldset>
-	
+
 	<button class="button" data-i18n="pair.device.add"></button><br>
 	<label class="fa fa-warning warning" data-i18n="pair.warning.not_changeable"></label>
-</form>	
+</form>
 
 <script>
-	var SUPPORTED_CAPABILITIES = ["onoff", "button", "windowcoverings_state"];
+	var SUPPORTED_CAPABILITIES = [
+		"onoff",
+		"dim",
+		"button",
+		"windowcoverings_state"];
 	var SUPPORTED_CLASSES = {
 			"socket": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"dim"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -93,7 +98,8 @@
 			},
 			"light": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"dim"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -118,6 +124,7 @@
 			"windowcoverings": {
 				"capabilities": [
 					"onoff",
+					"dim",
 					"windowcoverings_state"
 				],
 				"defaultCapabilities": [
@@ -126,7 +133,8 @@
 			},
 			"fan": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"dim"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -134,7 +142,8 @@
 			},
 			"heater": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"dim"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -182,13 +191,13 @@
 				capabilityLabelElement.prop("class", "enabled");
 
 				if ( defaultCapabilities.contains(capability) ){
-					capabilityElement.prop("checked", true);					
+					capabilityElement.prop("checked", true);
 				} else {
 					capabilityElement.prop("checked", false);
 				}
 			} else {
 //				console.log( "Capability " + capability + " is not allowed" )
-				capabilityElement.prop("checked", false);			
+				capabilityElement.prop("checked", false);
 				capabilityElement.prop("disabled", true);
 				capabilityLabelElement.prop("class", "disabled");
 			}
@@ -231,15 +240,15 @@
 	function setLabelinLanguage(selector, name) {
 		$(selector).text( __(name) );
  	}
- 	
+
  	function addCapability(capab) {
  		var html = '<div>\
 			<input type="checkbox" name="capability_' + capab + '" value="' + capab + '">\
 			<label class="enabled" value="' + capab + '" data-i18n="capability.' + capab + '"></label>\
-		</div>'	
+		</div>'
 	 	$('#list_of_capabilities').append(html);
  	}
- 	
+
  	function addSelectableIcon(icon) {
  		var html = '<label class="icon inline_list">\
 	 			<input type="radio" name="icon" value="'+ icon.location + '"/>\
@@ -258,7 +267,7 @@
  		}
  		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
  	}
- 	
+
  	Array.prototype.contains = function(obj) {
  	    var i = this.length;
  	    while (i--) {
@@ -284,10 +293,9 @@
 		for (var i = 0, len = devices.length; i < len; i++) {
 			addSelectableIcon(devices[i]);
 		}
- 
+
  		var firstImage = $('#list_of_images > .icon:first-child > input:first-child')
 		firstImage.prop("checked", true);
 	});
 
 </script>
-

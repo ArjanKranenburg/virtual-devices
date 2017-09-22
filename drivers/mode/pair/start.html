@@ -1,6 +1,13 @@
 <style>
-	.inline_list {display:inline-block;margin-right:10px;} 
-	.inline_question {display:inline-block} 
+  .inline {float:left}
+	.inline_list {display:inline-block;margin-right:10px;}
+	.inline_question {display:inline-block}
+
+	.action-arrow {
+		margin-top: 32px;
+		margin-left: 8px;
+		margin-right: 8px;
+	}
 
 	.icon > input{ /* HIDE RADIO */
 	  visibility: hidden; /* Makes input not-clickable */
@@ -14,16 +21,16 @@
 	.icon > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
 	  border:2px solid #f00;
 	}
-	
+
 	.icon > .icon_name {
 	  text-align: center
 	}
-	
-	.my_checkbox {
-		line-height: 20px
-	}
-	
+
 	.warning {
+		color: #f00
+	}
+
+	.red {
 		color: #f00
 	}
 
@@ -34,15 +41,15 @@
 	input {
 		padding: 3px
 	}
-	
+
 	select {
 		font-size: 14px
 	}
-	
+
 	form.device {
 		height: unset
 	}
-	
+
 </style>
 
 <form name="deviceForm" class="device" action="javascript: addDevice(deviceForm)">
@@ -52,91 +59,72 @@
 		<input class="fa" name="deviceName" type="text" value="Virtual Device">
 		<br>
 
-		<div hidden>
-			<div class="fa" data-i18n="pair.select.class">Class:</div><span>:</span>
-			<select id="device_class" name="class" class="inline_question" disabled>
-			    <option value="other" data-i18n="other">Other</option>
-			</select>
-			<br>
-		</div>
+		<div>
+      <div>
+  			<input type="radio" id="type-onoff" name="modeType" value="onoff" checked>
+  			<label for="type-onoff" data-i18n="capability.onoff">onoff</label>
+      </div>
+      <div>
+        <input type="radio" id="type-alarm-modes" name="modeType" value="alarm_modes">
+  			<label for="type-alarm-modes" data-i18n="capability.alarm_modes">alarm-modes</label>
+      </div>
+      <div>
+        <input type="radio" id="type-home-modes" name="modeType" value="home_modes">
+  			<label for="type-home-modes" data-i18n="capability.home_modes">home-modes</label>
+  		</div>
+    </div>
+		<br>
 
-		<div hidden>
-			<div class="fa" data-i18n="pair.select.capability">Capability:</div><span>:</span>
-			<div id="list_of_capabilities" class="my_checkbox"></div>
-	 		<br>
-		</div>
-		
 		<div class="fa" data-i18n="pair.select.icon">Select Icon</div><span>:</span>
 		<div id="list_of_images"></div>
 
 	</fieldset>
-	
+
 	<button class="button" data-i18n="pair.device.add"></button><br>
 	<label class="fa fa-warning warning" data-i18n="pair.warning.not_changeable"></label>
-</form>	
+</form>
 
 <script>
-	var SUPPORTED_CAPABILITIES = ["onoff"];
-	var SUPPORTED_CLASSES = {
-			"other": {
-				"capabilities": ["onoff"],
-				"defaultCapabilities": ["onoff"]
-			},
-		}
+
 	var DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/mode/";
-
-	function classSelected( selectedClass ) {
-		var allowedCapabilities = SUPPORTED_CLASSES[selectedClass]["capabilities"]
-		var defaultCapabilities = SUPPORTED_CLASSES[selectedClass]["defaultCapabilities"]
-
-		for (var i = 0, len = SUPPORTED_CAPABILITIES.length; i < len; i++) {
-			var capability = SUPPORTED_CAPABILITIES[i];
-			var capabilityElement = $('#list_of_capabilities > div > input[value="'+capability+'"]')
-			var capabilityLabelElement = $('#list_of_capabilities > div > label[value="'+capability+'"]')
-
-			if ( allowedCapabilities.contains(capability) ) {
-//				console.log( "Capability " + capability + " is allowed" )
-				capabilityElement.prop("disabled", false);
-				capabilityLabelElement.prop("class", "enabled");
-
-				if ( defaultCapabilities.contains(capability) ){
-					capabilityElement.prop("checked", true);					
-				} else {
-					capabilityElement.prop("checked", false);
-				}
-			} else {
-//				console.log( "Capability " + capability + " is not allowed" )
-				capabilityElement.prop("checked", false);			
-				capabilityElement.prop("disabled", true);
-				capabilityLabelElement.prop("class", "disabled");
-			}
-		}
-	}
 
 	// Function triggered when add Device is called
 	function addDevice( details ) {
 		console.log("Adding device:")
 
-		var capabilities = []
-		for (var i = 0, len = SUPPORTED_CAPABILITIES.length; i < len; i++) {
-			var capab = SUPPORTED_CAPABILITIES[i];
-			if ( details[ "capability_"+capab ].checked ) capabilities.push( details[ "capability_"+capab ].value )
-		}
-		console.log( JSON.stringify(capabilities) )
+		var capabilities = [ details.modeType.value ]
+    console.log( JSON.stringify(capabilities) )
 
 		var newDevice = {
 			name: details.deviceName.value,
 			data: {
 				id: guid(),
 				version: 1,
-				icon_name: details.icon.value.split(";")[0],
-				"class": details["class"].value,
-				capabilities: capabilities,
+				icon_name: details.icon.value.split(";")[0]
 			},
-			"class": details["class"].value,
+			"class": "other",
 			capabilities: capabilities,
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
 		}
+
+    if (details.modeType.value !== "onoff")
+    {
+      newDevice.mobile = {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "picker",
+            "capabilities": capabilities,
+            "options": {
+              "showTitle": false
+            }
+          }
+        ]
+      }
+    }
+
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
 		    if( err ) return console.error(err);
@@ -145,18 +133,6 @@
 		Homey.done();
 	}
 
-	function setLabelinLanguage(selector, name) {
-		$(selector).text( __(name) );
- 	}
- 	
- 	function addCapability(capab) {
- 		var html = '<div>\
-			<input type="checkbox" name="capability_' + capab + '" value="' + capab + '">\
-			<label class="enabled" value="' + capab + '" data-i18n="' + capab + '"></label>\
-		</div>'	
-	 	$('#list_of_capabilities').append(html);
- 	}
- 	
  	function addSelectableIcon(icon) {
  		var html = '<label class="icon inline_list">\
 	 			<input type="radio" name="icon" value="' + icon.name + ';' + icon.location + '"/>\
@@ -175,7 +151,7 @@
  		}
  		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
  	}
- 	
+
  	Array.prototype.contains = function(obj) {
  	    var i = this.length;
  	    while (i--) {
@@ -189,23 +165,14 @@
 	// Build the view
 	Homey.setTitle( __("pair.select.details") );
 
-	// Add Supported Capabilities
-	for (var i = 0, len = SUPPORTED_CAPABILITIES.length; i < len; i++) {
-		addCapability(SUPPORTED_CAPABILITIES[i]);
-	}
-
-	classSelected("other");
-	$('#list_of_capabilities > div:first-child > input').prop("disabled", true);
-
 	// Add Possible Icons
 	Homey.emit( 'getIcons', {}, function( err, devices ){
 		for (var i = 0, len = devices.length; i < len; i++) {
 			addSelectableIcon(devices[i]);
 		}
- 
+
  		var firstImage = $('#list_of_images > .icon:first-child > input:first-child')
 		firstImage.prop("checked", true);
 	});
 
 </script>
-
