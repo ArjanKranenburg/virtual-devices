@@ -1,0 +1,55 @@
+Describes the structure of the devices added in different versions of the Application.
+
+virtual_switch:
+  version 1 (0.4.0 - 0.6.3?): Initial
+    name: details.deviceName.value,
+    data: {
+      id: guid(),
+      name:
+      version: 1,
+      class:
+      capabilities:
+      icon: details.icon.value,
+    },
+    "class": details["class"].value,
+    capabilities: capabilities,
+    icon: DRIVER_LOCATION + "assets/" + details.icon.value,
+
+version 2: (0.6.4 - ): Cleanup after switch to SDK2
+  name: details.deviceName.value,
+  data: {
+    id: guid(),
+    version: 2,
+    icon: details.icon.value,
+  },
+  "class": details["class"].value,
+  capabilities: capabilities,
+  icon: DRIVER_LOCATION + "assets/" + details.icon.value,
+
+
+mode:
+  version 1: (0.4.0 - 0.6.3?): Initial
+    name: details.deviceName.value,
+    data: {
+      id: guid(),
+      name:
+      version: 1,
+      class:
+      capabilities:
+      icon_name: details.icon.value.split(";")[0]
+    },
+    "class": "other",
+    capabilities: capabilities,
+    icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
+
+
+  version 2: (0.6.4 - ): Cleanup after switch to SDK2
+    name: details.deviceName.value,
+    data: {
+      id: guid(),
+      version: 2,
+      icon_name: details.icon.value.split(";")[0]
+    },
+    "class": "other",
+    capabilities: capabilities,
+    icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
