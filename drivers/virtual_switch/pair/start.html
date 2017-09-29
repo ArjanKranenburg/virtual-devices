@@ -85,12 +85,15 @@
 		"onoff",
 		"dim",
 		"button",
-		"windowcoverings_state"];
+		"windowcoverings_state",
+		"alarm_state"
+	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
 				"capabilities": [
 					"onoff",
-					"dim"
+					"dim",
+					"alarm_state"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -226,6 +229,22 @@
 			capabilities: capabilities,
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 		}
+
+		if (capabilities.contains("alarm_state")) {
+			// We have to construct the mobile cards ourselves
+			newDevice.mobile = {
+				"components": [
+					{
+						"id": "icon"
+					}
+				]
+			}
+
+			for (var i = 0, len = capabilities.length; i < len; i++) {
+				addMobileCard( newDevice, capabilities[i] );
+			}
+    }
+
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
 		    if( err ) return console.error(err);
@@ -234,9 +253,35 @@
 		Homey.done();
 	}
 
-	function setLabelinLanguage(selector, name) {
-		$(selector).text( __(name) );
- 	}
+	function addMobileCard( deviceData, capability ) {
+		if (capability === "onoff") {
+			addSimpleMobileCard(deviceData, "toggle", capability);
+		}
+		if (capability === "dim") {
+			addSimpleMobileCard(deviceData, "slider", capability);
+		}
+		if (capability === "button") {
+			addSimpleMobileCard(deviceData, "button", capability);
+		}
+		if (capability === "windowcoverings_state") {
+			addSimpleMobileCard(deviceData, "ternary", capability);
+		}
+		if (capability === "alarm_state") {
+			addSimpleMobileCard(deviceData, "picker", capability);
+		}
+	}
+
+	function addSimpleMobileCard( deviceData, mobileCardId, capability ) {
+		deviceData.mobile.components.push(
+			{
+				"id": mobileCardId,
+				"capabilities": [capability],
+				"options": {
+					"showTitle": false
+				}
+			}
+		)
+	}
 
  	function addCapability(capab) {
  		var html = '<div>\

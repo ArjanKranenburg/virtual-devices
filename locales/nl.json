@@ -33,7 +33,7 @@
 		"dim": "Dimbaar",
 		"button": "Knop",
 		"windowcoverings_state": "Op / stop / neer",
-		"alarm_modes": "Geactiveerd / Bewaakt / Uitgeschakeld / Alarm",
+		"alarm_state": "Geactiveerd / Bewaakt / Uitgeschakeld / Alarm",
 		"home_modes": "Thuis / Weg / Slapend / Vakantie"
 	},
 	"icon": {

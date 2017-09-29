@@ -39,7 +39,7 @@
   },
   "category": "tools",
   "capabilities": {
-    "alarm_modes": {
+    "alarm_state": {
       "type": "enum",
       "title": {
         "en": "Alarm states",
@@ -177,15 +177,15 @@
         ]
       },
       {
-        "id": "alarm_mode_is",
+        "id": "alarm_state_is",
         "title": {
-          "en": "Alarm mode is",
-          "nl": "Alarm modus is"
+          "en": "Alarm state is",
+          "nl": "Alarm status is"
         },
         "args": [
           {
             "type": "dropdown",
-            "name": "alarm_mode",
+            "name": "alarm_state",
             "values": [
               {
                 "id": "armed",
@@ -220,7 +220,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=mode"
+            "filter": "driver_id=virtual_switch"
           }
         ]
       },
@@ -289,15 +289,15 @@
         ]
       },
       {
-        "id": "alarm_mode",
+        "id": "alarm_state",
         "title": {
-          "en": "Alarm mode !{{is|isn't}}",
-          "nl": "Alarm Modus !{{is|is niet}}"
+          "en": "Alarm state !{{is|isn't}}",
+          "nl": "Alarm Status !{{is|is niet}}"
         },
         "args": [
           {
             "type": "dropdown",
-            "name": "alarm_mode",
+            "name": "alarm_state",
             "values": [
               {
                 "id": "armed",
@@ -332,7 +332,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=mode"
+            "filter": "driver_id=virtual_switch"
           }
         ]
       },
@@ -443,15 +443,15 @@
         ]
       },
       {
-        "id": "set_alarm_mode",
+        "id": "set_alarm_state",
         "title": {
-          "en": "Set Alarm mode",
-          "nl": "Zet Alarm Modus"
+          "en": "Set Alarm state",
+          "nl": "Zet Alarm status"
         },
         "args": [
           {
             "type": "dropdown",
-            "name": "alarm_mode",
+            "name": "alarm_state",
             "values": [
               {
                 "id": "armed",
@@ -486,7 +486,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=mode"
+            "filter": "driver_id=virtual_switch"
           }
         ]
       },
@@ -553,9 +553,7 @@
       },
       "class": "other",
       "capabilities": [
-        "onoff",
-        "dim",
-        "button"
+        "onoff"
       ],
       "pair": [
         {

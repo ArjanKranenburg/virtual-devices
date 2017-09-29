@@ -12,13 +12,10 @@ class ModeDriver extends Homey.Driver {
     let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
     triggerDeviceOff.register();
 
-    let alarmModeIsTrigger = new Homey.FlowCardTriggerDevice('alarm_mode_is');
-    alarmModeIsTrigger.register();
     let homeModeIsTrigger = new Homey.FlowCardTriggerDevice('home_mode_is');
     homeModeIsTrigger.register();
 
     this.registerFlowCardCondition('mode', 'onoff');
-    this.registerFlowCardCondition('alarm_mode', 'alarm_modes');
     this.registerFlowCardCondition('home_mode', 'home_modes');
 
     this.registerFlowCardAction('mode_action_on',  'onoff', triggerDeviceOn);
@@ -26,7 +23,6 @@ class ModeDriver extends Homey.Driver {
     this.registerFlowCardAction('mode_state_on',  'onoff', null);
     this.registerFlowCardAction('mode_state_off', 'onoff');
 
-    this.registerFlowCardAction('set_alarm_mode', 'alarm_modes', alarmModeIsTrigger);
     this.registerFlowCardAction('set_home_mode',  'home_modes',  homeModeIsTrigger);
 	}
 

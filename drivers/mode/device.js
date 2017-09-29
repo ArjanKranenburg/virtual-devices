@@ -22,10 +22,6 @@ class ModeDevice extends Homey.Device {
     let triggerDevice = new Homey.FlowCardTriggerDevice('mode_changed');
     triggerDevice.register();
 
-    let alarmModeIsTrigger = new Homey.FlowCardTriggerDevice('alarm_mode_is');
-    alarmModeIsTrigger.register();
-    this.registerFlowCardRunListener(alarmModeIsTrigger);
-
     let homeModeIsTrigger = new Homey.FlowCardTriggerDevice('home_mode_is');
     homeModeIsTrigger.register();
     this.registerFlowCardRunListener(homeModeIsTrigger);
@@ -40,7 +36,6 @@ class ModeDevice extends Homey.Device {
         return Promise.resolve();
       }, 500);
 
-    this.registerSingleCapabilityListener('alarm_modes', alarmModeIsTrigger);
     this.registerSingleCapabilityListener('home_modes',  homeModeIsTrigger);
   }
 

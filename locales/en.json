@@ -33,7 +33,7 @@
 		"dim": "Dimmable",
 		"button": "Button",
 		"windowcoverings_state": "Up / Idle / Down",
-		"alarm_modes": "Armed / Guard / Disarmed / Alarm",
+		"alarm_state": "Armed / Guard / Disarmed / Alarm",
 		"home_modes": "Home / Away / Sleep / Holiday"
 	},
 	"icon": {
