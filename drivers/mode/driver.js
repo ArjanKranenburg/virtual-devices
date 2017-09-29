@@ -18,12 +18,12 @@ class ModeDriver extends Homey.Driver {
     this.registerFlowCardCondition('mode', 'onoff');
     this.registerFlowCardCondition('home_mode', 'home_modes');
 
-    this.registerFlowCardAction('mode_action_on',  'onoff', triggerDeviceOn);
-    this.registerFlowCardAction('mode_action_off', 'onoff', triggerDeviceOff);
-    this.registerFlowCardAction('mode_state_on',  'onoff', null);
-    this.registerFlowCardAction('mode_state_off', 'onoff');
+    this.registerFlowCardAction('mode_action_on', 'onoff', true, triggerDeviceOn);
+    this.registerFlowCardAction('mode_action_off', 'onoff', false, triggerDeviceOff);
+    this.registerFlowCardAction('mode_state_on', 'onoff', true);
+    this.registerFlowCardAction('mode_state_off', 'onoff', false);
 
-    this.registerFlowCardAction('set_home_mode',  'home_modes',  homeModeIsTrigger);
+    this.registerFlowCardAction('set_home_mode', 'home_modes', 'enum', homeModeIsTrigger);
 	}
 
   onPair( socket ) {
@@ -58,34 +58,18 @@ class ModeDriver extends Homey.Driver {
     })
   }
 
-  registerFlowCardCondition(card_name, capability) {
-    let flowCardCondition = new Homey.FlowCardCondition(card_name);
-    flowCardCondition
-      .register()
-      .registerRunListener(( args, state ) => {
-        let device = args.device;
-        let argums = cleanJson(args);
-        let firstKey = Object.keys(argums)[0]; // Should I check all keys?
-        let stateToCheck = argums[firstKey];
-        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
-
-        if (stateToCheck === device.getState()[capability]) {
-          return Promise.resolve( true );
-        } else {
-          return Promise.resolve( false );
-        }
-      })
-  }
-
-  registerFlowCardAction(card_name, capability, flow_trigger) {
+  registerFlowCardAction(card_name, capability, newState, flow_trigger) {
     let flowCardAction = new Homey.FlowCardAction(card_name);
     flowCardAction
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
-        let argums = cleanJson(args);
-        let firstArg = Object.keys(argums)[0]; // Should I iterate over all arguments?
-        let newState = argums[firstArg];
+
+        if ( newState === 'enum' ) {
+          let argums = cleanJson(args);
+          let firstArg = Object.keys(argums)[0]; // Should I iterate over all arguments?
+          let newState = argums[firstArg];
+        }
         this.log(device.getName() + ' -> State set to ' + newState);
 
         device.setCapabilityValue(capability, newState) // Fire and forget
@@ -97,6 +81,26 @@ class ModeDriver extends Homey.Driver {
         }
 
         return Promise.resolve( true );
+      })
+  }
+
+  registerFlowCardCondition(card_name, capability) {
+    let flowCardCondition = new Homey.FlowCardCondition(card_name);
+    flowCardCondition
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        let argums = cleanJson(args);
+        let firstKey = Object.keys(argums)[0]; // Should I check all keys?
+        let stateToCheck = argums[firstKey];
+        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
+
+
+        if (stateToCheck === device.getState()[capability]) {
+          return Promise.resolve( true );
+        } else {
+          return Promise.resolve( false );
+        }
       })
   }
 }
