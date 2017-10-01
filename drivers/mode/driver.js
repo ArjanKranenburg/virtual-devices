@@ -12,18 +12,12 @@ class ModeDriver extends Homey.Driver {
     let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
     triggerDeviceOff.register();
 
-    let homeModeIsTrigger = new Homey.FlowCardTriggerDevice('home_mode_is');
-    homeModeIsTrigger.register();
+    this.registerFlowCardCondition('mode');
 
-    this.registerFlowCardCondition('mode', 'onoff');
-    this.registerFlowCardCondition('home_mode', 'home_modes');
-
-    this.registerFlowCardAction('mode_action_on', 'onoff', true, triggerDeviceOn);
-    this.registerFlowCardAction('mode_action_off', 'onoff', false, triggerDeviceOff);
-    this.registerFlowCardAction('mode_state_on', 'onoff', true);
-    this.registerFlowCardAction('mode_state_off', 'onoff', false);
-
-    this.registerFlowCardAction('set_home_mode', 'home_modes', 'enum', homeModeIsTrigger);
+    this.registerFlowCardAction('mode_action_on', true, triggerDeviceOn);
+    this.registerFlowCardAction('mode_action_off', false, triggerDeviceOff);
+    this.registerFlowCardAction('mode_state_on', true);
+    this.registerFlowCardAction('mode_state_off', false);
 	}
 
   onPair( socket ) {
@@ -58,21 +52,31 @@ class ModeDriver extends Homey.Driver {
     })
   }
 
-  registerFlowCardAction(card_name, capability, newState, flow_trigger) {
+  registerFlowCardCondition(card_name) {
+    let flowCardCondition = new Homey.FlowCardCondition(card_name);
+    flowCardCondition
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
+
+        if (device.getState().onoff) {
+          return Promise.resolve( true );
+        } else {
+          return Promise.resolve( false );
+        }
+      })
+  }
+
+  registerFlowCardAction(card_name, newState, flow_trigger) {
     let flowCardAction = new Homey.FlowCardAction(card_name);
     flowCardAction
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
-
-        if ( newState === 'enum' ) {
-          let argums = cleanJson(args);
-          let firstArg = Object.keys(argums)[0]; // Should I iterate over all arguments?
-          let newState = argums[firstArg];
-        }
         this.log(device.getName() + ' -> State set to ' + newState);
 
-        device.setCapabilityValue(capability, newState) // Fire and forget
+        device.setCapabilityValue('onoff', newState) // Fire and forget
           .catch(this.error);
 
         if (flow_trigger) {
@@ -81,26 +85,6 @@ class ModeDriver extends Homey.Driver {
         }
 
         return Promise.resolve( true );
-      })
-  }
-
-  registerFlowCardCondition(card_name, capability) {
-    let flowCardCondition = new Homey.FlowCardCondition(card_name);
-    flowCardCondition
-      .register()
-      .registerRunListener(( args, state ) => {
-        let device = args.device;
-        let argums = cleanJson(args);
-        let firstKey = Object.keys(argums)[0]; // Should I check all keys?
-        let stateToCheck = argums[firstKey];
-        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
-
-
-        if (stateToCheck === device.getState()[capability]) {
-          return Promise.resolve( true );
-        } else {
-          return Promise.resolve( false );
-        }
       })
   }
 }

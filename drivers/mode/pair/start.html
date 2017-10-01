@@ -59,18 +59,6 @@
 		<input class="fa" name="deviceName" type="text" value="Virtual Device">
 		<br>
 
-		<div>
-      <div>
-  			<input type="radio" id="type-onoff" name="modeType" value="onoff" checked>
-  			<label for="type-onoff" data-i18n="capability.onoff">onoff</label>
-      </div>
-      <div>
-        <input type="radio" id="type-home-modes" name="modeType" value="home_modes">
-  			<label for="type-home-modes" data-i18n="capability.home_modes">home-modes</label>
-  		</div>
-    </div>
-		<br>
-
 		<div class="fa" data-i18n="pair.select.icon">Select Icon</div><span>:</span>
 		<div id="list_of_images"></div>
 
@@ -88,8 +76,8 @@
 	function addDevice( details ) {
 		console.log("Adding device:")
 
-		var capabilities = [ details.modeType.value ]
-    console.log( JSON.stringify(capabilities) )
+		var capabilities = [ "onoff" ]
+//    console.log( JSON.stringify(capabilities) )
 
 		var newDevice = {
 			name: details.deviceName.value,
@@ -102,24 +90,6 @@
 			capabilities: capabilities,
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
 		}
-
-    if (details.modeType.value !== "onoff")
-    {
-      newDevice.mobile = {
-        "components": [
-          {
-            "id": "icon"
-          },
-          {
-            "id": "picker",
-            "capabilities": capabilities,
-            "options": {
-              "showTitle": false
-            }
-          }
-        ]
-      }
-    }
 
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
@@ -146,16 +116,6 @@
  			return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
  		}
  		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
- 	}
-
- 	Array.prototype.contains = function(obj) {
- 	    var i = this.length;
- 	    while (i--) {
- 	        if (this[i] === obj) {
- 	            return true;
- 	        }
- 	    }
- 	    return false;
  	}
 
 	// Build the view

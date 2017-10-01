@@ -77,45 +77,6 @@
           }
         }
       ]
-    },
-    "home_modes": {
-      "type": "enum",
-      "title": {
-        "en": "Home states",
-        "nl": "Thuis statuses"
-      },
-      "getable": true,
-      "setable": true,
-      "values": [
-        {
-          "id": "home",
-          "title": {
-            "en": "Home",
-            "nl": "Thuis"
-          }
-        },
-        {
-          "id": "away",
-          "title": {
-            "en": "Away",
-            "nl": "Weg"
-          }
-        },
-        {
-          "id": "sleep",
-          "title": {
-            "en": "Sleep",
-            "nl": "Slapend"
-          }
-        },
-        {
-          "id": "holiday",
-          "title": {
-            "en": "Holiday",
-            "nl": "Vakantie"
-          }
-        }
-      ]
     }
   },
   "flow": {
@@ -223,54 +184,6 @@
             "filter": "driver_id=virtual_switch"
           }
         ]
-      },
-      {
-        "id": "home_mode_is",
-        "title": {
-          "en": "Home mode is",
-          "nl": "Huis modus is"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "home_mode",
-            "values": [
-              {
-                "id": "home",
-                "label": {
-                  "en": "Home",
-                  "nl": "Thuis"
-                }
-              },
-              {
-                "id": "away",
-                "label": {
-                  "en": "Away",
-                  "nl": "Weg"
-                }
-              },
-              {
-                "id": "sleep",
-                "label": {
-                  "en": "Sleep",
-                  "nl": "Slapend"
-                }
-              },
-              {
-                "id": "holiday",
-                "label": {
-                  "en": "Holiday",
-                  "nl": "Vakantie"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=mode"
-          }
-        ]
       }
     ],
     "conditions": [
@@ -333,54 +246,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=virtual_switch"
-          }
-        ]
-      },
-      {
-        "id": "home_mode",
-        "title": {
-          "en": "Home mode !{{is|isn't}}",
-          "nl": "Thuis Modus !{{is|is niet}}"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "home_mode",
-            "values": [
-              {
-                "id": "home",
-                "label": {
-                  "en": "Home",
-                  "nl": "Thuis"
-                }
-              },
-              {
-                "id": "away",
-                "label": {
-                  "en": "Away",
-                  "nl": "Weg"
-                }
-              },
-              {
-                "id": "sleep",
-                "label": {
-                  "en": "Sleep",
-                  "nl": "Slapend"
-                }
-              },
-              {
-                "id": "holiday",
-                "label": {
-                  "en": "Holiday",
-                  "nl": "Vakantie"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=mode"
           }
         ]
       }
@@ -487,54 +352,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=virtual_switch"
-          }
-        ]
-      },
-      {
-        "id": "set_home_mode",
-        "title": {
-          "en": "Set Home mode",
-          "nl": "Zet Thuis Modus"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "home_mode",
-            "values": [
-              {
-                "id": "home",
-                "label": {
-                  "en": "Home",
-                  "nl": "Thuis"
-                }
-              },
-              {
-                "id": "away",
-                "label": {
-                  "en": "Away",
-                  "nl": "Weg"
-                }
-              },
-              {
-                "id": "sleep",
-                "label": {
-                  "en": "Sleep",
-                  "nl": "Slapend"
-                }
-              },
-              {
-                "id": "holiday",
-                "label": {
-                  "en": "Holiday",
-                  "nl": "Vakantie"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=mode"
           }
         ]
       }
