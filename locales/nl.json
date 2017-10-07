@@ -6,7 +6,14 @@
 			"name": "Geef het een naam",
 			"icon": "Selecteer een pictogram",
 			"capability": "Selecteer 1 of meerdere eigenschappen",
-			"class": "Selecteer een apparaatklasse"
+			"class": "Selecteer een apparaatklasse",
+			"mode": {
+				"list": "Lijst met modi",
+				"name": "Geef de modus een naam",
+				"icon": "Selecteer een pictogram voor de modus",
+				"add": "Voeg deze modus toe aan de lijst",
+				"empty-list": "De lijst is nu nog leeg"
+			}
 		},
 		"device": {
 			"add": "Voeg toe"

@@ -6,7 +6,14 @@
 			"name": "Give it a Name",
 			"icon": "Select an Icon",
 			"capability": "Select 1 or more Capabilities",
-			"class": "Select a Device Class"
+			"class": "Select a Device Class",
+			"mode": {
+				"list": "List of modes",
+				"name": "Give the mode a name",
+				"icon": "Select an icon for the mode",
+				"add": "Add mode to the list",
+				"empty-list": "The list is still empty"
+			}
 		},
 		"device": {
 			"add": "Add Device"

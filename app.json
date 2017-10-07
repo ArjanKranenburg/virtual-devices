@@ -33,6 +33,14 @@
       }
     ]
   },
+  "contributing": {
+      "donate": {
+          "paypal": {
+              "email": "arjan.kranenburg@gmail.com",
+              "currency": "EUR"
+          }
+      }
+  },
   "images": {
     "large": "./assets/images/large.png",
     "small": "./assets/images/small.png"
@@ -77,6 +85,15 @@
           }
         }
       ]
+    },
+    "multi_state": {
+      "type": "string",
+      "title": {
+        "en": "Multi-mode state",
+        "nl": "Multimode status"
+      },
+      "getable": true,
+      "setable": true
     }
   },
   "flow": {
@@ -396,6 +413,52 @@
       "capabilities": [
         "onoff"
       ],
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "add_mode",
+          "template": "add_devices"
+        }
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "multi",
+      "name": {
+        "en": "Multi-Mode",
+        "nl": "Multi Modus"
+      },
+      "images": {
+        "large": "drivers/multi/assets/images/large.png",
+        "small": "drivers/multi/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "multi_state"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "greyout": false
+        }
+      },
       "pair": [
         {
           "id": "start"
