@@ -22,9 +22,12 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.6.5
+* Added Multi-mode (issue #14, remainder)
+
 ### 0.6.4
 * Added radiator icon
-# Added Alarm-states (issue #14, partly)
+* Added Alarm-states (issue #14, partly)
 
 ### 0.6.3
 * Added trigger card for modes to trigger on a change (issue #11)
