@@ -120,17 +120,24 @@
 
     $('#empty_list').hide();
 
+    var mode_id = guid();
     var selectedIcon = $('#list_of_mode_images > label > input:checked').val();
-    var html = '<li class="mode inline_list">\
+    var html = '<li class="mode inline_list" id="' + mode_id + '">\
           <div>\
             <div class="icon_object" style="display: none;">' + selectedIcon + '</div>\
   		 			<div class="icon bg" style="-webkit-mask-image: url(' + selectedIcon.split(";")[1] + ')"></div>\
   		 			<div class="name">' + $('#mode_name').val() + '</div>\
           </div>\
-          <div class="remove">x</div>\
+          <div class="remove" onclick="removeMode(\'' + mode_id + '\')">x</div>\
         </li>';
 
     $('#list_of_modes').append(html);
+  }
+
+  function removeMode( mode_id ) {
+    console.log("Removing mode from the list: " + mode_id);
+
+    $('#' + mode_id).remove();
   }
 
 	// Function triggered when add Device is called

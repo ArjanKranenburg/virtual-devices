@@ -46,6 +46,17 @@
     "small": "./assets/images/small.png"
   },
   "category": "tools",
+  "capabilities": {
+    "multi_state": {
+      "type": "string",
+      "title": {
+        "en": "Multi-mode state",
+        "nl": "Multimode status"
+      },
+      "getable": true,
+      "setable": true
+    }
+  },
   "flow": {
     "triggers": [
       {
