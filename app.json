@@ -114,6 +114,20 @@
             "filter": "driver_id=mode"
           }
         ]
+      },
+      {
+        "id": "multi_changed",
+        "title": {
+          "en": "Multi Mode Changed",
+          "nl": "Multi-Modus Veranderd"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=multi"
+          }
+        ]
       }
     ],
     "conditions": [
