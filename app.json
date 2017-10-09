@@ -46,56 +46,6 @@
     "small": "./assets/images/small.png"
   },
   "category": "tools",
-  "capabilities": {
-    "alarm_state": {
-      "type": "enum",
-      "title": {
-        "en": "Alarm states",
-        "nl": "Alarm statuses"
-      },
-      "getable": true,
-      "setable": true,
-      "values": [
-        {
-          "id": "armed",
-          "title": {
-            "en": "Armed",
-            "nl": "Geactiveerd"
-          }
-        },
-        {
-          "id": "guard",
-          "title": {
-            "en": "Guard",
-            "nl": "Bewaakt"
-          }
-        },
-        {
-          "id": "disarmed",
-          "title": {
-            "en": "Disarmed",
-            "nl": "Uitgeschakeld"
-          }
-        },
-        {
-          "id": "alarm",
-          "title": {
-            "en": "Alarm",
-            "nl": "Alarm"
-          }
-        }
-      ]
-    },
-    "multi_state": {
-      "type": "string",
-      "title": {
-        "en": "Multi-mode state",
-        "nl": "Multimode status"
-      },
-      "getable": true,
-      "setable": true
-    }
-  },
   "flow": {
     "triggers": [
       {
@@ -153,54 +103,6 @@
             "filter": "driver_id=mode"
           }
         ]
-      },
-      {
-        "id": "alarm_state_is",
-        "title": {
-          "en": "Alarm state is",
-          "nl": "Alarm status is"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "alarm_state",
-            "values": [
-              {
-                "id": "armed",
-                "label": {
-                  "en": "Armed",
-                  "nl": "Geactiveerd"
-                }
-              },
-              {
-                "id": "guard",
-                "label": {
-                  "en": "Guard",
-                  "nl": "Bewaakt"
-                }
-              },
-              {
-                "id": "disarmed",
-                "label": {
-                  "en": "Disarmed",
-                  "nl": "Uitgeschakeld"
-                }
-              },
-              {
-                "id": "alarm",
-                "label": {
-                  "en": "Alarm",
-                  "nl": "Alarm"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=virtual_switch"
-          }
-        ]
       }
     ],
     "conditions": [
@@ -215,54 +117,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=mode"
-          }
-        ]
-      },
-      {
-        "id": "alarm_state",
-        "title": {
-          "en": "Alarm state !{{is|isn't}}",
-          "nl": "Alarm Status !{{is|is niet}}"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "alarm_state",
-            "values": [
-              {
-                "id": "armed",
-                "label": {
-                  "en": "Armed",
-                  "nl": "Geactiveerd"
-                }
-              },
-              {
-                "id": "guard",
-                "label": {
-                  "en": "Guard",
-                  "nl": "Bewaakt"
-                }
-              },
-              {
-                "id": "disarmed",
-                "label": {
-                  "en": "Disarmed",
-                  "nl": "Uitgeschakeld"
-                }
-              },
-              {
-                "id": "alarm",
-                "label": {
-                  "en": "Alarm",
-                  "nl": "Alarm"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=virtual_switch"
           }
         ]
       }
@@ -321,54 +175,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=mode"
-          }
-        ]
-      },
-      {
-        "id": "set_alarm_state",
-        "title": {
-          "en": "Set Alarm state",
-          "nl": "Zet Alarm status"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "alarm_state",
-            "values": [
-              {
-                "id": "armed",
-                "label": {
-                  "en": "Armed",
-                  "nl": "Geactiveerd"
-                }
-              },
-              {
-                "id": "guard",
-                "label": {
-                  "en": "Guard",
-                  "nl": "Bewaakt"
-                }
-              },
-              {
-                "id": "disarmed",
-                "label": {
-                  "en": "Disarmed",
-                  "nl": "Uitgeschakeld"
-                }
-              },
-              {
-                "id": "alarm",
-                "label": {
-                  "en": "Alarm",
-                  "nl": "Alarm"
-                }
-              }
-            ]
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=virtual_switch"
           }
         ]
       }

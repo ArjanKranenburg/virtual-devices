@@ -33,15 +33,15 @@
 		"heater": "Verwarming",
 		"kettle": "Waterketel",
 		"coffeemachine": "Kofiezetapparaat",
-		"button": "Knop"
+		"button": "Knop",
+		"homealarm": "Huisalarm"
 	},
 	"capability": {
 		"onoff": "Aan / uit",
 		"dim": "Dimbaar",
 		"button": "Knop",
 		"windowcoverings_state": "Op / stop / neer",
-		"alarm_state": "Geactiveerd / Bewaakt / Uitgeschakeld / Alarm",
-		"home_modes": "Thuis / Weg / Slapend / Vakantie"
+		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld"
 	},
 	"icon": {
 		"light": "Licht",

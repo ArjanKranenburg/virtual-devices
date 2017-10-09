@@ -63,7 +63,8 @@
 		    <option value="heater" data-i18n="class.heater">Heater</option>
 		    <option value="kettle" data-i18n="class.kettle">Kettle</option>
 		    <option value="coffeemachine" data-i18n="class.coffeemachine">Coffee Machine</option>
-		    <option value="button" data-i18n="class.button">Button</option>
+				<option value="button" data-i18n="class.button">Button</option>
+				<option value="homealarm" data-i18n="class.homealarm">Home Alarm</option>
 		</select>
 		<br>
 
@@ -86,14 +87,13 @@
 		"dim",
 		"button",
 		"windowcoverings_state",
-		"alarm_state"
+		"homealarm_state"
 	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
 				"capabilities": [
 					"onoff",
-					"dim",
-					"alarm_state"
+					"dim"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -175,6 +175,16 @@
 				"defaultCapabilities": [
 					"button"
 				]
+			},
+			"homealarm": {
+				"capabilities": [
+					"homealarm_state",
+					"onoff",
+					"button"
+				],
+				"defaultCapabilities": [
+					"homealarm_state"
+				]
 			}
 		}
 	var DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/virtual_switch/";
@@ -230,57 +240,12 @@
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 		}
 
-		if (capabilities.contains("alarm_state")) {
-			// We have to construct the mobile cards ourselves
-			newDevice.mobile = {
-				"components": [
-					{
-						"id": "icon"
-					}
-				]
-			}
-
-			for (var i = 0, len = capabilities.length; i < len; i++) {
-				addMobileCard( newDevice, capabilities[i] );
-			}
-    }
-
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
 		    if( err ) return console.error(err);
 		    console.log( result);
 		});
 		Homey.done();
-	}
-
-	function addMobileCard( deviceData, capability ) {
-		if (capability === "onoff") {
-			addSimpleMobileCard(deviceData, "toggle", capability);
-		}
-		if (capability === "dim") {
-			addSimpleMobileCard(deviceData, "slider", capability);
-		}
-		if (capability === "button") {
-			addSimpleMobileCard(deviceData, "button", capability);
-		}
-		if (capability === "windowcoverings_state") {
-			addSimpleMobileCard(deviceData, "ternary", capability);
-		}
-		if (capability === "alarm_state") {
-			addSimpleMobileCard(deviceData, "picker", capability);
-		}
-	}
-
-	function addSimpleMobileCard( deviceData, mobileCardId, capability ) {
-		deviceData.mobile.components.push(
-			{
-				"id": mobileCardId,
-				"capabilities": [capability],
-				"options": {
-					"showTitle": false
-				}
-			}
-		)
 	}
 
  	function addCapability(capab) {
