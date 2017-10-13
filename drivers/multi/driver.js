@@ -12,18 +12,12 @@ class MultiDriver extends Homey.Driver {
     // let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
     // triggerDeviceOff.register();
     //
-    // let homeModeIsTrigger = new Homey.FlowCardTriggerDevice('home_mode_is');
-    // homeModeIsTrigger.register();
-    //
-    // this.registerFlowCardCondition('mode', 'onoff');
-    // this.registerFlowCardCondition('home_mode', 'home_modes');
-    //
-    // this.registerFlowCardAction('mode_action_on', 'onoff', true, triggerDeviceOn);
-    // this.registerFlowCardAction('mode_action_off', 'onoff', false, triggerDeviceOff);
-    // this.registerFlowCardAction('mode_state_on', 'onoff', true);
-    // this.registerFlowCardAction('mode_state_off', 'onoff', false);
-    //
-    // this.registerFlowCardAction('set_home_mode', 'home_modes', 'enum', homeModeIsTrigger);
+    let multiModeTrigger = new Homey.FlowCardTriggerDevice('multi_changed');
+    multiModeTrigger.register();
+
+    this.registerFlowCardCondition('multi_mode_is', 'multi_state');
+
+    this.registerFlowCardAction('multi_set_state', 'multi_state', multiModeTrigger);
 	}
 
   onPair( socket ) {
@@ -57,51 +51,49 @@ class MultiDriver extends Homey.Driver {
     })
   }
 
-  // registerFlowCardAction(card_name, capability, newState, flow_trigger) {
-  //   let flowCardAction = new Homey.FlowCardAction(card_name);
-  //   flowCardAction
-  //     .register()
-  //     .registerRunListener(( args, state ) => {
-  //       let device = args.device;
-  //
-  //       if ( newState === 'enum' ) {
-  //         let argums = cleanJson(args);
-  //         let firstArg = Object.keys(argums)[0]; // Should I iterate over all arguments?
-  //         let newState = argums[firstArg];
-  //       }
-  //       this.log(device.getName() + ' -> State set to ' + newState);
-  //
-  //       device.setCapabilityValue(capability, newState) // Fire and forget
-  //         .catch(this.error);
-  //
-  //       if (flow_trigger) {
-  //         flow_trigger.trigger( device, {}, newState ) // Fire and forget
-  //           .catch( this.error );
-  //       }
-  //
-  //       return Promise.resolve( true );
-  //     })
-  // }
-  //
-  // registerFlowCardCondition(card_name, capability) {
-  //   let flowCardCondition = new Homey.FlowCardCondition(card_name);
-  //   flowCardCondition
-  //     .register()
-  //     .registerRunListener(( args, state ) => {
-  //       let device = args.device;
-  //       let argums = cleanJson(args);
-  //       let firstKey = Object.keys(argums)[0]; // Should I check all keys?
-  //       let stateToCheck = argums[firstKey];
-  //       this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
-  //
-  //
-  //       if (stateToCheck === device.getState()[capability]) {
-  //         return Promise.resolve( true );
-  //       } else {
-  //         return Promise.resolve( false );
-  //       }
-  //     })
-  // }
+  registerFlowCardCondition(card_name, capability) {
+    let flowCardCondition = new Homey.FlowCardCondition(card_name);
+    flowCardCondition
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+        let argums = cleanJson(args);
+        let firstKey = Object.keys(argums)[0];
+        let stateToCheck = argums[firstKey];
+        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
+
+
+        if (stateToCheck === device.getState()[capability]) {
+          return Promise.resolve( true );
+        } else {
+          return Promise.resolve( false );
+        }
+      })
+  }
+
+  registerFlowCardAction(card_name, capability, flow_trigger) {
+    let flowCardAction = new Homey.FlowCardAction(card_name);
+    flowCardAction
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+
+        let argums = cleanJson(args);
+        let firstArg = Object.keys(argums)[0];
+        let newState = argums[firstArg];
+        this.log(device.getName() + ' -> State set to ' + newState);
+
+        device.setCapabilityValue(capability, newState) // Fire and forget
+          .catch(this.error);
+
+        if (flow_trigger) {
+          flow_trigger.trigger( device, {}, newState ) // Fire and forget
+            .catch( this.error );
+        }
+
+        return Promise.resolve( true );
+      })
+  }
 }
 
 module.exports = MultiDriver;
@@ -113,36 +105,23 @@ function getIconNameAndLocation( name ) {
 	}
 };
 
-// function cleanJson (object){
-//     var simpleObject = {};
-//     for (var prop in object ){
-//         if (!object.hasOwnProperty(prop)){
-//             continue;
-//         }
-//         if (typeof(object[prop]) == 'object'){
-//             continue;
-//         }
-//         if (typeof(object[prop]) == 'function'){
-//             continue;
-//         }
-//         simpleObject[prop] = object[prop];
-//     }
-//     return simpleObject; // returns cleaned up JSON
-// };
-//
-// function simpleStringify (object){
-//     var simpleObject = {};
-//     for (var prop in object ){
-//         if (!object.hasOwnProperty(prop)){
-//             continue;
-//         }
-//         if (typeof(object[prop]) == 'object'){
-//             continue;
-//         }
-//         if (typeof(object[prop]) == 'function'){
-//             continue;
-//         }
-//         simpleObject[prop] = object[prop];
-//     }
-//     return JSON.stringify(simpleObject); // returns cleaned up JSON
-// };
+function cleanJson (object){
+    var simpleObject = {};
+    for (var prop in object ){
+        if (!object.hasOwnProperty(prop)){
+            continue;
+        }
+        if (typeof(object[prop]) == 'object'){
+            continue;
+        }
+        if (typeof(object[prop]) == 'function'){
+            continue;
+        }
+        simpleObject[prop] = object[prop];
+    }
+    return simpleObject; // returns cleaned up Object
+};
+
+function simpleStringify (object){
+  return JSON.stringify(cleanJson(object)); // returns cleaned up JSON
+};

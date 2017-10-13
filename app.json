@@ -144,6 +144,28 @@
             "filter": "driver_id=mode"
           }
         ]
+      },
+      {
+        "id": "multi_mode_is",
+        "title": {
+          "en": "Multi-mode !{{is|is not}} exactly",
+          "nl": "Multi-modus !{{is|is niet}} exact"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "text",
+            "placeholder": {
+              "en": "State",
+              "nl": "Status"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=multi"
+          }
+        ]
       }
     ],
     "actions": [
@@ -200,6 +222,28 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=mode"
+          }
+        ]
+      },
+      {
+        "id": "multi_set_state",
+        "title": {
+          "en": "Set multi-mode",
+          "nl": "Zet multi modus"
+        },
+        "args": [
+          {
+            "name": "multi_state",
+            "type": "text",
+            "placeholder": {
+              "en": "New state",
+              "nl": "Nieuwe status"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=multi"
           }
         ]
       }
