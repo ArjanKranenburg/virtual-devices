@@ -23,31 +23,14 @@ class ModeDevice extends Homey.Device {
     let triggerDevice = new Homey.FlowCardTriggerDevice('multi_changed');
     triggerDevice.register();
 
-    // let homeModeIsTrigger = new Homey.FlowCardTriggerDevice('home_mode_is');
-    // homeModeIsTrigger.register();
-    // this.registerFlowCardRunListener(homeModeIsTrigger);
-
     // When capability is changed
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
       this.log('State before:       ', this.getState());
 
-      // 1. valueObj = {"onoff.opt2":true} -> reset the others to false
       var changedCapability = Object.keys(valueObj)[0];
-      for (var capability in this.getState()) {
-        if ( capability !== changedCapability
-          && capability !== TOKEN_NAME) {
-          this.log('1) state:       ', capability);
-          this.setCapabilityValue(capability, false)
-            .catch( this.error );
-        }
-      }
-
-      // 2. Get the name and store it in multi_state
       var state_name = this.getData().state_names[changedCapability];
-      this.log('2) name:        ', state_name);
-      this.setCapabilityValue(TOKEN_NAME, state_name)
-        .catch( this.error );
+      this.setMultiState(state_name);
 
       // 3. Trigger flow
       triggerDevice.trigger( this, {}, valueObj ) // Fire and forget
@@ -78,47 +61,33 @@ class ModeDevice extends Homey.Device {
     this.log('device mode: ' + this.getName());
   }
 
-  // registerFlowCardRunListener(flowCardTrigger) {
-  //   flowCardTrigger.registerRunListener(( args, state ) => {
-  //     this.log('Flow card is triggered: ' + JSON.stringify(state));
-  //
-  //     let argums = cleanJson(args);
-  //     let firstArg = Object.keys(argums)[0]; // Should I iterate over all arguments?
-  //     let triggerState = argums[firstArg];
-  //
-  //     if (state === triggerState) {
-  //       return Promise.resolve( true );
-  //     } else {
-  //       return Promise.resolve( false );
-  //     }
-  //   })
-  // }
-  //
-  // registerSingleCapabilityListener(capability, flowCardTrigger){
-  //   this.registerCapabilityListener(capability, ( value, opts ) => {
-  //     this.log(this.getName() + ' -> ' + capability + ' changed: ' + JSON.stringify(value) );
-  //
-  //     flowCardTrigger.trigger( this, {}, value ) // Fire and forget
-  //       .catch( this.error );
-  //
-  //       return Promise.resolve();
-  //     }, 500);
-  // }
-
-  getStateAsString() {
-    this.log('getStateAsString');
-    this.setMultiState();
-
-    return this.getState().multi_state;
+  isStateAllowed( state ) {
+    var allowedStates = Object.values(this.getData().state_names);
+    return allowedStates.contains(state);
   }
 
-  setMultiState() {
-    var states = this.getState();
-    this.log('state:       ', JSON.stringify(states));
-    this.log('multi-state:       ', JSON.stringify(states.multi_state));
+  setMultiState( new_state ) {
+    if( ! this.isStateAllowed(new_state) ) { return }
+    this.log('Set name: ', new_state);
+    this.setCapabilityValue(TOKEN_NAME, new_state)
+      .catch( this.error );
 
-    for (var state in states) {
-      this.log('1) state:       ', JSON.stringify(state));
+    this.setBooleanWithStateName( new_state );
+  }
+
+  setBooleanWithStateName( state ) {
+    var stateNames = this.getData().state_names;
+    var capabilities = Object.keys(stateNames);
+    for (var i = 0, len = capabilities.length; i < len; i++) {
+      var capab = capabilities[i];
+      var stateName  = stateNames[capab]
+      if( stateName === state ) {
+        this.setCapabilityValue(capab, true)
+          .catch( this.error );
+      } else {
+        this.setCapabilityValue(capab, false)
+          .catch( this.error );
+      }
     }
   }
 }
@@ -141,3 +110,12 @@ module.exports = ModeDevice;
 //     }
 //     return simpleObject; // returns cleaned up JSON
 // };
+Array.prototype.contains = function(obj) {
+    var i = this.length;
+    while (i--) {
+        if (this[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}

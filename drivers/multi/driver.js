@@ -83,9 +83,17 @@ class MultiDriver extends Homey.Driver {
         let newState = argums[firstArg];
         this.log(device.getName() + ' -> State set to ' + newState);
 
-        device.setCapabilityValue(capability, newState) // Fire and forget
-          .catch(this.error);
+        // 1 Check that newState is allowed
+        if ( ! device.isStateAllowed(newState) ) {
+          var allowedStates = Object.values(device.getData().state_names);
+          this.error(newState + ' is not an allowed state. Allowed states are: ', JSON.stringify(allowedStates));
+          return Promise.resolve( false );
+        }
 
+        // 2. Set the multi-state and the boolean belonging to 'newState'
+        device.setMultiState(newState);
+
+        // 3. Trigger flow
         if (flow_trigger) {
           flow_trigger.trigger( device, {}, newState ) // Fire and forget
             .catch( this.error );

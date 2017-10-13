@@ -144,8 +144,6 @@
 	function addDevice( details ) {
 		console.log("Adding device:")
 
-    // var mobile_capabilities = ["onoff.opt1", "onoff.opt2", "onoff.opt3"]
-    // var capabilities = ["multi_state", "onoff.opt1", "onoff.opt2", "onoff.opt3"]
     var mobile_capabilities = []
     var capabilities = ["multi_state"]
 
@@ -199,18 +197,6 @@
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1]
 		}
 
-
-    // newDevice.mobile = {
-    //   "components": []
-    // }
-
-    // for (var i = 0, len = capabilities.length; i < len; i++) {
-      // addMobileCard(newDevice, capabilities[i]);
-    // }
-    // addMobileCard(newDevice, "multi-state1");
-    // addMobileCard(newDevice, "multi-state2");
-    // addMobileCard(newDevice, "multi-state3");
-
 		console.log( JSON.stringify(newDevice) );
 	 	Homey.addDevice(newDevice, function( err, result ){
 		    if( err ) return console.error(err);
@@ -218,21 +204,6 @@
 		});
 		Homey.done();
 	}
-
-  // function addMobileCard(deviceData, capability) {
-  //   var component = {
-  //     "id": "button",
-  //     "capabilities": [ capability ],
-  //     "options": {
-  //         "icons": {},
-  //         "toggle": [ capability ],
-  //         "showTitle": [ capability ]
-  //     }
-  //   };
-  //
-  //   component.options.icons[capability] = deviceData.icon;
-  //   deviceData.mobile.components.push(component);
-  // }
 
  	function addSelectableIcon(icon) {
     $('#list_of_images').append(getSelectableIconHtml(icon, "icon"));
@@ -256,16 +227,6 @@
  			return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
  		}
  		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
- 	}
-
- 	Array.prototype.contains = function(obj) {
- 	    var i = this.length;
- 	    while (i--) {
- 	        if (this[i] === obj) {
- 	            return true;
- 	        }
- 	    }
- 	    return false;
  	}
 
 	// Build the view
