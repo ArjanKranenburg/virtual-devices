@@ -6,15 +6,15 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 
 ## What works:
 
-* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV
-* Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual
+* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV, Heater
+* Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual, Secure
+* Multi-modes: have a mode with more than 2 states, with custom names
 * Trigger a flow
 * Use the switch/mode status as a condition
 * Use the switch/mode in the 'then'-column
 
 ## What doesn't:
 
-* Other devices, like a Dimmer, etc.
 * Settings (or other) that makes some modes mutually exclusive (issue #3)
 
 I'm very interested to hear your ideas for other virtual devices.
@@ -28,6 +28,7 @@ I'm very interested to hear your ideas for other virtual devices.
 ### 0.6.4
 * Added radiator icon
 * Added Alarm-states (issue #14, partly)
+* Added dim capability
 
 ### 0.6.3
 * Added trigger card for modes to trigger on a change (issue #11)
