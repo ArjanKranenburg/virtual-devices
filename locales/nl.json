@@ -43,8 +43,8 @@
 		"button": "Knop",
 		"windowcoverings_state": "Op / stop / neer",
 		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld",
-		"measure_temperature": "Meet Temperatuur",
-		"target_temperature": "Doel Temperatuur",
+		"measure_temperature": "Meettemperatuur",
+		"target_temperature": "Doeltemperatuur",
 		"thermostat_mode": "Automatisch / Verhitten / Koelen / Uit"
 	},
 	"icon": {
@@ -67,6 +67,7 @@
 		"radiator": "Verwarming",
 		"relax": "Ontspan",
 		"secure": "Veilig",
-		"sleep": "Slaap"
+		"sleep": "Slaap",
+		"thermostat": "Thermostaat"
 	}
 }
