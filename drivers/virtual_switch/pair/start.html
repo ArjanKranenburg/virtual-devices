@@ -65,6 +65,7 @@
 		    <option value="coffeemachine" data-i18n="class.coffeemachine">Coffee Machine</option>
 				<option value="button" data-i18n="class.button">Button</option>
 				<option value="homealarm" data-i18n="class.homealarm">Home Alarm</option>
+				<option value="thermostat" data-i18n="class.thermostat">Thermostat</option>
 		</select>
 		<br>
 
@@ -87,7 +88,10 @@
 		"dim",
 		"button",
 		"windowcoverings_state",
-		"homealarm_state"
+		"homealarm_state",
+		"measure_temperature",
+		"target_temperature",
+		"thermostat_mode"
 	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
@@ -184,6 +188,17 @@
 				],
 				"defaultCapabilities": [
 					"homealarm_state"
+				]
+			},
+			"thermostat": {
+				"capabilities": [
+					"measure_temperature",
+					"target_temperature",
+					"thermostat_mode"
+				],
+				"defaultCapabilities": [
+					"measure_temperature",
+					"target_temperature"
 				]
 			}
 		}
