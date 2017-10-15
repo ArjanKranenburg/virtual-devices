@@ -6,7 +6,7 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 
 ## What works:
 
-* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV, Heater
+* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV, Heater, Thermostat
 * Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual, Secure
 * Multi-modes: have a mode with more than 2 states, with custom names
 * Trigger a flow

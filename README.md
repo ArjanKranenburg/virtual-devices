@@ -22,6 +22,9 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.6.6
+* Added Virtual Thermostat
+
 ### 0.6.5
 * Added Multi-mode (issue #14, remainder)
 
