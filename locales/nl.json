@@ -34,14 +34,18 @@
 		"kettle": "Waterketel",
 		"coffeemachine": "Kofiezetapparaat",
 		"button": "Knop",
-		"homealarm": "Huisalarm"
+		"homealarm": "Huisalarm",
+		"thermostat": "Thermostaat"
 	},
 	"capability": {
 		"onoff": "Aan / uit",
 		"dim": "Dimbaar",
 		"button": "Knop",
 		"windowcoverings_state": "Op / stop / neer",
-		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld"
+		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld",
+		"measure_temperature": "Meet Temperatuur",
+		"target_temperature": "Doel Temperatuur",
+		"thermostat_mode": "Automatisch / Verhitten / Koelen / Uit"
 	},
 	"icon": {
 		"light": "Licht",

@@ -8,9 +8,10 @@ The copyright of the following icons lies with:
 * Switch (unchanged) by Arthur Shlain from the Noun Project via [Creative Commons](creative-commons)
 * Relax (unchanged) by Delwar Hossain from the Noun Project via [Creative Commons](creative-commons)
 * Manual (unchanged) by H Alberto Gongora from the Noun Project via [Creative Commons](creative-commons)
-* Radiator (unchanged) by José Manuel de Laá from the Noun Project via [Creative Commons](creative-commons)
-* House (unchanged) by Setyo Ari Wibowo from the Noun Project via [Creative Commons](creative-commons)
-* Multi-mode by Barracuda from the Noun Project via [Creative Commons](creative-commons)
+* Radiator (removed text) by José Manuel de Laá from the Noun Project via [Creative Commons](creative-commons)
+* House (removed text) by Setyo Ari Wibowo from the Noun Project via [Creative Commons](creative-commons)
+* Multi-mode (removed text) by Barracuda from the Noun Project via [Creative Commons](creative-commons)
+* Thermostat (removed 'devolo'-text) by Athom.
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 

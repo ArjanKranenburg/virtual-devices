@@ -34,14 +34,18 @@
 		"kettle": "Kettle",
 		"coffeemachine": "Coffee Machine",
 		"button": "Button",
-		"homealarm": "Home Alarm"
+		"homealarm": "Home Alarm",
+		"thermostat": "Thermostat"
 	},
 	"capability": {
 		"onoff": "On / Off",
 		"dim": "Dimmable",
 		"button": "Button",
 		"windowcoverings_state": "Up / Idle / Down",
-		"homealarm_state": "Armed / Partially armed / Disarmed"
+		"homealarm_state": "Armed / Partially armed / Disarmed",
+		"measure_temperature": "Measure Temperature",
+		"target_temperature": "Target Temperature",
+		"thermostat_mode": "Automatic / Heat / Cool / Off"
 	},
 	"icon": {
 		"light": "Light",
