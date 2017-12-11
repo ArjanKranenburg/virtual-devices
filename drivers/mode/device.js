@@ -40,8 +40,8 @@ class ModeDevice extends Homey.Device {
         modeOffTriggerDevice.trigger( this, {}, valueObj ) // Fire and forget
           .catch( this.error );
       }
-        return Promise.resolve();
-      }, 500);
+      return Promise.resolve();
+    }, 500);
   }
 
   // this method is called when the Device is added

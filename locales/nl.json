@@ -45,7 +45,11 @@
 		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld",
 		"measure_temperature": "Meettemperatuur",
 		"target_temperature": "Doeltemperatuur",
-		"thermostat_mode": "Automatisch / Verhitten / Koelen / Uit"
+		"thermostat_mode": "Automatisch / Verhitten / Koelen / Uit",
+		"light_hue": "Hue licht",
+		"light_saturation": "Saturatie",
+		"light_temperature": "Licht Temperatuur",
+		"light_mode": "Kleur / Temperatuur"
 	},
 	"icon": {
 		"light": "Licht",

@@ -45,7 +45,11 @@
 		"homealarm_state": "Armed / Partially armed / Disarmed",
 		"measure_temperature": "Measure Temperature",
 		"target_temperature": "Target Temperature",
-		"thermostat_mode": "Automatic / Heat / Cool / Off"
+		"thermostat_mode": "Automatic / Heat / Cool / Off",
+		"light_hue": "Hue light",
+		"light_saturation": "Saturation",
+		"light_temperature": "Licht Temperature",
+		"light_mode": "Color / Temperature"
 	},
 	"icon": {
 		"light": "Light",
