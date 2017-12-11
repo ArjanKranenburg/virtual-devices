@@ -49,7 +49,11 @@
 		"light_hue": "Hue light",
 		"light_saturation": "Saturation",
 		"light_temperature": "Licht Temperature",
-		"light_mode": "Color / Temperature"
+		"light_mode": "Color / Temperature",
+		"volume_set": "Set Volume",
+		"volume_mute": "Mute",
+		"volume_up": "Volume Up",
+		"volume_down": "Volume Down"
 	},
 	"icon": {
 		"light": "Light",

@@ -94,7 +94,11 @@
 		"light_hue",
 		"light_saturation",
 		"light_temperature",
-		"light_mode"
+		"light_mode",
+		"volume_set",
+		"volume_mute",
+		"volume_up",
+		"volume_down"
 	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
@@ -121,7 +125,11 @@
 			},
 			"tv": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"volume_set",
+					"volume_mute",
+					"volume_up",
+					"volume_down"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -129,7 +137,11 @@
 			},
 			"amplifier": {
 				"capabilities": [
-					"onoff"
+					"onoff",
+					"volume_set",
+					"volume_mute",
+					"volume_up",
+					"volume_down"
 				],
 				"defaultCapabilities": [
 					"onoff"

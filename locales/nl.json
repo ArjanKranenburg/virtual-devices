@@ -49,7 +49,12 @@
 		"light_hue": "Hue licht",
 		"light_saturation": "Saturatie",
 		"light_temperature": "Licht Temperatuur",
-		"light_mode": "Kleur / Temperatuur"
+		"light_mode": "Kleur / Temperatuur",
+		"volume_set": "Zet Volume",
+		"volume_mute": "Stil",
+		"volume_up": "Luider",
+		"volume_down": "Zachter"
+
 	},
 	"icon": {
 		"light": "Licht",
