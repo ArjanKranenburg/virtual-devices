@@ -66,6 +66,7 @@
 				<option value="button" data-i18n="class.button">Button</option>
 				<option value="homealarm" data-i18n="class.homealarm">Home Alarm</option>
 				<option value="thermostat" data-i18n="class.thermostat">Thermostat</option>
+				<option value="lock" data-i18n="class.lock">Lock</option>
 		</select>
 		<br>
 
@@ -98,7 +99,9 @@
 		"volume_set",
 		"volume_mute",
 		"volume_up",
-		"volume_down"
+		"volume_down",
+		"locked",
+		"lock_mode"
 	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
@@ -217,6 +220,15 @@
 				],
 				"defaultCapabilities": [
 					"target_temperature"
+				]
+			},
+			"lock": {
+				"capabilities": [
+					"locked",
+					"lock_mode"
+				],
+				"defaultCapabilities": [
+					"locked"
 				]
 			}
 		}

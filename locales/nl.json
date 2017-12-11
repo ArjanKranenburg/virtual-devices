@@ -35,7 +35,8 @@
 		"coffeemachine": "Kofiezetapparaat",
 		"button": "Knop",
 		"homealarm": "Huisalarm",
-		"thermostat": "Thermostaat"
+		"thermostat": "Thermostaat",
+		"lock": "Slot"
 	},
 	"capability": {
 		"onoff": "Aan / uit",
@@ -53,7 +54,9 @@
 		"volume_set": "Zet Volume",
 		"volume_mute": "Stil",
 		"volume_up": "Luider",
-		"volume_down": "Zachter"
+		"volume_down": "Zachter",
+		"locked": "Op slot",
+		"lock_mode": "Altijd op slot / Altijd open / Op slot tot geopend"
 
 	},
 	"icon": {
@@ -64,6 +67,7 @@
 		"hifi": "Hi-Fi",
 		"alarm": "Alarm",
 		"blinds": "Zonwering",
+		"curtains": "Gordijnen",
 		"mode": "Modus",
 		"away": "Weg",
 		"event": "Evenement",
@@ -77,6 +81,7 @@
 		"relax": "Ontspan",
 		"secure": "Veilig",
 		"sleep": "Slaap",
-		"thermostat": "Thermostaat"
+		"thermostat": "Thermostaat",
+		"lock": "Slot"
 	}
 }

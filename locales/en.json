@@ -35,7 +35,8 @@
 		"coffeemachine": "Coffee Machine",
 		"button": "Button",
 		"homealarm": "Home Alarm",
-		"thermostat": "Thermostat"
+		"thermostat": "Thermostat",
+		"lock": "Lock"
 	},
 	"capability": {
 		"onoff": "On / Off",
@@ -53,7 +54,9 @@
 		"volume_set": "Set Volume",
 		"volume_mute": "Mute",
 		"volume_up": "Volume Up",
-		"volume_down": "Volume Down"
+		"volume_down": "Volume Down",
+		"locked": "Locked",
+		"lock_mode": "Always locked / Always unlocked / Locked until unlocked"
 	},
 	"icon": {
 		"light": "Light",
@@ -63,6 +66,7 @@
 		"hifi": "Hi-Fi",
 		"alarm": "Alarm",
 		"blinds": "Blinds",
+		"curtains": "Curtains",
 		"mode": "Mode",
 		"away": "Away",
 		"event": "Event",
@@ -76,6 +80,7 @@
 		"relax": "Relax",
 		"secure": "Secure",
 		"sleep": "Sleep",
-		"thermostat": "Thermostat"
+		"thermostat": "Thermostat",
+		"lock": "Lock"
 	}
 }

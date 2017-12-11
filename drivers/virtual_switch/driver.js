@@ -21,12 +21,14 @@ class VirtualDriver extends Homey.Driver {
 	        getIconNameAndLocation('switch'),
 	        getIconNameAndLocation('light'),
 	        getIconNameAndLocation('blinds'),
+          getIconNameAndLocation('curtains'),
 	        getIconNameAndLocation('tv'),
 	        getIconNameAndLocation('hifi'),
 	        getIconNameAndLocation('alarm'),
           getIconNameAndLocation('radiator'),
           getIconNameAndLocation('thermostat'),
-	        getIconNameAndLocation('button'),
+          getIconNameAndLocation('button'),
+          getIconNameAndLocation('lock'),
 	    ]
 
         callback( null, device_data );
