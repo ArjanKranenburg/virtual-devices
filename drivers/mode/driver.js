@@ -32,6 +32,7 @@ class ModeDriver extends Homey.Driver {
 
         var device_data = [
 					getIconNameAndLocation('mode'),
+          getIconNameAndLocation('house'),
 	        getIconNameAndLocation('away'),
 	        getIconNameAndLocation('event'),
 	        getIconNameAndLocation('holiday'),

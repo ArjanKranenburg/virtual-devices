@@ -31,10 +31,10 @@ class MultiDriver extends Homey.Driver {
         console.log('Adding new device');
 
         var device_data = [
-	        getIconNameAndLocation('away'),
+          getIconNameAndLocation('house'),
+          getIconNameAndLocation('away'),
 	        getIconNameAndLocation('event'),
 	        getIconNameAndLocation('holiday'),
-          getIconNameAndLocation('house'),
 	        getIconNameAndLocation('movie'),
 	        getIconNameAndLocation('party'),
 	        getIconNameAndLocation('quiet'),
