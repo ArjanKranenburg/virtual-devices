@@ -12,6 +12,7 @@ The copyright of the following icons lies with:
 * House (removed text) by Setyo Ari Wibowo from the Noun Project via [Creative Commons](creative-commons)
 * Multi-mode (removed text) by Barracuda from the Noun Project via [Creative Commons](creative-commons)
 * Thermostat (removed 'devolo'-text) by Athom.
+* Curtains (removed text) by B Farias from the Noun Project via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 

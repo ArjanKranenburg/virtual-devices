@@ -52,6 +52,7 @@ class VirtualDevice extends Homey.Device {
 
   // this method is called when the Device is added
   onAdded() {
+    this.log('Adding device');
     this.log('Adding device: ' + this.getName() + ' (' + this.getData().id + ')');
   }
 

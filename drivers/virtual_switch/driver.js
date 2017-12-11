@@ -20,7 +20,8 @@ class VirtualDriver extends Homey.Driver {
         var device_data = [
 	        getIconNameAndLocation('switch'),
 	        getIconNameAndLocation('light'),
-	        getIconNameAndLocation('blinds'),
+          getIconNameAndLocation('blinds'),
+          getIconNameAndLocation('curtains'),
 	        getIconNameAndLocation('tv'),
 	        getIconNameAndLocation('hifi'),
 	        getIconNameAndLocation('alarm'),
