@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "compatibility": "1.x >=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -34,12 +34,12 @@
     ]
   },
   "contributing": {
-      "donate": {
-          "paypal": {
-              "email": "arjan.kranenburg@gmail.com",
-              "currency": "EUR"
-          }
+    "donate": {
+      "paypal": {
+        "email": "arjan.kranenburg@gmail.com",
+        "currency": "EUR"
       }
+    }
   },
   "images": {
     "large": "./assets/images/large.png",
@@ -59,6 +59,48 @@
   },
   "flow": {
     "triggers": [
+      {
+        "id": "device_changed",
+        "title": {
+          "en": "A virtual device changed",
+          "nl": "Een virtueel apparaat is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "value",
+            "title": {
+              "en": "value",
+              "nl": "waarde"
+            },
+            "example": {
+              "en": "true",
+              "nl": "true"
+            }
+          },
+          {
+            "name": "variable",
+            "title": {
+              "en": "variable",
+              "nl": "variabele"
+            },
+            "example": {
+              "en": "onoff",
+              "nl": "aanuit"
+            }
+          },
+          {
+            "name": "device",
+            "title": {
+              "en": "device",
+              "nl": "apparaat"
+            },
+            "example": {
+              "en": "Virtual Lamp",
+              "nl": "Virtuele Lamp"
+            }
+          }
+        ]
+      },
       {
         "id": "press",
         "title": {
