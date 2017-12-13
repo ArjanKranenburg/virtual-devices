@@ -17,10 +17,11 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Feature Requests and Bugs
 
-Any help to improve this App is highly appreciated. Requests for new Features can be done on github:
+Any help to improve this App is highly appreciated. Bug reports and requests for new Features can be done on github:
 [https://github.com/ArjanKranenburg/virtual-devices/issues](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
-Bugs can be reported there as well.
+For questions or comments, please use the forum:
+[https://forum.athom.com/discussion/3065/app-virtual-devices-for-homey](https://forum.athom.com/discussion/3065/app-virtual-devices-for-homey)
 
 ## If you like this App
 

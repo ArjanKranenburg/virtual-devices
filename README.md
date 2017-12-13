@@ -22,6 +22,14 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.6.7
+* Added Hue capabilities for lights
+* Added A general trigger if one of the virtual devices (not yet modes) have changed
+* Added Volume capabilities for tv and amplifier
+* Added Lock
+* Added House icon for modes
+* Added target_temperature capability for coffeemachine
+
 ### 0.6.6
 * Added Virtual Thermostat
 
