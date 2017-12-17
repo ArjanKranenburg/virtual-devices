@@ -29,8 +29,11 @@ class VirtualDevice extends Homey.Device {
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
 
-      triggerDevice.trigger( this, {}, valueObj ) // Fire and forget
-        .catch( this.error )
+      process.nextTick(async () => {
+        await sleep(100);
+        triggerDevice.trigger( this, {}, valueObj )
+          .catch( this.error );
+      });
 
       // b.v.: valueObj = {"light_saturation":1}
       var variable = Object.keys(valueObj)[0];
@@ -59,6 +62,10 @@ class VirtualDevice extends Homey.Device {
   onDeleted() {
     this.log('device deleted: ' + this.getName());
   }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = VirtualDevice;
