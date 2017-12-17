@@ -22,6 +22,9 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## Release history
 
+### 0.6.8
+* Fix for trigger & condition for same device (issue #27)
+
 ### 0.6.7
 * Added Hue capabilities for lights
 * Added A general trigger if one of the virtual devices (not yet modes) have changed
