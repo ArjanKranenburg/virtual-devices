@@ -5,6 +5,8 @@ const Homey = require('homey');
 class VirtualDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Virtual Devices');
+
+    this.registerFlowCardAction('set_sensor_value', false);
 	}
 
   onPair( socket ) {
@@ -37,6 +39,22 @@ class VirtualDriver extends Homey.Driver {
     socket.on('disconnect', function(){
         console.log("User aborted pairing, or pairing is finished");
     })
+  }
+
+  registerFlowCardAction(card_name) {
+    let flowCardAction = new Homey.FlowCardAction(card_name);
+    flowCardAction
+      .register()
+      .registerRunListener(( args, state ) => {
+        let device = args.device;
+//        this.log(device.getName() + ' -> Sensor: ' + args.sensor);
+//        this.log(device.getName() + ' -> Value:  ' + parseFloat(args.value, 10));
+
+        device.setCapabilityValue(args.sensor, parseFloat(args.value, 10)) // Fire and forget
+           .catch(this.error);
+
+        return Promise.resolve( true );
+      })
   }
 }
 
