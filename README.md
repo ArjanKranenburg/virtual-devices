@@ -22,5 +22,5 @@ I'm very interested to hear your ideas for other virtual devices.
 
 ## More information:
 
-There is more information, including How-to's on GitHub.
+There is more information, including How-to's on GitHub Pages:
 [https://arjankranenburg.github.io/virtual-devices/](https://arjankranenburg.github.io/virtual-devices/)
