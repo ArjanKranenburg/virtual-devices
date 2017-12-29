@@ -212,6 +212,36 @@
     ],
     "actions": [
       {
+        "id": "set_sensor_value",
+        "title": {
+          "en": "Set a virtual sensor value",
+          "nl": "Zet de waarde van een virtuele sensor"
+        },
+        "args": [
+          {
+            "name": "sensor",
+            "type": "text",
+            "placeholder": {
+              "en": "Sensor",
+              "nl": "Sensor"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=virtual_switch"
+          }
+        ]
+      },
+      {
         "id": "mode_action_on",
         "title": {
           "en": "Turn mode on",
