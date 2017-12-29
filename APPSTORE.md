@@ -4,16 +4,10 @@ This app gives you the opportunity to add Virtual Devices to Homey. You can oper
 
 Or you can add a mode and add it as a condition, e.g. to disable multiple flows when going on Holiday.
 
-## What works:
+## More information:
 
-* Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV, Heater, Thermostat
-* Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual, Secure
-* Multi-modes: have a mode with more than 2 states, with custom names
-* Trigger a flow
-* Use the switch/mode status as a condition
-* Use the switch/mode in the 'then'-column
-
-I'm very interested to hear your ideas for other virtual devices.
+There is more information, including How-to's on GitHub.
+[https://arjankranenburg.github.io/virtual-devices/](https://arjankranenburg.github.io/virtual-devices/)
 
 ## Feature Requests and Bugs
 
