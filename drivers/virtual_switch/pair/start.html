@@ -91,7 +91,6 @@
 		"windowcoverings_state",
 		"homealarm_state",
 		"target_temperature",
-		"measure_temperature",
 		"thermostat_mode",
 		"light_hue",
 		"light_saturation",
@@ -102,13 +101,31 @@
 		"volume_up",
 		"volume_down",
 		"locked",
-		"lock_mode"
+		"lock_mode",
+		"measure_temperature",
+		"measure_co",
+		"measure_co2",
+		"measure_current",
+		"measure_gust_angle",
+		"measure_gust_strength",
+		"measure_luminance",
+		"measure_noise",
+		"measure_pm25",
+		"measure_power",
+		"measure_pressure",
+		"measure_rain",
+		"measure_ultraviolet",
+		"measure_voltage",
+		"measure_water",
+		"measure_wind_angle",
+		"measure_wind_strength"
 	];
 	var SUPPORTED_CLASSES = {
 			"socket": {
 				"capabilities": [
 					"onoff",
-					"dim"
+					"dim",
+					"measure_power"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -121,7 +138,8 @@
 					"light_hue",
 					"light_saturation",
 					"light_temperature",
-					"light_mode"
+					"light_mode",
+					"measure_power"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -164,7 +182,8 @@
 			"fan": {
 				"capabilities": [
 					"onoff",
-					"dim"
+					"dim",
+					"measure_power"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -173,7 +192,8 @@
 			"heater": {
 				"capabilities": [
 					"onoff",
-					"dim"
+					"dim",
+					"measure_power"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -182,7 +202,9 @@
 			"kettle": {
 				"capabilities": [
 					"onoff",
-					"target_temperature"
+					"target_temperature",
+					"measure_temperature",
+					"measure_power"
 				],
 				"defaultCapabilities": [
 					"onoff"
@@ -191,7 +213,8 @@
 			"coffeemachine": {
 				"capabilities": [
 					"onoff",
-					"target_temperature"
+					"target_temperature",
+					"measure_temperature"
 				],
 				"defaultCapabilities": [
 					"onoff"
