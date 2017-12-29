@@ -1,11 +1,12 @@
 # Virtual Devices
 
 * [Description](index)
-* [Define a Multimode device](multimode)
-* [Setting a sensor](sensor)
+* [Multi-Mode device](multimode)
+* [Sensors](sensor)
 * [Versions](version)
+* [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
-## sensor
+## Sensor
 
 A Virtual Sensor is a bit contradictory, but nevertheless users wanted to view a value in a device, e.g. the actual room temperature in a Thermostat.
 
