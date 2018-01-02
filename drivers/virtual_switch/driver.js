@@ -47,6 +47,10 @@ class VirtualDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
+        if (typeof(device) == 'undefined' || device == null ) {
+          return Promise.reject(new Error('device is null or undefined');
+        }
+
 //        this.log(device.getName() + ' -> Sensor: ' + args.sensor);
 //        this.log(device.getName() + ' -> Value:  ' + parseFloat(args.value, 10));
 

@@ -59,6 +59,9 @@ class ModeDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
+        if (typeof(device) == 'undefined' || device == null ) {
+          return Promise.reject(new Error('device is null or undefined');
+        }
         this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
 
         if (device.getState().onoff) {
@@ -75,6 +78,9 @@ class ModeDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
+        if (typeof(device) == 'undefined' || device == null ) {
+          return Promise.reject(new Error('device is null or undefined');
+        }
         this.log(device.getName() + ' -> State set to ' + newState);
 
         device.setCapabilityValue('onoff', newState) // Fire and forget
