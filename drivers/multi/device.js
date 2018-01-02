@@ -32,9 +32,12 @@ class ModeDevice extends Homey.Device {
       var state_name = this.getData().state_names[changedCapability];
       this.setMultiState(state_name);
 
-      // 3. Trigger flow
-      triggerDevice.trigger( this, {}, valueObj ) // Fire and forget
-        .catch( this.error );
+      // Trigger flow
+      process.nextTick(async () => {
+        await sleep(100);
+        triggerDevice.trigger( this, {}, valueObj ) // Fire and forget
+          .catch( this.error );
+      });
 
       return Promise.resolve();
     }, 500);
