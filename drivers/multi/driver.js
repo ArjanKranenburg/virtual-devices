@@ -57,6 +57,11 @@ class MultiDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
+        if (typeof(device) == 'undefined' || device == null ) {
+          this.log('Condition checked without device: ' + simpleStringify(args) );
+          return Promise.reject(new Error('device is null or undefined'));
+        }
+
         let argums = cleanJson(args);
         let firstKey = Object.keys(argums)[0];
         let stateToCheck = argums[firstKey];
@@ -77,6 +82,10 @@ class MultiDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         let device = args.device;
+        if (typeof(device) == 'undefined' || device == null ) {
+          this.log('Action triggered without device: ' + simpleStringify(args) );
+          return Promise.reject(new Error('device is null or undefined'));
+        }
 
         let argums = cleanJson(args);
         let firstArg = Object.keys(argums)[0];
@@ -130,6 +139,7 @@ function cleanJson (object){
     return simpleObject; // returns cleaned up Object
 };
 
-function simpleStringify (object){
-  return JSON.stringify(cleanJson(object)); // returns cleaned up JSON
+function simpleStringify (object) {
+    var simpleObject = cleanJson(object);
+    return JSON.stringify(simpleObject);
 };

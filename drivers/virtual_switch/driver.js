@@ -48,7 +48,8 @@ class VirtualDriver extends Homey.Driver {
       .registerRunListener(( args, state ) => {
         let device = args.device;
         if (typeof(device) == 'undefined' || device == null ) {
-          return Promise.reject(new Error('device is null or undefined');
+          this.log('Action triggered without device: ' + simpleStringify(args) );
+          return Promise.reject(new Error('device is null or undefined'));
         }
 
 //        this.log(device.getName() + ' -> Sensor: ' + args.sensor);
@@ -69,4 +70,26 @@ function getIconNameAndLocation( name ) {
 		"name": name,
 		"location": "../assets/" + name + ".svg"
 	}
+};
+
+function cleanJson (object){
+    var simpleObject = {};
+    for (var prop in object ){
+        if (!object.hasOwnProperty(prop)){
+            continue;
+        }
+        if (typeof(object[prop]) == 'object'){
+            continue;
+        }
+        if (typeof(object[prop]) == 'function'){
+            continue;
+        }
+        simpleObject[prop] = object[prop];
+    }
+    return simpleObject; // returns cleaned up Object
+};
+
+function simpleStringify (object) {
+    var simpleObject = cleanJson(object);
+    return JSON.stringify(simpleObject);
 };

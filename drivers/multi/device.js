@@ -97,6 +97,10 @@ class ModeDevice extends Homey.Device {
 
 module.exports = ModeDevice;
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // function cleanJson (object){
 //     var simpleObject = {};
 //     for (var prop in object ){

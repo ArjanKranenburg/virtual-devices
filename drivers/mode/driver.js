@@ -60,7 +60,8 @@ class ModeDriver extends Homey.Driver {
       .registerRunListener(( args, state ) => {
         let device = args.device;
         if (typeof(device) == 'undefined' || device == null ) {
-          return Promise.reject(new Error('device is null or undefined');
+          this.log('Condition checked without device: ' + simpleStringify(args) );
+          return Promise.reject(new Error('device is null or undefined'));
         }
         this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
 
@@ -79,7 +80,8 @@ class ModeDriver extends Homey.Driver {
       .registerRunListener(( args, state ) => {
         let device = args.device;
         if (typeof(device) == 'undefined' || device == null ) {
-          return Promise.reject(new Error('device is null or undefined');
+          this.log('Action triggered without device: ' + simpleStringify(args) );
+          return Promise.reject(new Error('device is null or undefined'));
         }
         this.log(device.getName() + ' -> State set to ' + newState);
 
@@ -105,9 +107,9 @@ function getIconNameAndLocation( name ) {
 	}
 };
 
-function cleanJson (object){
+function cleanJson (object) {
     var simpleObject = {};
-    for (var prop in object ){
+    for (var prop in object ) {
         if (!object.hasOwnProperty(prop)){
             continue;
         }
@@ -122,19 +124,7 @@ function cleanJson (object){
     return simpleObject; // returns cleaned up JSON
 };
 
-function simpleStringify (object){
-    var simpleObject = {};
-    for (var prop in object ){
-        if (!object.hasOwnProperty(prop)){
-            continue;
-        }
-        if (typeof(object[prop]) == 'object'){
-            continue;
-        }
-        if (typeof(object[prop]) == 'function'){
-            continue;
-        }
-        simpleObject[prop] = object[prop];
-    }
-    return JSON.stringify(simpleObject); // returns cleaned up JSON
+function simpleStringify (object) {
+    var simpleObject = cleanJson(object);
+    return JSON.stringify(simpleObject);
 };
