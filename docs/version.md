@@ -8,8 +8,12 @@
 
 ## Release history
 
-### 0.7.0
-* Adding a measure_temperature and measure_power as sensor capabilities.
+### 0.7.1 (Beta)
+* Multimode not triggerd sometimes (issue #33)
+* App keeps crashing (issue #35)
+
+### 0.7.0 (Beta)
+* Adding a measure_temperature and measure_power as sensor capabilities
 
 ### 0.6.8
 * Fix for trigger & condition for same device (issue #27)
