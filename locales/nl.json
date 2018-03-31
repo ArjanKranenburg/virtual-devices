@@ -36,6 +36,7 @@
 		"button": "Knop",
 		"homealarm": "Huisalarm",
 		"thermostat": "Thermostaat",
+		"sensor": "Sensor",
 		"lock": "Slot"
 	},
 	"capability": {
@@ -72,7 +73,8 @@
 		"measure_wind_angle": "Windrichting",
 		"measure_wind_strength": "Windsnelheid",
 		"measure_gust_angle": "Windstootrichting",
-		"measure_gust_strength": "Windstootkracht"
+		"measure_gust_strength": "Windstootkracht",
+		"measure_humidity": "Relatieve Luchtvochtigheid"
 	},
 	"icon": {
 		"light": "Licht",
@@ -97,6 +99,7 @@
 		"secure": "Veilig",
 		"sleep": "Slaap",
 		"thermostat": "Thermostaat",
+		"sensor": "Sensor",
 		"lock": "Slot"
 	}
 }

@@ -36,6 +36,7 @@
 		"button": "Button",
 		"homealarm": "Home Alarm",
 		"thermostat": "Thermostat",
+		"sensor": "Sensor",
 		"lock": "Lock"
 	},
 	"capability": {
@@ -72,7 +73,8 @@
 		"measure_wind_strength": "Wind strength",
 		"measure_wind_angle": "Wind angle",
 		"measure_gust_strength": "Gust strength",
-		"measure_gust_angle": "Gust angle"
+		"measure_gust_angle": "Gust angle",
+		"measure_humidity": "Relative Humidity"
 	},
 	"icon": {
 		"light": "Light",
