@@ -28,9 +28,12 @@ class ModeDevice extends Homey.Device {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
       this.log('State before:       ', this.getState());
 
-      var changedCapability = Object.keys(valueObj)[0];
-      var state_name = this.getData().state_names[changedCapability];
-      this.setMultiState(state_name);
+      // There should be 1, but just in case
+      for (var i = 0, len = Object.keys(valueObj).length; i < len; i++) {
+        var changedCapability = Object.keys(valueObj)[i];
+        var state_name = this.getData().state_names[changedCapability];
+        this.setMultiState(state_name);
+      }
 
       // Trigger flow
       process.nextTick(async () => {

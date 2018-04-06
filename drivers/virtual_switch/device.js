@@ -35,26 +35,29 @@ class VirtualDevice extends Homey.Device {
           .catch( this.error );
       });
 
-      // b.v.: valueObj = {"light_saturation":1}
-      var variable = Object.keys(valueObj)[0];
-      var value = valueObj[variable];
-      // this.log('variable: ' + variable);
-      // this.log('value:    ' + value);
-      if (variable === "dim" && this.hasCapability( 'onoff' )) {
-        if ( value > 0 ) {
-          this.setCapabilityValue( 'onoff', true )
-        } else {
-          this.setCapabilityValue( 'onoff', false )
+      // There should be 1, but just in case
+      for (var i = 0, len = Object.keys(valueObj).length; i < len; i++) {
+        // b.v.: valueObj = {"light_saturation":1}
+        var variable = Object.keys(valueObj)[i];
+        var value = valueObj[variable];
+        // this.log('variable: ' + variable);
+        // this.log('value:    ' + value);
+        if (variable === 'dim' && this.hasCapability( 'onoff' )) {
+          if ( value > 0 ) {
+            this.setCapabilityValue( 'onoff', true )
+          } else {
+            this.setCapabilityValue( 'onoff', false )
+          }
         }
-      }
 
-      let tokens = {
-          'device': this.getName(),
-          'variable': variable,
-          'value': '' + value
+        let tokens = {
+            'device': this.getName(),
+            'variable': variable,
+            'value': '' + value
+        }
+        aVirtualDeviceChanged.trigger( tokens ) // Fire and forget
+          .catch( this.error )
       }
-      aVirtualDeviceChanged.trigger( tokens ) // Fire and forget
-        .catch( this.error )
 
       return Promise.resolve();
     }, 500);
