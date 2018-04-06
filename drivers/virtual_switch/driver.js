@@ -6,7 +6,7 @@ class VirtualDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Virtual Devices');
 
-    this.registerFlowCardAction('set_sensor_value', false);
+    this.registerFlowCardAction_sensor('set_sensor_value', false);
 	}
 
   onPair( socket ) {
@@ -41,24 +41,28 @@ class VirtualDriver extends Homey.Driver {
     })
   }
 
-  registerFlowCardAction(card_name) {
+  registerFlowCardAction_sensor(card_name) {
     let flowCardAction = new Homey.FlowCardAction(card_name);
     flowCardAction
       .register()
       .registerRunListener(( args, state ) => {
-        let device = args.device;
-        if (typeof(device) == 'undefined' || device == null ) {
-          this.log('Action triggered without device: ' + simpleStringify(args) );
-          return Promise.reject(new Error('device is null or undefined'));
+        try {
+          let device = validateItem('device', args.device);
+          let sensor = validateItem('sensor', args.sensor);
+          let value  = validateItem('value',  args.value );
+//        this.log(device.getName() + ' -> Sensor: ' + sensor);
+//        this.log(device.getName() + ' -> Value:  ' + parseFloat(value, 10));
+
+          device.setCapabilityValue(sensor, parseFloat(value, 10)) // Fire and forget
+             .catch(this.error);
+
+          return Promise.resolve( true );
         }
-
-//        this.log(device.getName() + ' -> Sensor: ' + args.sensor);
-//        this.log(device.getName() + ' -> Value:  ' + parseFloat(args.value, 10));
-
-        device.setCapabilityValue(args.sensor, parseFloat(args.value, 10)) // Fire and forget
-           .catch(this.error);
-
-        return Promise.resolve( true );
+        catch(error) {
+          this.log('Device triggered with missing information: ' + error.message)
+          this.log('args: ' + simpleStringify(args) );
+          return Promise.reject(error);
+        }
       })
   }
 }
@@ -71,6 +75,13 @@ function getIconNameAndLocation( name ) {
 		"location": "../assets/" + name + ".svg"
 	}
 };
+
+function validateItem(item, value) {
+  if (typeof(value) == 'undefined' || value == null ) {
+    throw new ReferenceError( item + ' is null or undefined' );
+  }
+  return value;
+}
 
 function cleanJson (object){
     var simpleObject = {};

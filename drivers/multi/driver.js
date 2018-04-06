@@ -56,22 +56,24 @@ class MultiDriver extends Homey.Driver {
     flowCardCondition
       .register()
       .registerRunListener(( args, state ) => {
-        let device = args.device;
-        if (typeof(device) == 'undefined' || device == null ) {
-          this.log('Condition checked without device: ' + simpleStringify(args) );
-          return Promise.reject(new Error('device is null or undefined'));
+        try {
+          let device = validateItem('device', args.device);
+
+          let argums = cleanJson(args);
+          let firstKey = Object.keys(argums)[0];
+          let stateToCheck = argums[firstKey];
+          this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
+
+
+          if (stateToCheck === device.getState()[capability]) {
+            return Promise.resolve( true );
+          } else {
+            return Promise.resolve( false );
+          }
         }
-
-        let argums = cleanJson(args);
-        let firstKey = Object.keys(argums)[0];
-        let stateToCheck = argums[firstKey];
-        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
-
-
-        if (stateToCheck === device.getState()[capability]) {
-          return Promise.resolve( true );
-        } else {
-          return Promise.resolve( false );
+        catch(error) {
+          this.log('Device condition checked with missing information: ' + error.message)
+          return Promise.reject(error);
         }
       })
   }
@@ -81,34 +83,36 @@ class MultiDriver extends Homey.Driver {
     flowCardAction
       .register()
       .registerRunListener(( args, state ) => {
-        let device = args.device;
-        if (typeof(device) == 'undefined' || device == null ) {
-          this.log('Action triggered without device: ' + simpleStringify(args) );
-          return Promise.reject(new Error('device is null or undefined'));
+        try {
+          let device = validateItem('device', args.device);
+
+          let argums = cleanJson(args);
+          let firstArg = Object.keys(argums)[0];
+          let newState = argums[firstArg];
+          this.log(device.getName() + ' -> State set to ' + newState);
+
+          // 1 Check that newState is allowed
+          if ( ! device.isStateAllowed(newState) ) {
+            var allowedStates = Object.values(device.getData().state_names);
+            this.error(newState + ' is not an allowed state. Allowed states are: ', JSON.stringify(allowedStates));
+            return Promise.resolve( false );
+          }
+
+          // 2. Set the multi-state and the boolean belonging to 'newState'
+          device.setMultiState(newState);
+
+          // 3. Trigger flow
+          if (flow_trigger) {
+            flow_trigger.trigger( device, {}, newState ) // Fire and forget
+              .catch( this.error );
+          }
+
+          return Promise.resolve( true );
         }
-
-        let argums = cleanJson(args);
-        let firstArg = Object.keys(argums)[0];
-        let newState = argums[firstArg];
-        this.log(device.getName() + ' -> State set to ' + newState);
-
-        // 1 Check that newState is allowed
-        if ( ! device.isStateAllowed(newState) ) {
-          var allowedStates = Object.values(device.getData().state_names);
-          this.error(newState + ' is not an allowed state. Allowed states are: ', JSON.stringify(allowedStates));
-          return Promise.resolve( false );
+        catch(error) {
+          this.log('Device action called with missing information: ' + error.message)
+          return Promise.reject(error);
         }
-
-        // 2. Set the multi-state and the boolean belonging to 'newState'
-        device.setMultiState(newState);
-
-        // 3. Trigger flow
-        if (flow_trigger) {
-          flow_trigger.trigger( device, {}, newState ) // Fire and forget
-            .catch( this.error );
-        }
-
-        return Promise.resolve( true );
       })
   }
 }
@@ -121,6 +125,13 @@ function getIconNameAndLocation( name ) {
 		'location': '../assets/' + name + '.svg'
 	}
 };
+
+function validateItem(item, value) {
+  if (typeof(value) == 'undefined' || value == null ) {
+    throw new ReferenceError( item + ' is null or undefined' );
+  }
+  return value;
+}
 
 function cleanJson (object){
     var simpleObject = {};

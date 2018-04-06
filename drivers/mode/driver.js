@@ -58,17 +58,19 @@ class ModeDriver extends Homey.Driver {
     flowCardCondition
       .register()
       .registerRunListener(( args, state ) => {
-        let device = args.device;
-        if (typeof(device) == 'undefined' || device == null ) {
-          this.log('Condition checked without device: ' + simpleStringify(args) );
-          return Promise.reject(new Error('device is null or undefined'));
-        }
-        this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
+        try {
+          let device = validateItem('device', args.device);
+          this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
 
-        if (device.getState().onoff) {
-          return Promise.resolve( true );
-        } else {
-          return Promise.resolve( false );
+          if (device.getState().onoff) {
+            return Promise.resolve( true );
+          } else {
+            return Promise.resolve( false );
+          }
+        }
+        catch(error) {
+          this.log('Device condition checked with missing information: ' + error.message)
+          return Promise.reject(error);
         }
       })
   }
@@ -78,22 +80,24 @@ class ModeDriver extends Homey.Driver {
     flowCardAction
       .register()
       .registerRunListener(( args, state ) => {
-        let device = args.device;
-        if (typeof(device) == 'undefined' || device == null ) {
-          this.log('Action triggered without device: ' + simpleStringify(args) );
-          return Promise.reject(new Error('device is null or undefined'));
+        try {
+          let device = validateItem('device', args.device);
+          this.log(device.getName() + ' -> State set to ' + newState);
+
+          device.setCapabilityValue('onoff', newState) // Fire and forget
+            .catch(this.error);
+
+          if (flow_trigger) {
+            flow_trigger.trigger( device, {}, newState ) // Fire and forget
+              .catch( this.error );
+          }
+
+          return Promise.resolve( true );
         }
-        this.log(device.getName() + ' -> State set to ' + newState);
-
-        device.setCapabilityValue('onoff', newState) // Fire and forget
-          .catch(this.error);
-
-        if (flow_trigger) {
-          flow_trigger.trigger( device, {}, newState ) // Fire and forget
-            .catch( this.error );
+        catch(error) {
+          this.log('Device action called with missing information: ' + error.message)
+          return Promise.reject(error);
         }
-
-        return Promise.resolve( true );
       })
   }
 }
@@ -106,6 +110,13 @@ function getIconNameAndLocation( name ) {
 		'location': '../assets/' + name + '.svg'
 	}
 };
+
+function validateItem(item, value) {
+  if (typeof(value) == 'undefined' || value == null ) {
+    throw new ReferenceError( item + ' is null or undefined' );
+  }
+  return value;
+}
 
 function cleanJson (object) {
     var simpleObject = {};
