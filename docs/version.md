@@ -8,6 +8,9 @@
 
 ## Release history
 
+### 0.7.2 (Beta)
+* Changing intensity does not turn the device on (issue #36)
+
 ### 0.7.1 (Beta)
 * Multimode not triggerd sometimes (issue #33)
 * App keeps crashing (issue #35)
