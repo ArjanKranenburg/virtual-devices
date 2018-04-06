@@ -59,11 +59,11 @@ class MultiDriver extends Homey.Driver {
         try {
           let device = validateItem('device', args.device);
 
-          let argums = cleanJson(args);
-          let firstKey = Object.keys(argums)[0];
-          let stateToCheck = argums[firstKey];
+          // let argums = cleanJson(args);
+          // let firstKey = Object.keys(argums)[0];
+          // let stateToCheck = argums[firstKey];
+          let stateToCheck = getState( args );
           this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
-
 
           if (stateToCheck === device.getState()[capability]) {
             return Promise.resolve( true );
@@ -86,9 +86,10 @@ class MultiDriver extends Homey.Driver {
         try {
           let device = validateItem('device', args.device);
 
-          let argums = cleanJson(args);
-          let firstArg = Object.keys(argums)[0];
-          let newState = argums[firstArg];
+          // let argums = cleanJson(args);
+          // let firstArg = Object.keys(argums)[0];
+          // let newState = argums[firstArg];
+          let newState = getState( args );
           this.log(device.getName() + ' -> State set to ' + newState);
 
           // 1 Check that newState is allowed
@@ -125,6 +126,12 @@ function getIconNameAndLocation( name ) {
 		'location': '../assets/' + name + '.svg'
 	}
 };
+
+function getState( args ) {
+  let argums = cleanJson(args);
+  let firstKey = Object.keys(argums)[0];
+  return argums[firstKey];
+}
 
 function validateItem(item, value) {
   if (typeof(value) == 'undefined' || value == null ) {
