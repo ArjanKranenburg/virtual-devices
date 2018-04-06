@@ -19,11 +19,11 @@ class VirtualDevice extends Homey.Device {
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
     // this.log('state:       ', this.getState());
 
-    let triggerDevice = new Homey.FlowCardTriggerDevice('press');
-    triggerDevice.register();
+    let thisDeviceChanged = new Homey.FlowCardTriggerDevice('press');
+    thisDeviceChanged.register();
 
-    let deviceChangedTrigger = new Homey.FlowCardTrigger('device_changed');
-		deviceChangedTrigger.register();
+    let aVirtualDeviceChanged = new Homey.FlowCardTrigger('device_changed');
+		aVirtualDeviceChanged.register();
 
     // When capability is changed
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
@@ -31,22 +31,29 @@ class VirtualDevice extends Homey.Device {
 
       process.nextTick(async () => {
         await sleep(100);
-        triggerDevice.trigger( this, {}, valueObj )
+        thisDeviceChanged.trigger( this, {}, valueObj )
           .catch( this.error );
       });
 
       // b.v.: valueObj = {"light_saturation":1}
       var variable = Object.keys(valueObj)[0];
+      var value = valueObj[variable];
       // this.log('variable: ' + variable);
-      // this.log('value:    ' + valueObj[variable]);
+      // this.log('value:    ' + value);
+      if (variable === "dim" && this.hasCapability( 'onoff' )) {
+        if ( value > 0 ) {
+          this.setCapabilityValue( 'onoff', true )
+        } else {
+          this.setCapabilityValue( 'onoff', false )
+        }
+      }
 
       let tokens = {
           'device': this.getName(),
           'variable': variable,
-          'value': '' + valueObj[variable]
+          'value': '' + value
       }
-
-      deviceChangedTrigger.trigger( tokens ) // Fire and forget
+      aVirtualDeviceChanged.trigger( tokens ) // Fire and forget
         .catch( this.error )
 
       return Promise.resolve();
