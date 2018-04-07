@@ -85,13 +85,15 @@ class ModeDriver extends Homey.Driver {
         try {
           let device = validateItem('device', args.device);
           this.log(device.getName() + ' -> State set to ' + newState);
+          if ( device.getCapabilityValue('onoff') !== newState ) {
 
-          device.setCapabilityValue('onoff', newState) // Fire and forget
-            .catch(this.error);
+            device.setCapabilityValue('onoff', newState) // Fire and forget
+              .catch(this.error);
 
-          for (var i = 0; i < flow_triggers.length; i++) {
-            flow_triggers[i].trigger( device, {}, newState ) // Fire and forget
-              .catch( this.error );
+            for (var i = 0; i < flow_triggers.length; i++) {
+              flow_triggers[i].trigger( device, {}, newState ) // Fire and forget
+                .catch( this.error );
+            }
           }
 
           return Promise.resolve( true );
