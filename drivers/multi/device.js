@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 const TOKEN_NAME = 'multi_state';
+const PREVIOUS_STATE_NAME = 'previous_state';
 
 //a list of devices, with their 'id' as key
 //it is generally advisable to keep a list of
@@ -28,18 +29,22 @@ class ModeDevice extends Homey.Device {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
       this.log('State before:       ', this.getState());
 
+      // There should be 1, but just in case
+      for (var changedCapability in valueObj) {
+        var newState = this.getData().state_names[changedCapability];
+        if (this.getCapabilityValue(TOKEN_NAME) === newState) {
+          this.log('State did not change')
+          return Promise.resolve(); // no change, no triggers
+        }
+
+        this.setMultiState(newState);
+      }
+
       process.nextTick(async () => {
         await sleep(100);
         thisMultiChanged.trigger( this, {}, valueObj ) // Fire and forget
           .catch( this.error );
       });
-
-      // There should be 1, but just in case
-      for (var i = 0, len = Object.keys(valueObj).length; i < len; i++) {
-        var changedCapability = Object.keys(valueObj)[i];
-        var state_name = this.getData().state_names[changedCapability];
-        this.setMultiState(state_name);
-      }
 
       return Promise.resolve();
     }, 500);
@@ -59,6 +64,9 @@ class ModeDevice extends Homey.Device {
     console.log('Setting state to: ' + this.getData().state_names["onoff.opt1"]);
     this.setCapabilityValue(TOKEN_NAME, this.getData().state_names["onoff.opt1"])
       .catch( this.error );
+    console.log('Setting previous state to: ' + this.getData().state_names["onoff.opt1"]);
+    this.setCapabilityValue(PREVIOUS_STATE_NAME, this.getData().state_names["onoff.opt1"])
+      .catch( this.error );
   }
 
   // this method is called when the Device is deleted
@@ -74,6 +82,11 @@ class ModeDevice extends Homey.Device {
   setMultiState( new_state ) {
     if( ! this.isStateAllowed(new_state) ) { return }
     this.log('Set name: ', new_state);
+    if (this.hasCapability(PREVIOUS_STATE_NAME)) {
+      this.log('Previous state: ', this.getCapabilityValue(TOKEN_NAME));
+      this.setCapabilityValue(PREVIOUS_STATE_NAME, this.getCapabilityValue(TOKEN_NAME))
+        .catch( this.error );
+    }
     this.setCapabilityValue(TOKEN_NAME, new_state)
       .catch( this.error );
 

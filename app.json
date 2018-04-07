@@ -50,6 +50,15 @@
       },
       "getable": true,
       "setable": true
+    },
+    "previous_state": {
+      "type": "string",
+      "title": {
+        "en": "Previous Multi-mode state",
+        "nl": "Vorige Multimode status"
+      },
+      "getable": true,
+      "setable": false
     }
   },
   "flow": {
