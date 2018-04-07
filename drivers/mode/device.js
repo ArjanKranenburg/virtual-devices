@@ -19,25 +19,25 @@ class ModeDevice extends Homey.Device {
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
     // this.log('state:       ', this.getState());
 
-    let modeOnTriggerDevice = new Homey.FlowCardTriggerDevice('mode_on');
-    modeOnTriggerDevice.register();
-    let modeOffTriggerDevice = new Homey.FlowCardTriggerDevice('mode_off');
-    modeOffTriggerDevice.register();
-    let modeChangedTriggerDevice = new Homey.FlowCardTriggerDevice('mode_changed');
-    modeChangedTriggerDevice.register();
+    let thisModeOn = new Homey.FlowCardTriggerDevice('mode_on');
+    thisModeOn.register();
+    let thisModeOff = new Homey.FlowCardTriggerDevice('mode_off');
+    thisModeOff.register();
+    let thisModeChanged = new Homey.FlowCardTriggerDevice('mode_changed');
+    thisModeChanged.register();
 
     // When capability is changed
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
 
-      modeChangedTriggerDevice.trigger( this, {}, valueObj ) // Fire and forget
+      thisModeChanged.trigger( this, {}, valueObj ) // Fire and forget
         .catch( this.error );
 
       if ( valueObj.onoff ) {
-        modeOnTriggerDevice.trigger( this, {}, valueObj ) // Fire and forget
+        thisModeOn.trigger( this, {}, valueObj ) // Fire and forget
           .catch( this.error );
       } else {
-        modeOffTriggerDevice.trigger( this, {}, valueObj ) // Fire and forget
+        thisModeOff.trigger( this, {}, valueObj ) // Fire and forget
           .catch( this.error );
       }
       return Promise.resolve();
