@@ -20,13 +20,19 @@ class ModeDevice extends Homey.Device {
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
     this.log('state:       ', this.getState());
 
-    let triggerDevice = new Homey.FlowCardTriggerDevice('multi_changed');
-    triggerDevice.register();
+    let thisMultiChanged = new Homey.FlowCardTriggerDevice('multi_changed');
+    thisMultiChanged.register();
 
     // When capability is changed
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
       this.log('State before:       ', this.getState());
+
+      process.nextTick(async () => {
+        await sleep(100);
+        thisMultiChanged.trigger( this, {}, valueObj ) // Fire and forget
+          .catch( this.error );
+      });
 
       // There should be 1, but just in case
       for (var i = 0, len = Object.keys(valueObj).length; i < len; i++) {
@@ -34,13 +40,6 @@ class ModeDevice extends Homey.Device {
         var state_name = this.getData().state_names[changedCapability];
         this.setMultiState(state_name);
       }
-
-      // Trigger flow
-      process.nextTick(async () => {
-        await sleep(100);
-        triggerDevice.trigger( this, {}, valueObj ) // Fire and forget
-          .catch( this.error );
-      });
 
       return Promise.resolve();
     }, 500);

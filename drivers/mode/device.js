@@ -30,8 +30,11 @@ class ModeDevice extends Homey.Device {
     this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
       this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
 
-      thisModeChanged.trigger( this, {}, valueObj ) // Fire and forget
-        .catch( this.error );
+      process.nextTick(async () => {
+        await sleep(100);
+        thisModeChanged.trigger( this, {}, valueObj ) // Fire and forget
+          .catch( this.error );
+      });
 
       if ( valueObj.onoff ) {
         thisModeOn.trigger( this, {}, valueObj ) // Fire and forget
@@ -53,6 +56,10 @@ class ModeDevice extends Homey.Device {
   onDeleted() {
     this.log('device mode: ' + this.getName());
   }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = ModeDevice;
