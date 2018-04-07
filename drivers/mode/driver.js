@@ -7,17 +7,19 @@ class ModeDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Modes');
 
-    let triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on');
+    var triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on');
     triggerDeviceOn.register();
-    let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
+    var triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
     triggerDeviceOff.register();
+    var triggerDeviceChanged = new Homey.FlowCardTriggerDevice('mode_changed');
+    triggerDeviceChanged.register();
 
     this.registerFlowCardCondition('mode');
 
-    this.registerFlowCardAction('mode_action_on', true, triggerDeviceOn);
-    this.registerFlowCardAction('mode_action_off', false, triggerDeviceOff);
-    this.registerFlowCardAction('mode_state_on', true);
-    this.registerFlowCardAction('mode_state_off', false);
+    this.registerFlowCardAction('mode_action_on', true, [triggerDeviceOn, triggerDeviceChanged]);
+    this.registerFlowCardAction('mode_action_off', false, [triggerDeviceOff, triggerDeviceChanged]);
+    this.registerFlowCardAction('mode_state_on', true, []);
+    this.registerFlowCardAction('mode_state_off', false, []);
 	}
 
   onPair( socket ) {
@@ -75,7 +77,7 @@ class ModeDriver extends Homey.Driver {
       })
   }
 
-  registerFlowCardAction(card_name, newState, flow_trigger) {
+  registerFlowCardAction(card_name, newState, flow_triggers) {
     let flowCardAction = new Homey.FlowCardAction(card_name);
     flowCardAction
       .register()
@@ -87,8 +89,8 @@ class ModeDriver extends Homey.Driver {
           device.setCapabilityValue('onoff', newState) // Fire and forget
             .catch(this.error);
 
-          if (flow_trigger) {
-            flow_trigger.trigger( device, {}, newState ) // Fire and forget
+          for (var i = 0; i < flow_triggers.length; i++) {
+            flow_triggers[i].trigger( device, {}, newState ) // Fire and forget
               .catch( this.error );
           }
 

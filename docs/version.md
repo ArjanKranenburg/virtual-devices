@@ -10,6 +10,7 @@
 
 ### 0.7.2 (Beta)
 * Changing intensity does not turn the device on (issue #36)
+* Mode changed is now also triggered when a mode is changed in a flow (issue #39)
 
 ### 0.7.1 (Beta)
 * Multimode not triggerd sometimes (issue #33)
