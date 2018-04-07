@@ -26,23 +26,21 @@ class VirtualDevice extends Homey.Device {
 		aVirtualDeviceChanged.register();
 
     // When capability is changed
-    this.registerMultipleCapabilityListener(this.getCapabilities(), (valueObj, optsObj) => {
-      this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(valueObj));
+    this.registerMultipleCapabilityListener(this.getCapabilities(), (changedCapabs, optsObj) => {
+      this.log(this.getName() + ' -> Capability changed: ' + JSON.stringify(changedCapabs));
 
-      process.nextTick(async () => {
-        await sleep(100);
-        thisDeviceChanged.trigger( this, {}, valueObj )
-          .catch( this.error );
-      });
-
-      // There should be 1, but just in case
-      for (var i = 0, len = Object.keys(valueObj).length; i < len; i++) {
-        // b.v.: valueObj = {"light_saturation":1}
-        var variable = Object.keys(valueObj)[i];
-        var value = valueObj[variable];
-        // this.log('variable: ' + variable);
+      for (var capability in changedCapabs) {
+        var value = changedCapabs[capability];
+        // this.log('capability: ' + capability);
         // this.log('value:    ' + value);
-        if (variable === 'dim' && this.hasCapability( 'onoff' )) {
+
+        if ( capability === 'onoff' ) {
+          if ( this.getCapabilityValue('onoff') === value ) {
+            return Promise.resolve(); // no change, no triggers
+          }
+        }
+
+        if (capability === 'dim' && this.hasCapability( 'onoff' )) {
           if ( value > 0 ) {
             this.setCapabilityValue( 'onoff', true )
           } else {
@@ -50,9 +48,15 @@ class VirtualDevice extends Homey.Device {
           }
         }
 
+        process.nextTick(async () => {
+          await sleep(100);
+          thisDeviceChanged.trigger( this, {}, changedCapabs )
+            .catch( this.error );
+        });
+
         let tokens = {
             'device': this.getName(),
-            'variable': variable,
+            'variable': capability,
             'value': '' + value
         }
         aVirtualDeviceChanged.trigger( tokens ) // Fire and forget
