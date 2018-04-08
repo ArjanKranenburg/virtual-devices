@@ -108,6 +108,10 @@ class ModeDevice extends Homey.Device {
       }
     }
   }
+
+  getMultiState() {
+    return this.getCapabilityValue(TOKEN_NAME)
+  }
 }
 
 module.exports = ModeDevice;

@@ -7,11 +7,6 @@ class MultiDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Multi-Modes');
 
-    // let triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on');
-    // triggerDeviceOn.register();
-    // let triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
-    // triggerDeviceOff.register();
-    //
     let multiModeTrigger = new Homey.FlowCardTriggerDevice('multi_changed');
     multiModeTrigger.register();
 
@@ -59,9 +54,6 @@ class MultiDriver extends Homey.Driver {
         try {
           let device = validateItem('device', args.device);
 
-          // let argums = cleanJson(args);
-          // let firstKey = Object.keys(argums)[0];
-          // let stateToCheck = argums[firstKey];
           let stateToCheck = getState( args );
           this.log(device.getName() + ' -> Condition checked: ' + simpleStringify(device.getState()) );
 
@@ -85,24 +77,22 @@ class MultiDriver extends Homey.Driver {
       .registerRunListener(( args, state ) => {
         try {
           let device = validateItem('device', args.device);
-
-          // let argums = cleanJson(args);
-          // let firstArg = Object.keys(argums)[0];
-          // let newState = argums[firstArg];
           let newState = getState( args );
-          this.log(device.getName() + ' -> State set to ' + newState);
+          this.log(device.getName() + ' -> Multi-State set to ' + newState);
 
-          // 1 Check that newState is allowed
           if ( ! device.isStateAllowed(newState) ) {
             var allowedStates = Object.values(device.getData().state_names);
             this.error(newState + ' is not an allowed state. Allowed states are: ', JSON.stringify(allowedStates));
             return Promise.resolve( false );
           }
 
-          // 2. Set the multi-state and the boolean belonging to 'newState'
+          if (device.getMultiState() === newState) {
+            this.log('Multi-State did not change')
+            return Promise.resolve(); // no change, no triggers
+          }
+
           device.setMultiState(newState);
 
-          // 3. Trigger flow
           if (flow_trigger) {
             flow_trigger.trigger( device, {}, newState ) // Fire and forget
               .catch( this.error );
