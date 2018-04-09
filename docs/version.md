@@ -8,6 +8,9 @@
 
 ## Release history
 
+### 0.7.3 (Beta)
+* Added a Sensor (issue #26 and #32)
+
 ### 0.7.2 (Beta)
 * A Multi-state now also has a previous_state (issue #47)
 * A device that is turned on will not be turned on again (issue #42)
