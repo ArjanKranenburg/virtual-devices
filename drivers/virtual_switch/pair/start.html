@@ -66,6 +66,7 @@
 				<option value="button" data-i18n="class.button">Button</option>
 				<option value="homealarm" data-i18n="class.homealarm">Home Alarm</option>
 				<option value="thermostat" data-i18n="class.thermostat">Thermostat</option>
+				<option value="sensor" data-i18n="class.sensor">Sensor</option>
 				<option value="lock" data-i18n="class.lock">Lock</option>
 		</select>
 		<br>
@@ -103,16 +104,18 @@
 		"locked",
 		"lock_mode",
 		"measure_temperature",
-		"measure_power"
+		"measure_power",
+		"measure_co2",
+		"measure_pressure",
+		"measure_humidity",
+		"measure_pm25"
 	];
 	// "measure_co",
-	// "measure_co2",
 	// "measure_current",
 	// "measure_gust_angle",
 	// "measure_gust_strength",
 	// "measure_luminance",
 	// "measure_noise",
-	// "measure_pm25",
 	// "measure_pressure",
 	// "measure_rain",
 	// "measure_ultraviolet",
@@ -247,6 +250,17 @@
 				],
 				"defaultCapabilities": [
 					"target_temperature"
+				]
+			},
+			"sensor": {
+				"capabilities": [
+					"measure_temperature",
+					"measure_co2",
+					"measure_pressure",
+					"measure_humidity",
+					"measure_pm25"
+				],
+				"defaultCapabilities": [
 				]
 			},
 			"lock": {
