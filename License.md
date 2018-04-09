@@ -14,6 +14,7 @@ The copyright of the following icons lies with:
 * Thermostat (removed 'devolo'-text) by Athom.
 * Curtains (removed text) by b farias from the Noun Project via [Creative Commons](creative-commons)
 * Lock (removed text) by Aleksandr Vector from the Noun Project via [Creative Commons](creative-commons)
+* Sensor (removed text) by Arthur Lacôte from the Noun Project via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 

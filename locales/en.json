@@ -99,6 +99,7 @@
 		"secure": "Secure",
 		"sleep": "Sleep",
 		"thermostat": "Thermostat",
+		"sensor": "Sensor",
 		"lock": "Lock"
 	}
 }
