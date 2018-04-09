@@ -9,7 +9,9 @@
 ## Release history
 
 ### 0.7.2 (Beta)
-* Changing intensity does not turn the device on (issue #36)
+* A Multi-state now also has a previous_state (issue #47)
+* A device that is turned on will not be turned on again (issue #42)
+* Changing intensity affects the device on-off (issue #36)
 * Mode changed is now also triggered when a mode is changed in a flow (issue #39)
 
 ### 0.7.1 (Beta)
