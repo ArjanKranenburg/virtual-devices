@@ -45,6 +45,7 @@
 		"button": "Button",
 		"windowcoverings_state": "Up / Idle / Down",
 		"homealarm_state": "Armed / Partially armed / Disarmed",
+		"alarm_motion": "Detected Motion",
 		"target_temperature": "Target Temperature",
 		"thermostat_mode": "Automatic / Heat / Cool / Off",
 		"light_hue": "Hue light",

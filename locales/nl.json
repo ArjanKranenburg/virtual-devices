@@ -45,6 +45,7 @@
 		"button": "Knop",
 		"windowcoverings_state": "Op / stop / neer",
 		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld",
+		"alarm_motion": "Beweging gedetecteerd",
 		"target_temperature": "Doeltemperatuur",
 		"thermostat_mode": "Automatisch / Verhitten / Koelen / Uit",
 		"light_hue": "Hue licht",

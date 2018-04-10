@@ -9,6 +9,7 @@
 ## Release history
 
 ### 0.7.3 (Beta)
+* Added capability alarm_motion (issue #40)
 * Added a Sensor (issue #26 and #32)
 
 ### 0.7.2 (Beta)
