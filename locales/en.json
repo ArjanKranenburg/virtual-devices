@@ -101,6 +101,23 @@
 		"sleep": "Sleep",
 		"thermostat": "Thermostat",
 		"sensor": "Sensor",
-		"lock": "Lock"
+		"lock": "Lock",
+		"ambiance": "Ambiance",
+		"concentrate": "Concentrate",
+		"day": "Day",
+		"energize": "Energize",
+		"evening": "Evening",
+		"heart": "Heart",
+		"morning": "Morning",
+		"night": "Night",
+		"number-zero": "Zero",
+		"number-one": "One",
+		"number-two": "Two",
+		"number-three": "Three",
+		"number-four": "Four",
+		"reading": "Reading",
+		"work": "Working",
+		"window_closed": "Closed window",
+		"window_open": "Open window"
 	}
 }

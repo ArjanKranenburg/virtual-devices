@@ -101,6 +101,23 @@
 		"sleep": "Slaap",
 		"thermostat": "Thermostaat",
 		"sensor": "Sensor",
-		"lock": "Slot"
+		"lock": "Slot",
+		"ambiance": "Ambiance",
+		"concentrate": "Concentratie",
+		"day": "Dag",
+		"energize": "Opgeladen",
+		"evening": "'s Avonds",
+		"heart": "Hart",
+		"morning": "Morgen",
+		"night": "Nacht",
+		"number-zero": "Nul",
+		"number-one": "Een",
+		"number-two": "Twee",
+		"number-three": "Drie",
+		"number-four": "Vier",
+		"reading": "Lezen",
+		"work": "Werken",
+		"window_closed": "Gesloten raam",
+		"window_open": "Open raam"
 	}
 }

@@ -15,6 +15,20 @@ The copyright of the following icons lies with:
 * Curtains (removed text) by b farias from the Noun Project via [Creative Commons](creative-commons)
 * Lock (removed text) by Aleksandr Vector from the Noun Project via [Creative Commons](creative-commons)
 * Sensor (removed text) by Arthur Lacôte from the Noun Project via [Creative Commons](creative-commons)
+* Ambiance (removed text) by Lilit Kalachyan from the Noun Project via [Creative Commons](creative-commons)
+* Concentrate (removed text) by Carl Williamson from the Noun Project via [Creative Commons](creative-commons)
+* Day (removed text) by Landan Lloyd from the Noun Project via [Creative Commons](creative-commons)
+* Evening (removed text) by ruliani from the Noun Project via [Creative Commons](creative-commons)
+* Morning (removed text) by Gan Khoon Lay from the Noun Project via [Creative Commons](creative-commons)
+* Night (removed text) by Ralf Schmitzer from the Noun Project via [Creative Commons](creative-commons)
+* Reading (removed text) by iconesia from the Noun Project via [Creative Commons](creative-commons)
+* Window_closed (removed text) by Creaticca Creative Agency from the Noun Project via [Creative Commons](creative-commons)
+* Window_open (removed text) by Creaticca Creative Agency from the Noun Project via [Creative Commons](creative-commons)
+* Number-zero by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Number-one by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Number-two by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Number-three by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Number-four by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 
