@@ -9,6 +9,9 @@
 ## Release history
 
 ### 0.7.3 (Beta)
+* Added lots of icons to multi-mode (issue #37)
+* Added numbered icons to multi-mode (issue #10)
+* Added icons to multi-mode for open and closed windows (issue #41)
 * Added capability alarm_motion (issue #40)
 * Added a Sensor (issue #26 and #32)
 
