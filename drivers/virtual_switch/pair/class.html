@@ -1,0 +1,28 @@
+<script src='../../../assets/vue.min.js'></script>
+<script src='./capabilities.js'></script>
+<script>
+  Homey.setTitle('Choose a device class');
+  new Vue({
+    el: '#devices-list',
+    data: {
+      classes: devices
+    },
+    methods:{
+      addClass(deviceClass) {
+        Homey.emit('setClass', {'class': deviceClass}, function (err, result) {
+          if(err){console.log(err); return;}
+            Homey.nextView();
+        });
+      }
+    }
+  });
+</script>
+
+<ul id='devices-list'>
+  <li v-for='(value, key) in classes'  v-on:click='addClass(key)' class='device'>
+    <label for="device" class="name">
+      <div class="overlay"></div>
+      <span class="name" tabindex="-1">{{key}}</span>
+    </label>
+  </li>
+</ul>

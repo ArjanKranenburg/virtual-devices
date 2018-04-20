@@ -344,13 +344,31 @@
       "capabilities": [
         "onoff"
       ],
-      "pair": [
-        {
-          "id": "start"
+      "pair": [{
+          "id": "class"
         },
         {
-          "id": "add_switches",
-          "template": "add_devices"
+          "id": "name",
+          "navigation": {
+            "next": "icon",
+            "prev": "class"
+          }
+        },
+        {
+          "id": "icon"
+        },
+        {
+          "id": "capabilities",
+          "navigation": {
+            "next": "done",
+            "prev": "icon"
+          }
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "icon"
+          }
         }
       ]
     },

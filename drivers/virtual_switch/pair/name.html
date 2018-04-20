@@ -1,0 +1,31 @@
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/lodash.min.js'></script>
+<script>
+  Homey.setTitle('Choose a device name');
+  Homey.emit('getPairingDevice', null, function (err, device) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(device);
+
+    new Vue({
+      el: '#device-name',
+      data: {
+        name: __( 'class.' + device.class)
+      },
+      watch: {
+        'name': _.debounce( function(val){
+          Homey.emit('setName', {'name': val}, function (err, result) {
+            if(err){console.log(err); return;}
+            console.log(result);
+          });
+        }, 500)
+      }
+    })
+  })
+</script>
+
+<div id="device-name">
+  <input v-model="name">
+</div>

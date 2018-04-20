@@ -1,0 +1,44 @@
+<script src='../../../assets/vue.min.js'></script>
+<script src="./capabilities.js"></script>
+<script>
+
+Homey.setTitle('Select the capabilities');
+Homey.emit('getPairingDevice', null, function (err, result) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(result);
+
+  new Vue({
+    el: '#app',
+    data: {
+      capabilities: devices[result.class].capabilities,
+      selectedCapabilities: []
+    },
+    watch: {
+      'selectedCapabilities': function(val){
+        Homey.emit('addCapabilities', {'capabilities': val}, function (err, result) {
+          if(err){console.log(err); return;}
+          console.log(result);
+        });
+      }
+    }
+  });
+
+});
+</script>
+
+<div id="app">
+  <ul id="devices-list" >
+    <li class="device" v-for="(key, value) in capabilities">
+		<label :for="key" class="name">
+			<div class="overlay"></div>
+			<span class="name" tabindex="-1">{{key}}</span>
+		</label>
+		<label :for="key" class="checkbox">
+			<input :id="key" :value="key" name="device" type="checkbox" tabindex="2" v-model="selectedCapabilities">
+		</label>
+	</li>
+  </ul>
+</div>
