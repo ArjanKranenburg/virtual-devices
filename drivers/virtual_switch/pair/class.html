@@ -1,7 +1,14 @@
 <script src='../../../assets/vue.min.js'></script>
 <script src='./capabilities.js'></script>
 <script>
-  Homey.setTitle('Choose a device class');
+  Homey.setTitle(__('pair.title.class'));
+  new Vue({
+    el: '#class_instructions',
+    data: {
+      instructions: __('pair.select.class')
+    }
+  });
+
   new Vue({
     el: '#devices-list',
     data: {
@@ -18,6 +25,7 @@
   });
 </script>
 
+<span id='class_instructions'>{{instructions}}</span>
 <ul id='devices-list'>
   <li v-for='(value, key) in classes'  v-on:click='addClass(key)' class='device'>
     <label for="device" class="name">

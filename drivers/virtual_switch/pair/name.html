@@ -1,7 +1,14 @@
 <script src='../../../assets/vue.min.js'></script>
 <script src='../../../assets/lodash.min.js'></script>
 <script>
-  Homey.setTitle('Choose a device name');
+  Homey.setTitle(__('pair.title.name'));
+  new Vue({
+    el: '#name_instructions',
+    data: {
+      instructions: __('pair.select.name')
+    }
+  });
+
   Homey.emit('getPairingDevice', null, function (err, device) {
     if (err) {
       console.log(err);
@@ -10,7 +17,7 @@
     console.log(device);
 
     new Vue({
-      el: '#device-name',
+      el: '#device_name',
       data: {
         name: __( 'class.' + device.class)
       },
@@ -26,6 +33,7 @@
   })
 </script>
 
-<div id="device-name">
-  <input v-model="name">
+<span id='name_instructions'>{{instructions}}</span>
+<div id='device_name'>
+  <input v-model='name'>
 </div>

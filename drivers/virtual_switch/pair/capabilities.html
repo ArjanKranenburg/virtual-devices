@@ -1,34 +1,41 @@
 <script src='../../../assets/vue.min.js'></script>
-<script src="./capabilities.js"></script>
+<script src='./capabilities.js'></script>
 <script>
-
-Homey.setTitle('Select the capabilities');
-Homey.emit('getPairingDevice', null, function (err, result) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log(result);
-
+  Homey.setTitle(__('pair.title.capabilities'));
   new Vue({
-    el: '#app',
+    el: '#capab_instructions',
     data: {
-      capabilities: devices[result.class].capabilities,
-      selectedCapabilities: []
-    },
-    watch: {
-      'selectedCapabilities': function(val){
-        Homey.emit('addCapabilities', {'capabilities': val}, function (err, result) {
-          if(err){console.log(err); return;}
-          console.log(result);
-        });
-      }
+      instructions: __('pair.select.capabilities')
     }
   });
 
-});
+  Homey.emit('getPairingDevice', null, function (err, result) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(result);
+
+    new Vue({
+      el: '#app',
+      data: {
+        capabilities: devices[result.class].capabilities,
+        selectedCapabilities: []
+      },
+      watch: {
+        'selectedCapabilities': function(val){
+          Homey.emit('addCapabilities', {'capabilities': val}, function (err, result) {
+            if(err){console.log(err); return;}
+            console.log(result);
+          });
+        }
+      }
+    });
+
+  });
 </script>
 
+<span id='capab_instructions'>{{instructions}}</span>
 <div id="app">
   <ul id="devices-list" >
     <li class="device" v-for="(key, value) in capabilities">

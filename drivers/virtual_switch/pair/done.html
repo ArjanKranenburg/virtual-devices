@@ -1,6 +1,12 @@
 <script>
 
-  Homey.setTitle('Adding device to Homey...');
+  Homey.setTitle(__('pair.title.done'));
+  new Vue({
+    el: '#done_instructions',
+    data: {
+      instructions: __('pair.select.done')
+    }
+  });
   Homey.emit('getPairingDevice', null, function (err, device) {
     if (err) {
       console.log(err);
@@ -18,3 +24,5 @@
     })
   });
 </script>
+
+<span id='done_instructions'>{{instructions}}</span>

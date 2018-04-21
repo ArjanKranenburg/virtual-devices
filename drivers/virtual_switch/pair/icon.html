@@ -15,13 +15,24 @@
   .vd-icon-tile {
     height: 60px;
   }
+
+  #icon_list {
+    margin: 0px;
+  }
 </style>
 <script src='../../../assets/vue.min.js'></script>
 <script src='../../../assets/vue-masonry.min.js'></script>
 <script>
   Vue.use(VueMasonry);
 
-  Homey.setTitle('Select an icon');
+  Homey.setTitle(__('pair.title.icon'));
+  new Vue({
+    el: '#icon_instructions',
+    data: {
+      instructions: __('pair.select.icon')
+    }
+  });
+
   Homey.emit('getIcons', null, function (err, icons) {
     if (err) {
       console.log(err);
@@ -29,7 +40,7 @@
     }
 
     new Vue({
-      el: '#icon-list',
+      el: '#icon_list',
       data: {
         icons: icons
       },
@@ -46,7 +57,8 @@
   })
 </script>
 
-<ul id="icon-list">
+<span id='icon_instructions'>{{instructions}}</span>
+<ul id="icon_list">
   <masonry
     :cols="3"
     :gutter="10"
@@ -57,5 +69,4 @@
       </label>
     </div>
   </masonry>
-
 </ul>
