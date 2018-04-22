@@ -23,6 +23,9 @@
 				"empty-list": "The list is still empty"
 			}
 		},
+		"mode": {
+			"default_name": "New Mode"
+		},
 		"device": {
 			"add": "Add Device"
 		},

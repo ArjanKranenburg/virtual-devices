@@ -12,7 +12,7 @@
 			"class": "Selecteer een apparaatklasse",
 			"done": "Het apparaat wordt aan Homey toegevoegd",
 			"icon": "Selecteer een pictogram",
-			"name": "Geef het apparaat een naam",
+			"name": "Geef het een naam",
 			"type": "Nieuwe modus type",
 			"details": "Specificeer de details",
 			"mode": {
@@ -22,6 +22,9 @@
 				"add": "Voeg deze modus toe aan de lijst",
 				"empty-list": "De lijst is nu nog leeg"
 			}
+		},
+		"mode": {
+			"default_name": "Nieuwe Modus"
 		},
 		"device": {
 			"add": "Voeg toe"

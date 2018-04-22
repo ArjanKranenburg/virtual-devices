@@ -388,11 +388,19 @@
       ],
       "pair": [
         {
-          "id": "start"
+          "id": "name",
+          "navigation": {
+            "next": "icon"
+          }
         },
         {
-          "id": "add_mode",
-          "template": "add_devices"
+          "id": "icon"
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "icon"
+          }
         }
       ],
       "mobile": {

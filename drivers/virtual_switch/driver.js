@@ -26,7 +26,7 @@ class VirtualDriver extends Homey.Driver {
     });
 
     socket.on('setClass', function( data, callback ) {
-        console.log(data);
+        console.log('setClass: ' + data);
         pairingDevice.class = data.class;
         pairingDevice.name = Homey.__( 'class.' + data.class);
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
@@ -34,7 +34,7 @@ class VirtualDriver extends Homey.Driver {
     });
 
     socket.on('setName', function( data, callback ) {
-        console.log(data);
+        console.log('setName: ' + data);
         pairingDevice.name = data.name;
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
@@ -45,7 +45,7 @@ class VirtualDriver extends Homey.Driver {
     });
 
     socket.on('addCapabilities', function( data, callback ) {
-        console.log(data);
+        console.log('addCapabilities: ' + data);
         pairingDevice.capabilities = data.capabilities;
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
@@ -71,7 +71,7 @@ class VirtualDriver extends Homey.Driver {
     });
 
     socket.on('addIcon', function( data, callback ) {
-        console.log(data);
+        console.log('addIcon: ' + data);
         pairingDevice.data.icon = data.icon.location;
         pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
