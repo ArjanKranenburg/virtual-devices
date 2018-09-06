@@ -1,0 +1,77 @@
+<style>
+  .vd-icon{
+    display: block;
+    width: 6.5em;
+    height: 4.5em;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    background: #333;
+    vertical-align: middle;
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vd-icon-tile {
+    height: 60px;
+  }
+
+  #icon_list {
+    margin: 0px;
+  }
+</style>
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/vue-masonry.min.js'></script>
+<script>
+  Vue.use(VueMasonry);
+
+  Homey.setTitle(__('pair.title.icon'));
+  new Vue({
+    el: '#icon_instructions',
+    data: {
+      instructions: __('pair.select.icon')
+    }
+  });
+
+  Homey.emit('getIcons', null, function (err, icons) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    new Vue({
+      el: '#icon_list',
+      data: {
+        icons: icons
+      },
+      methods:{
+        addIcon(icon) {
+          Homey.emit('setIcon', {'icon': icon}, function (err, result) {
+            if(err){
+              console.log('ERROR in the setIcon-call');
+              console.log(err);
+              return;
+            }
+            Homey.nextView();
+          })
+        }
+      }
+    })
+
+  })
+</script>
+
+<span id='icon_instructions'>{{instructions}}</span>
+<ul id="icon_list">
+  <masonry
+    :cols="3"
+    :gutter="10"
+    >
+    <div v-for="(item, index) in icons" :key="index" v-on:click='addIcon(item)'>
+      <label for="icon" class="vd-icon-tile device">
+        <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(/app/com.arjankranenburg.virtual/drivers/multi/assets/' + item.location + ')'}"></span>
+      </label>
+    </div>
+  </masonry>
+</ul>

@@ -1,0 +1,33 @@
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/lodash.min.js'></script>
+<script>
+  Homey.setTitle('New sub-mode name');
+  // Homey.setTitle(__('pair.title.modeName'));
+  new Vue({
+    el: '#submodename_instructions',
+    data: {
+      instructions: __('pair.select.mode.name')
+    }
+  });
+
+  new Vue({
+    el: '#submode_name',
+    data: {
+      name: __('pair.default.name.sub')
+    },
+    watch: {
+      'name': _.debounce( function(val){
+        Homey.emit('setModeName', {'name': val}, function (err, result) {
+          if(err){console.log(err); return;}
+          console.log(result);
+        });
+
+      }, 500)
+    }
+  })
+</script>
+
+<span id='submodename_instructions'>{{instructions}}</span>
+<div id='submode_name'>
+  <input v-model='name'>
+</div>
