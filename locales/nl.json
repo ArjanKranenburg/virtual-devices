@@ -5,7 +5,9 @@
 			"class": "Apparaatklasse",
 			"done": "Klaar",
 			"icon": "Pictogram",
-			"name": "Apparaatnaam"
+			"name": "Apparaatnaam",
+			"modeName": "Modusnaam",
+			"modes": "Modi"
 		},
 		"select": {
 			"capabilities": "Selecteer 1 of meerdere eigenschappen",
@@ -13,6 +15,7 @@
 			"done": "Het apparaat wordt aan Homey toegevoegd",
 			"icon": "Selecteer een pictogram",
 			"name": "Geef het een naam",
+			"modes": "Voeg modi toe",
 			"type": "Nieuwe modus type",
 			"details": "Specificeer de details",
 			"mode": {
@@ -23,8 +26,12 @@
 				"empty-list": "De lijst is nu nog leeg"
 			}
 		},
-		"mode": {
-			"default_name": "Nieuwe Modus"
+		"default": {
+			"name": {
+				"mode": "Nieuwe Modus",
+				"multi": "Nieuwe Multi-Modus",
+				"sub": "Nieuwe Sub-Modus"
+			}
 		},
 		"device": {
 			"add": "Voeg toe"

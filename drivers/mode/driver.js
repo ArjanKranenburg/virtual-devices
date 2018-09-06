@@ -25,7 +25,7 @@ class ModeDriver extends Homey.Driver {
 
   onPair( socket ) {
     let pairingDevice = {
-      "name": Homey.__( 'pair.mode.default_name' ),
+      "name": Homey.__( 'pair.default.name.mode' ),
       "settings": {},
       "data": {
         id: guid(),

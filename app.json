@@ -442,11 +442,43 @@
       },
       "pair": [
         {
-          "id": "start"
+          "id": "name",
+          "navigation": {
+            "next": "icon"
+          }
         },
         {
-          "id": "add_mode",
-          "template": "add_devices"
+          "id": "icon",
+          "navigation": {
+            "prev": "name"
+          }
+        },
+        {
+          "id": "modes",
+          "navigation": {
+            "prev": "icon",
+            "next": "done"
+          }
+        },
+        {
+          "id": "mode_name",
+          "navigation": {
+            "prev": "modes",
+            "next": "mode_icon"
+          }
+        },
+        {
+          "id": "mode_icon",
+          "navigation": {
+            "prev": "mode_name",
+            "next": "modes"
+          }
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "modes"
+          }
         }
       ],
       "mobile": {

@@ -5,7 +5,9 @@
 			"class": "Device Class",
 			"done": "Ready",
 			"icon": "Icon",
-			"name": "Device Name"
+			"name": "Device Name",
+			"modeName": "Mode name",
+			"modes": "Modes"
 		},
 		"select": {
 			"capabilities": "Select 1 or more Capabilities",
@@ -13,6 +15,7 @@
 			"done": "The device is added to Homey",
 			"icon": "Select an Icon",
 			"name": "Give it a Name",
+			"modes": "Add modes",
 			"type": "New mode type",
 			"details": "Specify the Details",
 			"mode": {
@@ -23,8 +26,12 @@
 				"empty-list": "The list is still empty"
 			}
 		},
-		"mode": {
-			"default_name": "New Mode"
+		"default": {
+			"name": {
+				"mode": "New Mode",
+				"multi": "New Multi-Mode",
+				"sub": "New Sub-Mode"
+			}
 		},
 		"device": {
 			"add": "Add Device"
