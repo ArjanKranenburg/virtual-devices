@@ -4,6 +4,7 @@
 * [Multi-Mode device](multimode)
 * [Sensors](sensor)
 * [Versions](version)
+* [Questions](https://community.athom.com/t/virtual-devices/1723)
 * [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
 This app gives you the opportunity to add Virtual Devices to Homey. You can operate the Virtual Devices from the UI and/or use them in flows.
