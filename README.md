@@ -30,4 +30,4 @@ Please report bugs on github:
 
 Questions can be asked on the Virtual Devices topic of the Homey Forum: [https://community.athom.com/t/virtual-devices/1723](https://community.athom.com/t/virtual-devices/1723)
 
-...or on [Slack](athomcommunity.slack.com) (@arielaxed)
+...or on [Slack](https://athomcommunity.slack.com) (@arielaxed)
