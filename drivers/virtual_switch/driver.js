@@ -32,6 +32,8 @@ class VirtualDriver extends Homey.Driver {
           getIconNameAndLocation('sensor'),
           getIconNameAndLocation('button'),
           getIconNameAndLocation('lock'),
+          getIconNameAndLocation('contact'),
+          getIconNameAndLocation('motion'),
 	    ]
 
         callback( null, device_data );
