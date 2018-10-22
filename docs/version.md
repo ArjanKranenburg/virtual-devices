@@ -11,6 +11,10 @@
 ### 0.7.5 (Beta)
 * Support for motion and contact sensors (issue #67)
 * Increase range for target_temperature (issue #53)
+* Added capabilities to measure co, current, gust_angle, gust_strength,
+  luminance, noise, rain, ultraviolet, voltage, water, wind_angle, and
+  wind_strength (issues #26 and #66) 
+* Added capability to measure Energy (KWh) (issue #57)
 
 ### 0.7.4
 * Support for boolean sensors (issue #61)
