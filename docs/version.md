@@ -10,6 +10,7 @@
 
 ### 0.7.5 (Beta)
 * Support for motion and contact sensors (issue #67)
+* Increase range for target_temperature (issue #53)
 
 ### 0.7.4
 * Support for boolean sensors (issue #61)
