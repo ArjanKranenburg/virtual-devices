@@ -8,7 +8,10 @@
 
 ## Release history
 
-### 0.7.4 (Beta)
+### 0.7.5 (Beta)
+* Support for motion and contact sensors (issue #67)
+
+### 0.7.4
 * Support for boolean sensors (issue #61)
 
 ### 0.7.3
