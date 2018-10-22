@@ -29,6 +29,9 @@ The copyright of the following icons lies with:
 * Number-two by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
 * Number-three by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
 * Number-four by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Work (removed text) by Alina Oleynik from the Noun Project via [Creative Commons](creative-commons)
+* Motion (removed text) by Arthur Shlain from the Noun Project via [Creative Commons](creative-commons)
+* Door (removed text) by yanti anis from the Noun Project via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 

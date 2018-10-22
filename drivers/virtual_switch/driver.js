@@ -32,7 +32,7 @@ class VirtualDriver extends Homey.Driver {
           getIconNameAndLocation('sensor'),
           getIconNameAndLocation('button'),
           getIconNameAndLocation('lock'),
-          getIconNameAndLocation('contact'),
+          getIconNameAndLocation('door'),
           getIconNameAndLocation('motion'),
 	    ]
 
