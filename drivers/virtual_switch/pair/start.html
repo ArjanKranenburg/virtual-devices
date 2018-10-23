@@ -1,5 +1,12 @@
 <style>
-	.inline_list {display:inline-block;margin-right:10px;}
+	.inline_list {
+		display:inline-block;
+		margin-right:10px;
+		margin-bottom:10px;
+		width: 100px;
+		border-radius: 3px
+	}
+
 	.inline_question {display:inline-block}
 
 	.icon > input{ /* HIDE RADIO */
@@ -8,8 +15,9 @@
 	}
 	.icon > input + div{ /* IMAGE STYLES */
 	  cursor:pointer;
-	  border:2px solid transparent;
-	  text-align: center
+	  border:1px solid #ddd;
+	  border-radius: 3px;
+	  text-align: center;
 	}
 	.icon > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
 	  border:2px solid #f00;
@@ -110,21 +118,20 @@
 		"measure_co2",
 		"measure_pressure",
 		"measure_humidity",
-		"measure_pm25",
-		"measure_co",
-		"measure_current",
-		"measure_gust_angle",
-		"measure_gust_strength",
-		"measure_luminance",
-		"measure_noise",
-		"measure_rain",
-		"measure_ultraviolet",
-		"measure_voltage",
-		"measure_water",
-		"measure_wind_angle",
-		"measure_wind_strength",
-		"meter_power"
+		"measure_pm25"
 	];
+	// "measure_co",
+	// "measure_current",
+	// "measure_gust_angle",
+	// "measure_gust_strength",
+	// "measure_luminance",
+	// "measure_noise",
+	// "measure_rain",
+	// "measure_ultraviolet",
+	// "measure_voltage",
+	// "measure_water",
+	// "measure_wind_angle",
+	// "measure_wind_strength"
 
 	var SUPPORTED_CLASSES = {
 			"socket": {
@@ -263,21 +270,8 @@
 					"measure_pressure",
 					"measure_humidity",
 					"measure_pm25",
-					"measure_co",
-					"measure_current",
-					"measure_gust_angle",
-					"measure_gust_strength",
-					"measure_luminance",
-					"measure_noise",
-					"measure_rain",
-					"measure_ultraviolet",
-					"measure_voltage",
-					"measure_water",
-					"measure_wind_angle",
-					"measure_wind_strength",
 					"alarm_motion",
-					"alarm_contact",
-					"meter_power"
+					"alarm_contact"
 				],
 				"defaultCapabilities": [
 				]
@@ -342,11 +336,6 @@
 			},
 			"class": details["class"].value,
 			capabilities: capabilities,
-			capabilitiesOptions: {
-        target_temperature: {
-						max: 100
-        }
-			},
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 		}
 

@@ -1,6 +1,12 @@
 <style>
-  .inline {float:left}
-	.inline_list {display:inline-block;margin-right:10px;}
+	.inline_list {
+		display:inline-block;
+		margin-right:10px;
+		margin-bottom:10px;
+		width: 100px;
+		border-radius: 3px
+	}
+
 	.inline_question {display:inline-block}
 
 	.action-arrow {
@@ -15,7 +21,8 @@
 	}
 	.icon > input + div{ /* IMAGE STYLES */
 	  cursor:pointer;
-	  border:2px solid transparent;
+		border:1px solid #ddd;
+	  border-radius: 3px;
 	  text-align: center
 	}
 	.icon > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
@@ -95,7 +102,7 @@
 		<br>
   </fieldset>
 
-  <div>
+  <fieldset>
     <div class="fa" data-i18n="pair.select.mode.name"></div><span>:</span>
     <input class="fa" id="mode_name" type="text" value="Mode">
     <br>
@@ -105,7 +112,7 @@
     <br>
     <div class="button" data-i18n="pair.select.mode.add" onclick="addMode()">Add mode</div>
     <br>
-  </div>
+	</fieldset>
 
 	<button class="button" data-i18n="pair.device.add"></button><br>
 	<label class="fa fa-warning warning" data-i18n="pair.warning.not_changeable"></label>

@@ -1,6 +1,12 @@
 <style>
-  .inline {float:left}
-	.inline_list {display:inline-block;margin-right:10px;}
+	.inline_list {
+		display:inline-block;
+		margin-right:10px;
+		margin-bottom:10px;
+		width: 100px;
+		border-radius: 3px
+	}
+
 	.inline_question {display:inline-block}
 
 	.action-arrow {
@@ -15,7 +21,8 @@
 	}
 	.icon > input + div{ /* IMAGE STYLES */
 	  cursor:pointer;
-	  border:2px solid transparent;
+	  border:1px solid #ddd;
+	  border-radius: 3px;
 	  text-align: center
 	}
 	.icon > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
