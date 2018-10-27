@@ -7,7 +7,8 @@
 			"icon": "Icon",
 			"name": "Device Name",
 			"modeName": "Mode name",
-			"modes": "Modes"
+			"modes": "Modes",
+			"device": "New Virtual Device"
 		},
 		"select": {
 			"capabilities": "Select 1 or more Capabilities",
@@ -55,7 +56,8 @@
 		"homealarm": "Home Alarm",
 		"thermostat": "Thermostat",
 		"sensor": "Sensor",
-		"lock": "Lock"
+		"lock": "Lock",
+		"undefined": "New device"
 	},
 	"capability": {
 		"onoff": "On / Off",

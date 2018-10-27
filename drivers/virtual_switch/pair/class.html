@@ -1,7 +1,9 @@
 <script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/vue-masonry.min.js'></script>
 <script src='./capabilities.js'></script>
 <script>
-  Homey.setTitle(__('pair.title.class'));
+  Vue.use(VueMasonry);
+  Homey.setTitle(__('pair.title.device'));
   new Vue({
     el: '#class_instructions',
     data: {
@@ -16,21 +18,34 @@
     },
     methods:{
       addClass(deviceClass) {
-        Homey.emit('setClass', {'class': deviceClass}, function (err, result) {
+        Homey.emit('setClass', {'class': deviceClass, 'capabilities': devices[deviceClass].defaultCapabilities}, function (err, result) {
           if(err){console.log(err); return;}
             Homey.nextView();
         });
       }
     }
   });
+
+  Homey.emit('getPairingDevice', null, function (err, device) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(device);
+    Homey.setTitle(__('pair.title.device') + ' ' + device.name);
+  })
+
 </script>
 
 <span id='class_instructions'>{{instructions}}</span>
 <ul id='devices-list'>
-  <li v-for='(value, key) in classes'  v-on:click='addClass(key)' class='device'>
-    <label for="device" class="name">
-      <div class="overlay"></div>
-      <span class="name" tabindex="-1">{{key}}</span>
-    </label>
-  </li>
+  <masonry
+    :cols="3"
+    :gutter="10"
+    >
+    <div v-for='(value, key) in classes'  v-on:click='addClass(key)' class='device'>
+      <span class="name" tabindex="-1">{{ __('class.' + key) }}</span>
+    </div>
+  </masonry>
 </ul>
+<!-- <span class="name" tabindex="-1" :variant="key" v-bind:variant2="class.'key'" :data-i18n="class.'key'">tbd</span> -->

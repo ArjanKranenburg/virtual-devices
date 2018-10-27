@@ -12,8 +12,9 @@ class VirtualDriver extends Homey.Driver {
 
   onPair( socket ) {
     let pairingDevice = {
-      "settings": {},
-      "data": {
+      name: Homey.__('pair.default.name.device'),
+      settings: {},
+      data: {
         id: guid(),
         version: 3
       },
@@ -28,7 +29,6 @@ class VirtualDriver extends Homey.Driver {
     socket.on('setClass', function( data, callback ) {
         console.log('setClass: ' + data);
         pairingDevice.class = data.class;
-        pairingDevice.name = Homey.__( 'class.' + data.class);
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
     });
