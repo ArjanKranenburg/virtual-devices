@@ -65,13 +65,15 @@ class VirtualDriver extends Homey.Driver {
           getIconNameAndLocation('sensor'),
           getIconNameAndLocation('button'),
           getIconNameAndLocation('lock'),
+          getIconNameAndLocation('door'),
+          getIconNameAndLocation('motion'),
 	    ]
 
         callback( null, device_data );
     });
 
-    socket.on('addIcon', function( data, callback ) {
-        console.log('addIcon: ' + data);
+    socket.on('setIcon', function( data, callback ) {
+        console.log('setIcon: ' + data);
         pairingDevice.data.icon = data.icon.location;
         pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
@@ -89,14 +91,29 @@ class VirtualDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         try {
+          this.log('args: ' + simpleStringify(args) );
           let device = validateItem('device', args.device);
           let sensor = validateItem('sensor', args.sensor);
           let value  = validateItem('value',  args.value );
-//        this.log(device.getName() + ' -> Sensor: ' + sensor);
-//        this.log(device.getName() + ' -> Value:  ' + parseFloat(value, 10));
 
-          device.setCapabilityValue(sensor, parseFloat(value, 10)) // Fire and forget
-             .catch(this.error);
+          this.log(device.getName() + ' -> Sensor: ' + sensor);
+
+          var valueToSet;
+          if( isNaN(value) ) {
+            if ( value.toLowerCase() === 'true' ) {
+              valueToSet = true;
+            } else if ( value.toLowerCase() === 'false' ) {
+              valueToSet = false;
+            } else {
+              valueToSet = value;
+            }
+          } else {
+            valueToSet = parseFloat(value, 10);
+          }
+
+          this.log(device.getName() + ' -> Value:  ' + valueToSet);
+          device.setCapabilityValue(sensor, valueToSet) // Fire and forget
+            .catch(this.error);
 
           return Promise.resolve( true );
         }

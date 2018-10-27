@@ -8,24 +8,35 @@
 
 ## Release history
 
-### 0.7.3 (Beta)
+### 0.7.5 (Beta)
+* Support for motion and contact sensors (issue #67)
+* Increase range for target_temperature (issue #53)
+* Added capabilities to measure co, current, gust_angle, gust_strength,
+  luminance, noise, rain, ultraviolet, voltage, water, wind_angle, and
+  wind_strength (issues #26 and #66) 
+* Added capability to measure Energy (KWh) (issue #57)
+
+### 0.7.4
+* Support for boolean sensors (issue #61)
+
+### 0.7.3
 * Added lots of icons to multi-mode (issue #37)
 * Added numbered icons to multi-mode (issue #10)
 * Added icons to multi-mode for open and closed windows (issue #41)
 * Added capability alarm_motion (issue #40)
 * Added a Sensor (issue #26 and #32)
 
-### 0.7.2 (Beta)
+### 0.7.2
 * A Multi-state now also has a previous_state (issue #47)
 * A device that is turned on will not be turned on again (issue #42)
 * Changing intensity affects the device on-off (issue #36)
 * Mode changed is now also triggered when a mode is changed in a flow (issue #39)
 
-### 0.7.1 (Beta)
-* Multimode not triggerd sometimes (issue #33)
+### 0.7.1
+* Multimode not triggered sometimes (issue #33)
 * App keeps crashing (issue #35)
 
-### 0.7.0 (Beta)
+### 0.7.0
 * Adding a measure_temperature and measure_power as sensor capabilities
 
 ### 0.6.8
@@ -37,7 +48,7 @@
 * Added Volume capabilities for tv and amplifier
 * Added Lock
 * Added House icon for modes
-* Added target_temperature capability for coffeemachine
+* Added target_temperature capability for coffee machine
 
 ### 0.6.6
 * Added Virtual Thermostat

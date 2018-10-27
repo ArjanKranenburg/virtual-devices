@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "compatibility": "1.x >=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -40,6 +40,7 @@
         "url": "https://github.com/ArjanKranenburg/virtual-devices/issues"
   },
   "athomForumDiscussionId": 3065,
+  "homeyCommunityTopicId": 1723,
   "images": {
     "large": "./assets/images/large.png",
     "small": "./assets/images/small.png"
@@ -344,31 +345,34 @@
       "capabilities": [
         "onoff"
       ],
-      "pair": [{
-          "id": "class"
-        },
+      "pair": [
         {
           "id": "name",
           "navigation": {
-            "next": "icon",
-            "prev": "class"
+            "next": "icon"
           }
         },
         {
-          "id": "icon"
+          "id": "icon",
+          "navigation": {
+            "prev": "name"
+          }
+        },
+        {
+          "id": "class",
+          "navigation": {
+            "prev": "icon"
+          }
         },
         {
           "id": "capabilities",
           "navigation": {
             "next": "done",
-            "prev": "icon"
+            "prev": "class"
           }
         },
         {
-          "id": "done",
-          "navigation": {
-            "prev": "icon"
-          }
+          "id": "done"
         }
       ]
     },

@@ -133,7 +133,20 @@ var devices = {
         "measure_co2",
         "measure_pressure",
         "measure_humidity",
-        "measure_pm25"
+        "measure_pm25",
+        "measure_co",
+    		"measure_current",
+    		"measure_gust_angle",
+    		"measure_gust_strength",
+    		"measure_luminance",
+    		"measure_noise",
+    		"measure_rain",
+    		"measure_ultraviolet",
+    		"measure_voltage",
+    		"measure_water",
+    		"measure_wind_angle",
+    		"measure_wind_strength",
+    		"meter_power"
       ],
       "defaultCapabilities": [
       ]
