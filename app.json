@@ -398,13 +398,13 @@
           }
         },
         {
-          "id": "icon"
+          "id": "icon",
+          "navigation": {
+            "prev": "name"
+          }
         },
         {
-          "id": "done",
-          "navigation": {
-            "prev": "icon"
-          }
+          "id": "done"
         }
       ],
       "mobile": {
