@@ -111,7 +111,8 @@ var devices = {
         "homealarm_state",
         "onoff",
         "button",
-        "alarm_motion"
+        "alarm_motion",
+        "alarm_contact"
       ],
       "defaultCapabilities": [
         "homealarm_state"
