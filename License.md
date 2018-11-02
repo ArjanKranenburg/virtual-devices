@@ -38,6 +38,7 @@ The copyright of the following icons lies with:
 * Coffee Maker (removed text) by fauzan akbar from the Noun Project via [Creative Commons](creative-commons)
 * Electricity (removed text) by Templet from the Noun Project via [Creative Commons](creative-commons)
 * Water (removed text) by Gregor Cresnar from the Noun Project via [Creative Commons](creative-commons)
+* Garage (removed text) by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 
