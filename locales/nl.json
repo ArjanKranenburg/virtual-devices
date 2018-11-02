@@ -9,7 +9,8 @@
 			"modeName": "Modusnaam",
 			"modes": "Modi",
 			"device": "Nieuw Virtueel Apparaat",
-			"mode": "Nieuwe Mode"
+			"mode": "Nieuwe Mode",
+			"multi": "Nieuwe Multi-mode"
 		},
 		"select": {
 			"capabilities": "Selecteer 1 of meerdere eigenschappen",

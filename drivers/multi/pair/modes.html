@@ -48,7 +48,7 @@
 <script src='../../../assets/vue-masonry.min.js'></script>
 <script>
   Vue.use(VueMasonry);
-  Homey.setTitle(__('pair.title.modes'));
+  Homey.setTitle(__('pair.title.multi'));
 
   var modeList = []
   var selectedIcon = {}
@@ -76,7 +76,7 @@
       methods:{
         removeMode: function(mode) {
           console.log('removeMode: ' + JSON.stringify(mode));
-          Homey.emit('removeMode', {'mode': mode}, function (err, result) {
+          Homey.emit('removeMode', {'mode': mode}, function (err, modeList) {
             if(err){
               console.log('ERROR in the removeMode-call');
               console.log(err);
@@ -100,6 +100,15 @@
           Homey.showView( 'mode_name' )
         }
     }
+  })
+
+  Homey.emit('getPairingDevice', null, function (err, device) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(device);
+    Homey.setTitle(__('pair.title.multi') + ' ' + device.name);
   })
 
 </script>

@@ -8,7 +8,9 @@
 			"name": "Device Name",
 			"modeName": "Mode name",
 			"modes": "Modes",
-			"device": "New Virtual Device"
+			"device": "New Virtual Device",
+			"mode": "New Mode",
+			"multi": "New Multi-mode"
 		},
 		"select": {
 			"capabilities": "Select 1 or more Capabilities",
