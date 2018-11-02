@@ -70,8 +70,8 @@ class ModeDriver extends Homey.Driver {
         callback( null, device_data );
     });
 
-    socket.on('addIcon', function( data, callback ) {
-        console.log('addIcon: ' + data);
+    socket.on('setIcon', function( data, callback ) {
+        console.log('setIcon: ' + data);
         pairingDevice.data.icon_name = data.icon.name;
         pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
