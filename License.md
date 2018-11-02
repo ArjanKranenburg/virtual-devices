@@ -12,7 +12,7 @@ The copyright of the following icons lies with:
 * House (removed text) by Logan from the Noun Project via [Creative Commons](creative-commons)
 * Multi-mode (removed text) by Barracuda from the Noun Project via [Creative Commons](creative-commons)
 * Thermostat (removed 'devolo'-text) by Athom.
-* Curtains (removed text) by b farias from the Noun Project via [Creative Commons](creative-commons)
+* Curtains (removed text) by B Farias from the Noun Project via [Creative Commons](creative-commons)
 * Lock (removed text) by Aleksandr Vector from the Noun Project via [Creative Commons](creative-commons)
 * Sensor (removed text) by Arthur Lacôte from the Noun Project via [Creative Commons](creative-commons)
 * sensor (2) (removed text) by Pham Duy Phuong Hung from the Noun Project via [Creative Commons](creative-commons)

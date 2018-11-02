@@ -51,7 +51,10 @@ var devices = {
       "capabilities": [
         "onoff",
         "dim",
-        "windowcoverings_state"
+        "windowcoverings_state",
+        "windowcoverings_tilt_down",
+        "windowcoverings_tilt_set",
+        "windowcoverings_tilt_up"    
       ],
       "defaultCapabilities": [
         "onoff"
