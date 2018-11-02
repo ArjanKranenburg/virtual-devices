@@ -8,7 +8,10 @@
 
 ## Release history
 
-### 0.7.5 (Beta)
+### 0.8.0 (Beta)
+* Improved pairing process
+
+### 0.7.5
 * Support for motion and contact sensors (issue #67)
 * Increase range for target_temperature (issue #53)
 * Added capabilities to measure co, current, gust_angle, gust_strength,
