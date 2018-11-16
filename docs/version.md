@@ -8,6 +8,9 @@
 
 ## Release history
 
+### 0.8.1 (Beta)
+* Updated Compatibility
+
 ### 0.8.0 (Beta)
 * Improved pairing process
 
