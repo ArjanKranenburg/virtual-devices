@@ -1,0 +1,125 @@
+<style>
+  .vd-icon{
+    display: block;
+    width: 6.5em;
+    height: 4.5em;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    background: #333;
+    vertical-align: middle;
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vd-icon-tile {
+    height: 60px;
+  }
+
+  .mode > .remove {
+    position: absolute;
+    z-index: 999;
+    border-radius: 50%;
+    background: black;
+    width: 16px;
+    top: -8px;
+    right: -8px;
+    border: 2px solid white;
+    box-shadow: -1px 1px 3px rgba(0,0,0,0.25);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: all .3s
+  }
+
+  .submode_name {
+    margin-bottom: 8px;
+  }
+
+  #mode_list {
+    margin-right: 10px;
+  }
+</style>
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/vue-masonry.min.js'></script>
+<script>
+  Vue.use(VueMasonry);
+  Homey.setTitle(__('pair.title.modes'));
+
+  var modeList = []
+  var selectedIcon = {}
+  var modeName = __('pair.default.name.mode')
+
+  new Vue({
+    el: '#modes_instructions',
+    data: {
+      instructions: __('pair.select.modes')
+    }
+  });
+
+  Homey.emit('getSubModes', null, function (err, modeList) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(modeList);
+
+    new Vue({
+      el: '#mode_list',
+      data: {
+        modes: modeList
+      },
+      methods:{
+        removeMode: function(mode) {
+          console.log('removeMode: ' + JSON.stringify(mode));
+          Homey.emit('removeMode', {'mode': mode}, function (err, result) {
+            if(err){
+              console.log('ERROR in the removeMode-call');
+              console.log(err);
+              return;
+            }
+            Homey.showView( 'modes' )
+          })
+        }
+      }
+    })
+  })
+
+  new Vue({
+    el: '#add_mode_button',
+    data: {
+      modes: modeList
+      },
+      methods: {
+        addMode: function() {
+          console.log('Add button pressed');
+          Homey.showView( 'mode_name' )
+        }
+    }
+  })
+
+</script>
+
+<span id='modes_instructions'>{{instructions}}</span>
+<ul id="mode_list">
+  <masonry
+    :cols="3"
+    :gutter="10"
+    >
+    <div v-for="(item, index) in modes" :key="index">
+      <div class="device vd-icon-tile mode">
+        <div class="remove" v-on:click='removeMode(item)'>x</div>
+        <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(' + item.icon.location + ')'}"></span>
+      </div>
+      <div class="submode_name">{{item.name}}</div>
+    </div>
+  </masonry>
+</ul>
+
+<div id="add_mode_button">
+  <button v-on:click='addMode'>Add Mode</button>
+</div>

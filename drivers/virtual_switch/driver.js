@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/virtual_switch/";
 
 class VirtualDriver extends Homey.Driver {
   onInit() {
@@ -10,15 +11,47 @@ class VirtualDriver extends Homey.Driver {
 	}
 
   onPair( socket ) {
+    let pairingDevice = {
+      "settings": {},
+      "data": {
+        id: guid(),
+        version: 3
+      },
+      capabilities: []
+    };
 
     socket.on('log', function( msg, callback ) {
         console.log(msg);
         callback( null, "ok" );
     });
 
-    socket.on('getIcons', function( data, callback ) {
-        console.log("Adding new device");
+    socket.on('setClass', function( data, callback ) {
+        console.log('setClass: ' + data);
+        pairingDevice.class = data.class;
+        pairingDevice.name = Homey.__( 'class.' + data.class);
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
+    });
 
+    socket.on('setName', function( data, callback ) {
+        console.log('setName: ' + data);
+        pairingDevice.name = data.name;
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
+    });
+
+    socket.on('getPairingDevice', function( data, callback ) {
+        callback( null, pairingDevice );
+    });
+
+    socket.on('addCapabilities', function( data, callback ) {
+        console.log('addCapabilities: ' + data);
+        pairingDevice.capabilities = data.capabilities;
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
+    });
+
+    socket.on('getIcons', function( data, callback ) {
         var device_data = [
 	        getIconNameAndLocation('switch'),
 	        getIconNameAndLocation('light'),
@@ -35,6 +68,14 @@ class VirtualDriver extends Homey.Driver {
 	    ]
 
         callback( null, device_data );
+    });
+
+    socket.on('addIcon', function( data, callback ) {
+        console.log('addIcon: ' + data);
+        pairingDevice.data.icon = data.icon.location;
+        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
     });
 
     socket.on('disconnect', function(){
@@ -69,6 +110,13 @@ class VirtualDriver extends Homey.Driver {
 }
 
 module.exports = VirtualDriver;
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
 
 function getIconNameAndLocation( name ) {
 	return {
