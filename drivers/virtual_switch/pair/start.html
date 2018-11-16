@@ -92,6 +92,7 @@
 		"windowcoverings_state",
 		"homealarm_state",
 		"alarm_motion",
+		"alarm_contact",
 		"target_temperature",
 		"thermostat_mode",
 		"light_hue",
@@ -109,20 +110,21 @@
 		"measure_co2",
 		"measure_pressure",
 		"measure_humidity",
-		"measure_pm25"
+		"measure_pm25",
+		"measure_co",
+		"measure_current",
+		"measure_gust_angle",
+		"measure_gust_strength",
+		"measure_luminance",
+		"measure_noise",
+		"measure_rain",
+		"measure_ultraviolet",
+		"measure_voltage",
+		"measure_water",
+		"measure_wind_angle",
+		"measure_wind_strength",
+		"meter_power"
 	];
-	// "measure_co",
-	// "measure_current",
-	// "measure_gust_angle",
-	// "measure_gust_strength",
-	// "measure_luminance",
-	// "measure_noise",
-	// "measure_rain",
-	// "measure_ultraviolet",
-	// "measure_voltage",
-	// "measure_water",
-	// "measure_wind_angle",
-	// "measure_wind_strength"
 
 	var SUPPORTED_CLASSES = {
 			"socket": {
@@ -237,7 +239,8 @@
 					"homealarm_state",
 					"onoff",
 					"button",
-					"alarm_motion"
+					"alarm_motion",
+					"alarm_contact"
 				],
 				"defaultCapabilities": [
 					"homealarm_state"
@@ -259,7 +262,22 @@
 					"measure_co2",
 					"measure_pressure",
 					"measure_humidity",
-					"measure_pm25"
+					"measure_pm25",
+					"measure_co",
+					"measure_current",
+					"measure_gust_angle",
+					"measure_gust_strength",
+					"measure_luminance",
+					"measure_noise",
+					"measure_rain",
+					"measure_ultraviolet",
+					"measure_voltage",
+					"measure_water",
+					"measure_wind_angle",
+					"measure_wind_strength",
+					"alarm_motion",
+					"alarm_contact",
+					"meter_power"
 				],
 				"defaultCapabilities": [
 				]
@@ -324,6 +342,11 @@
 			},
 			"class": details["class"].value,
 			capabilities: capabilities,
+			capabilitiesOptions: {
+        target_temperature: {
+						max: 100
+        }
+			},
 			icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 		}
 

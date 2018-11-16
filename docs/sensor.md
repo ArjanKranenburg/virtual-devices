@@ -33,4 +33,4 @@ It is the name in the grey-box, e.g. measure_temperature.
 
 ![Technical_capability_names](images/Technical_capability_names.jpeg "Technical Capability Names")
 
-Currently only measure_temperature and measure_power are supported.
+Currently only measure_temperature, measure_power, alarm_motion, measure_co2, measure_pressure, measure_pm25, and measure_humidity are supported.

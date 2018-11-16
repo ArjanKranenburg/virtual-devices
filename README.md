@@ -24,3 +24,10 @@ I'm very interested to hear your ideas for other virtual devices.
 
 There is more information, including How-to's on GitHub Pages:
 [https://arjankranenburg.github.io/virtual-devices/](https://arjankranenburg.github.io/virtual-devices/)
+
+Please report bugs on github:
+[https://github.com/ArjanKranenburg/virtual-devices/issues](https://github.com/ArjanKranenburg/virtual-devices/issues)
+
+Questions can be asked on the Virtual Devices topic of the Homey Forum: [https://community.athom.com/t/virtual-devices/1723](https://community.athom.com/t/virtual-devices/1723)
+
+...or on [Slack](https://athomcommunity.slack.com) (@arielaxed)
