@@ -36,6 +36,10 @@
       }
     }
   },
+  "bugs": {
+        "url": "https://github.com/ArjanKranenburg/virtual-devices/issues"
+  },
+  "athomForumDiscussionId": 3065,
   "images": {
     "large": "./assets/images/large.png",
     "small": "./assets/images/small.png"
@@ -340,13 +344,31 @@
       "capabilities": [
         "onoff"
       ],
-      "pair": [
-        {
-          "id": "start"
+      "pair": [{
+          "id": "class"
         },
         {
-          "id": "add_switches",
-          "template": "add_devices"
+          "id": "name",
+          "navigation": {
+            "next": "icon",
+            "prev": "class"
+          }
+        },
+        {
+          "id": "icon"
+        },
+        {
+          "id": "capabilities",
+          "navigation": {
+            "next": "done",
+            "prev": "icon"
+          }
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "icon"
+          }
         }
       ]
     },
@@ -366,11 +388,19 @@
       ],
       "pair": [
         {
-          "id": "start"
+          "id": "name",
+          "navigation": {
+            "next": "icon"
+          }
         },
         {
-          "id": "add_mode",
-          "template": "add_devices"
+          "id": "icon"
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "icon"
+          }
         }
       ],
       "mobile": {
@@ -412,11 +442,43 @@
       },
       "pair": [
         {
-          "id": "start"
+          "id": "name",
+          "navigation": {
+            "next": "icon"
+          }
         },
         {
-          "id": "add_mode",
-          "template": "add_devices"
+          "id": "icon",
+          "navigation": {
+            "prev": "name"
+          }
+        },
+        {
+          "id": "modes",
+          "navigation": {
+            "prev": "icon",
+            "next": "done"
+          }
+        },
+        {
+          "id": "mode_name",
+          "navigation": {
+            "prev": "modes",
+            "next": "mode_icon"
+          }
+        },
+        {
+          "id": "mode_icon",
+          "navigation": {
+            "prev": "mode_name",
+            "next": "modes"
+          }
+        },
+        {
+          "id": "done",
+          "navigation": {
+            "prev": "modes"
+          }
         }
       ],
       "mobile": {

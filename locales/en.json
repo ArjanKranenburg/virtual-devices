@@ -1,18 +1,36 @@
 {
 	"pair": {
+		"title":{
+			"capabilities": "Capabilities",
+			"class": "Device Class",
+			"done": "Ready",
+			"icon": "Icon",
+			"name": "Device Name",
+			"modeName": "Mode name",
+			"modes": "Modes"
+		},
 		"select": {
+			"capabilities": "Select 1 or more Capabilities",
+			"class": "Select a Device Class",
+			"done": "The device is added to Homey",
+			"icon": "Select an Icon",
+			"name": "Give it a Name",
+			"modes": "Add modes",
 			"type": "New mode type",
 			"details": "Specify the Details",
-			"name": "Give it a Name",
-			"icon": "Select an Icon",
-			"capability": "Select 1 or more Capabilities",
-			"class": "Select a Device Class",
 			"mode": {
 				"list": "List of modes",
 				"name": "Give the mode a name",
 				"icon": "Select an icon for the mode",
 				"add": "Add mode to the list",
 				"empty-list": "The list is still empty"
+			}
+		},
+		"default": {
+			"name": {
+				"mode": "New Mode",
+				"multi": "New Multi-Mode",
+				"sub": "New Sub-Mode"
 			}
 		},
 		"device": {

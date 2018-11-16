@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/multi/";
 
 class MultiDriver extends Homey.Driver {
 
@@ -11,20 +12,65 @@ class MultiDriver extends Homey.Driver {
     multiModeTrigger.register();
 
     this.registerFlowCardCondition('multi_mode_is', 'multi_state');
-
     this.registerFlowCardAction('multi_set_state', 'multi_state', multiModeTrigger);
 	}
 
   onPair( socket ) {
+    let pairingDevice = {
+      "name": Homey.__( 'pair.default.name.multi' ),
+      "settings": {},
+      "data": {
+        id: guid(),
+        version: 3,
+        state_names: {}
+      },
+      "class": "other",
+      "capabilities": ["multi_state", "previous_state"],
+      "mobile": {
+        "components": []
+      }
+    };
+    let nextModeName = ''
+    let subModeList = []
+    let mainComponent = {
+      "id": "sensor",
+      "capabilities": ["multi_state"],
+      "options": {
+        "icons": {}
+      }
+    }
+    let modesComponent = {
+      "id": "button",
+      "capabilities": [],
+      "options": {
+        "icons": {},
+        "showTitle": [ ]
+      }
+    }
 
     socket.on('log', function( msg, callback ) {
         console.log(msg);
         callback( null, 'ok' );
     });
 
-    socket.on('getIcons', function( data, callback ) {
-        console.log('Adding new device');
+    socket.on('setName', function( data, callback ) {
+        console.log('setName: ' + data);
+        pairingDevice.name = data.name;
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
+    });
 
+    socket.on('setModeName', function( data, callback ) {
+        console.log('setModeName: ' + JSON.stringify(data));
+        nextModeName = data.name;
+        callback( null, pairingDevice );
+    });
+
+    socket.on('getPairingDevice', function( data, callback ) {
+        callback( null, pairingDevice );
+    });
+
+    socket.on('getIcons', function( data, callback ) {
         var device_data = [
           getIconNameAndLocation('house'),
           getIconNameAndLocation('away'),
@@ -56,6 +102,56 @@ class MultiDriver extends Homey.Driver {
 	    ]
 
         callback( null, device_data );
+    });
+
+    socket.on('setIcon', function( data, callback ) {
+        console.log('setIcon: ' + JSON.stringify(data));
+        mainComponent.options.icons.multi_state = 'drivers/multi/assets/' + data.icon.location
+        pairingDevice.data.icon_name = data.icon.name
+        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        pairingDevice.mobile.components = [ mainComponent, modesComponent ]
+
+        console.log('setIcon - pairingDevice: ' + JSON.stringify(pairingDevice))
+        callback( null, pairingDevice )
+    });
+
+    socket.on('setModeIcon', function( data, callback ) {
+        console.log('setModeIcon: ' + JSON.stringify(data));
+        var nrOfSubModes = modesComponent.capabilities.length + 1
+        var modeCapability = "onoff.opt" + nrOfSubModes
+        console.log('new Mode Capability: ' + modeCapability);
+
+        modesComponent.capabilities.push(modeCapability)
+        modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        console.log('setModeIcon - modesComponent: ' + JSON.stringify(modesComponent));
+
+        pairingDevice.capabilities.push(modeCapability)
+        pairingDevice.data.state_names[modeCapability] = nextModeName;
+        console.log('setModeIcon - pairingDevice: ' + JSON.stringify(pairingDevice))
+
+        var subMode = {
+          'name': nextModeName,
+          'icon': data.icon
+        }
+        subModeList.push(subMode)
+        console.log('setModeIcon - subModeList: ' + JSON.stringify(subModeList))
+
+        callback( null, pairingDevice )
+    });
+
+    socket.on('getSubModes', function( data, callback ) {
+        callback( null, subModeList );
+    });
+
+    socket.on('setModes', function( data, callback ) {
+        console.log('setModes: ' + JSON.stringify(data));
+        modesComponent.capabilities = data.capabilities
+        modesComponent.options.icons = data.modeIcons
+        pairingDevice.data.state_names = data.modeNames
+        pairingDevice.mobile.components = [ mainComponent, modesComponent ]
+
+        console.log('setModes - pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
     });
 
     socket.on('disconnect', function(){
@@ -126,6 +222,13 @@ class MultiDriver extends Homey.Driver {
 }
 
 module.exports = MultiDriver;
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
 
 function getIconNameAndLocation( name ) {
 	return {
