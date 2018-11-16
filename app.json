@@ -1,7 +1,7 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.8.0",
-  "compatibility": "1.x >=1.5.0",
+  "version": "0.8.1",
+  "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
   "name": {
