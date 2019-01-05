@@ -18,8 +18,18 @@ class VirtualDriver extends Homey.Driver {
         id: guid(),
         version: 3
       },
-      capabilities: []
+      capabilities: [],
+      capabilitiesOptions: {
+        target_temperature: {
+          max: 100
+        }    
+      }
     };
+        // measure_temperature: {
+        //   min: 0,
+        //   max: 100,
+        //   setable: true
+        // },
 
     socket.on('log', function( msg, callback ) {
         console.log(msg);
@@ -145,7 +155,7 @@ function guid() {
 function getIconNameAndLocation( name ) {
 	return {
 		"name": name,
-		"location": "../assets/" + name + ".svg"
+		"location": name + ".svg"
 	}
 };
 
