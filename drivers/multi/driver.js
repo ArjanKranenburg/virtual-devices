@@ -112,7 +112,10 @@ class MultiDriver extends Homey.Driver {
         console.log('setIcon: ' + JSON.stringify(data));
         mainComponent.options.icons.multi_state = 'drivers/multi/assets/' + data.icon.location
         pairingDevice.data.icon_name = data.icon.name
-        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        pairingDevice.icon = data.icon.location
+        if ( Homey.version == undefined ) {
+          pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        }
         pairingDevice.mobile.components = [ mainComponent, modesComponent ]
 
         console.log('setIcon - pairingDevice: ' + JSON.stringify(pairingDevice))

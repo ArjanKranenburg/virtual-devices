@@ -92,7 +92,10 @@ class VirtualDriver extends Homey.Driver {
     socket.on('setIcon', function( data, callback ) {
         console.log('setIcon: ' + data);
         pairingDevice.data.icon = data.icon.location;
-        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        pairingDevice.icon = data.icon.location
+        if ( Homey.version == undefined ) {
+          pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        }
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
     });
