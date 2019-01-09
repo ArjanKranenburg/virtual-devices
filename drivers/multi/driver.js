@@ -129,7 +129,11 @@ class MultiDriver extends Homey.Driver {
         console.log('new Mode Capability: ' + modeCapability);
 
         modesComponent.capabilities.push(modeCapability)
-        modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        // modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        modesComponent.options.icons[modeCapability] = data.icon.location;
+        if ( Homey.version == undefined ) {
+          modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        }
         console.log('setModeIcon - modesComponent: ' + JSON.stringify(modesComponent));
 
         pairingDevice.capabilities.push(modeCapability)
