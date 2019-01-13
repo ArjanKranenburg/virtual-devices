@@ -17,6 +17,11 @@
     console.log(result);
     Homey.setTitle(__('pair.title.device') + ' ' + result.name);
 
+    Homey.emit('addCapabilities', {'capabilities': devices[result.class].defaultCapabilities}, function (err, result) {
+            if(err){console.log(err); return;}
+            console.log(result);
+          });
+
     new Vue({
       el: '#app',
       data: {
