@@ -8,6 +8,10 @@
 
 ## Release history
 
+### 0.8.5 (Beta)
+* Fixed icons of new devices in V2 (issue #77)
+* Fixed no capability when not selecting other than default capability (issue #81)
+
 ### 0.8.1 (Beta)
 * Updated Compatibility
 
