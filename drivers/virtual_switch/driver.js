@@ -21,7 +21,7 @@ class VirtualDriver extends Homey.Driver {
       capabilities: [],
       capabilitiesOptions: {
         target_temperature: {
-          max: 100
+          max: 50
         }    
       }
     };
