@@ -8,14 +8,17 @@
 
 ## Release history
 
-### 0.8.5 (Beta)
+### 0.8.6 (Beta)
+* Lowered scale for target-temp up-to 50 (issue #94)
+
+### 0.8.5
 * Fixed icons of new devices in V2 (issue #77)
 * Fixed no capability when not selecting other than default capability (issue #81)
 
-### 0.8.1 (Beta)
+### 0.8.1
 * Updated Compatibility
 
-### 0.8.0 (Beta)
+### 0.8.0
 * Improved pairing process
 
 ### 0.7.5
