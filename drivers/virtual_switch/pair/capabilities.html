@@ -1,7 +1,7 @@
 <script src='../../../assets/vue.min.js'></script>
 <script src='./capabilities.js'></script>
 <script>
-  Homey.setTitle(__('pair.title.capabilities'));
+  Homey.setTitle(__('pair.title.device'));
   new Vue({
     el: '#capab_instructions',
     data: {
@@ -15,12 +15,18 @@
       return;
     }
     console.log(result);
+    Homey.setTitle(__('pair.title.device') + ' ' + result.name);
+
+    Homey.emit('addCapabilities', {'capabilities': devices[result.class].defaultCapabilities}, function (err, result) {
+            if(err){console.log(err); return;}
+            console.log(result);
+          });
 
     new Vue({
       el: '#app',
       data: {
         capabilities: devices[result.class].capabilities,
-        selectedCapabilities: []
+        selectedCapabilities: devices[result.class].defaultCapabilities
       },
       watch: {
         'selectedCapabilities': function(val){
@@ -41,7 +47,7 @@
     <li class="device" v-for="(key, value) in capabilities">
 		<label :for="key" class="name">
 			<div class="overlay"></div>
-			<span class="name" tabindex="-1">{{key}}</span>
+			<span class="name" tabindex="-1">{{ __('capability.' + key) }}</span>
 		</label>
 		<label :for="key" class="checkbox">
 			<input :id="key" :value="key" name="device" type="checkbox" tabindex="2" v-model="selectedCapabilities">

@@ -12,13 +12,24 @@ class VirtualDriver extends Homey.Driver {
 
   onPair( socket ) {
     let pairingDevice = {
-      "settings": {},
-      "data": {
+      name: Homey.__('pair.default.name.device'),
+      settings: {},
+      data: {
         id: guid(),
         version: 3
       },
-      capabilities: []
+      capabilities: [],
+      capabilitiesOptions: {
+        target_temperature: {
+          max: 50
+        }    
+      }
     };
+        // measure_temperature: {
+        //   min: 0,
+        //   max: 100,
+        //   setable: true
+        // },
 
     socket.on('log', function( msg, callback ) {
         console.log(msg);
@@ -28,7 +39,6 @@ class VirtualDriver extends Homey.Driver {
     socket.on('setClass', function( data, callback ) {
         console.log('setClass: ' + data);
         pairingDevice.class = data.class;
-        pairingDevice.name = Homey.__( 'class.' + data.class);
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
     });
@@ -55,25 +65,37 @@ class VirtualDriver extends Homey.Driver {
         var device_data = [
 	        getIconNameAndLocation('switch'),
 	        getIconNameAndLocation('light'),
+          getIconNameAndLocation('button'),
+          getIconNameAndLocation('alarm'),
+          getIconNameAndLocation('lock'),
+          getIconNameAndLocation('door'),
+          getIconNameAndLocation('motion'),
 	        getIconNameAndLocation('blinds'),
           getIconNameAndLocation('curtains'),
+          getIconNameAndLocation('garage'),
 	        getIconNameAndLocation('tv'),
 	        getIconNameAndLocation('hifi'),
-	        getIconNameAndLocation('alarm'),
-          getIconNameAndLocation('radiator'),
-          getIconNameAndLocation('thermostat'),
           getIconNameAndLocation('sensor'),
-          getIconNameAndLocation('button'),
-          getIconNameAndLocation('lock'),
+          getIconNameAndLocation('thermostat'),
+          getIconNameAndLocation('radiator'),
+          getIconNameAndLocation('fan'),
+          getIconNameAndLocation('electricity'),
+          getIconNameAndLocation('water'),
+          getIconNameAndLocation('sensor2'),
+          getIconNameAndLocation('coffee_maker'),
+          getIconNameAndLocation('kettle'),
 	    ]
 
         callback( null, device_data );
     });
 
-    socket.on('addIcon', function( data, callback ) {
-        console.log('addIcon: ' + data);
+    socket.on('setIcon', function( data, callback ) {
+        console.log('setIcon: ' + data);
         pairingDevice.data.icon = data.icon.location;
-        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        pairingDevice.icon = data.icon.location
+        if ( Homey.version == undefined ) {
+          pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        }
         console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
     });
@@ -89,14 +111,29 @@ class VirtualDriver extends Homey.Driver {
       .register()
       .registerRunListener(( args, state ) => {
         try {
+          this.log('args: ' + simpleStringify(args) );
           let device = validateItem('device', args.device);
           let sensor = validateItem('sensor', args.sensor);
           let value  = validateItem('value',  args.value );
-//        this.log(device.getName() + ' -> Sensor: ' + sensor);
-//        this.log(device.getName() + ' -> Value:  ' + parseFloat(value, 10));
 
-          device.setCapabilityValue(sensor, parseFloat(value, 10)) // Fire and forget
-             .catch(this.error);
+          this.log(device.getName() + ' -> Sensor: ' + sensor);
+
+          var valueToSet;
+          if( isNaN(value) ) {
+            if ( value.toLowerCase() === 'true' ) {
+              valueToSet = true;
+            } else if ( value.toLowerCase() === 'false' ) {
+              valueToSet = false;
+            } else {
+              valueToSet = value;
+            }
+          } else {
+            valueToSet = parseFloat(value, 10);
+          }
+
+          this.log(device.getName() + ' -> Value:  ' + valueToSet);
+          device.setCapabilityValue(sensor, valueToSet) // Fire and forget
+            .catch(this.error);
 
           return Promise.resolve( true );
         }
@@ -121,7 +158,7 @@ function guid() {
 function getIconNameAndLocation( name ) {
 	return {
 		"name": name,
-		"location": "../assets/" + name + ".svg"
+		"location": name + ".svg"
 	}
 };
 

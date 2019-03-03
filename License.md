@@ -12,9 +12,10 @@ The copyright of the following icons lies with:
 * House (removed text) by Logan from the Noun Project via [Creative Commons](creative-commons)
 * Multi-mode (removed text) by Barracuda from the Noun Project via [Creative Commons](creative-commons)
 * Thermostat (removed 'devolo'-text) by Athom.
-* Curtains (removed text) by b farias from the Noun Project via [Creative Commons](creative-commons)
+* Curtains (removed text) by B Farias from the Noun Project via [Creative Commons](creative-commons)
 * Lock (removed text) by Aleksandr Vector from the Noun Project via [Creative Commons](creative-commons)
 * Sensor (removed text) by Arthur Lacôte from the Noun Project via [Creative Commons](creative-commons)
+* sensor (2) (removed text) by Pham Duy Phuong Hung from the Noun Project via [Creative Commons](creative-commons)
 * Ambiance (removed text) by Lilit Kalachyan from the Noun Project via [Creative Commons](creative-commons)
 * Concentrate (removed text) by Carl Williamson from the Noun Project via [Creative Commons](creative-commons)
 * Day (removed text) by Landan Lloyd from the Noun Project via [Creative Commons](creative-commons)
@@ -29,6 +30,15 @@ The copyright of the following icons lies with:
 * Number-two by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
 * Number-three by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
 * Number-four by Alessio Atzeni from Flaticon via [Creative Commons](creative-commons)
+* Work (removed text) by Alina Oleynik from the Noun Project via [Creative Commons](creative-commons)
+* Motion (removed text) by Arthur Shlain from the Noun Project via [Creative Commons](creative-commons)
+* Door (removed text) by yanti anis from the Noun Project via [Creative Commons](creative-commons)
+* Fan (removed text) by anbileru adaleru from the Noun Project via [Creative Commons](creative-commons)
+* Kettle (removed text) by Andrejs Kirma from the Noun Project via [Creative Commons](creative-commons)
+* Coffee Maker (removed text) by fauzan akbar from the Noun Project via [Creative Commons](creative-commons)
+* Electricity (removed text) by Templet from the Noun Project via [Creative Commons](creative-commons)
+* Water (removed text) by Gregor Cresnar from the Noun Project via [Creative Commons](creative-commons)
+* Garage (removed text) by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 

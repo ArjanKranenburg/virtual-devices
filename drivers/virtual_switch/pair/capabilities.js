@@ -51,7 +51,10 @@ var devices = {
       "capabilities": [
         "onoff",
         "dim",
-        "windowcoverings_state"
+        "windowcoverings_state",
+        "windowcoverings_tilt_down",
+        "windowcoverings_tilt_set",
+        "windowcoverings_tilt_up"    
       ],
       "defaultCapabilities": [
         "onoff"
@@ -111,7 +114,8 @@ var devices = {
         "homealarm_state",
         "onoff",
         "button",
-        "alarm_motion"
+        "alarm_motion",
+        "alarm_contact"
       ],
       "defaultCapabilities": [
         "homealarm_state"
@@ -133,7 +137,20 @@ var devices = {
         "measure_co2",
         "measure_pressure",
         "measure_humidity",
-        "measure_pm25"
+        "measure_pm25",
+        "measure_co",
+    		"measure_current",
+    		"measure_gust_angle",
+    		"measure_gust_strength",
+    		"measure_luminance",
+    		"measure_noise",
+    		"measure_rain",
+    		"measure_ultraviolet",
+    		"measure_voltage",
+    		"measure_water",
+    		"measure_wind_angle",
+    		"measure_wind_strength",
+    		"meter_power"
       ],
       "defaultCapabilities": [
       ]

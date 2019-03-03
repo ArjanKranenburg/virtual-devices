@@ -30,7 +30,7 @@ class MultiDriver extends Homey.Driver {
         "components": []
       }
     };
-    let nextModeName = ''
+    let nextModeName = Homey.__( 'pair.default.name.sub')
     let subModeList = []
     let mainComponent = {
       "id": "sensor",
@@ -68,6 +68,10 @@ class MultiDriver extends Homey.Driver {
 
     socket.on('getPairingDevice', function( data, callback ) {
         callback( null, pairingDevice );
+    });
+
+    socket.on('getPairingModeName', function( data, callback ) {
+        callback( null, nextModeName );
     });
 
     socket.on('getIcons', function( data, callback ) {
@@ -108,7 +112,10 @@ class MultiDriver extends Homey.Driver {
         console.log('setIcon: ' + JSON.stringify(data));
         mainComponent.options.icons.multi_state = 'drivers/multi/assets/' + data.icon.location
         pairingDevice.data.icon_name = data.icon.name
-        pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        pairingDevice.icon = data.icon.location
+        if ( Homey.version == undefined ) {
+          pairingDevice.icon = DRIVER_LOCATION + "assets/" + data.icon.location
+        }
         pairingDevice.mobile.components = [ mainComponent, modesComponent ]
 
         console.log('setIcon - pairingDevice: ' + JSON.stringify(pairingDevice))
@@ -122,7 +129,11 @@ class MultiDriver extends Homey.Driver {
         console.log('new Mode Capability: ' + modeCapability);
 
         modesComponent.capabilities.push(modeCapability)
-        modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        // modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        modesComponent.options.icons[modeCapability] = data.icon.location;
+        if ( Homey.version == undefined ) {
+          modesComponent.options.icons[modeCapability] = 'drivers/multi/assets/' + data.icon.location;
+        }
         console.log('setModeIcon - modesComponent: ' + JSON.stringify(modesComponent));
 
         pairingDevice.capabilities.push(modeCapability)
@@ -130,12 +141,14 @@ class MultiDriver extends Homey.Driver {
         console.log('setModeIcon - pairingDevice: ' + JSON.stringify(pairingDevice))
 
         var subMode = {
+          'id': guid(),
           'name': nextModeName,
           'icon': data.icon
         }
         subModeList.push(subMode)
         console.log('setModeIcon - subModeList: ' + JSON.stringify(subModeList))
 
+        nextModeName = Homey.__( 'pair.default.name.sub')
         callback( null, pairingDevice )
     });
 
@@ -144,7 +157,7 @@ class MultiDriver extends Homey.Driver {
     });
 
     socket.on('setModes', function( data, callback ) {
-        console.log('setModes: ' + JSON.stringify(data));
+      console.log('setModes: ' + JSON.stringify(data));
         modesComponent.capabilities = data.capabilities
         modesComponent.options.icons = data.modeIcons
         pairingDevice.data.state_names = data.modeNames
@@ -152,6 +165,37 @@ class MultiDriver extends Homey.Driver {
 
         console.log('setModes - pairingDevice: ' + JSON.stringify(pairingDevice));
         callback( null, pairingDevice );
+    });
+
+    socket.on('removeMode', function( data, callback ) {
+      console.log('removeMode: ' + JSON.stringify(data))
+      var newSubModeList = []
+      var newIconList = {}
+      var newStateNames = {}
+      for (var i = 0; i < subModeList.length; i++) {
+        var subMode = subModeList[i]
+        var oldModeCapability = "onoff.opt" + (i+1)
+
+        if ( subMode.id !== data.mode.id ) {
+          newSubModeList.push(subMode)
+          var nrOfNewSubModes = newSubModeList.length
+          var newModeCapability = "onoff.opt" + nrOfNewSubModes
+          newIconList[newModeCapability] = modesComponent.options.icons[oldModeCapability]
+          newStateNames[newModeCapability] = pairingDevice.data.state_names[oldModeCapability]
+
+        } else {
+          console.log("This one will be removed: " + oldModeCapability)
+        }
+      }
+
+      modesComponent.capabilities.pop()
+      pairingDevice.capabilities.pop()
+
+      modesComponent.options.icons = newIconList
+      pairingDevice.data.state_names = newStateNames
+
+      subModeList = newSubModeList
+      callback( null, subModeList );
     });
 
     socket.on('disconnect', function(){

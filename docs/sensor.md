@@ -32,5 +32,3 @@ The technical name to fill in step 2 above is the capability name as shown on
 It is the name in the grey-box, e.g. measure_temperature.
 
 ![Technical_capability_names](images/Technical_capability_names.jpeg "Technical Capability Names")
-
-Currently only measure_temperature and measure_power are supported.

@@ -7,7 +7,10 @@
 			"icon": "Icon",
 			"name": "Device Name",
 			"modeName": "Mode name",
-			"modes": "Modes"
+			"modes": "Modes",
+			"device": "New Virtual Device",
+			"mode": "New Mode",
+			"multi": "New Multi-mode"
 		},
 		"select": {
 			"capabilities": "Select 1 or more Capabilities",
@@ -28,6 +31,7 @@
 		},
 		"default": {
 			"name": {
+				"device": "New Device",
 				"mode": "New Mode",
 				"multi": "New Multi-Mode",
 				"sub": "New Sub-Mode"
@@ -55,15 +59,20 @@
 		"homealarm": "Home Alarm",
 		"thermostat": "Thermostat",
 		"sensor": "Sensor",
-		"lock": "Lock"
+		"lock": "Lock",
+		"undefined": "New device"
 	},
 	"capability": {
 		"onoff": "On / Off",
 		"dim": "Dimmable",
 		"button": "Button",
 		"windowcoverings_state": "Up / Idle / Down",
+		"windowcoverings_tilt_up": "Tilt Up",
+		"windowcoverings_tilt_set": "Tilt Set",
+		"windowcoverings_tilt_down": "Tilt Down",
 		"homealarm_state": "Armed / Partially armed / Disarmed",
-		"alarm_motion": "Detected Motion",
+		"alarm_motion": "Motion",
+		"alarm_contact": "Door/Window Open",
 		"target_temperature": "Target Temperature",
 		"thermostat_mode": "Automatic / Heat / Cool / Off",
 		"light_hue": "Hue light",
@@ -93,7 +102,8 @@
 		"measure_wind_angle": "Wind angle",
 		"measure_gust_strength": "Gust strength",
 		"measure_gust_angle": "Gust angle",
-		"measure_humidity": "Relative Humidity"
+		"measure_humidity": "Relative Humidity",
+		"meter_power": "Energy"
 	},
 	"icon": {
 		"light": "Light",
@@ -103,6 +113,7 @@
 		"hifi": "Hi-Fi",
 		"alarm": "Alarm",
 		"blinds": "Blinds",
+		"contact": "Door/Window",
 		"curtains": "Curtains",
 		"mode": "Mode",
 		"away": "Away",
@@ -110,6 +121,7 @@
 		"holiday": "Holiday",
 		"house": "Home",
 		"manual": "Manual",
+		"motion": "Motion",
 		"movie": "Movie",
 		"party": "Party",
 		"quiet": "Quiet",
