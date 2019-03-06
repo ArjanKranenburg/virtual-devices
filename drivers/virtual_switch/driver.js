@@ -69,6 +69,7 @@ class VirtualDriver extends Homey.Driver {
           getIconNameAndLocation('alarm'),
           getIconNameAndLocation('lock'),
           getIconNameAndLocation('door'),
+          getIconNameAndLocation('window_open'),
           getIconNameAndLocation('motion'),
 	        getIconNameAndLocation('blinds'),
           getIconNameAndLocation('curtains'),
