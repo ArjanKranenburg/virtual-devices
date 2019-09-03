@@ -1,12 +1,13 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
   "name": {
     "en": "Virtual Devices",
-    "nl": "Virtuele Apparaten"
+    "nl": "Virtuele Apparaten",
+    "de": "Virtual Devices"
   },
   "tags": {
     "en": [
@@ -14,6 +15,9 @@
     ],
     "nl": [
       "Virtuele Apparaten"
+    ],
+    "de": [
+      "Virtual Devices"
     ]
   },
   "author": {
@@ -25,6 +29,18 @@
       {
         "name": "Arjan Kranenburg",
         "email": "arjan.kranenburg@gmail.com"
+      },
+      {
+        "name": "Danee de Kruyff",
+        "email": "daneedekruyff@outlook.com"
+      }
+    ],
+    "translators": [
+      {
+        "name": "🇬🇧Arjan Kranenburg"
+      },
+      {
+        "name": "🇳🇱Arjan Kranenburg"
       }
     ]
   },
@@ -51,7 +67,8 @@
       "type": "string",
       "title": {
         "en": "Multi-mode state",
-        "nl": "Multimode status"
+        "nl": "Multimode status",
+        "de": "Multi-mode state"
       },
       "getable": true,
       "setable": true
@@ -60,7 +77,8 @@
       "type": "string",
       "title": {
         "en": "Previous Multi-mode state",
-        "nl": "Vorige Multimode status"
+        "nl": "Vorige Multimode status",
+        "de": "Previous Multi-mode state"
       },
       "getable": true,
       "setable": false
@@ -72,40 +90,47 @@
         "id": "device_changed",
         "title": {
           "en": "A virtual device changed",
-          "nl": "Een virtueel apparaat is veranderd"
+          "nl": "Een virtueel apparaat is veranderd",
+          "de": "A virtual device changed"
         },
         "tokens": [
           {
             "name": "value",
             "title": {
               "en": "value",
-              "nl": "waarde"
+              "nl": "waarde",
+              "de": "value"
             },
             "example": {
               "en": "true",
-              "nl": "true"
+              "nl": "true",
+              "de": "true"
             }
           },
           {
             "name": "variable",
             "title": {
               "en": "variable",
-              "nl": "variabele"
+              "nl": "variabele",
+              "de": "variable"
             },
             "example": {
               "en": "onoff",
-              "nl": "aanuit"
+              "nl": "aanuit",
+              "de": "onoff"
             }
           },
           {
             "name": "device",
             "title": {
               "en": "device",
-              "nl": "apparaat"
+              "nl": "apparaat",
+              "de": "device"
             },
             "example": {
               "en": "Virtual Lamp",
-              "nl": "Virtuele Lamp"
+              "nl": "Virtuele Lamp",
+              "de": "Virtual Lamp"
             }
           }
         ]
@@ -114,7 +139,8 @@
         "id": "press",
         "title": {
           "en": "Pressed / changed",
-          "nl": "Ingedrukt / veranderd"
+          "nl": "Ingedrukt / veranderd",
+          "de": "Pressed / changed"
         },
         "args": [
           {
@@ -128,7 +154,8 @@
         "id": "mode_on",
         "title": {
           "en": "Mode is on",
-          "nl": "Modus wordt aangezet"
+          "nl": "Modus wordt aangezet",
+          "de": "Mode is on"
         },
         "args": [
           {
@@ -142,7 +169,8 @@
         "id": "mode_off",
         "title": {
           "en": "Mode is off",
-          "nl": "Modus wordt uitgezet"
+          "nl": "Modus wordt uitgezet",
+          "de": "Mode is off"
         },
         "args": [
           {
@@ -156,7 +184,8 @@
         "id": "mode_changed",
         "title": {
           "en": "Mode Changed",
-          "nl": "Modus Veranderd"
+          "nl": "Modus Veranderd",
+          "de": "Mode Changed"
         },
         "args": [
           {
@@ -170,7 +199,8 @@
         "id": "multi_changed",
         "title": {
           "en": "Multi Mode Changed",
-          "nl": "Multi-Modus Veranderd"
+          "nl": "Multi-Modus Veranderd",
+          "de": "Multi Mode Changed"
         },
         "args": [
           {
@@ -186,7 +216,8 @@
         "id": "mode",
         "title": {
           "en": "Mode !{{is|isn't}} turned on",
-          "nl": "Modus !{{is|is niet}} aangezet"
+          "nl": "Modus !{{is|is niet}} aangezet",
+          "de": "Mode !{{is|isn't}} turned on"
         },
         "args": [
           {
@@ -200,7 +231,8 @@
         "id": "multi_mode_is",
         "title": {
           "en": "Multi-mode !{{is|is not}} exactly",
-          "nl": "Multi-modus !{{is|is niet}} exact"
+          "nl": "Multi-modus !{{is|is niet}} exact",
+          "de": "Multi-mode !{{is|is not}} exactly"
         },
         "args": [
           {
@@ -208,7 +240,8 @@
             "type": "text",
             "placeholder": {
               "en": "State",
-              "nl": "Status"
+              "nl": "Status",
+              "de": "State"
             }
           },
           {
@@ -224,7 +257,8 @@
         "id": "set_sensor_value",
         "title": {
           "en": "Set a virtual sensor value",
-          "nl": "Zet de waarde van een virtuele sensor"
+          "nl": "Zet de waarde van een virtuele sensor",
+          "de": "Set a virtual sensor value"
         },
         "args": [
           {
@@ -232,7 +266,8 @@
             "type": "text",
             "placeholder": {
               "en": "Sensor",
-              "nl": "Sensor"
+              "nl": "Sensor",
+              "de": "Sensor"
             }
           },
           {
@@ -240,7 +275,8 @@
             "type": "text",
             "placeholder": {
               "en": "Value",
-              "nl": "Waarde"
+              "nl": "Waarde",
+              "de": "Value"
             }
           },
           {
@@ -254,7 +290,8 @@
         "id": "mode_action_on",
         "title": {
           "en": "Turn mode on",
-          "nl": "Zet modus aan"
+          "nl": "Zet modus aan",
+          "de": "Turn mode on"
         },
         "args": [
           {
@@ -268,7 +305,8 @@
         "id": "mode_action_off",
         "title": {
           "en": "Turn mode off",
-          "nl": "Zet modus uit"
+          "nl": "Zet modus uit",
+          "de": "Turn mode off"
         },
         "args": [
           {
@@ -282,7 +320,8 @@
         "id": "mode_state_on",
         "title": {
           "en": "Set mode on, no trigger",
-          "nl": "Zet modus aan zonder trigger"
+          "nl": "Zet modus aan zonder trigger",
+          "de": "Set mode on, no trigger"
         },
         "args": [
           {
@@ -296,7 +335,8 @@
         "id": "mode_state_off",
         "title": {
           "en": "Set mode off, no trigger",
-          "nl": "Zet modus uit zonder trigger"
+          "nl": "Zet modus uit zonder trigger",
+          "de": "Set mode off, no trigger"
         },
         "args": [
           {
@@ -310,7 +350,8 @@
         "id": "multi_set_state",
         "title": {
           "en": "Set multi-mode",
-          "nl": "Zet multi modus"
+          "nl": "Zet multi modus",
+          "de": "Set multi-mode"
         },
         "args": [
           {
@@ -318,7 +359,8 @@
             "type": "text",
             "placeholder": {
               "en": "New state",
-              "nl": "Nieuwe status"
+              "nl": "Nieuwe status",
+              "de": "New state"
             }
           },
           {
@@ -335,7 +377,8 @@
       "id": "virtual_switch",
       "name": {
         "en": "Device",
-        "nl": "Apparaat"
+        "nl": "Apparaat",
+        "de": "Device"
       },
       "images": {
         "large": "drivers/virtual_switch/assets/images/large.png",
@@ -380,7 +423,8 @@
       "id": "mode",
       "name": {
         "en": "Mode",
-        "nl": "Modus"
+        "nl": "Modus",
+        "de": "Mode"
       },
       "images": {
         "large": "drivers/mode/assets/images/large.png",
@@ -428,7 +472,8 @@
       "id": "multi",
       "name": {
         "en": "Multi-Mode",
-        "nl": "Multi Modus"
+        "nl": "Multi Modus",
+        "de": "Multi-Mode"
       },
       "images": {
         "large": "drivers/multi/assets/images/large.png",
