@@ -8,7 +8,13 @@
 
 ## Release history
 
-### 0.8.6 (Beta)
+### 0.8.7
+* Improved pairing pages (thanks to @daneedk)
+* added German translation (thanks to @philsniff)
+* capabilities added to sensor (thanks to @daneedk)
+* Added open-window icon to virtual-switch
+
+### 0.8.6
 * Lowered scale for target-temp up-to 50 (issue #94)
 
 ### 0.8.5
@@ -26,7 +32,7 @@
 * Increase range for target_temperature (issue #53)
 * Added capabilities to measure co, current, gust_angle, gust_strength,
   luminance, noise, rain, ultraviolet, voltage, water, wind_angle, and
-  wind_strength (issues #26 and #66) 
+  wind_strength (issues #26 and #66)
 * Added capability to measure Energy (KWh) (issue #57)
 
 ### 0.7.4
