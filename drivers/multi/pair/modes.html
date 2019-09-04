@@ -15,6 +15,12 @@
 
   .vd-icon-tile {
     height: 60px;
+    position: relative; 
+    padding: 5px;  
+    margin-bottom: 5px;
+    border-radius: 3px;
+    line-height: 30px; 
+    cursor: pointer; 
   }
 
   .mode > .remove {
@@ -120,7 +126,7 @@
     :gutter="10"
     >
     <div v-for="(item, index) in modes" :key="index">
-      <div class="device vd-icon-tile mode">
+      <div class="vd-icon-tile mode">
         <div class="remove" v-on:click='removeMode(item)'>x</div>
         <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(' + item.icon.location + ')'}"></span>
       </div>

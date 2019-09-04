@@ -14,7 +14,16 @@
   }
 
   .vd-icon-tile {
-    height: 60px;
+      /* height: 60px; */
+      position: relative; 
+    padding: 5px; 
+    height: 30px; 
+    margin-bottom: 5px;
+    /* background: #eee; */
+    /* border: 1px solid rgba(0,0,0,0.05); */
+    border-radius: 3px;
+    line-height: 30px; 
+    cursor: pointer; 
   }
 
   #icon_list {
@@ -74,7 +83,7 @@
     :gutter="10"
     >
     <div v-for="(item, index) in icons" :key="index" v-on:click='addIcon(item)'>
-      <label for="icon" class="vd-icon-tile device">
+      <label for="icon" class="vd-icon-tile">
         <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(/app/com.arjankranenburg.virtual/drivers/mode/assets/' + item.location + ')'}"></span>
       </label>
     </div>

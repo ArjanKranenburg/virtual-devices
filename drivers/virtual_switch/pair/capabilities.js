@@ -150,7 +150,9 @@ var devices = {
     		"measure_water",
     		"measure_wind_angle",
     		"measure_wind_strength",
-    		"meter_power"
+        "meter_power",
+        "alarm_motion",
+        "alarm_contact"
       ],
       "defaultCapabilities": [
       ]
