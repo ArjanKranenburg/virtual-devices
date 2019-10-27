@@ -12,6 +12,7 @@
 * Disabled Multi-modes
 * Added classes blinds, curtain, sunshade, solarpanel, and doorbell
 * Added classes vacuumcleaner, camera, remote, speaker
+* Set Energy Consumption hardcoded to 0
 
 ### 0.8.7
 * Improved pairing pages (thanks to @daneedk)

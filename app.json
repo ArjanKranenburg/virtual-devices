@@ -200,6 +200,7 @@
       },
       {
         "id": "multi_changed",
+        "deprecated": true,
         "title": {
           "en": "Multi Mode Changed",
           "nl": "Multi-Modus Veranderd",
@@ -232,6 +233,7 @@
       },
       {
         "id": "multi_mode_is",
+        "deprecated": true,
         "title": {
           "en": "Multi-mode !{{is|is not}} exactly",
           "nl": "Multi-modus !{{is|is niet}} exact",
@@ -351,6 +353,7 @@
       },
       {
         "id": "multi_set_state",
+        "deprecated": true,
         "title": {
           "en": "Set multi-mode",
           "nl": "Zet multi modus",
@@ -391,6 +394,11 @@
       "capabilities": [
         "onoff"
       ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 0
+        }
+      },    
       "pair": [
         {
           "id": "name",
@@ -437,6 +445,12 @@
       "capabilities": [
         "onoff"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },    
       "pair": [
         {
           "id": "name",
