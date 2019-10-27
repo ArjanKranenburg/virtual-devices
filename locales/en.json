@@ -60,7 +60,12 @@
 		"thermostat": "Thermostat",
 		"sensor": "Sensor",
 		"lock": "Lock",
-		"undefined": "New device"
+		"blinds": "Blinds",
+		"curtain": "Curtains",
+		"doorbell": "Doorbell",
+		"sunshade": "Sunshade",
+		"solarpanel": "Solar panel",
+		"undefined": "Unknown device"
 	},
 	"capability": {
 		"onoff": "On / Off",
@@ -70,6 +75,8 @@
 		"windowcoverings_tilt_up": "Tilt Up",
 		"windowcoverings_tilt_set": "Tilt Set",
 		"windowcoverings_tilt_down": "Tilt Down",
+		"windowcoverings_closed": "Closed",
+		"windowcoverings_set": "Position",
 		"homealarm_state": "Armed / Partially armed / Disarmed",
 		"alarm_motion": "Motion",
 		"alarm_contact": "Door/Window Open",

@@ -59,7 +59,13 @@
 		"homealarm": "Huisalarm",
 		"thermostat": "Thermostaat",
 		"sensor": "Sensor",
-		"lock": "Slot"
+		"lock": "Slot",
+		"blinds": "Jaloezieën & Lamellen",
+		"curtain": "Gordijnen",
+		"doorbell": "Deurbel",
+		"sunshade": "Zonnescherm",
+		"solarpanel": "Zonnepaneel",
+		"undefined": "Onbekend apparaat"
 	},
 	"capability": {
 		"onoff": "Aan / uit",
@@ -69,6 +75,8 @@
 		"windowcoverings_tilt_up": "Draai omhoog",
 		"windowcoverings_tilt_set": "Zet Verdraaiing",
 		"windowcoverings_tilt_down": "Draai omlaag",
+		"windowcoverings_closed": "Gesloten",
+		"windowcoverings_set": "Positie",
 		"homealarm_state": "Ingeschakeld / Deels Ingeschakeld / Uitgeschakeld",
 		"alarm_motion": "Beweging",
 		"alarm_contact": "Deur/Raam open",

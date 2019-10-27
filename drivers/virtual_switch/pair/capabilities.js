@@ -54,7 +54,9 @@ var devices = {
         "windowcoverings_state",
         "windowcoverings_tilt_down",
         "windowcoverings_tilt_set",
-        "windowcoverings_tilt_up"    
+        "windowcoverings_tilt_up",
+        "windowcoverings_closed",
+        "windowcoverings_set"
       ],
       "defaultCapabilities": [
         "onoff"
@@ -166,5 +168,65 @@ var devices = {
       "defaultCapabilities": [
         "locked"
       ]
+    },
+    "blinds": {
+      "capabilities": [
+        "onoff",
+        "windowcoverings_state",
+        "windowcoverings_tilt_down",
+        "windowcoverings_tilt_set",
+        "windowcoverings_tilt_up",
+        "windowcoverings_closed",
+        "windowcoverings_set"
+      ],
+      "defaultCapabilities": [
+        "windowcoverings_state"
+      ]
+    },
+    "curtain": {
+      "capabilities": [
+        "onoff",
+        "windowcoverings_state",
+        "windowcoverings_closed",
+        "windowcoverings_set"
+      ],
+      "defaultCapabilities": [
+        "windowcoverings_state"
+      ]
+    },
+    "doorbell": {
+      "capabilities": [
+        "button"
+      ],
+      "defaultCapabilities": [
+        "button"
+      ]
+    },
+    "sunshade": {
+      "capabilities": [
+        "windowcoverings_state",
+        "windowcoverings_closed",
+        "windowcoverings_set"
+     ],
+      "defaultCapabilities": [
+        "windowcoverings_state"
+      ]
+    },
+    "solarpanel": {
+      "capabilities": [
+        "meter_power",
+        "measure_power"
+      ],
+      "defaultCapabilities": [
+        "meter_power"
+      ]
     }
+  }
+
+  var todo = {
+    "camera": {},
+    "remote": {},
+    "speaker": {},
+    "": {},
+    "vacuumcleaner": {}
   }

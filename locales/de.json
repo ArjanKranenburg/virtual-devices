@@ -60,6 +60,11 @@
 		"thermostat": "Thermostat",
 		"sensor": "Sensor",
 		"lock": "Lock",
+		"blinds": "Rolladen",
+		"curtain": "Vorhänge",
+		"doorbell": "Türklingel",
+		"sunshade": "Sonnenschirm",
+		"solarpanel": "Solarmodul",
 		"undefined": "New device"
 	},
 	"capability": {
@@ -70,6 +75,8 @@
 		"windowcoverings_tilt_up": "nach oben kippen",
 		"windowcoverings_tilt_set": "Neigung festlegen",
 		"windowcoverings_tilt_down": "nach unten kippen",
+		"windowcoverings_closed": "Geschlossen",
+		"windowcoverings_set": "Position",
 		"homealarm_state": "Gesichert / teilweise gesichert / entsichert",
 		"alarm_motion": "Bewegung",
 		"alarm_contact": "Tür/Fenster geöffnet",
