@@ -46,6 +46,7 @@
 	},
 	"class": {
 		"other": "Anders",
+		"solarpanel": "zonnepaneel",
 		"light": "Licht",
 		"socket": "Stopcontact",
 		"tv": "TV",
@@ -105,6 +106,7 @@
 		"meter_power": "Energie"
 	},
 	"icon": {
+		"solarpanel": "zonnepaneel",
 		"light": "Licht",
 		"button": "Knop",
 		"switch": "Schakelaar",

@@ -8,7 +8,17 @@ var devices = {
       "defaultCapabilities": [
         "onoff"
       ]
+      
     },
+    "solarpanel": {
+      "capabilities": [
+        "measure_power",
+        "meter_power"
+      ],
+      "defaultCapabilities": [
+      ]
+
+    },  
     "light": {
       "capabilities": [
         "onoff",

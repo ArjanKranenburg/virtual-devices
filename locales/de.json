@@ -46,6 +46,7 @@
 	},
 	"class": {
 		"other": "Andere",
+		"solarpanel": "Solarmodul",		
 		"light": "Licht",
 		"socket": "Steckdose",
 		"tv": "TV",
@@ -106,6 +107,7 @@
 		"meter_power": "Energie"
 	},
 	"icon": {
+		"solarpanel": "Solarmodul",
 		"light": "Licht",
 		"button": "Button/ Taste",
 		"switch": "Schalter",

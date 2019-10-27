@@ -46,6 +46,7 @@
 	},
 	"class": {
 		"other": "Other",
+		"solarpanel": "Solarpanel",		
 		"light": "Light",
 		"socket": "Socket",
 		"tv": "TV",
@@ -106,6 +107,7 @@
 		"meter_power": "Energy"
 	},
 	"icon": {
+		"solarpanel": "Solarpanel",
 		"light": "Light",
 		"button": "Button",
 		"switch": "Switch",

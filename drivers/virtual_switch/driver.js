@@ -64,6 +64,7 @@ class VirtualDriver extends Homey.Driver {
     socket.on('getIcons', function( data, callback ) {
         var device_data = [
 	        getIconNameAndLocation('switch'),
+          getIconNameAndLocation('solarpanel'),
 	        getIconNameAndLocation('light'),
           getIconNameAndLocation('button'),
           getIconNameAndLocation('alarm'),
