@@ -151,6 +151,7 @@ var devices = {
     		"measure_wind_angle",
     		"measure_wind_strength",
         "meter_power",
+        "measure_power",
         "alarm_motion",
         "alarm_contact"
       ],
