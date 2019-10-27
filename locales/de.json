@@ -65,6 +65,10 @@
 		"doorbell": "Türklingel",
 		"sunshade": "Sonnenschirm",
 		"solarpanel": "Solarmodul",
+		"vacuumcleaner": "Staubsauger",
+		"camera": "Kamera",
+		"remote": "Remote",
+		"speaker": "Lautsprecher",
 		"undefined": "New device"
 	},
 	"capability": {
@@ -110,7 +114,18 @@
 		"measure_gust_strength": "Böen",
 		"measure_gust_angle": "Böenrichtung",
 		"measure_humidity": "Relative Luftfeuchtigkeit",
-		"meter_power": "Energie"
+		"meter_power": "Energie",
+		"vacuumcleaner_state": "Staubsauger-Status",
+		"speaker_playing": "Abspielen",
+        "speaker_next": "Weiter",
+        "speaker_prev": "Zurück",
+        "speaker_shuffle": "Zufallswiedergabe",
+        "speaker_repeat": "Wiederholen",
+        "speaker_artist": "Künstler",
+        "speaker_album": "Album",
+        "speaker_track": "Track",
+        "speaker_duration": "Länge",
+        "speaker_position": "Position"
 	},
 	"icon": {
 		"light": "Licht",

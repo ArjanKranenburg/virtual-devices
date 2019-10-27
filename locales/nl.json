@@ -65,6 +65,10 @@
 		"doorbell": "Deurbel",
 		"sunshade": "Zonnescherm",
 		"solarpanel": "Zonnepaneel",
+		"vacuumcleaner": "Stofzuiger",
+		"camera": "Camera",
+		"remote": "Remote",
+		"speaker": "Speaker",
 		"undefined": "Onbekend apparaat"
 	},
 	"capability": {
@@ -110,7 +114,18 @@
 		"measure_gust_angle": "Windstootrichting",
 		"measure_gust_strength": "Windstootkracht",
 		"measure_humidity": "Relatieve Luchtvochtigheid",
-		"meter_power": "Energie"
+		"meter_power": "Energie",
+		"vacuumcleaner_state": "Stofzuigerstatus",
+		"speaker_playing": "Afspelen",
+        "speaker_next": "Volgende",
+        "speaker_prev": "vorige",
+        "speaker_shuffle": "Shuffle",
+        "speaker_repeat": "Herhalen",
+        "speaker_artist": "Artiest",
+        "speaker_album": "Album",
+        "speaker_track": "Track",
+        "speaker_duration": "Lengte",
+        "speaker_position": "Positie"
 	},
 	"icon": {
 		"light": "Licht",

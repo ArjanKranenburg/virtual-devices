@@ -11,6 +11,7 @@
 * Support measure_power (thanks to @allram)
 * Disabled Multi-modes
 * Added classes blinds, curtain, sunshade, solarpanel, and doorbell
+* Added classes vacuumcleaner, camera, remote, speaker
 
 ### 0.8.7
 * Improved pairing pages (thanks to @daneedk)

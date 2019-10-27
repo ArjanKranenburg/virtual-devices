@@ -218,15 +218,65 @@ var devices = {
         "measure_power"
       ],
       "defaultCapabilities": [
-        "meter_power"
+        "measure_power"
+      ]
+    },
+    "vacuumcleaner": {
+      "capabilities": [
+        "onoff",
+        "vacuumcleaner_state"
+      ],
+      "defaultCapabilities": [
+        "vacuumcleaner_state"
+      ]
+    },
+    "camera": {
+      "capabilities": [
+        "alarm_motion",
+        "alarm_battery",
+        "alarm_tamper"
+      ],
+      "defaultCapabilities": [
+        "alarm_motion"
+      ]
+    },
+    "remote": {
+      "capabilities": [
+        "onoff",
+        "dim",
+        "volume_set",
+        "volume_up",
+        "volume_down",
+        "volume_mute",
+        "channel_up",
+        "channel_down",
+        "windowcoverings_state",
+        "windowcoverings_closed",
+      ],
+      "defaultCapabilities": [
+        "onoff"
+      ]
+    },
+    "speaker": {
+      "capabilities": [
+        "button",
+        "volume_set",
+        "volume_mute",
+        "volume_up",
+        "volume_down",
+        "speaker_playing",
+        "speaker_next",
+        "speaker_prev",
+        "speaker_shuffle",
+        "speaker_repeat",
+        "speaker_artist",
+        "speaker_album",
+        "speaker_track",
+        "speaker_duration",
+        "speaker_position"
+      ],
+      "defaultCapabilities": [
+        "button"
       ]
     }
-  }
-
-  var todo = {
-    "camera": {},
-    "remote": {},
-    "speaker": {},
-    "": {},
-    "vacuumcleaner": {}
   }

@@ -64,7 +64,11 @@
 		"curtain": "Curtains",
 		"doorbell": "Doorbell",
 		"sunshade": "Sunshade",
-		"solarpanel": "Solar panel",
+		"solarpanel": "Solar Panel",
+		"vacuumcleaner": "Vacuum Cleaner",
+		"camera": "Camera",
+		"remote": "Remote",
+		"speaker": "Speaker",
 		"undefined": "Unknown device"
 	},
 	"capability": {
@@ -110,7 +114,18 @@
 		"measure_gust_strength": "Gust strength",
 		"measure_gust_angle": "Gust angle",
 		"measure_humidity": "Relative Humidity",
-		"meter_power": "Energy"
+		"meter_power": "Energy",
+		"vacuumcleaner_state": "Vacuum cleaner state",
+		"speaker_playing": "Playing",
+        "speaker_next": "Next",
+        "speaker_prev": "Previous",
+        "speaker_shuffle": "Shuffle",
+        "speaker_repeat": "Repeat",
+        "speaker_artist": "Artist",
+        "speaker_album": "Album",
+        "speaker_track": "Track",
+        "speaker_duration": "Duration",
+        "speaker_position": "Position"
 	},
 	"icon": {
 		"light": "Light",
