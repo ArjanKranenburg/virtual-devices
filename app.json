@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -473,6 +473,7 @@
     },
     {
       "id": "multi",
+      "deprecated": true,
       "name": {
         "en": "Multi-Mode",
         "nl": "Multi Modus",
@@ -492,47 +493,6 @@
           "greyout": false
         }
       },
-      "pair": [
-        {
-          "id": "name",
-          "navigation": {
-            "next": "icon"
-          }
-        },
-        {
-          "id": "icon",
-          "navigation": {
-            "prev": "name"
-          }
-        },
-        {
-          "id": "modes",
-          "navigation": {
-            "prev": "icon",
-            "next": "done"
-          }
-        },
-        {
-          "id": "mode_name",
-          "navigation": {
-            "prev": "modes",
-            "next": "mode_icon"
-          }
-        },
-        {
-          "id": "mode_icon",
-          "navigation": {
-            "prev": "mode_name",
-            "next": "modes"
-          }
-        },
-        {
-          "id": "done",
-          "navigation": {
-            "prev": "modes"
-          }
-        }
-      ],
       "mobile": {
         "components": [
           {

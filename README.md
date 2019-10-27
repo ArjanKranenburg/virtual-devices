@@ -8,7 +8,6 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 
 * Virtual Devices: Switch, Alarm, Blinds, Hifi, Light, Security, TV, Heater
 * Modes: Holiday, Away, Party, Event, Quiet, Movie, Sleep, Relax, Manual, Secure
-* Multi-modes: have a mode with more than 2 states, with custom names
 * Trigger a flow
 * Use the switch/mode status as a condition
 * Use the switch/mode in the 'then'-column
@@ -16,8 +15,6 @@ Or you can add a mode and add it as a condition, e.g. to disable multiple flows 
 ## What doesn't:
 
 * Settings (or other) that makes some modes mutually exclusive (issue #3)
-
-I'm very interested to hear your ideas for other virtual devices.
 
 
 ## More information:

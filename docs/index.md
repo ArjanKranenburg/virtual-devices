@@ -1,7 +1,6 @@
 # Virtual Devices
 
 * [Description](index)
-* [Multi-Mode device](multimode)
 * [Sensors](sensor)
 * [Versions](version)
 * [Questions](https://community.athom.com/t/virtual-devices/1723)

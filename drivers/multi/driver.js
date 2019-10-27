@@ -277,7 +277,7 @@ function guid() {
 function getIconNameAndLocation( name ) {
 	return {
 		'name': name,
-		'location': '../assets/' + name + '.svg'
+		'location': '../assets/obsolete.svg'
 	}
 };
 

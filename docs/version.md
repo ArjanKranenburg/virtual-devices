@@ -1,12 +1,15 @@
 # Virtual Devices
 
 * [Description](index)
-* [Multi-Mode device](multimode)
 * [Sensors](sensor)
 * [Versions](version)
 * [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
 ## Release history
+
+### 0.8.8
+* Support measure_power (thanks to @allram)
+* Disabled Multi-modes
 
 ### 0.8.7
 * Improved pairing pages (thanks to @daneedk)

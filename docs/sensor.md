@@ -1,7 +1,6 @@
 # Virtual Devices
 
 * [Description](index)
-* [Multi-Mode device](multimode)
 * [Sensors](sensor)
 * [Versions](version)
 * [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
