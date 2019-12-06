@@ -7,6 +7,9 @@
 
 ## Release history
 
+### 0.8.9
+* Added Norwegian translation (thanks to Allram)
+
 ### 0.8.8
 * Support measure_power (thanks to @allram)
 * Disabled Multi-modes
