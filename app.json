@@ -7,15 +7,15 @@
   "name": {
     "en": "Virtual Devices",
     "nl": "Virtuele Apparaten",
-    "de": "virtuelle Geräte",
-    "no": "virtuelle enheter"
+    "de": "Virtuelle Geräte",
+    "no": "Virtuelle Enheter"
   },
   "tags": {
     "en": [
       "virtual device"
     ],
     "nl": [
-      "Virtuele Apparaten"
+      "virtuele apparaten"
     ],
     "de": [
       "virtuelle Geräte"
@@ -89,7 +89,7 @@
       "title": {
         "en": "Previous Multi-mode state",
         "nl": "Vorige Multimode status",
-        "de": "vorheriger Multimodus Status",
+        "de": "Vorheriger Multimodus Status",
         "no": "Forrige multimodus status"
       },
       "getable": true,
@@ -113,7 +113,7 @@
               "en": "value",
               "nl": "waarde",
               "de": "Wert",
-              "no": "Verdi"
+              "no": "verdi"
             },
             "example": {
               "en": "true",
@@ -128,13 +128,13 @@
               "en": "variable",
               "nl": "variabele",
               "de": "Variable",
-              "no": "Variabel"
+              "no": "variabel"
             },
             "example": {
               "en": "onoff",
               "nl": "aanuit",
               "de": "An/Aus",
-              "no": "På/Av"
+              "no": "på/av"
             }
           },
           {
@@ -160,7 +160,7 @@
           "en": "Pressed / changed",
           "nl": "Ingedrukt / veranderd",
           "de": "Gedrückt / verändert",
-          "no": "Trykket / Endret"
+          "no": "Trykket / endret"
         },
         "args": [
           {
