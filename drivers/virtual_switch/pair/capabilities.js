@@ -151,8 +151,12 @@ var devices = {
     		"measure_voltage",
     		"measure_water",
     		"measure_wind_angle",
-    		"measure_wind_strength",
+        "measure_wind_strength",
+        "measure_battery",
         "meter_power",
+        "meter_gas",
+        "meter_water",
+        "meter_rain",
         "measure_power",
         "alarm_motion",
         "alarm_contact"
