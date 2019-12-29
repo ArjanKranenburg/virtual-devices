@@ -1,0 +1,5 @@
+{
+  "0.8.9": {
+    "en": "Support for Norwegian and added support for capabilities measure_battery, meter_gas, meter_water, and meter_rain in Sensor"
+  }
+}
