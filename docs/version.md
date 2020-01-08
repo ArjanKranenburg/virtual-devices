@@ -7,6 +7,9 @@
 
 ## Release history
 
+### 0.9.0
+* Fixes ability to set the energy consumption (issue #111)
+
 ### 0.8.9
 * Added support for capabilities measure_battery, meter_gas, meter_water, and meter_rain in Sensor
 * Added Norwegian translation (thanks to Allram)
