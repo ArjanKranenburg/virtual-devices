@@ -40,6 +40,16 @@ The copyright of the following icons lies with:
 * Water (removed text) by Gregor Cresnar from the Noun Project via [Creative Commons](creative-commons)
 * Garage (removed text) by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
 
+* noun_Printer_788475 by Maxim Kulikov from the Noun Project via [Creative Commons](creative-commons)
+* noun_Router_3082250 by Smalllike from the Noun Project via [Creative Commons](creative-commons)
+* noun_Network_Switch_1127762  by Creaticca Creative Agency from the Noun Project via [Creative Commons](creative-commons)
+* noun_wash_machine_2853287 by Pascal Heß from the Noun Project via [Creative Commons](creative-commons)
+* noun_Dryer_1830790 by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
+* noun_Microwave_1041614 by AFY Studio from the Noun Project via [Creative Commons](creative-commons)
+* noun_socket_1743860 by LAUREN from the Noun Project via [Creative Commons](creative-commons)
+* noun_NAS_1602489 NAS by SBTS from the Noun Project  via [Creative Commons](creative-commons)
+
+
 The other icons are not copyrighted, but have no right to claim as yours or sell it.
 
 ## Software
