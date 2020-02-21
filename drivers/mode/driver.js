@@ -65,6 +65,9 @@ class ModeDriver extends Homey.Driver {
 	        getIconNameAndLocation('relax'),
 	        getIconNameAndLocation('secure'),
 	        getIconNameAndLocation('sleep'),
+	        getIconNameAndLocation('speaker'),
+	        getIconNameAndLocation('on'),
+	        getIconNameAndLocation('off'),
 	    ]
 
         callback( null, device_data );

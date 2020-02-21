@@ -39,15 +39,19 @@ The copyright of the following icons lies with:
 * Electricity (removed text) by Templet from the Noun Project via [Creative Commons](creative-commons)
 * Water (removed text) by Gregor Cresnar from the Noun Project via [Creative Commons](creative-commons)
 * Garage (removed text) by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
-
-* noun_Printer_788475 by Maxim Kulikov from the Noun Project via [Creative Commons](creative-commons)
-* noun_Router_3082250 by Smalllike from the Noun Project via [Creative Commons](creative-commons)
-* noun_Network_Switch_1127762  by Creaticca Creative Agency from the Noun Project via [Creative Commons](creative-commons)
-* noun_wash_machine_2853287 by Pascal Heß from the Noun Project via [Creative Commons](creative-commons)
-* noun_Dryer_1830790 by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
-* noun_Microwave_1041614 by AFY Studio from the Noun Project via [Creative Commons](creative-commons)
-* noun_socket_1743860 by LAUREN from the Noun Project via [Creative Commons](creative-commons)
-* noun_NAS_1602489 NAS by SBTS from the Noun Project  via [Creative Commons](creative-commons)
+* Printer (removed text) by Maxim Kulikov from the Noun Project via [Creative Commons](creative-commons)
+* Router (removed text) by Smalllike from the Noun Project via [Creative Commons](creative-commons)
+* Network_switch (removed text) by Creaticca Creative Agency from the Noun Project via [Creative Commons](creative-commons)
+* Wash_machine (removed text) by Pascal Heß from the Noun Project via [Creative Commons](creative-commons)
+* Dryer (removed text) by Adrien Coquet from the Noun Project via [Creative Commons](creative-commons)
+* Microwave (removed text) by AFY Studio from the Noun Project via [Creative Commons](creative-commons)
+* Socket (removed text) by LAUREN from the Noun Project via [Creative Commons](creative-commons)
+* NAS (removed text) by SBTS from the Noun Project  via [Creative Commons](creative-commons)
+* Quiet as Mute (removed text) by myladkings from the Noun Project  via [Creative Commons](creative-commons)
+* Speaker (removed text) by myladkings from the Noun Project  via [Creative Commons](creative-commons)
+* Off (removed text) by Peter Hayward from the Noun Project  via [Creative Commons](creative-commons)
+* On as Tick (removed text) by Peter Hayward from the Noun Project  via [Creative Commons](creative-commons)
+* Music (removed text) by Gajah Mada Studio from the Noun Project  via [Creative Commons](creative-commons)
 
 
 The other icons are not copyrighted, but have no right to claim as yours or sell it.

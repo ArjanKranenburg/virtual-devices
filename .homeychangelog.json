@@ -1,5 +1,8 @@
 {
   "0.8.9": {
     "en": "Support for Norwegian and added support for capabilities measure_battery, meter_gas, meter_water, and meter_rain in Sensor"
+  },
+  "0.9.0": {
+    "en": "Fixes ability to set the energy consumption (issue #111)"
   }
 }
