@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": "Virtual Devices to trigger your flows from the GUI.",
@@ -37,7 +37,12 @@
       {
         "name": "Danee de Kruyff",
         "email": "daneedekruyff@outlook.com"
+      },
+      {
+        "name": "Radiotechniman",
+        "email": "spamisgood4you@gmail.com"
       }
+
     ],
     "translators": [
       {

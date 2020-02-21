@@ -85,6 +85,16 @@ class VirtualDriver extends Homey.Driver {
           getIconNameAndLocation('sensor2'),
           getIconNameAndLocation('coffee_maker'),
           getIconNameAndLocation('kettle'),
+	  getIconNameAndLocation('noun_Printer_788475'),
+	  getIconNameAndLocation('noun_Router_3082250'),
+	  getIconNameAndLocation('noun_Network_Switch_1127762'),
+	  getIconNameAndLocation('noun_wash_machine_2853287'),
+	  getIconNameAndLocation('noun_Dryer_1830790'),
+	  getIconNameAndLocation('noun_Microwave_1041614'),
+	  getIconNameAndLocation('noun_socket_1743860'),
+	  getIconNameAndLocation('noun_NAS_1602489'),
+
+
 	    ]
 
         callback( null, device_data );
