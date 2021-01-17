@@ -3,7 +3,10 @@
   "version": "0.9.1",
   "compatibility": ">=1.5.0",
   "sdk": 2,
-  "description": "Virtual Devices to trigger your flows from the GUI.",
+  "description": {
+    "en": "Virtual Devices to simulate 1 or more real devices",
+    "nl": "Virtuele Apparaten om 1 of meerdere apparaten te simuleren"
+  },
   "name": {
     "en": "Virtual Devices",
     "nl": "Virtuele Apparaten",

@@ -10,7 +10,7 @@
 ### 0.9.1
 * Added icons for Dryer, Microwave, Wash Machine, NAS, Network Switch, Printer, Router, and Socket
 * Added icons for Contact, Music, On, Off, and Speaker
-* Changed icon for quiet to make it samy style as Speaker
+* Changed icon for quiet to make it same style as Speaker
 
 ### 0.9.0
 * Fixes ability to set the energy consumption (issue #111)
