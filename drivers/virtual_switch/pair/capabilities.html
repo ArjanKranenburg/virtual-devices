@@ -9,40 +9,90 @@
     }
   });
 
+  var capabilitiesVue = new Vue({
+    el: '#capabilitiesVue',
+    data: {
+      capabilities: [],
+      selectedCapabilities: []
+    },
+    watch: {
+      'selectedCapabilities': function(val){ updateCapabilities( {'capabilities': val} ) }
+    }
+  });
+
+  var capabilitiesOptionsVue = new Vue({
+    el: '#capabilitiesOptionsVue',
+    data: {
+      capabilitiesOptions: []
+    },
+    watch: {
+      'capabilitiesOptions.target_temperature.min':      _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'min':      val}} )}, 500),
+      'capabilitiesOptions.target_temperature.max':      _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'max':      val}} )}, 500),
+      'capabilitiesOptions.measure_temperature.down':    _.debounce( function(val){ updateCapabilitiesOptions( {'measure_temperature': {'down':     val}} )}, 500),
+      'capabilitiesOptions.measure_temperature.up':      _.debounce( function(val){ updateCapabilitiesOptions( {'measure_temperature': {'up':       val}} )}, 500)
+    }
+  });
+
   Homey.emit('getPairingDevice', null, function (err, result) {
     if (err) {
       console.log(err);
       return;
     }
+    console.log('result from getPairingDevice:');
     console.log(result);
+    Homey.emit('log', result, function (err, result2) {});
+
     Homey.setTitle(__('pair.title.device') + ' ' + result.name);
 
-    Homey.emit('addCapabilities', {'capabilities': devices[result.class].defaultCapabilities}, function (err, result) {
-            if(err){console.log(err); return;}
-            console.log(result);
-          });
+    capabilitiesVue.capabilities = devices[result.class].capabilities
+    capabilitiesVue.selectedCapabilities = devices[result.class].defaultCapabilities
 
-    new Vue({
-      el: '#app',
-      data: {
-        capabilities: devices[result.class].capabilities,
-        selectedCapabilities: devices[result.class].defaultCapabilities
-      },
-      watch: {
-        'selectedCapabilities': function(val){
-          Homey.emit('addCapabilities', {'capabilities': val}, function (err, result) {
-            if(err){console.log(err); return;}
-            console.log(result);
-          });
-        }
-      }
-    });
-
+    updateCapabilities( {'capabilities': devices[result.class].defaultCapabilities} )
   });
+
+  function updateCapabilities( capabilities ) {
+    Homey.emit('updateCapabilities', capabilities, function (err, currrentPairingDevice) {
+      if(err){console.log(err); return;}
+      console.log('result from updateCapabilities:');
+      console.log(currrentPairingDevice);
+
+      var capabilitiesOptions = getCapabilitiesOptions( currrentPairingDevice.capabilities, currrentPairingDevice.capabilitiesOptions )
+      capabilitiesOptionsVue.capabilitiesOptions = capabilitiesOptions
+    });
+  }
+
+  function updateCapabilitiesOptions(capabilityOptionChanges) {
+    console.log('updateCapabilitiesOptions:')
+    console.log(capabilityOptionChanges)
+    Homey.emit('updateCapabilitiesOptions', capabilityOptionChanges, function (err, currrentPairingDevice) {
+      if(err){console.log(err); return;}
+      console.log('result from updateCapabilitiesOptions:');
+      console.log(currrentPairingDevice);
+    });
+  }
+
+  function getCapabilitiesOptions( capabilities, currentCapabilitiesOptions ) {
+    var newCapabilitiesOptions = {}
+    capabilities.forEach( capability => {
+      console.log('Evaluating: ' + capability);
+      if ( !currentCapabilitiesOptions.hasOwnProperty(capability) ) { 
+        console.log('This is new: ' + capability);
+        if ( default_options.hasOwnProperty(capability) ) {
+          newCapabilitiesOptions[capability] = JSON.parse(JSON.stringify(default_options[capability])) 
+        }
+      } else {
+        newCapabilitiesOptions[capability] = JSON.parse(JSON.stringify(currentCapabilitiesOptions[capability]))
+      }
+    })
+
+    return newCapabilitiesOptions
+  }
+
 </script>
 
 <span id='capab_instructions'>{{instructions}}</span>
-<div id="app">
+
+<div id="capabilitiesVue">
   <ul id="devices-list" >
     <li class="device" v-for="(key, value) in capabilities">
 		<label :for="key" class="name">
@@ -54,4 +104,20 @@
 		</label>
 	</li>
   </ul>
+</div>
+
+<div id="capabilitiesOptionsVue">
+  <span v-if="capabilitiesOptions.hasOwnProperty('target_temperature')">
+    <div>
+      <span>{{ __('capability.target_temperature') }}</span>
+      <div>
+        <label>minimum</label>
+        <input type="number" v-model.number='capabilitiesOptions.target_temperature.min'>
+      </div>
+      <div>
+        <label>maximum</label>
+        <input type="number" v-model.number='capabilitiesOptions.target_temperature.max'>  
+      </div>
+    </div>
+  </span>
 </div>

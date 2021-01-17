@@ -19,15 +19,11 @@ class VirtualDriver extends Homey.Driver {
         version: 3
       },
       capabilities: [],
-      capabilitiesOptions: {
-        target_temperature: {
-          max: 50
-        }    
-      }
+      capabilitiesOptions: {}
     };
 
-    socket.on('log', function( msg, callback ) {
-        console.log(msg);
+    socket.on('log', function( data, callback ) {
+        console.log('log: ' + JSON.stringify(data));
         callback( null, "ok" );
     });
 
@@ -49,11 +45,32 @@ class VirtualDriver extends Homey.Driver {
         callback( null, pairingDevice );
     });
 
-    socket.on('addCapabilities', function( data, callback ) {
-        console.log('addCapabilities: ' + data);
-        pairingDevice.capabilities = data.capabilities;
-        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
-        callback( null, pairingDevice );
+    socket.on('updateCapabilities', function( data, callback ) {
+      console.log('updateCapabilities: ' + JSON.stringify(data));
+      pairingDevice.capabilities = data.capabilities;
+      console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+      callback( null, pairingDevice );
+    });
+
+    socket.on('updateCapabilityOptions', function( capabilityOptions, callback ) {
+      console.log('updateCapabilityOptions: ' + JSON.stringify(capabilityOptions));
+      console.log(JSON.stringify(pairingDevice.capabilitiesOptions));
+      Object.keys(capabilityOptions).forEach( capability => {
+        if ( Object.keys(capabilityOptions[capability]).length === 0 ) {
+          console.log('removing options for: ' + capability);
+          delete pairingDevice.capabilitiesOptions[capability]
+        } else {
+          console.log('Adding/updating options for: ' + capability);
+          if ( pairingDevice.capabilitiesOptions[capability] == null ) pairingDevice.capabilitiesOptions[capability] = {}
+
+          Object.keys(capabilityOptions[capability]).forEach( capabilityOptionKey => {
+            console.log('Adding/updating: ' + capabilityOptionKey);
+            pairingDevice.capabilitiesOptions[capability][capabilityOptionKey] = JSON.parse(JSON.stringify(capabilityOptions[capability][capabilityOptionKey]))
+          })
+        }
+      })
+      console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+      callback( null, pairingDevice );
     });
 
     socket.on('getIcons', function( data, callback ) {
