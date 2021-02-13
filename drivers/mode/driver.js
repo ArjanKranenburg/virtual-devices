@@ -1,10 +1,10 @@
 'use strict';
 
 const Homey = require('homey');
+const fs = require('fs');
 const DRIVER_LOCATION = "/app/com.arjankranenburg.virtual/drivers/mode/";
 
 class ModeDriver extends Homey.Driver {
-
   onInit() {
 		this.log('Initialized driver for Modes');
 
@@ -84,8 +84,29 @@ class ModeDriver extends Homey.Driver {
         callback( null, pairingDevice );
     });
 
+    socket.on('saveIcon', function(data, callback) {
+      try {
+        console.log('saveIcon: ' + JSON.stringify(data));
+        listFiles("./userdata");
+        uploadIcon(data, pairingDevice.data.id);
+        var deviceIcon = "../../../userdata/"+ pairingDevice.data.id +".svg";
+
+        pairingDevice.data.icon = deviceIcon;
+        pairingDevice.icon = deviceIcon
+        console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
+        callback( null, pairingDevice );
+
+      } catch (error) {
+        console.log('saveIcon ERROR ' + JSON.stringify(error));
+        callback( error, pairingDevice );
+      }
+    });
+
     socket.on('disconnect', function(){
         console.log('User aborted pairing, or pairing is finished');
+        if ( pairingDevice.data.icon !== undefined && pairingDevice.data.icon.startsWith("../userdata")) {
+          removeIcon(pairingDevice.data.icon)
+        }
     })
   }
 
@@ -155,6 +176,53 @@ function getIconNameAndLocation( name ) {
 		'location': '../assets/' + name + '.svg'
 	}
 };
+
+function listFiles( path ) {
+  console.log("listFiles: ");
+  return new Promise((resolve, reject) => {
+    try {
+      fs.readdirSync(path).forEach(file => {
+        console.log(file);
+      });
+    } catch (error) {
+      return reject(error);
+    }
+  })
+}
+
+function uploadIcon(img, id) {
+  return new Promise((resolve, reject) => {
+    try {
+      const path = "../userdata/"+ id +".svg";
+      const base64 = img.replace("data:image/svg+xml;base64,", '');
+      fs.writeFile(path, base64, 'base64', (error) => {
+        if (error) {
+          return reject(error);
+        } else {
+          return resolve(true);
+        }
+      });
+    } catch (error) {
+      return reject(error);
+    }
+  })
+}
+
+function removeIcon(iconpath) {
+  console.log("removeIcon( " + iconpath + " )");
+  return new Promise((resolve, reject) => {
+    try {
+      if (fs.existsSync(iconpath)) {
+        fs.unlinkSync(iconpath);
+        return resolve(true);
+      } else {
+        return resolve(true);
+      }
+    } catch (error) {
+      return reject(error);
+    }
+  })
+}
 
 function validateItem(item, value) {
   if (typeof(value) == 'undefined' || value == null ) {

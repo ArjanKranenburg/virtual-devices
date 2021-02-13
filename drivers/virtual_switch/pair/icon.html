@@ -29,19 +29,45 @@
   #icon_list {
     margin: 0px;
   }
+
+  .form-group {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+  }
+  #preview-outerframe {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #preview-innerframe img {
+    width: 125px;
+    height: 125px;
+    padding: 20px;
+  }
+  .buttons {
+    margin-top: 5px;
+    bottom: 0;
+    text-align: right;
+  }
+  .button:disabled {
+    color: #ccc;
+  }
+  .button:enabled {
+    background-color: #00c139 !important;
+    color: #fff;
+  }
 </style>
 <script src='../../../assets/vue.min.js'></script>
 <script src='../../../assets/vue-masonry.min.js'></script>
 <script>
   Vue.use(VueMasonry);
 
+  var imgBase64 = '';
+
   Homey.setTitle(__('pair.title.device'));
-  new Vue({
-    el: '#icon_instructions',
-    data: {
-      instructions: __('pair.select.icon')
-    }
-  });
 
   Homey.emit('getIcons', null, function (err, icons) {
     if (err) {
@@ -63,7 +89,6 @@
         }
       }
     })
-
   })
 
   Homey.emit('getPairingDevice', null, function (err, device) {
@@ -74,18 +99,61 @@
     console.log(device);
     Homey.setTitle(__('pair.title.device') + ' ' + device.name);
   })
+
+  $('#save-icon').click(function() {
+    Homey.emit('saveIcon', imgBase64)
+      .then(result => {
+        Homey.nextView();
+      })
+      .catch(error => {
+        Homey.alert(error.message, 'error');
+        Homey.done()
+      });
+  });
+
+  function loadIcon(event) {
+    const img = event.target.files[0];
+    const preview = document.getElementById('preview');
+    const reader = new FileReader();
+    reader.readAsDataURL(img);
+    reader.onload = () => {
+          imgBase64 = reader.result;
+          preview.src = imgBase64;
+          if (imgBase64.length > 1048000) return Homey.alert('Image size is too large', 'error');
+      $("#preview-outerframe").show();
+      $('#save-icon').prop('disabled', false);
+          return;
+    };
+  }
 </script>
 
-<span id='icon_instructions'>{{instructions}}</span>
-<ul id="icon_list">
-  <masonry
-    :cols="3"
-    :gutter="10"
-    >
-    <div v-for="(item, index) in icons" :key="index" v-on:click='setIcon(item)'>
-      <label for="icon" class="vd-icon-tile">
-        <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(/app/com.arjankranenburg.virtual/drivers/virtual_switch/assets/' + item.location + ')'}"></span>
-      </label>
+<div>
+  <span data-i18n="pair.select.icon.custom">If you wish to use a custom icon for your device you can upload it here. The icon needs to be in .svg format.</span>
+  <div class="form-group">
+      <input id="custom-icon" type="file" accept=".svg" name="image" onchange="loadIcon(event)">
+  </div>
+  <div id="preview-outerframe">
+    <div id="preview-innerframe">
+      <img id="preview" />
     </div>
-  </masonry>
-</ul>
+  </div>
+  <div class="form-group buttons">
+    <button id="save-icon" class="button" data-i18n="pair.button.icon.use" disabled>Save & use</button>
+  </div>  
+</div>
+
+<div>
+  <span data-i18n="pair.select.icon.standard">Or you can use one of the pre-defined icons.</span>
+  <ul id="icon_list">
+    <masonry
+      :cols="3"
+      :gutter="10"
+      >
+      <div v-for="(item, index) in icons" :key="index" v-on:click='setIcon(item)'>
+        <label for="icon" class="vd-icon-tile">
+          <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(/app/com.arjankranenburg.virtual/drivers/virtual_switch/assets/' + item.location + ')'}"></span>
+        </label>
+      </div>
+    </masonry>
+  </ul>  
+</div>

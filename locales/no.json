@@ -12,11 +12,19 @@
 			"mode": "Ny modus",
 			"multi": "Ny multi-modus"
 		},
+		"button": {
+			"icon": {
+				"use": "Bruk denne"
+			}
+		},
 		"select": {
 			"capabilities": "Velg 1 eller flere muligheter",
 			"class": "Velg Enhetsklasse",
 			"done": "Enheten er lagt til i Homey",
-			"icon": "Velg ikon",
+			"icon": {
+				"custom": "Last opp ditt eget ikon. Ikonet må være i .svg-format.",
+				"standard": "...eller velg ett av disse ikonene"
+			},
 			"name": "Gi enheten ett navn",
 			"modes": "Legg til moduser",
 			"type": "Ny modustype",

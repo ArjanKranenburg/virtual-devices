@@ -1,6 +1,7 @@
 'use strict';
 
 const Homey = require('homey');
+const fs = require('fs');
 
 //a list of devices, with their 'id' as key
 //it is generally advisable to keep a list of
@@ -76,7 +77,27 @@ class VirtualDevice extends Homey.Device {
   // this method is called when the Device is deleted
   onDeleted() {
     this.log('device deleted: ' + this.getName());
+    
+    if ( this.getData().icon.startsWith("../../../userdata")) {
+      removeIcon(this.getData().icon)
+    }
   }
+}
+
+function removeIcon(iconpath) {
+  console.log("removeIcon( " + iconpath + " )");
+  return new Promise((resolve, reject) => {
+    try {
+      if (fs.existsSync(iconpath)) {
+        fs.unlinkSync(iconpath);
+        return resolve(true);
+      } else {
+        return resolve(true);
+      }
+    } catch (error) {
+      return reject(error);
+    }
+  })
 }
 
 function sleep(ms) {

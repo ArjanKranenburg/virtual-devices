@@ -12,11 +12,19 @@
 			"mode": "neuer Modus",
 			"multi": "neuer Multimodus"
 		},
+		"button": {
+			"icon": {
+				"use": "Benutze das"
+			}
+		},
 		"select": {
 			"capabilities": "Wähle eine oder mehrere Eigenschaften",
 			"class": "Wähle eine Geräteklasse",
 			"done": "Das Gerät wurde zu Homey hinzhugefügt.",
-			"icon": "Wähle ein Icon",
+			"icon": {
+				"custom": "Laden Sie Ihr eigenes Icon hoch. Das Icon muss im SVG-Format vorliegen.",
+				"standard": "...oder wählen Sie eines dieser Icons aus"
+			},
 			"name": "Gib einen Namen",
 			"modes": "Füge Modi hinzu",
 			"type": "neuer Modustyp",

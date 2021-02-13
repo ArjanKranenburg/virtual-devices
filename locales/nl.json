@@ -12,11 +12,19 @@
 			"mode": "Nieuwe Mode",
 			"multi": "Nieuwe Multi-mode"
 		},
+		"button": {
+			"icon": {
+				"use": "Gebruik deze"
+			}
+		},
 		"select": {
 			"capabilities": "Selecteer 1 of meerdere eigenschappen",
 			"class": "Selecteer een apparaatklasse",
 			"done": "Het apparaat wordt aan Homey toegevoegd",
-			"icon": "Selecteer een pictogram",
+			"icon": {
+				"custom": "Upload een eigen pictogram. Het pictogram moet in .svg formaat zijn.",
+				"standard": "...of selecteer een van deze pictogrammen"
+			},
 			"name": "Geef het een naam",
 			"modes": "Voeg modi toe",
 			"type": "Nieuwe modus type",

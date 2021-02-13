@@ -12,11 +12,19 @@
 			"mode": "New Mode",
 			"multi": "New Multi-mode"
 		},
+		"button": {
+			"icon": {
+				"use": "Use this"
+			}
+		},
 		"select": {
 			"capabilities": "Select 1 or more Capabilities",
 			"class": "Select a Device Class",
 			"done": "The device is added to Homey",
-			"icon": "Select an Icon",
+			"icon": {
+				"custom": "Upload your own icon. The icon has to be in .svg format.",
+				"standard": "...or select one of these icons"
+			},
 			"name": "Give it a Name",
 			"modes": "Add modes",
 			"type": "New mode type",
