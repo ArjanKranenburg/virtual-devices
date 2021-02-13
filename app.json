@@ -176,6 +176,7 @@
       },
       {
         "id": "mode_on",
+        "deprecated": true,
         "title": {
           "en": "Mode is on",
           "nl": "Modus wordt aangezet",
@@ -192,6 +193,7 @@
       },
       {
         "id": "mode_off",
+        "deprecated": true,
         "title": {
           "en": "Mode is off",
           "nl": "Modus wordt uitgezet",
@@ -243,6 +245,7 @@
     "conditions": [
       {
         "id": "mode",
+        "deprecated": true,
         "title": {
           "en": "Mode !{{is|isn't}} turned on",
           "nl": "Modus !{{is|is niet}} aangezet",
@@ -324,6 +327,7 @@
       },
       {
         "id": "mode_action_on",
+        "deprecated": true,
         "title": {
           "en": "Turn mode on",
           "nl": "Zet modus aan",
@@ -340,6 +344,7 @@
       },
       {
         "id": "mode_action_off",
+        "deprecated": true,
         "title": {
           "en": "Turn mode off",
           "nl": "Zet modus uit",
