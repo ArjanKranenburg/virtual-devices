@@ -8,7 +8,6 @@ class VirtualDevices extends Homey.App {
 
 		this.log('Virtual Devices App is initialized');
 	}
-
 }
 
 module.exports = VirtualDevices;

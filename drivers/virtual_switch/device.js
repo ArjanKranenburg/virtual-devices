@@ -18,6 +18,9 @@ class VirtualDevice extends Homey.Device {
     // this.log('icon:        ', this.getData().icon);
     // this.log('class:       ', this.getClass());
     // this.log('capabilities:', JSON.stringify(this.getCapabilities()));
+    // this.getCapabilities().forEach(capability => {
+    //   this.log('capabilityOptions - ' + capability + ':', JSON.stringify(this.getCapabilityOptions(capability)));      
+    // });
     // this.log('state:       ', this.getState());
 
     let thisDeviceChanged = new Homey.FlowCardTriggerDevice('press');

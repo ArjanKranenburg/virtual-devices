@@ -49,28 +49,22 @@ class VirtualDriver extends Homey.Driver {
     socket.on('updateCapabilities', function( data, callback ) {
       console.log('updateCapabilities: ' + JSON.stringify(data));
       pairingDevice.capabilities = data.capabilities;
-      console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
       callback( null, pairingDevice );
     });
 
-    socket.on('updateCapabilityOptions', function( capabilityOptions, callback ) {
-      console.log('updateCapabilityOptions: ' + JSON.stringify(capabilityOptions));
-      console.log(JSON.stringify(pairingDevice.capabilitiesOptions));
-      Object.keys(capabilityOptions).forEach( capability => {
-        if ( Object.keys(capabilityOptions[capability]).length === 0 ) {
-          console.log('removing options for: ' + capability);
+    socket.on('updateCapabilitiesOptions', function( capabilityOptionChanges, callback ) {
+      console.log('updateCapabilitiesOptions: ' + JSON.stringify(capabilityOptionChanges));
+      Object.keys(capabilityOptionChanges).forEach( capability => {
+        if ( Object.keys(capabilityOptionChanges[capability]).length === 0 ) {
           delete pairingDevice.capabilitiesOptions[capability]
         } else {
-          console.log('Adding/updating options for: ' + capability);
           if ( pairingDevice.capabilitiesOptions[capability] == null ) pairingDevice.capabilitiesOptions[capability] = {}
 
-          Object.keys(capabilityOptions[capability]).forEach( capabilityOptionKey => {
-            console.log('Adding/updating: ' + capabilityOptionKey);
-            pairingDevice.capabilitiesOptions[capability][capabilityOptionKey] = JSON.parse(JSON.stringify(capabilityOptions[capability][capabilityOptionKey]))
+          Object.keys(capabilityOptionChanges[capability]).forEach( capabilityOptionKey => {
+            pairingDevice.capabilitiesOptions[capability][capabilityOptionKey] = JSON.parse(JSON.stringify(capabilityOptionChanges[capability][capabilityOptionKey]))
           })
         }
       })
-      console.log('pairingDevice: ' + JSON.stringify(pairingDevice));
       callback( null, pairingDevice );
     });
 
@@ -166,10 +160,7 @@ class VirtualDriver extends Homey.Driver {
           }
 
           this.log(device.getName() + ' -> Value:  ' + valueToSet);
-          device.setCapabilityValue(sensor, valueToSet) // Fire and forget
-            .catch(this.error);
-
-          return Promise.resolve( true );
+          return device.setCapabilityValue(sensor, valueToSet) 
         }
         catch(error) {
           this.log('Device triggered with missing information: ' + error.message)

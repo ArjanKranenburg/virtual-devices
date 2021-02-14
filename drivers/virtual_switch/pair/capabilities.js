@@ -288,6 +288,11 @@ var devices = {
 var default_options = {
   "target_temperature": {
     "min": 12,
-    "max": 32
+    "max": 32,
+    "step": 0.5
+  },
+  "measure_temperature": {
+    "decimals": 1
   }
+
 }

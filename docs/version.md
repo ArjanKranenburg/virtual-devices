@@ -9,6 +9,13 @@
 
 ## Release history
 
+### 0.9.4
+* Allow decimals for measure_temperature to be set
+
+### 0.9.3
+* Fix setting min & max target_temperature
+* Also allow step-size to be set
+
 ### 0.9.2
 * Own icons can be uploaded (issue #127)
 * Allow min & max for target_temperature to be set (issue #116)

@@ -26,10 +26,10 @@
       capabilitiesOptions: []
     },
     watch: {
-      'capabilitiesOptions.target_temperature.min':      _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'min':      val}} )}, 500),
-      'capabilitiesOptions.target_temperature.max':      _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'max':      val}} )}, 500),
-      'capabilitiesOptions.measure_temperature.down':    _.debounce( function(val){ updateCapabilitiesOptions( {'measure_temperature': {'down':     val}} )}, 500),
-      'capabilitiesOptions.measure_temperature.up':      _.debounce( function(val){ updateCapabilitiesOptions( {'measure_temperature': {'up':       val}} )}, 500)
+      'capabilitiesOptions.target_temperature.min':   _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'min':  val}} )}, 500),
+      'capabilitiesOptions.target_temperature.max':   _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'max':  val}} )}, 500),
+      'capabilitiesOptions.target_temperature.step':  _.debounce( function(val){ updateCapabilitiesOptions( {'target_temperature':  {'step': val}} )}, 500),
+      'capabilitiesOptions.measure_temperature.decimals': _.debounce( function(val){ updateCapabilitiesOptions( {'measure_temperature': {'decimals': val}} )}, 500),
     }
   });
 
@@ -53,8 +53,7 @@
   function updateCapabilities( capabilities ) {
     Homey.emit('updateCapabilities', capabilities, function (err, currrentPairingDevice) {
       if(err){console.log(err); return;}
-      console.log('result from updateCapabilities:');
-      console.log(currrentPairingDevice);
+      // console.log(currrentPairingDevice);
 
       var capabilitiesOptions = getCapabilitiesOptions( currrentPairingDevice.capabilities, currrentPairingDevice.capabilitiesOptions )
       capabilitiesOptionsVue.capabilitiesOptions = capabilitiesOptions
@@ -62,21 +61,16 @@
   }
 
   function updateCapabilitiesOptions(capabilityOptionChanges) {
-    console.log('updateCapabilitiesOptions:')
-    console.log(capabilityOptionChanges)
     Homey.emit('updateCapabilitiesOptions', capabilityOptionChanges, function (err, currrentPairingDevice) {
       if(err){console.log(err); return;}
-      console.log('result from updateCapabilitiesOptions:');
-      console.log(currrentPairingDevice);
+      // console.log(currrentPairingDevice);
     });
   }
 
   function getCapabilitiesOptions( capabilities, currentCapabilitiesOptions ) {
     var newCapabilitiesOptions = {}
     capabilities.forEach( capability => {
-      console.log('Evaluating: ' + capability);
       if ( !currentCapabilitiesOptions.hasOwnProperty(capability) ) { 
-        console.log('This is new: ' + capability);
         if ( default_options.hasOwnProperty(capability) ) {
           newCapabilitiesOptions[capability] = JSON.parse(JSON.stringify(default_options[capability])) 
         }
@@ -86,6 +80,17 @@
     })
 
     return newCapabilitiesOptions
+  }
+
+  function validateNumber( value, min, max, step ) {
+    if (value < min) return min;
+    if (value > max) return max;
+
+    step || (step = 1.0);
+    var inv = 1.0 / step;
+    if (value != Math.round(value*inv)/inv) return Math.round(value*inv)/inv
+
+    return value
   }
 
 </script>
@@ -112,12 +117,25 @@
       <span>{{ __('capability.target_temperature') }}</span>
       <div>
         <label>minimum</label>
-        <input type="number" v-model.number='capabilitiesOptions.target_temperature.min'>
+        <input type="number" v-model.number='capabilitiesOptions.target_temperature.min' oninput="javascript: this.value = validateNumber(this.value, -100, 50, 0.5)">
       </div>
       <div>
         <label>maximum</label>
-        <input type="number" v-model.number='capabilitiesOptions.target_temperature.max'>  
+        <input type="number" v-model.number='capabilitiesOptions.target_temperature.max' oninput="javascript: this.value = validateNumber(this.value, 0, 200, 0.5)">
+      </div>
+      <div>
+        <label>step</label>
+        <input type="number" v-model.number='capabilitiesOptions.target_temperature.step' oninput="javascript: this.value = validateNumber(this.value, 0, 2, 0.5)">  
       </div>
     </div>
+  </span>
+  <span v-if="capabilitiesOptions.hasOwnProperty('measure_temperature')">
+    <div>
+      <span>{{ __('capability.measure_temperature') }}</span>
+      <div>
+        <label>decimals</label>
+        <input type="number" v-model.number='capabilitiesOptions.measure_temperature.decimals' oninput="javascript: this.value = validateNumber(this.value, 0, 2, 1)">  
+      </div>
+   </div>
   </span>
 </div>
