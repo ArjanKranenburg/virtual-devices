@@ -8,9 +8,9 @@ class ModeDriver extends Homey.Driver {
   onInit() {
 		this.log('Initialized driver for Modes');
 
-    var triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on'); //deprecated
+    var triggerDeviceOn  = new Homey.FlowCardTriggerDevice('mode_on');
     triggerDeviceOn.register();
-    var triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off'); //deprecated
+    var triggerDeviceOff = new Homey.FlowCardTriggerDevice('mode_off');
     triggerDeviceOff.register();
     var triggerDeviceChanged = new Homey.FlowCardTriggerDevice('mode_changed');
     triggerDeviceChanged.register();

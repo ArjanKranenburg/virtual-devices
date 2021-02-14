@@ -15,7 +15,7 @@ virtual_switch:
     capabilities: capabilities,
     icon: DRIVER_LOCATION + "assets/" + details.icon.value,
 
-version 2: (0.6.4 - ): Cleanup after switch to SDK2
+version 2: (0.6.4 - 0.7.6): Cleanup after switch to SDK2
   name: details.deviceName.value,
   data: {
     id: guid(),
@@ -25,6 +25,18 @@ version 2: (0.6.4 - ): Cleanup after switch to SDK2
   "class": details["class"].value,
   capabilities: capabilities,
   icon: DRIVER_LOCATION + "assets/" + details.icon.value,
+
+version 3: (0.8.0 - ): New pairing
+     name: Homey.__('pair.default.name.device'),
+     "settings": {},
+      "data": {
+        id: guid(),
+        version: 3
+      },
+      capabilities: []
+      capabilitiesOptions: {}
+      icon = data.icon.location
+    };
 
 
 mode:
@@ -43,7 +55,7 @@ mode:
     icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
 
 
-  version 2: (0.6.4 - ): Cleanup after switch to SDK2
+  version 2: (0.6.4 - 0.7.6): Cleanup after switch to SDK2
     name: details.deviceName.value,
     data: {
       id: guid(),
@@ -53,3 +65,16 @@ mode:
     "class": "other",
     capabilities: capabilities,
     icon: DRIVER_LOCATION + "assets/" + details.icon.value.split(";")[1],
+
+
+  version 3: (0.8.0 - ): New pairing
+      "name": Homey.__( 'pair.default.name.mode' ),
+      "settings": {},
+      "data": {
+        id: guid(),
+        version: 3
+      },
+      "class": "other",
+      capabilities: [ "onoff" ]
+      icon = data.icon.location
+    };

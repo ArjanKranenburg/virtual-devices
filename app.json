@@ -176,7 +176,6 @@
       },
       {
         "id": "mode_on",
-        "deprecated": true,
         "title": {
           "en": "Mode is on",
           "nl": "Modus wordt aangezet",
@@ -193,7 +192,6 @@
       },
       {
         "id": "mode_off",
-        "deprecated": true,
         "title": {
           "en": "Mode is off",
           "nl": "Modus wordt uitgezet",

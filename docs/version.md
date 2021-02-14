@@ -2,15 +2,19 @@
 
 * [Description](index)
 * [Sensors](sensor)
+* [Modes](mode)
 * [Versions](version)
+* [Questions](https://community.athom.com/t/virtual-devices/1723)
 * [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
 ## Release history
 
-### 0.9.1
-* Added icons for Dryer, Microwave, Wash Machine, NAS, Network Switch, Printer, Router, and Socket
-* Added icons for Contact, Music, On, Off, and Speaker
+### 0.9.2
+* Own icons can be uploaded (issue #127)
+* Allow min & max for target_temperature to be set (issue #116)
 * Changed icon for quiet to make it same style as Speaker
+
+### 0.9.1 Cancelled
 
 ### 0.9.0
 * Fixes ability to set the energy consumption (issue #111)

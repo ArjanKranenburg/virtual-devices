@@ -2,7 +2,9 @@
 
 * [Description](index)
 * [Sensors](sensor)
+* [Modes](mode)
 * [Versions](version)
+* [Questions](https://community.athom.com/t/virtual-devices/1723)
 * [Bugs, Issues, and Feature Requests](https://github.com/ArjanKranenburg/virtual-devices/issues)
 
 ## Sensor
