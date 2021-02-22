@@ -1,6 +1,6 @@
 {
   "id": "com.arjankranenburg.virtual",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "description": {
@@ -61,11 +61,11 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "email": "arjan.kranenburg@gmail.com",
-        "currency": "EUR"
+        "username": "ArjanKranenburg"
       }
     }
   },
+  "source": "https://github.com/ArjanKranenburg/virtual-devices",
   "bugs": {
         "url": "https://github.com/ArjanKranenburg/virtual-devices/issues"
   },

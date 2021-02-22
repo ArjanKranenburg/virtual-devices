@@ -104,7 +104,8 @@ class ModeDriver extends Homey.Driver {
 
     socket.on('disconnect', function(){
         console.log('User aborted pairing, or pairing is finished');
-        if ( pairingDevice.data.icon !== undefined && pairingDevice.data.icon.startsWith("../userdata")) {
+        if( typeof pairingDevice.data.icon !== 'undefined' && pairingDevice.data.icon !== null 
+            && pairingDevice.data.icon.startsWith("../userdata")) {
           removeIcon(pairingDevice.data.icon)
         }
     })
