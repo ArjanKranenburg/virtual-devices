@@ -13,5 +13,8 @@
   },
   "0.9.4": {
     "en": "Allow decimals for measure_temperature to be set"
+  },
+  "0.9.5": {
+    "en": "Fix issue #133: Crash when removing device or mode"
   }
 }

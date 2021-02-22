@@ -9,6 +9,9 @@
 
 ## Release history
 
+### 0.9.5
+* Fix crash when removing device or mode(issue #133)
+
 ### 0.9.4
 * Allow decimals for measure_temperature to be set
 
