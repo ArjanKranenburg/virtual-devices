@@ -319,7 +319,8 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=virtual_switch"
+            "filter": "driver_id=virtual_switch",
+            "filter": "driver_id=electricitymeter"
           }
         ]
       },
@@ -436,6 +437,58 @@
         "onoff"
       ],
       "pair": [
+        {
+          "id": "name",
+          "navigation": {
+            "next": "icon"
+          }
+        },
+        {
+          "id": "icon",
+          "navigation": {
+            "prev": "name"
+          }
+        },
+        {
+          "id": "class",
+          "navigation": {
+            "prev": "icon"
+          }
+        },
+        {
+          "id": "capabilities",
+          "navigation": {
+            "next": "done",
+            "prev": "class"
+          }
+        },
+        {
+          "id": "done"
+        }
+      ]
+    },
+        {
+      "id": "electricitymeter",
+      "name": {
+        "en": "Electricity meter",
+        "nl": "Elektriciteitsmeter",
+        "de": "Stromzähler",
+        "no": "Strømmåler"
+      },
+      "images": {
+        "large": "drivers/electricitymeter/assets/images/large.png",
+        "small": "drivers/electricitymeter/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+
+       "energy": {
+       "cumulative": true
+     },
+
+        "pair": [
         {
           "id": "name",
           "navigation": {
