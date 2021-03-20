@@ -372,8 +372,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=virtual_switch",
-            "filter": "driver_id=electricitymeter"
+            "filter": "driver_id=virtual_switch|electricitymeter"
           }
         ]
       },
