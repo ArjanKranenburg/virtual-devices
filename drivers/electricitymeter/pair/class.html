@@ -1,0 +1,65 @@
+<style>
+  .deviceclass {
+    position: relative;
+    padding: 10px;
+    height: 40px;
+    margin-bottom: 5px;
+    background: #eee;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 3px;
+    /* line-height: 30px; */
+    cursor: pointer;
+  }
+</style>
+
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/vue-masonry.min.js'></script>
+<script src='./capabilities.js'></script>
+<script>
+  Vue.use(VueMasonry);
+  Homey.setTitle(__('pair.title.device'));
+  new Vue({
+    el: '#class_instructions',
+    data: {
+      instructions: __('pair.select.class')
+    }
+  });
+
+  new Vue({
+    el: '#devices-list',
+    data: {
+      classes: devices
+    },
+    methods:{
+      addClass(deviceClass) {
+        Homey.emit('setClass', {'class': deviceClass, 'capabilities': devices[deviceClass].defaultCapabilities}, function (err, result) {
+          if(err){console.log(err); return;}
+            Homey.nextView();
+        });
+      }
+    }
+  });
+
+  Homey.emit('getPairingDevice', null, function (err, device) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(device);
+    Homey.setTitle(__('pair.title.device') + ' ' + device.name);
+  })
+
+</script>
+
+<span id='class_instructions'>{{instructions}}</span>
+<ul id='devices-list'>
+  <masonry
+    :cols="3"
+    :gutter="10"
+    >
+    <div v-for='(value, key) in classes'  v-on:click='addClass(key)' class='deviceclass'>
+      <span tabindex="-1">{{ __('class.' + key) }}</span>
+    </div>
+  </masonry>
+</ul>
+<!-- <span class="name" tabindex="-1" :variant="key" v-bind:variant2="class.'key'" :data-i18n="class.'key'">tbd</span> -->
