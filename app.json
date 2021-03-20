@@ -76,7 +76,58 @@
     "small": "./assets/images/small.png"
   },
   "category": "tools",
-  "capabilities": {
+ "capabilities": {
+    "measure_radon": {
+      "type": "number",
+      "title": {
+        "en": "Radon (Short Term)"
+      },
+      "icon": "/assets/radon.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "bq"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
+    "measure_radon_longterm": {
+      "type": "number",
+      "title": {
+        "en": "Radon (Long Term)"
+      },
+      "icon": "/assets/radon.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "bq"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
+    "measure_voc": {
+      "type": "number",
+      "title": {
+        "en": "VOC"
+      },
+      "icon": "/assets/voc.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "ppb"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
     "multi_state": {
       "type": "string",
       "title": {
@@ -85,6 +136,7 @@
         "de": "Multimodus Status",
         "no": "Status multimodus"
       },
+      
       "getable": true,
       "setable": true
     },
@@ -100,6 +152,7 @@
       "setable": false
     }
   },
+
   "flow": {
     "triggers": [
       {
@@ -436,6 +489,7 @@
       "capabilities": [
         "onoff"
       ],
+
       "pair": [
         {
           "id": "name",
