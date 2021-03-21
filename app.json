@@ -80,7 +80,10 @@
     "measure_radon": {
       "type": "number",
       "title": {
-        "en": "Radon (Short Term)"
+        "en": "Radon short term",
+        "de": "Radon kurzfristig",
+        "nl": "Radon korte tijd",
+        "no": "Radon korttid"
       },
       "icon": "/assets/radon.svg",
       "insights": true,
@@ -88,7 +91,7 @@
       "getable": true,
       "setable": false,
       "units": {
-        "en": "bq"
+        "en": "bq/m3"
       },
       "min": 0,
       "max": 2000,
@@ -97,7 +100,10 @@
     "measure_radon_longterm": {
       "type": "number",
       "title": {
-        "en": "Radon (Long Term)"
+        "en": "Radon longterm",
+        "de": "Radon langfristig",
+        "nl": "Radon lange tijd",
+        "no": "Radon langtid"
       },
       "icon": "/assets/radon.svg",
       "insights": true,
@@ -105,7 +111,7 @@
       "getable": true,
       "setable": false,
       "units": {
-        "en": "bq"
+        "en": "bq/m3"
       },
       "min": 0,
       "max": 2000,
@@ -114,7 +120,10 @@
     "measure_voc": {
       "type": "number",
       "title": {
-        "en": "VOC"
+        "en": "TVOC",
+        "de": "TVOC",
+        "nl": "TVOC",
+        "no": "TVOC"
       },
       "icon": "/assets/voc.svg",
       "insights": true,
@@ -122,7 +131,7 @@
       "getable": true,
       "setable": false,
       "units": {
-        "en": "ppb"
+        "en": "ppm"
       },
       "min": 0,
       "max": 2000,
