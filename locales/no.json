@@ -123,6 +123,8 @@
 		"measure_gust_angle": "Vindkast retning",
 		"measure_humidity": "Relativ fuktighet",
 		"measure_battery": "Batteri",
+		"measure_temperature2": "Temperatur2",
+		"measure_temperature3": "Temperatur3",
 		"meter_power": "Energimåler",
 		"meter_gas": "Gassmåler",
 		"meter_water": "Vannmåler",

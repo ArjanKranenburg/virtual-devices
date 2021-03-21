@@ -77,6 +77,99 @@
   },
   "category": "tools",
   "capabilities": {
+    "measure_temperature2": {
+      "type": "number",
+      "title": {
+        "en": "Temperature2",
+        "de": "Radon kurzfristig",
+        "nl": "Radon korte tijd",
+        "no": "Temperatur2"
+      },
+      "icon": "/assets/temperature.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "$flow": {
+        "triggers": [
+        {
+        "id": "measure_temperature2_changed",
+        "title": {
+          "en": "Temperature2 value changed",
+          "nl": "De temperatuur2 is veranderd",
+          "de": "Die Temperatur2 hat sich geändert",
+          "no": "Temperatur2 verdien endret"
+        },
+        "tokens": [
+          {
+            "name": "measure_temperature2",
+            "title": {
+        "en": "Temperature2",
+        "de": "Temperatur2",
+        "nl": "Temperatuur2",
+        "no": "Temperatur2"
+            },
+            "type": "number",
+            "example": 23.5
+                  }
+              ]
+            }
+          ]
+      },
+      "units": {
+        "en": "℃"
+      },
+      "min": 0,
+      "max": 40,
+      "step": 1
+    },
+ 
+    "measure_temperature3": {
+      "type": "number",
+      "title": {
+        "en": "Temperature3",
+        "de": "Temperatur3",
+        "nl": "temperatuur3",
+        "no": "Temperatur3"
+      },
+      "icon": "/assets/temperature.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "$flow": {
+        "triggers": [
+        {
+        "id": "measure_temperature3_changed",
+        "title": {
+          "en": "Temperature3 value changed",
+          "nl": "De temperatuur3 is veranderd",
+          "de": "Die Temperatur3 hat sich geändert",
+          "no": "Temperatur3 verdien ble endret"
+        },
+        "tokens": [
+          {
+            "name": "measure_temperature3",
+            "title": {
+        "en": "Temperature3",
+        "de": "Temperatur3",
+        "nl": "temperatuur3",
+        "no": "Temperatur3"
+            },
+            "type": "number",
+            "example": 23.5
+                  }
+              ]
+            }
+          ]
+      },      
+      "units": {
+        "en": "℃"
+      },
+      "min": 0,
+      "max": 40,
+      "step": 1
+    },
     "multi_state": {
       "type": "string",
       "title": {

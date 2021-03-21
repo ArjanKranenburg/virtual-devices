@@ -127,7 +127,9 @@ var devices = {
     "capabilities": [
       "target_temperature",
       "thermostat_mode",
-      "measure_temperature"
+      "measure_temperature",
+      "measure_temperature2",
+      "measure_temperature3"
     ],
     "defaultCapabilities": [
       "target_temperature"
