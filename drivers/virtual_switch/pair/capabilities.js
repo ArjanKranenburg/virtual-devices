@@ -162,7 +162,8 @@ var devices = {
       "meter_rain",
       "measure_power",
       "alarm_motion",
-      "alarm_contact"
+      "alarm_contact",
+      "onoff"
     ],
     "defaultCapabilities": [
     ]
