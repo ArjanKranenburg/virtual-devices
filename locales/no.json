@@ -123,7 +123,7 @@
 		"measure_gust_angle": "Vindkast retning",
 		"measure_humidity": "Relativ fuktighet",
 		"measure_battery": "Batteri",
-		"measure_voc": "VOC",
+		"measure_tvoc": "TVOC",
       	"measure_radon": "Radon korttid",
       	"measure_radon_longterm": "Radon langtid",
 		"meter_power": "Energimåler",

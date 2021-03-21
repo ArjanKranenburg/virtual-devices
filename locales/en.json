@@ -123,7 +123,7 @@
 		"measure_gust_angle": "Gust angle",
 		"measure_humidity": "Relative Humidity",
 		"measure_battery": "Battery",
-		"measure_voc": "VOC",
+		"measure_tvoc": "TVOC",
       	"measure_radon": "Radon shorttime",
       	"measure_radon_longterm": "Radon longtime",
 		"meter_power": "Power Meter",

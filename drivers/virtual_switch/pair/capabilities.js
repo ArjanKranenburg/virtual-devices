@@ -153,7 +153,7 @@ var devices = {
       "measure_wind_angle",
       "measure_wind_strength",
       "measure_battery",
-      "measure_voc",
+      "measure_tvoc",
       "measure_radon",
       "measure_radon_longterm",
       "meter_power",

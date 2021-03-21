@@ -123,7 +123,7 @@
 		"measure_gust_strength": "Windstootkracht",
 		"measure_humidity": "Relatieve Luchtvochtigheid",
 		"measure_battery": "Batterij",
-		"measure_voc": "VOC",
+		"measure_tvoc": "TVOC",
       	"measure_radon": "Radon korte tijd",
       	"measure_radon_longterm": "Radon lange tijd",
 		"meter_power": "Energiemeter",
