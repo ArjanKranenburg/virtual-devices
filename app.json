@@ -81,8 +81,8 @@
       "type": "number",
       "title": {
         "en": "Temperature2",
-        "de": "Radon kurzfristig",
-        "nl": "Radon korte tijd",
+        "de": "Temperatur2",
+        "nl": "Temperatuur2",
         "no": "Temperatur2"
       },
       "icon": "/assets/temperature.svg",
@@ -168,7 +168,6 @@
       },
       "min": 0,
       "max": 40,
-      "step": 1
     },
     "multi_state": {
       "type": "string",
