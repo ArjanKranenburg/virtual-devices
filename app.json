@@ -96,8 +96,8 @@
         "id": "measure_radon_changed",
         "title": {
           "en": "The radonvalues changed",
-          "nl": "De temperatuur is veranderd",
-          "de": "Die Temperatur hat sich geändert",
+          "nl": "De radonwaarden zijn gewijzigd",
+          "de": "Die Radonwerte haben sich geändert",
           "no": "Radonverdien ble endret"
         },
         "tokens": [
