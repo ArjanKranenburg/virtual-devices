@@ -121,6 +121,7 @@
       },
       "min": 0,
       "max": 40,
+      "decimals": 2
     },
  
     "measure_temperature3": {
@@ -167,7 +168,9 @@
       },
       "min": 0,
       "max": 40,
+      "decimals": 2
     },
+    
     "multi_state": {
       "type": "string",
       "title": {
