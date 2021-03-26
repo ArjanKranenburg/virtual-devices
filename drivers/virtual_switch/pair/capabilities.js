@@ -138,6 +138,8 @@ var devices = {
   "sensor": {
     "capabilities": [
       "measure_temperature",
+      "measure_temperature2",
+      "measure_temperature3",
       "measure_co2",
       "measure_pressure",
       "measure_humidity",
