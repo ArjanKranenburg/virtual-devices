@@ -123,6 +123,8 @@
 		"measure_gust_angle": "Böenrichtung",
 		"measure_humidity": "Relative Luftfeuchtigkeit",
 		"measure_battery": "Batterie",
+		"measure_Temperature2": "Temperatur messen2",
+		"measure_Temperature3": "Temperatur messen3",
 		"meter_power": "Energiezähler",
         "meter_gas": "Gaszähler",
         "meter_water": "Wasserzähler",
