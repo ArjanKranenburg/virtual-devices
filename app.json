@@ -76,7 +76,148 @@
     "small": "./assets/images/small.png"
   },
   "category": "tools",
-  "capabilities": {
+ "capabilities": {
+    "measure_radon": {
+      "type": "number",
+      "title": {
+        "en": "Radon short term",
+        "de": "Radon kurzfristig",
+        "nl": "Radon korte tijd",
+        "no": "Radon korttid"
+      },
+      "icon": "/assets/radon.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "$flow": {
+        "triggers": [
+        {
+        "id": "measure_radon_changed",
+        "title": {
+          "en": "The radonvalues changed",
+          "nl": "De radonwaarden zijn gewijzigd",
+          "de": "Die Radonwerte haben sich geändert",
+          "no": "Radonverdien ble endret"
+        },
+        "tokens": [
+          {
+            "name": "measure_radon",
+            "title": {
+        "en": "Radon short term",
+        "de": "Radon kurzfristig",
+        "nl": "Radon korte tijd",
+        "no": "Radon korttid"
+            },
+            "type": "number",
+            "example": 130
+                  }
+              ]
+            }
+          ]
+      },
+      "units": {
+        "en": "bq/m3"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
+ 
+    "measure_radon_longterm": {
+      "type": "number",
+      "title": {
+        "en": "Radon longterm",
+        "de": "Radon langfristig",
+        "nl": "Radon lange tijd",
+        "no": "Radon langtid"
+      },
+      "icon": "/assets/radon.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "$flow": {
+        "triggers": [
+        {
+        "id": "measure_radon_longterm_changed",
+        "title": {
+          "en": "The long term radon values changed",
+          "nl": "De radonwaarden op lange termijn zijn veranderd",
+          "de": "Die langfristigen Radonwerte änderten sich",
+          "no": "Langtids radon verdien ble endret"
+        },
+        "tokens": [
+          {
+            "name": "measure_radon_longterm",
+            "title": {
+        "en": "Radon longterm",
+        "de": "Radon langfristig",
+        "nl": "Radon lange tijd",
+        "no": "Radon langtid"
+            },
+            "type": "number",
+            "example": 230
+                  }
+              ]
+            }
+          ]
+      },      
+      "units": {
+        "en": "bq/m3"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
+
+    "measure_tvoc": {
+      "type": "number",
+      "title": {
+        "en": "TVOC",
+        "de": "TVOC",
+        "nl": "TVOC",
+        "no": "TVOC"
+      },
+      "icon": "/assets/tvoc.svg",
+      "insights": true,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "$flow": {
+        "triggers": [
+        {
+        "id": "measure_tvoc_changed",
+        "title": {
+          "en": "The TVOC value changed",
+          "nl": "De TVOC-waarde is veranderd",
+          "de": "Der TVOC-Wert hat sich geändert",
+          "no": "TVOC verdien ble endret"
+        },
+        "tokens": [
+          {
+            "name": "measure_tvoc",
+            "title": {
+        "en": "TVOC",
+        "de": "TVOC",
+        "nl": "TVOC",
+        "no": "TVOC"
+            },
+            "type": "number",
+            "example": 230
+                  }
+              ]
+            }
+          ]
+      },      
+      "units": {
+        "en": "ppb"
+      },
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    },
+
     "multi_state": {
       "type": "string",
       "title": {
@@ -85,6 +226,7 @@
         "de": "Multimodus Status",
         "no": "Status multimodus"
       },
+      
       "getable": true,
       "setable": true
     },
@@ -100,6 +242,7 @@
       "setable": false
     }
   },
+
   "flow": {
     "triggers": [
       {
@@ -319,7 +462,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=virtual_switch"
+            "filter": "driver_id=virtual_switch|electricitymeter"
           }
         ]
       },
@@ -435,6 +578,7 @@
       "capabilities": [
         "onoff"
       ],
+
       "pair": [
         {
           "id": "name",
