@@ -123,6 +123,8 @@
 		"measure_gust_strength": "Windstootkracht",
 		"measure_humidity": "Relatieve Luchtvochtigheid",
 		"measure_battery": "Batterij",
+		"measure_Temperature2": "Gemeten temperatuur2",
+		"measure_Temperature3": "Gemeten temperatuur3",
 		"meter_power": "Energiemeter",
         "meter_gas": "Gasmeter",
         "meter_water": "Watermeter",
