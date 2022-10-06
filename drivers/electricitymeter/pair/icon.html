@@ -1,0 +1,159 @@
+<style>
+  .vd-icon{
+    display: block;
+    width: 6.5em;
+    height: 4.5em;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    background: #333;
+    vertical-align: middle;
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vd-icon-tile {
+    /* height: 60px; */
+    position: relative; 
+    padding: 5px; 
+    height: 30px; 
+    margin-bottom: 5px;
+    /* background: #eee; */
+    /* border: 1px solid rgba(0,0,0,0.05); */
+    border-radius: 3px;
+    line-height: 30px; 
+    cursor: pointer; 
+  }
+
+  #icon_list {
+    margin: 0px;
+  }
+
+  .form-group {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+  }
+  #preview-outerframe {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #preview-innerframe img {
+    width: 125px;
+    height: 125px;
+    padding: 20px;
+  }
+  .buttons {
+    margin-top: 5px;
+    bottom: 0;
+    text-align: right;
+  }
+  .button:disabled {
+    color: #ccc;
+  }
+  .button:enabled {
+    background-color: #00c139 !important;
+    color: #fff;
+  }
+</style>
+<script src='../../../assets/vue.min.js'></script>
+<script src='../../../assets/vue-masonry.min.js'></script>
+<script>
+  Vue.use(VueMasonry);
+
+  var imgBase64 = '';
+
+  Homey.setTitle(__('pair.title.device'));
+
+  Homey.emit('getIcons', null, function (err, icons) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    new Vue({
+      el: '#icon_list',
+      data: {
+        icons: icons
+      },
+      methods:{
+        setIcon(icon) {
+          Homey.emit('setIcon', {'icon': icon}, function (err, result) {
+            if(err){console.log(err); return;}
+            Homey.nextView();
+          })
+        }
+      }
+    })
+  })
+
+  Homey.emit('getPairingDevice', null, function (err, device) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(device);
+    Homey.setTitle(__('pair.title.device') + ' ' + device.name);
+  })
+
+  $('#save-icon').click(function() {
+    Homey.emit('saveIcon', imgBase64)
+      .then(result => {
+        Homey.nextView();
+      })
+      .catch(error => {
+        Homey.alert(error.message, 'error');
+        Homey.done()
+      });
+  });
+
+  function loadIcon(event) {
+    const img = event.target.files[0];
+    const preview = document.getElementById('preview');
+    const reader = new FileReader();
+    reader.readAsDataURL(img);
+    reader.onload = () => {
+          imgBase64 = reader.result;
+          preview.src = imgBase64;
+          if (imgBase64.length > 1048000) return Homey.alert('Image size is too large', 'error');
+      $("#preview-outerframe").show();
+      $('#save-icon').prop('disabled', false);
+          return;
+    };
+  }
+</script>
+
+<div>
+  <span data-i18n="pair.select.icon.custom">If you wish to use a custom icon for your device you can upload it here. The icon needs to be in .svg format.</span>
+  <div class="form-group">
+      <input id="custom-icon" type="file" accept=".svg" name="image" onchange="loadIcon(event)">
+  </div>
+  <div id="preview-outerframe">
+    <div id="preview-innerframe">
+      <img id="preview" />
+    </div>
+  </div>
+  <div class="form-group buttons">
+    <button id="save-icon" class="button" data-i18n="pair.button.icon.use" disabled>Save & use</button>
+  </div>  
+</div>
+
+<div>
+  <span data-i18n="pair.select.icon.standard">Or you can use one of the pre-defined icons.</span>
+  <ul id="icon_list">
+    <masonry
+      :cols="3"
+      :gutter="10"
+      >
+      <div v-for="(item, index) in icons" :key="index" v-on:click='setIcon(item)'>
+        <label for="icon" class="vd-icon-tile">
+          <span class="vd-icon" v-bind:style="{WebkitMaskImage: 'url(/app/com.arjankranenburg.virtual/drivers/electricitymeter/assets/' + item.location + ')'}"></span>
+        </label>
+      </div>
+    </masonry>
+  </ul>  
+</div>
